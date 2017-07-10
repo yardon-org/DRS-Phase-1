@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Web.Http;
 using drs_backend_phase1.Models;
 using log4net;
-using Microsoft.VisualBasic.Logging;
 
 namespace drs_backend_phase1.Controllers
 {
