@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DRSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="to" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="QueuedEmails" Relationship="Self.fk_6d489a18fcf57e4c8be0dbe3b25" FromRole="Email" ToRole="QueuedEmail" />
+  </EntityType>
+  <EntityType Name="EventLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeKey" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="configId" Type="Int32" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="serverName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="properties" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EventLogConfig" Relationship="Self.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLog" ToRole="EventLogConfig" />
+    <NavigationProperty Name="EventLogType" Relationship="Self.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLog" ToRole="EventLogType" />
+  </EntityType>
+  <EntityType Name="EventLogConfig">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logTypeKey" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="loggingIsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EventLogs" Relationship="Self.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLogConfig" ToRole="EventLog" />
+    <NavigationProperty Name="EventLogType" Relationship="Self.fk_1c19cf8556e5edb55657714e1e8" FromRole="EventLogConfig" ToRole="EventLogType" />
+  </EntityType>
+  <EntityType Name="EventLogType">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="friendlyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cssClass" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EventLogs" Relationship="Self.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLogType" ToRole="EventLog" />
+    <NavigationProperty Name="EventLogConfigs" Relationship="Self.fk_1c19cf8556e5edb55657714e1e8" FromRole="EventLogType" ToRole="EventLogConfig" />
+  </EntityType>
+  <EntityType Name="JobType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isClinical" Type="Boolean" />
+    <Property Name="isGmcRequired" Type="Boolean" />
+    <Property Name="isNmcRequired" Type="Boolean" />
+    <Property Name="isHcpcRequired" Type="Boolean" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="ProfileProfessionals" Relationship="Self.fk_35d1abd21894dd99e9d03613ebb" FromRole="JobType" ToRole="ProfileProfessional" />
+  </EntityType>
+  <EntityType Name="Lookup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="type" Type="Int32" />
+    <NavigationProperty Name="ProfileProfessionals" Relationship="Self.fk_0d3d74559a9756e18d3b0b3137f" FromRole="Lookup" ToRole="ProfileProfessional" />
+    <NavigationProperty Name="ProfileProfessionals1" Relationship="Self.fk_4188eb6914e1de08b48209b3fc0" FromRole="Lookup" ToRole="ProfileProfessional" />
+    <NavigationProperty Name="LookupType" Relationship="Self.fk_55ed666b6b287e744002b5e3039" FromRole="Lookup" ToRole="LookupType" />
+    <NavigationProperty Name="ProfileFinances" Relationship="Self.fk_6ba690537dabd13ee8fb4ab5bd5" FromRole="Lookup" ToRole="ProfileFinance" />
+    <NavigationProperty Name="ProfileProfessionals2" Relationship="Self.fk_8876aa3ee193d532881f9b6cd5d" FromRole="Lookup" ToRole="ProfileProfessional" />
+    <NavigationProperty Name="ProfileProfessionals3" Relationship="Self.fk_9471293e36e1cd29ba7727961a5" FromRole="Lookup" ToRole="ProfileProfessional" />
+    <NavigationProperty Name="ProfileDocuments" Relationship="Self.fk_acf4862a0cd563f13dd928abe8f" FromRole="Lookup" ToRole="ProfileDocument" />
+    <NavigationProperty Name="ProfileProfessionals4" Relationship="Self.fk_e2c98fd24e3a6be988a12494962" FromRole="Lookup" ToRole="ProfileProfessional" />
+    <NavigationProperty Name="ProfilePaymentCategories" Relationship="Self.fk_f2fc32d7e8f52761c4ef6e987d9" FromRole="Lookup" ToRole="ProfilePaymentCategory" />
+    <NavigationProperty Name="ProfileShiftTypes" Relationship="Self.fk_f368a2ec3f354d1b68093b2dca6" FromRole="Lookup" ToRole="ProfileShiftType" />
+    <NavigationProperty Name="ProfileProfessionals5" Relationship="Self.fk_fdb921f2951ecf3d1858bc7830b" FromRole="Lookup" ToRole="ProfileProfessional" />
+  </EntityType>
+  <EntityType Name="LookupType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="namePlural" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="Lookups" Relationship="Self.fk_55ed666b6b287e744002b5e3039" FromRole="LookupType" ToRole="Lookup" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="firstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="middleNames" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="postcode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="homePhone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="mobilePhone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="homeEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nhsEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="smsEnabled" Type="Boolean" />
+    <Property Name="isInactive" Type="Boolean" />
+    <Property Name="isComplete" Type="Boolean" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="profileProfessionalId" Type="Int32" />
+    <Property Name="profileFinanceId" Type="Int32" />
+    <NavigationProperty Name="SpecialNotes" Relationship="Self.fk_97adea54804aa384c890cd6c3ae" FromRole="Profile" ToRole="SpecialNote" />
+    <NavigationProperty Name="ProfileProfessional" Relationship="Self.fk_a68f954b809d3a2fc2a21cb61b5" FromRole="Profile" ToRole="ProfileProfessional" />
+    <NavigationProperty Name="ProfileDocuments" Relationship="Self.fk_c000a0f2b66dd4a69ad36de6460" FromRole="Profile" ToRole="ProfileDocument" />
+    <NavigationProperty Name="ProfileFinance" Relationship="Self.fk_e7569dcf417e285aff79a7581cb" FromRole="Profile" ToRole="ProfileFinance" />
+  </EntityType>
+  <EntityType Name="ProfileDocument">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="documentTypeId" Type="Int32" />
+    <Property Name="originalFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="multerFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="mimeType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="dateObtained" Type="DateTime" Precision="3" />
+    <Property Name="dateExpires" Type="DateTime" Precision="3" />
+    <Property Name="profileId" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="Lookup" Relationship="Self.fk_acf4862a0cd563f13dd928abe8f" FromRole="ProfileDocument" ToRole="Lookup" />
+    <NavigationProperty Name="Profile" Relationship="Self.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="ProfileFinance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="payrollNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="isIc24Staff" Type="Boolean" />
+    <Property Name="nationalInsuranceNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="bankId" Type="Int32" />
+    <Property Name="bankAccountNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="bankSortCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="buildingSocietyRollNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="Lookup" Relationship="Self.fk_6ba690537dabd13ee8fb4ab5bd5" FromRole="ProfileFinance" ToRole="Lookup" />
+    <NavigationProperty Name="Profiles" Relationship="Self.fk_e7569dcf417e285aff79a7581cb" FromRole="ProfileFinance" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="ProfilePaymentCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="paymentCategoryId" Type="Int32" />
+    <Property Name="profileProfessionalId" Type="Int32" />
+    <Property Name="isDefault" Type="Boolean" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="Lookup" Relationship="Self.fk_f2fc32d7e8f52761c4ef6e987d9" FromRole="ProfilePaymentCategory" ToRole="Lookup" />
+    <NavigationProperty Name="ProfileProfessional" Relationship="Self.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfilePaymentCategory" ToRole="ProfileProfessional" />
+  </EntityType>
+  <EntityType Name="ProfileProfessional">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="teamId" Type="Int32" />
+    <Property Name="jobTypeId" Type="Int32" />
+    <Property Name="gmcNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="nmcNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="hcpcNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="registrationExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="subTypeId" Type="Int32" />
+    <Property Name="registrarLevelId" Type="Int32" />
+    <Property Name="registrarTrainer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="isRegistrarGreen" Type="Boolean" />
+    <Property Name="agencyId" Type="Int32" />
+    <Property Name="registeredSurgeryId" Type="Int32" />
+    <Property Name="ccgId" Type="Int32" />
+    <Property Name="indemnityProviderId" Type="Int32" />
+    <Property Name="performersList" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="performersListChecked" Type="Boolean" />
+    <Property Name="performersListCheckedDate" Type="DateTime" Precision="3" />
+    <Property Name="performersListCheckedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="indemnityNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="indemnityExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="isPremium" Type="Boolean" />
+    <Property Name="isTrainer" Type="Boolean" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="JobType" Relationship="Self.fk_35d1abd21894dd99e9d03613ebb" FromRole="ProfileProfessional" ToRole="JobType" />
+    <NavigationProperty Name="Lookup" Relationship="Self.fk_0d3d74559a9756e18d3b0b3137f" FromRole="ProfileProfessional" ToRole="Lookup" />
+    <NavigationProperty Name="Lookup1" Relationship="Self.fk_4188eb6914e1de08b48209b3fc0" FromRole="ProfileProfessional" ToRole="Lookup" />
+    <NavigationProperty Name="Lookup2" Relationship="Self.fk_8876aa3ee193d532881f9b6cd5d" FromRole="ProfileProfessional" ToRole="Lookup" />
+    <NavigationProperty Name="Lookup3" Relationship="Self.fk_9471293e36e1cd29ba7727961a5" FromRole="ProfileProfessional" ToRole="Lookup" />
+    <NavigationProperty Name="Lookup4" Relationship="Self.fk_e2c98fd24e3a6be988a12494962" FromRole="ProfileProfessional" ToRole="Lookup" />
+    <NavigationProperty Name="Lookup5" Relationship="Self.fk_fdb921f2951ecf3d1858bc7830b" FromRole="ProfileProfessional" ToRole="Lookup" />
+    <NavigationProperty Name="Profiles" Relationship="Self.fk_a68f954b809d3a2fc2a21cb61b5" FromRole="ProfileProfessional" ToRole="Profile" />
+    <NavigationProperty Name="ProfilePaymentCategories" Relationship="Self.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfileProfessional" ToRole="ProfilePaymentCategory" />
+    <NavigationProperty Name="SubType" Relationship="Self.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="ProfileProfessional" ToRole="SubType" />
+    <NavigationProperty Name="ProfileShiftTypes" Relationship="Self.fk_eab3618488d653242b55e486b64" FromRole="ProfileProfessional" ToRole="ProfileShiftType" />
+  </EntityType>
+  <EntityType Name="ProfileShiftType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="shiftTypeId" Type="Int32" />
+    <Property Name="profileProfessionalId" Type="Int32" />
+    <Property Name="isUnderReview" Type="Boolean" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="Lookup" Relationship="Self.fk_f368a2ec3f354d1b68093b2dca6" FromRole="ProfileShiftType" ToRole="Lookup" />
+    <NavigationProperty Name="ProfileProfessional" Relationship="Self.fk_eab3618488d653242b55e486b64" FromRole="ProfileShiftType" ToRole="ProfileProfessional" />
+  </EntityType>
+  <EntityType Name="QueuedEmail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="retryCount" Type="Single" Nullable="false" />
+    <Property Name="status" Type="Single" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="email" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Email1" Relationship="Self.fk_6d489a18fcf57e4c8be0dbe3b25" FromRole="QueuedEmail" ToRole="Email" />
+  </EntityType>
+  <EntityType Name="SpecialNote">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="noteText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="profileId" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="Profile" Relationship="Self.fk_97adea54804aa384c890cd6c3ae" FromRole="SpecialNote" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="SubType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isAgency" Type="Boolean" />
+    <Property Name="isRegistrar" Type="Boolean" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="dateModified" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <NavigationProperty Name="ProfileProfessionals" Relationship="Self.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="SubType" ToRole="ProfileProfessional" />
+  </EntityType>
+  <Association Name="fk_6d489a18fcf57e4c8be0dbe3b25">
+    <End Role="Email" Type="Self.Email" Multiplicity="1" />
+    <End Role="QueuedEmail" Type="Self.QueuedEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Email">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="QueuedEmail">
+        <PropertyRef Name="email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_7ff1130ed564e0a101e659e5860">
+    <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="0..1" />
+    <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventLogConfig">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="EventLog">
+        <PropertyRef Name="configId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_a61286fc3ad6b583e96516d1d63">
+    <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="1" />
+    <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventLogType">
+        <PropertyRef Name="key" />
+      </Principal>
+      <Dependent Role="EventLog">
+        <PropertyRef Name="typeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_1c19cf8556e5edb55657714e1e8">
+    <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="0..1" />
+    <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventLogType">
+        <PropertyRef Name="key" />
+      </Principal>
+      <Dependent Role="EventLogConfig">
+        <PropertyRef Name="logTypeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_35d1abd21894dd99e9d03613ebb">
+    <End Role="JobType" Type="Self.JobType" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="jobTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_0d3d74559a9756e18d3b0b3137f">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="registeredSurgeryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_4188eb6914e1de08b48209b3fc0">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="teamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_55ed666b6b287e744002b5e3039">
+    <End Role="LookupType" Type="Self.LookupType" Multiplicity="0..1" />
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LookupType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Lookup">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_6ba690537dabd13ee8fb4ab5bd5">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileFinance" Type="Self.ProfileFinance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileFinance">
+        <PropertyRef Name="bankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_8876aa3ee193d532881f9b6cd5d">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="ccgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_9471293e36e1cd29ba7727961a5">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="agencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_acf4862a0cd563f13dd928abe8f">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileDocument" Type="Self.ProfileDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileDocument">
+        <PropertyRef Name="documentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_e2c98fd24e3a6be988a12494962">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="indemnityProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_f2fc32d7e8f52761c4ef6e987d9">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfilePaymentCategory" Type="Self.ProfilePaymentCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfilePaymentCategory">
+        <PropertyRef Name="paymentCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_f368a2ec3f354d1b68093b2dca6">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileShiftType" Type="Self.ProfileShiftType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileShiftType">
+        <PropertyRef Name="shiftTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_fdb921f2951ecf3d1858bc7830b">
+    <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lookup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="registrarLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_97adea54804aa384c890cd6c3ae">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="SpecialNote" Type="Self.SpecialNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SpecialNote">
+        <PropertyRef Name="profileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_a68f954b809d3a2fc2a21cb61b5">
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="0..1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileProfessional">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="profileProfessionalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_c000a0f2b66dd4a69ad36de6460">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="0..1" />
+    <End Role="ProfileDocument" Type="Self.ProfileDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileDocument">
+        <PropertyRef Name="profileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_e7569dcf417e285aff79a7581cb">
+    <End Role="ProfileFinance" Type="Self.ProfileFinance" Multiplicity="0..1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileFinance">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="profileFinanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_a99f1e86833eaeda0198ae4d8fc">
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="0..1" />
+    <End Role="ProfilePaymentCategory" Type="Self.ProfilePaymentCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileProfessional">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfilePaymentCategory">
+        <PropertyRef Name="profileProfessionalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_b9e3709fcadd3d69eb7b7c8cc03">
+    <End Role="SubType" Type="Self.SubType" Multiplicity="0..1" />
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileProfessional">
+        <PropertyRef Name="subTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_eab3618488d653242b55e486b64">
+    <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="0..1" />
+    <End Role="ProfileShiftType" Type="Self.ProfileShiftType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileProfessional">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProfileShiftType">
+        <PropertyRef Name="profileProfessionalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DRSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Emails" EntityType="Self.Email" />
+    <EntitySet Name="EventLogs" EntityType="Self.EventLog" />
+    <EntitySet Name="EventLogConfigs" EntityType="Self.EventLogConfig" />
+    <EntitySet Name="EventLogTypes" EntityType="Self.EventLogType" />
+    <EntitySet Name="JobTypes" EntityType="Self.JobType" />
+    <EntitySet Name="Lookups" EntityType="Self.Lookup" />
+    <EntitySet Name="LookupTypes" EntityType="Self.LookupType" />
+    <EntitySet Name="Profiles" EntityType="Self.Profile" />
+    <EntitySet Name="ProfileDocuments" EntityType="Self.ProfileDocument" />
+    <EntitySet Name="ProfileFinances" EntityType="Self.ProfileFinance" />
+    <EntitySet Name="ProfilePaymentCategories" EntityType="Self.ProfilePaymentCategory" />
+    <EntitySet Name="ProfileProfessionals" EntityType="Self.ProfileProfessional" />
+    <EntitySet Name="ProfileShiftTypes" EntityType="Self.ProfileShiftType" />
+    <EntitySet Name="QueuedEmails" EntityType="Self.QueuedEmail" />
+    <EntitySet Name="SpecialNotes" EntityType="Self.SpecialNote" />
+    <EntitySet Name="SubTypes" EntityType="Self.SubType" />
+    <AssociationSet Name="fk_6d489a18fcf57e4c8be0dbe3b25" Association="Self.fk_6d489a18fcf57e4c8be0dbe3b25">
+      <End Role="Email" EntitySet="Emails" />
+      <End Role="QueuedEmail" EntitySet="QueuedEmails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_7ff1130ed564e0a101e659e5860" Association="Self.fk_7ff1130ed564e0a101e659e5860">
+      <End Role="EventLogConfig" EntitySet="EventLogConfigs" />
+      <End Role="EventLog" EntitySet="EventLogs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_a61286fc3ad6b583e96516d1d63" Association="Self.fk_a61286fc3ad6b583e96516d1d63">
+      <End Role="EventLogType" EntitySet="EventLogTypes" />
+      <End Role="EventLog" EntitySet="EventLogs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_1c19cf8556e5edb55657714e1e8" Association="Self.fk_1c19cf8556e5edb55657714e1e8">
+      <End Role="EventLogType" EntitySet="EventLogTypes" />
+      <End Role="EventLogConfig" EntitySet="EventLogConfigs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_35d1abd21894dd99e9d03613ebb" Association="Self.fk_35d1abd21894dd99e9d03613ebb">
+      <End Role="JobType" EntitySet="JobTypes" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_0d3d74559a9756e18d3b0b3137f" Association="Self.fk_0d3d74559a9756e18d3b0b3137f">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_4188eb6914e1de08b48209b3fc0" Association="Self.fk_4188eb6914e1de08b48209b3fc0">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_55ed666b6b287e744002b5e3039" Association="Self.fk_55ed666b6b287e744002b5e3039">
+      <End Role="LookupType" EntitySet="LookupTypes" />
+      <End Role="Lookup" EntitySet="Lookups" />
+    </AssociationSet>
+    <AssociationSet Name="fk_6ba690537dabd13ee8fb4ab5bd5" Association="Self.fk_6ba690537dabd13ee8fb4ab5bd5">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileFinance" EntitySet="ProfileFinances" />
+    </AssociationSet>
+    <AssociationSet Name="fk_8876aa3ee193d532881f9b6cd5d" Association="Self.fk_8876aa3ee193d532881f9b6cd5d">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_9471293e36e1cd29ba7727961a5" Association="Self.fk_9471293e36e1cd29ba7727961a5">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_acf4862a0cd563f13dd928abe8f" Association="Self.fk_acf4862a0cd563f13dd928abe8f">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_e2c98fd24e3a6be988a12494962" Association="Self.fk_e2c98fd24e3a6be988a12494962">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_f2fc32d7e8f52761c4ef6e987d9" Association="Self.fk_f2fc32d7e8f52761c4ef6e987d9">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfilePaymentCategory" EntitySet="ProfilePaymentCategories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_f368a2ec3f354d1b68093b2dca6" Association="Self.fk_f368a2ec3f354d1b68093b2dca6">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileShiftType" EntitySet="ProfileShiftTypes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_fdb921f2951ecf3d1858bc7830b" Association="Self.fk_fdb921f2951ecf3d1858bc7830b">
+      <End Role="Lookup" EntitySet="Lookups" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_97adea54804aa384c890cd6c3ae" Association="Self.fk_97adea54804aa384c890cd6c3ae">
+      <End Role="Profile" EntitySet="Profiles" />
+      <End Role="SpecialNote" EntitySet="SpecialNotes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_a68f954b809d3a2fc2a21cb61b5" Association="Self.fk_a68f954b809d3a2fc2a21cb61b5">
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+      <End Role="Profile" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_c000a0f2b66dd4a69ad36de6460" Association="Self.fk_c000a0f2b66dd4a69ad36de6460">
+      <End Role="Profile" EntitySet="Profiles" />
+      <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_e7569dcf417e285aff79a7581cb" Association="Self.fk_e7569dcf417e285aff79a7581cb">
+      <End Role="ProfileFinance" EntitySet="ProfileFinances" />
+      <End Role="Profile" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_a99f1e86833eaeda0198ae4d8fc" Association="Self.fk_a99f1e86833eaeda0198ae4d8fc">
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+      <End Role="ProfilePaymentCategory" EntitySet="ProfilePaymentCategories" />
+    </AssociationSet>
+    <AssociationSet Name="fk_b9e3709fcadd3d69eb7b7c8cc03" Association="Self.fk_b9e3709fcadd3d69eb7b7c8cc03">
+      <End Role="SubType" EntitySet="SubTypes" />
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_eab3618488d653242b55e486b64" Association="Self.fk_eab3618488d653242b55e486b64">
+      <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+      <End Role="ProfileShiftType" EntitySet="ProfileShiftTypes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

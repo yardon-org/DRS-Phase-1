@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8783c4619c1d4f9cbd439e25bb57f4c0" Name="Diagram1">
+        <EntityTypeShape EntityType="DRSModel.Email" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.EventLog" Width="1.5" PointX="19.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.EventLogConfig" Width="1.5" PointX="17" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.EventLogType" Width="1.5" PointX="14.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.JobType" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.Lookup" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.LookupType" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.Profile" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="15.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileFinance" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfilePaymentCategory" Width="1.5" PointX="13.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileProfessional" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileShiftType" Width="1.5" PointX="13.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.QueuedEmail" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SpecialNote" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SubType" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="DRSModel.fk_6d489a18fcf57e4c8be0dbe3b25" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_7ff1130ed564e0a101e659e5860" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_a61286fc3ad6b583e96516d1d63" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_1c19cf8556e5edb55657714e1e8" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_35d1abd21894dd99e9d03613ebb" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_0d3d74559a9756e18d3b0b3137f" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_4188eb6914e1de08b48209b3fc0" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_55ed666b6b287e744002b5e3039" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_6ba690537dabd13ee8fb4ab5bd5" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_8876aa3ee193d532881f9b6cd5d" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_9471293e36e1cd29ba7727961a5" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_acf4862a0cd563f13dd928abe8f" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_e2c98fd24e3a6be988a12494962" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_f2fc32d7e8f52761c4ef6e987d9" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_f368a2ec3f354d1b68093b2dca6" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_fdb921f2951ecf3d1858bc7830b" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_97adea54804aa384c890cd6c3ae" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_a68f954b809d3a2fc2a21cb61b5" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_e7569dcf417e285aff79a7581cb" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_eab3618488d653242b55e486b64" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
