@@ -68,7 +68,7 @@ namespace drs_backend_phase1.Controllers
         }
 
         [HttpGet]
-        [Route("{bytypename}")]
+        [Route("bytypename")]
         public IHttpActionResult FetchLookupByTypeName(string typename)
         {
             Log.DebugFormat("LookupController (FetchLookupByTypeName)\n");
