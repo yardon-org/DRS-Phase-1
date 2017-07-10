@@ -7,7 +7,7 @@ using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
-    [RoutePrefix("api/eventlog")]
+    [RoutePrefix("api/event-log")]
     public class EventLogController : ApiController
     {
         private readonly DRSEntities _db;
@@ -20,10 +20,9 @@ namespace drs_backend_phase1.Controllers
         }
 
         [HttpGet]
-        [Route("")]
-        public IHttpActionResult GetListOfEventLogs()
+        public IHttpActionResult ReadAllEventLogs()
         {
-            Log.DebugFormat("EventLogController (GetListOfEventLogs)\n");
+            Log.DebugFormat("EventLogController (ReadAllEventLogs)\n");
 
             try
             {
