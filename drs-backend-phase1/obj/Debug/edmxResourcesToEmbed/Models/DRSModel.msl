@@ -15,39 +15,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EventLogs">
-      <EntityTypeMapping TypeName="DRSModel.EventLog">
-        <MappingFragment StoreEntitySet="EventLog">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="typeKey" ColumnName="typeKey" />
-          <ScalarProperty Name="configId" ColumnName="configId" />
-          <ScalarProperty Name="userId" ColumnName="userId" />
-          <ScalarProperty Name="userName" ColumnName="userName" />
-          <ScalarProperty Name="createDate" ColumnName="createDate" />
-          <ScalarProperty Name="serverName" ColumnName="serverName" />
-          <ScalarProperty Name="properties" ColumnName="properties" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EventLogConfigs">
-      <EntityTypeMapping TypeName="DRSModel.EventLogConfig">
-        <MappingFragment StoreEntitySet="EventLogConfig">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="logTypeKey" ColumnName="logTypeKey" />
-          <ScalarProperty Name="loggingIsActive" ColumnName="loggingIsActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EventLogTypes">
-      <EntityTypeMapping TypeName="DRSModel.EventLogType">
-        <MappingFragment StoreEntitySet="EventLogType">
-          <ScalarProperty Name="key" ColumnName="key" />
-          <ScalarProperty Name="friendlyName" ColumnName="friendlyName" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="JobTypes">
       <EntityTypeMapping TypeName="DRSModel.JobType">
         <MappingFragment StoreEntitySet="JobType">
@@ -244,6 +211,39 @@
           <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
           <ScalarProperty Name="dateModified" ColumnName="dateModified" />
           <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventLogs">
+      <EntityTypeMapping TypeName="DRSModel.EventLog">
+        <MappingFragment StoreEntitySet="EventLog">
+          <ScalarProperty Name="properties" ColumnName="properties" />
+          <ScalarProperty Name="serverName" ColumnName="serverName" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="configId" ColumnName="configId" />
+          <ScalarProperty Name="typeKey" ColumnName="typeKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventLogConfigs">
+      <EntityTypeMapping TypeName="DRSModel.EventLogConfig">
+        <MappingFragment StoreEntitySet="EventLogConfig">
+          <ScalarProperty Name="loggingIsActive" ColumnName="loggingIsActive" />
+          <ScalarProperty Name="logTypeKey" ColumnName="logTypeKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventLogTypes">
+      <EntityTypeMapping TypeName="DRSModel.EventLogType">
+        <MappingFragment StoreEntitySet="EventLogType">
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="friendlyName" ColumnName="friendlyName" />
+          <ScalarProperty Name="key" ColumnName="key" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

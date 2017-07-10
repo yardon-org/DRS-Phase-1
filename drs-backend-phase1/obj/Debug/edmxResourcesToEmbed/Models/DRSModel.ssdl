@@ -242,18 +242,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_1c19cf8556e5edb55657714e1e8">
-    <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="0..1" />
-    <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EventLogType">
-        <PropertyRef Name="key" />
-      </Principal>
-      <Dependent Role="EventLogConfig">
-        <PropertyRef Name="logTypeKey" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_35d1abd21894dd99e9d03613ebb">
     <End Role="JobType" Type="Self.JobType" Multiplicity="0..1" />
     <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
@@ -526,10 +514,6 @@
     <AssociationSet Name="fk_0d3d74559a9756e18d3b0b3137f" Association="Self.fk_0d3d74559a9756e18d3b0b3137f">
       <End Role="Lookup" EntitySet="Lookup" />
       <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
-    </AssociationSet>
-    <AssociationSet Name="fk_1c19cf8556e5edb55657714e1e8" Association="Self.fk_1c19cf8556e5edb55657714e1e8">
-      <End Role="EventLogType" EntitySet="EventLogType" />
-      <End Role="EventLogConfig" EntitySet="EventLogConfig" />
     </AssociationSet>
     <AssociationSet Name="fk_35d1abd21894dd99e9d03613ebb" Association="Self.fk_35d1abd21894dd99e9d03613ebb">
       <End Role="JobType" EntitySet="JobType" />

@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using System.Web.Http;
 using drs_backend_phase1.Models;
 using log4net;
+using System.Data.Entity;
+using System.Linq;
 
 namespace drs_backend_phase1.Controllers
 {
@@ -20,13 +21,18 @@ namespace drs_backend_phase1.Controllers
         }
 
         [HttpGet]
+        [Route("")]
         public IHttpActionResult ReadAllEventLogs()
         {
             Log.DebugFormat("EventLogController (ReadAllEventLogs)\n");
 
             try
             {
-                var listOfEvents = _db.EventLogs.ToList();
+                var listOfEvents = _db.EventLogs
+                    .Include(b => b.EventLogConfig)
+                    .Include(b => b.EventLogType)
+                    .ToList();
+
                 Log.DebugFormat("Retrieval of EventLogs was successful.\n");
                 return Ok(listOfEvents);
             }

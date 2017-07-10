@@ -22,7 +22,7 @@ namespace drs_backend_phase1.Models
         public System.DateTime createDate { get; set; }
         public string serverName { get; set; }
         public string properties { get; set; }
-
+    
         public virtual EventLogConfig EventLogConfig { get; set; }
         public virtual EventLogType EventLogType { get; set; }
     }

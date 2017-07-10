@@ -14,42 +14,6 @@
     <Property Name="isDeleted" Type="Boolean" />
     <NavigationProperty Name="QueuedEmails" Relationship="Self.fk_6d489a18fcf57e4c8be0dbe3b25" FromRole="Email" ToRole="QueuedEmail" />
   </EntityType>
-  <EntityType Name="EventLog">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="typeKey" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="configId" Type="Int32" />
-    <Property Name="userId" Type="Int32" />
-    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="serverName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="properties" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="EventLogConfig" Relationship="Self.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLog" ToRole="EventLogConfig" />
-    <NavigationProperty Name="EventLogType" Relationship="Self.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLog" ToRole="EventLogType" />
-  </EntityType>
-  <EntityType Name="EventLogConfig">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="logTypeKey" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
-    <Property Name="loggingIsActive" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="EventLogs" Relationship="Self.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLogConfig" ToRole="EventLog" />
-    <NavigationProperty Name="EventLogType" Relationship="Self.fk_1c19cf8556e5edb55657714e1e8" FromRole="EventLogConfig" ToRole="EventLogType" />
-  </EntityType>
-  <EntityType Name="EventLogType">
-    <Key>
-      <PropertyRef Name="key" />
-    </Key>
-    <Property Name="key" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="friendlyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="cssClass" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="EventLogs" Relationship="Self.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLogType" ToRole="EventLog" />
-    <NavigationProperty Name="EventLogConfigs" Relationship="Self.fk_1c19cf8556e5edb55657714e1e8" FromRole="EventLogType" ToRole="EventLogConfig" />
-  </EntityType>
   <EntityType Name="JobType">
     <Key>
       <PropertyRef Name="id" />
@@ -288,42 +252,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_7ff1130ed564e0a101e659e5860">
-    <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="0..1" />
-    <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EventLogConfig">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="EventLog">
-        <PropertyRef Name="configId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_a61286fc3ad6b583e96516d1d63">
-    <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="1" />
-    <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EventLogType">
-        <PropertyRef Name="key" />
-      </Principal>
-      <Dependent Role="EventLog">
-        <PropertyRef Name="typeKey" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_1c19cf8556e5edb55657714e1e8">
-    <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="0..1" />
-    <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EventLogType">
-        <PropertyRef Name="key" />
-      </Principal>
-      <Dependent Role="EventLogConfig">
-        <PropertyRef Name="logTypeKey" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_35d1abd21894dd99e9d03613ebb">
     <End Role="JobType" Type="Self.JobType" Multiplicity="0..1" />
     <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
@@ -554,9 +482,6 @@
   </Association>
   <EntityContainer Name="DRSEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Emails" EntityType="Self.Email" />
-    <EntitySet Name="EventLogs" EntityType="Self.EventLog" />
-    <EntitySet Name="EventLogConfigs" EntityType="Self.EventLogConfig" />
-    <EntitySet Name="EventLogTypes" EntityType="Self.EventLogType" />
     <EntitySet Name="JobTypes" EntityType="Self.JobType" />
     <EntitySet Name="Lookups" EntityType="Self.Lookup" />
     <EntitySet Name="LookupTypes" EntityType="Self.LookupType" />
@@ -572,18 +497,6 @@
     <AssociationSet Name="fk_6d489a18fcf57e4c8be0dbe3b25" Association="Self.fk_6d489a18fcf57e4c8be0dbe3b25">
       <End Role="Email" EntitySet="Emails" />
       <End Role="QueuedEmail" EntitySet="QueuedEmails" />
-    </AssociationSet>
-    <AssociationSet Name="fk_7ff1130ed564e0a101e659e5860" Association="Self.fk_7ff1130ed564e0a101e659e5860">
-      <End Role="EventLogConfig" EntitySet="EventLogConfigs" />
-      <End Role="EventLog" EntitySet="EventLogs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_a61286fc3ad6b583e96516d1d63" Association="Self.fk_a61286fc3ad6b583e96516d1d63">
-      <End Role="EventLogType" EntitySet="EventLogTypes" />
-      <End Role="EventLog" EntitySet="EventLogs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_1c19cf8556e5edb55657714e1e8" Association="Self.fk_1c19cf8556e5edb55657714e1e8">
-      <End Role="EventLogType" EntitySet="EventLogTypes" />
-      <End Role="EventLogConfig" EntitySet="EventLogConfigs" />
     </AssociationSet>
     <AssociationSet Name="fk_35d1abd21894dd99e9d03613ebb" Association="Self.fk_35d1abd21894dd99e9d03613ebb">
       <End Role="JobType" EntitySet="JobTypes" />
@@ -661,5 +574,74 @@
       <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
       <End Role="ProfileShiftType" EntitySet="ProfileShiftTypes" />
     </AssociationSet>
+    <EntitySet Name="EventLogs" EntityType="DRSModel.EventLog" />
+    <EntitySet Name="EventLogConfigs" EntityType="DRSModel.EventLogConfig" />
+    <EntitySet Name="EventLogTypes" EntityType="DRSModel.EventLogType" />
+    <AssociationSet Name="fk_7ff1130ed564e0a101e659e5860" Association="DRSModel.fk_7ff1130ed564e0a101e659e5860">
+      <End Role="EventLogConfig" EntitySet="EventLogConfigs" />
+      <End Role="EventLog" EntitySet="EventLogs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_a61286fc3ad6b583e96516d1d63" Association="DRSModel.fk_a61286fc3ad6b583e96516d1d63">
+      <End Role="EventLogType" EntitySet="EventLogTypes" />
+      <End Role="EventLog" EntitySet="EventLogs" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="EventLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeKey" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="configId" Type="Int32" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="serverName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="properties" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EventLogConfig" Relationship="DRSModel.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLog" ToRole="EventLogConfig" />
+    <NavigationProperty Name="EventLogType" Relationship="DRSModel.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLog" ToRole="EventLogType" />
+  </EntityType>
+  <EntityType Name="EventLogConfig">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logTypeKey" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="loggingIsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EventLogs" Relationship="DRSModel.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLogConfig" ToRole="EventLog" />
+  </EntityType>
+  <EntityType Name="EventLogType">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="friendlyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="cssClass" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EventLogs" Relationship="DRSModel.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLogType" ToRole="EventLog" />
+  </EntityType>
+  <Association Name="fk_7ff1130ed564e0a101e659e5860">
+    <End Type="DRSModel.EventLogConfig" Role="EventLogConfig" Multiplicity="0..1" />
+    <End Type="DRSModel.EventLog" Role="EventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventLogConfig">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="EventLog">
+        <PropertyRef Name="configId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_a61286fc3ad6b583e96516d1d63">
+    <End Type="DRSModel.EventLogType" Role="EventLogType" Multiplicity="1" />
+    <End Type="DRSModel.EventLog" Role="EventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventLogType">
+        <PropertyRef Name="key" />
+      </Principal>
+      <Dependent Role="EventLog">
+        <PropertyRef Name="typeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

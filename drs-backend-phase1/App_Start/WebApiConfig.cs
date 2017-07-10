@@ -10,6 +10,7 @@ namespace drs_backend_phase1
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
         }
     }
 }

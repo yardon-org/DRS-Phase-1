@@ -26,6 +26,5 @@ namespace drs_backend_phase1.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EventLog> EventLogs { get; set; }
-        public virtual EventLogType EventLogType { get; set; }
     }
 }

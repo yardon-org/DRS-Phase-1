@@ -6,9 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="8783c4619c1d4f9cbd439e25bb57f4c0" Name="Diagram1">
         <EntityTypeShape EntityType="DRSModel.Email" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DRSModel.EventLog" Width="1.5" PointX="19.25" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DRSModel.EventLogConfig" Width="1.5" PointX="17" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DRSModel.EventLogType" Width="1.5" PointX="14.75" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DRSModel.JobType" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DRSModel.Lookup" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DRSModel.LookupType" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
@@ -22,9 +19,6 @@
         <EntityTypeShape EntityType="DRSModel.SpecialNote" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DRSModel.SubType" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
         <AssociationConnector Association="DRSModel.fk_6d489a18fcf57e4c8be0dbe3b25" ManuallyRouted="false" />
-        <AssociationConnector Association="DRSModel.fk_7ff1130ed564e0a101e659e5860" ManuallyRouted="false" />
-        <AssociationConnector Association="DRSModel.fk_a61286fc3ad6b583e96516d1d63" ManuallyRouted="false" />
-        <AssociationConnector Association="DRSModel.fk_1c19cf8556e5edb55657714e1e8" ManuallyRouted="false" />
         <AssociationConnector Association="DRSModel.fk_35d1abd21894dd99e9d03613ebb" ManuallyRouted="false" />
         <AssociationConnector Association="DRSModel.fk_0d3d74559a9756e18d3b0b3137f" ManuallyRouted="false" />
         <AssociationConnector Association="DRSModel.fk_4188eb6914e1de08b48209b3fc0" ManuallyRouted="false" />
@@ -44,6 +38,11 @@
         <AssociationConnector Association="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" ManuallyRouted="false" />
         <AssociationConnector Association="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" ManuallyRouted="false" />
         <AssociationConnector Association="DRSModel.fk_eab3618488d653242b55e486b64" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DRSModel.EventLog" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="DRSModel.EventLogConfig" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="DRSModel.EventLogType" Width="1.5" PointX="0.75" PointY="5.5" />
+        <AssociationConnector Association="DRSModel.fk_7ff1130ed564e0a101e659e5860" />
+        <AssociationConnector Association="DRSModel.fk_a61286fc3ad6b583e96516d1d63" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

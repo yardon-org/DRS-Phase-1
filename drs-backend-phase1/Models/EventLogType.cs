@@ -18,7 +18,6 @@ namespace drs_backend_phase1.Models
         public EventLogType()
         {
             this.EventLogs = new HashSet<EventLog>();
-            this.EventLogConfigs = new HashSet<EventLogConfig>();
         }
     
         public string key { get; set; }
@@ -28,7 +27,5 @@ namespace drs_backend_phase1.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EventLog> EventLogs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EventLogConfig> EventLogConfigs { get; set; }
     }
 }

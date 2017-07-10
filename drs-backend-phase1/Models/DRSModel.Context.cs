@@ -18,7 +18,6 @@ namespace drs_backend_phase1.Models
         public DRSEntities()
             : base("name=DRSEntities")
         {
-            Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -27,9 +26,6 @@ namespace drs_backend_phase1.Models
         }
     
         public virtual DbSet<Email> Emails { get; set; }
-        public virtual DbSet<EventLog> EventLogs { get; set; }
-        public virtual DbSet<EventLogConfig> EventLogConfigs { get; set; }
-        public virtual DbSet<EventLogType> EventLogTypes { get; set; }
         public virtual DbSet<JobType> JobTypes { get; set; }
         public virtual DbSet<Lookup> Lookups { get; set; }
         public virtual DbSet<LookupType> LookupTypes { get; set; }
@@ -42,5 +38,8 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<QueuedEmail> QueuedEmails { get; set; }
         public virtual DbSet<SpecialNote> SpecialNotes { get; set; }
         public virtual DbSet<SubType> SubTypes { get; set; }
+        public virtual DbSet<EventLog> EventLogs { get; set; }
+        public virtual DbSet<EventLogConfig> EventLogConfigs { get; set; }
+        public virtual DbSet<EventLogType> EventLogTypes { get; set; }
     }
 }
