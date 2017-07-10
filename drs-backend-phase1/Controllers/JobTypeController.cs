@@ -49,6 +49,7 @@ namespace drs_backend_phase1.Controllers
         }
 
         [HttpGet]
+        [Route("")]
         public IHttpActionResult FetchAllJobTypes()
         {   
             Log.DebugFormat("JobTypeController (ReadAllJobTypes)\n");

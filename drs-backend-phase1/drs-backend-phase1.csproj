@@ -200,6 +200,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\PafController.cs" />
     <Compile Include="Controllers\JobTypeController.cs" />
     <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Controllers\LookupTypeController.cs" />
@@ -234,6 +235,9 @@
     <Compile Include="Models\EventLogType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Get_AddressesForPostCodeSimple_Result.cs">
+      <DependentUpon>PAFModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\JobType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
@@ -242,6 +246,21 @@
     </Compile>
     <Compile Include="Models\LookupType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAFModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAFModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAFModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAFModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAFModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Profile.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
@@ -289,6 +308,16 @@
       <DependentUpon>DRSModel.edmx</DependentUpon>
       <LastGenOutput>DRSModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\PAFModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PAFModel.edmx</DependentUpon>
+      <LastGenOutput>PAFModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PAFModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PAFModel.edmx</DependentUpon>
+      <LastGenOutput>PAFModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -321,6 +350,13 @@
     </EntityDeploy>
     <Content Include="Models\DRSModel.edmx.diagram">
       <DependentUpon>DRSModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PAFModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PAFModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PAFModel.edmx.diagram">
+      <DependentUpon>PAFModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

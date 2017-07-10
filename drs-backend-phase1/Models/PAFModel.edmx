@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PAFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="Get_AddressesForPostCodeSimple" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PostCode" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="PAFModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PAFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PAFEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="Get_AddressesForPostCodeSimple" ReturnType="Collection(PAFModel.Get_AddressesForPostCodeSimple_Result)">
+            <Parameter Name="PostCode" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Get_AddressesForPostCodeSimple_Result">
+          <Property Type="Int64" Name="Id" Nullable="true" />
+          <Property Type="String" Name="line1" Nullable="true" MaxLength="192" />
+          <Property Type="String" Name="line2" Nullable="true" MaxLength="192" />
+          <Property Type="String" Name="line3" Nullable="true" MaxLength="192" />
+          <Property Type="String" Name="line4" Nullable="true" MaxLength="192" />
+          <Property Type="String" Name="line5" Nullable="true" MaxLength="567" />
+          <Property Type="String" Name="Postcode" Nullable="true" MaxLength="8" />
+          <Property Type="Int32" Name="GridReferenceEast" Nullable="true" />
+          <Property Type="Int32" Name="GridReferenceNorth" Nullable="true" />
+          <Property Type="String" Name="GeoLocality" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PAFModelStoreContainer" CdmEntityContainer="PAFEntities" >
+          <FunctionImportMapping FunctionImportName="Get_AddressesForPostCodeSimple" FunctionName="PAFModel.Store.Get_AddressesForPostCodeSimple">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PAFModel.Get_AddressesForPostCodeSimple_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="line1" ColumnName="line1" />
+                <ScalarProperty Name="line2" ColumnName="line2" />
+                <ScalarProperty Name="line3" ColumnName="line3" />
+                <ScalarProperty Name="line4" ColumnName="line4" />
+                <ScalarProperty Name="line5" ColumnName="line5" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="GridReferenceEast" ColumnName="GridReferenceEast" />
+                <ScalarProperty Name="GridReferenceNorth" ColumnName="GridReferenceNorth" />
+                <ScalarProperty Name="GeoLocality" ColumnName="GeoLocality" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

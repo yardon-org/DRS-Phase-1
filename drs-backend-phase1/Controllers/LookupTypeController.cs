@@ -49,6 +49,7 @@ namespace drs_backend_phase1.Controllers
         }
 
         [HttpGet]
+        [Route("")]
         public IHttpActionResult FetchAllLookupTypes()
         {   
             Log.DebugFormat("LookupTypeController (ReadAllLookupTypes)\n");
