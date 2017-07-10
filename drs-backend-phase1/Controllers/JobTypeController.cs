@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
@@ -28,6 +29,7 @@ namespace drs_backend_phase1.Controllers
                 try
                 {
                     _db.JobTypes.Add(newJobType);
+                    _db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
@@ -48,7 +50,7 @@ namespace drs_backend_phase1.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult ReadAllJobTypes()
+        public IHttpActionResult FetchAllJobTypes()
         {   
             Log.DebugFormat("JobTypeController (ReadAllJobTypes)\n");
 
@@ -67,13 +69,13 @@ namespace drs_backend_phase1.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public IHttpActionResult ReadAllJobTypeById(int id)
+        public IHttpActionResult FetchJobTypeById(int id)
         {
             Log.DebugFormat("JobTypeController (ReadAllJobTypeById)\n");
 
             try
             {
-                var jobType = _db.JobTypes.Where(x=>x.id==id);
+                var jobType = _db.JobTypes.SingleOrDefault(x => x.id==id);
                 Log.DebugFormat("Retrieval of ReadAllJobTypeById was successful.\n");
                 return Ok(jobType);
             }
@@ -81,6 +83,61 @@ namespace drs_backend_phase1.Controllers
             {
                 Log.DebugFormat($"Error retrieving ReadAllJobTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
                 return BadRequest($"Error retrieving ReadAllJobTypeById. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        [HttpPut]
+        public IHttpActionResult UpdateJobType(JobType jobTypeToUpdate)
+        {
+            Log.DebugFormat("JobTypeController (UpdateJobType)\n");
+
+            if (jobTypeToUpdate != null)
+            {
+                try
+                {
+                    _db.JobTypes.AddOrUpdate(jobTypeToUpdate);
+                    _db.SaveChanges();
+
+                    Log.DebugFormat("Retrieval of UpdateJobType was successful.\n");
+                    return Ok(jobTypeToUpdate);
+                }
+                catch (Exception ex)
+                {
+                    Log.DebugFormat(
+                        $"Error retrieving UpdateJobType. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                    return BadRequest($"Error retrieving UpdateJobType. The reason is as follows: {ex.Message}");
+                }
+            }
+
+            Log.DebugFormat(
+                $"Error updating JobType. JobType cannot be null\n");
+            return BadRequest($"Error creating new JobType. JobType cannot be null");
+
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IHttpActionResult DeleteJobTypeById(int id)
+        {
+            Log.DebugFormat("JobTypeController (DeleteJobTypeById)\n");
+
+            try
+            {
+                var jobType = _db.JobTypes.SingleOrDefault(x => x.id == id);
+
+                if (jobType != null)
+                {
+                    _db.JobTypes.Remove(jobType);
+                    _db.SaveChanges();
+                }
+
+                Log.DebugFormat("Retrieval of DeleteJobTypeById was successful.\n");
+                return Ok(jobType);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error retrieving DeleteJobTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving DeleteJobTypeById. The reason is as follows: {ex.Message}");
             }
         }
     }
