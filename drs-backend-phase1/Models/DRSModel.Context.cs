@@ -18,6 +18,8 @@ namespace drs_backend_phase1.Models
         public DRSEntities()
             : base("name=DRSEntities")
         {
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
