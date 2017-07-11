@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using Swashbuckle.Application;
 
 namespace drs_backend_phase1
 {
@@ -10,6 +11,9 @@ namespace drs_backend_phase1
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            //config
+            //    .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
+            //    .EnableSwaggerUi();
 
         }
     }

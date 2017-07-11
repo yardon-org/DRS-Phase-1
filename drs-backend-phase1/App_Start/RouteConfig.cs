@@ -10,9 +10,9 @@ namespace drs_backend_phase1
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "DefaultApi",
+                name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
         }

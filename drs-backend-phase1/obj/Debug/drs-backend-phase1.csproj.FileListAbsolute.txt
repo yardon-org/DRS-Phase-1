@@ -62,3 +62,10 @@ G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.WebPages.Razor.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Antlr3.Runtime.pdb
 G:\Git\drs-backend-phase1\drs-backend-phase1\obj\Debug\drs-backend-phase1.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\obj\Debug\drs-backend-phase1.pdb
+G:\Git\drs-backend-phase1\drs-backend-phase1\obj\Debug\drs-backend-phase1.csprojResolveAssemblyReference.cache
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Swashbuckle.Core.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Swashbuckle.WebHost.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Cors.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.Cors.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\WebActivatorEx.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.Cors.xml
