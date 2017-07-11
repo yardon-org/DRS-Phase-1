@@ -39,7 +39,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="newSubType">New type of the sub.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPost]
-        public IHttpActionResult CreateSubType(SubType newSubType)
+        public IHttpActionResult CreateSubType([FromBody]SubType newSubType)
         {
             if (newSubType != null)
             {

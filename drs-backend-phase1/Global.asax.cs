@@ -8,8 +8,15 @@ using log4net.Config;
 
 namespace drs_backend_phase1
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="System.Web.HttpApplication" />
     public class WebApiApplication : System.Web.HttpApplication
     {
+        /// <summary>
+        /// Applications the start.
+        /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

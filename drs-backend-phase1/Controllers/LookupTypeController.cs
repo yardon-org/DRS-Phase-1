@@ -39,7 +39,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="newLookupType">New type of the lookup.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPost]
-        public IHttpActionResult CreateLookupType(LookupType newLookupType)
+        public IHttpActionResult CreateLookupType([FromBody]LookupType newLookupType)
         {
             if (newLookupType != null)
             {

@@ -34,7 +34,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="newLookup">The new Lookup object.</param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult CreateLookup(Lookup newLookup)
+        public IHttpActionResult CreateLookup([FromBody]Lookup newLookup)
         {
             if (newLookup != null)
             {

@@ -37,9 +37,8 @@ namespace drs_backend_phase1.Controllers
         /// Adds a new JobType to the database.
         /// </summary>
         /// <param name="newJobType">New type of the job.</param>
-        /// <returns>HttpActionResult</returns>
         [HttpPost]
-        public IHttpActionResult CreateJobType(JobType newJobType)
+        public void CreateJobType([FromBody]JobType newJobType)
         {
             if (newJobType != null)
             {
@@ -52,18 +51,13 @@ namespace drs_backend_phase1.Controllers
                 {
                     Log.DebugFormat(
                         $"Error creating new JobType. The reason is as follows: {ex.Message} {ex.StackTrace}\n");
-                    return BadRequest($"Error creating new JobType. The reason is as follows: {ex.Message}");
-
                 }
 
                 Log.DebugFormat("The new JobType record has been created successfully.\n");
-                return Ok(true);
-
             }
 
             Log.DebugFormat(
                 $"Error creating new JobType. JobType cannot be null\n");
-            return BadRequest($"Error creating new JobType. JobType cannot be null");
         }
 
         /// <summary>
