@@ -8,6 +8,10 @@ using System.Linq;
 
 namespace drs_backend_phase1.Controllers
 {
+    /// <summary>
+    /// EventLog Controller
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/event-log")]
     public class EventLogController : ApiController
     {
@@ -15,11 +19,18 @@ namespace drs_backend_phase1.Controllers
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventLogController"/> class.
+        /// </summary>
         public EventLogController()
         {
             _db = new DRSEntities();
         }
 
+        /// <summary>
+        /// Reads all event logs.
+        /// </summary>
+        /// <returns>List of EventLogs</returns>
         [HttpGet]
         [Route("")]
         public IHttpActionResult ReadAllEventLogs()

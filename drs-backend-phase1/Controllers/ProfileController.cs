@@ -9,18 +9,36 @@ using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
+    /// <summary>
+    /// Profile Controller
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/profile")]
     public class ProfileController : ApiController
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         private readonly DRSEntities _db;
+        /// <summary>
+        /// The log
+        /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-    
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProfileController"/> class.
+        /// </summary>
         public ProfileController()
         {
             _db = new DRSEntities();
         }
 
+        /// <summary>
+        /// Fetches all profiles.
+        /// </summary>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <returns>List of Profiles</returns>
         [HttpGet]
         [Route("fetchProfiles")]
         public IHttpActionResult FetchAllProfiles(bool includeDeleted)
@@ -49,6 +67,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Fetches a Profile by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A Profile object</returns>
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchProfileById(int id)
@@ -68,6 +91,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates a Profile.
+        /// </summary>
+        /// <param name="profileToUpdate">The Profile to update.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPut]
         public IHttpActionResult UpdateProfile(Profile profileToUpdate)
         {
@@ -81,7 +109,7 @@ namespace drs_backend_phase1.Controllers
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
-                    return Ok(profileToUpdate);
+                    return Ok(true);
                 }
                 catch (Exception ex)
                 {
@@ -97,6 +125,11 @@ namespace drs_backend_phase1.Controllers
 
         }
 
+        /// <summary>
+        /// Deletes a Profile by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteProfileById(int id)
@@ -105,16 +138,16 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var Profile = _db.Profiles.SingleOrDefault(x => x.id == id);
+                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
 
-                if (Profile != null)
+                if (profile != null)
                 {
-                    _db.Profiles.Remove(Profile);
+                    _db.Profiles.Remove(profile);
                     _db.SaveChanges();
                 }
 
                 Log.DebugFormat("Retrieval of DeleteProfileById was successful.\n");
-                return Ok(Profile);
+                return Ok(true);
             }
             catch (Exception ex)
             {

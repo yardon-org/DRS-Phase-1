@@ -12,6 +12,7 @@ G:\Git\drs-backend-phase1\drs-backend-phase1\bin\roslyn\vbc.exe
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\roslyn\VBCSCompiler.exe
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\roslyn\VBCSCompiler.exe.config
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\drs-backend-phase1.dll.config
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\drs-backend-phase1.XML
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\drs-backend-phase1.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\drs-backend-phase1.pdb
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Antlr3.Runtime.dll
@@ -28,8 +29,12 @@ G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Microsoft.ApplicationInsights.d
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Microsoft.Web.Infrastructure.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Newtonsoft.Json.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Swashbuckle.Core.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Swashbuckle.WebHost.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Net.Http.Formatting.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Cors.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Helpers.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.Cors.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.WebHost.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Mvc.dll
@@ -38,6 +43,7 @@ G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Razor.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.WebPages.Deployment.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.WebPages.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.WebPages.Razor.dll
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\WebActivatorEx.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\WebGrease.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\EntityFramework.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\EntityFramework.SqlServer.xml
@@ -49,6 +55,7 @@ G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Microsoft.AI.WindowsServer.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Microsoft.ApplicationInsights.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Newtonsoft.Json.xml
+G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.Cors.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Net.Http.Formatting.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Helpers.xml
 G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.xml
@@ -63,9 +70,3 @@ G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Antlr3.Runtime.pdb
 G:\Git\drs-backend-phase1\drs-backend-phase1\obj\Debug\drs-backend-phase1.dll
 G:\Git\drs-backend-phase1\drs-backend-phase1\obj\Debug\drs-backend-phase1.pdb
 G:\Git\drs-backend-phase1\drs-backend-phase1\obj\Debug\drs-backend-phase1.csprojResolveAssemblyReference.cache
-G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Swashbuckle.Core.dll
-G:\Git\drs-backend-phase1\drs-backend-phase1\bin\Swashbuckle.WebHost.dll
-G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Cors.dll
-G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.Cors.dll
-G:\Git\drs-backend-phase1\drs-backend-phase1\bin\WebActivatorEx.dll
-G:\Git\drs-backend-phase1\drs-backend-phase1\bin\System.Web.Http.Cors.xml

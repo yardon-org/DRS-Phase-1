@@ -7,18 +7,36 @@ using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
+    /// <summary>
+    /// PAF Controller
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/paf")]
     public class PafController : ApiController
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         private readonly PAFEntities _db;
+        /// <summary>
+        /// The log
+        /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PafController"/> class.
+        /// </summary>
         public PafController()
         {
             _db = new PAFEntities();
         }
 
+        /// <summary>
+        /// Queries the PAF server for addresses.
+        /// </summary>
+        /// <param name="postcode">The postcode to query.</param>
+        /// <returns>List of Addresses</returns>
         [HttpGet]
         [Route("findaddresses")]
         public IHttpActionResult QueryPostcode(string postcode)

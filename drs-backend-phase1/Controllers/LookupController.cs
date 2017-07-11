@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
@@ -8,18 +9,30 @@ using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
+    /// <summary>
+    /// Lookup Controller
+    /// </summary>
+    /// <seealso cref="ApiController" />
     [RoutePrefix("api/lookup")]
     public class LookupController : ApiController
     {
         private readonly DRSEntities _db;
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-    
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookupController"/> class.
+        /// </summary>
         public LookupController()
         {
             _db = new DRSEntities();
         }
 
+        /// <summary>
+        /// Adds a new Lookup object to the database.
+        /// </summary>
+        /// <param name="newLookup">The new Lookup object.</param>
+        /// <returns></returns>
         [HttpPost]
         public IHttpActionResult CreateLookup(Lookup newLookup)
         {
@@ -48,6 +61,10 @@ namespace drs_backend_phase1.Controllers
             return BadRequest($"Error creating new Lookup. Lookup cannot be null");
         }
 
+        /// <summary>
+        /// Fetches all Lookup objects in the database.
+        /// </summary>
+        /// <returns>A list of Lookup objects</returns>
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllLookups()
@@ -56,7 +73,9 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var listOfJobTypes = _db.Lookups.OrderBy(x=>x.name).ToList();
+                var listOfJobTypes = _db.Lookups.OrderBy(x=>x.name)
+                    .Include(x=>x.LookupType)
+                    .ToList();
                 Log.DebugFormat("Retrieval of Lookups was successful.\n");
                 return Ok(listOfJobTypes);
             }
@@ -67,6 +86,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Fetches a list of Lookup objects based on their typename.
+        /// </summary>
+        /// <param name="typename">The typename.</param>
+        /// <returns>A list of Lookup objects</returns>
         [HttpGet]
         [Route("bytypename")]
         public IHttpActionResult FetchLookupByTypeName(string typename)
@@ -75,7 +99,10 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var lookupList = _db.Lookups.Where(x=>x.LookupType.name==typename).ToList();
+                var lookupList = _db.Lookups
+                    .Include(x => x.LookupType)
+                    .Where(x => x.LookupType.name == typename)
+                    .ToList();
                 Log.DebugFormat("Retrieval of FetchLookupByTypeName was successful.\n");
                 return Ok(lookupList);
             }
@@ -86,6 +113,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Fetches a Lookup object by identifier.
+        /// </summary>
+        /// <param name="id">Lookup identifier.</param>
+        /// <returns>A Lookup object</returns>
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchLookupById(int id)
@@ -106,6 +138,11 @@ namespace drs_backend_phase1.Controllers
         }
 
 
+        /// <summary>
+        /// Updates a Lookup object in the database.
+        /// </summary>
+        /// <param name="lookupToUpdate">The updated Lookup object.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPut]
         public IHttpActionResult UpdateLookup(Lookup lookupToUpdate)
         {
@@ -119,7 +156,7 @@ namespace drs_backend_phase1.Controllers
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateLookup was successful.\n");
-                    return Ok(lookupToUpdate);
+                    return Ok(true);
                 }
                 catch (Exception ex)
                 {
@@ -135,6 +172,11 @@ namespace drs_backend_phase1.Controllers
 
         }
 
+        /// <summary>
+        /// Deletes a Lookup by identifier.
+        /// </summary>
+        /// <param name="id">The Lookup identifier.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteLookupById(int id)
@@ -152,7 +194,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("Retrieval of DeleteLookupById was successful.\n");
-                return Ok(jobType);
+                return Ok(true);
             }
             catch (Exception ex)
             {

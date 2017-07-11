@@ -8,18 +8,36 @@ using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
+    /// <summary>
+    /// SubType Controller
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/sub-type")]
     public class SubTypeController : ApiController
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         private readonly DRSEntities _db;
+        /// <summary>
+        /// The log
+        /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-    
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SubTypeController"/> class.
+        /// </summary>
         public SubTypeController()
         {
             _db = new DRSEntities();
         }
 
+        /// <summary>
+        /// Creates a new SubType.
+        /// </summary>
+        /// <param name="newSubType">New type of the sub.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPost]
         public IHttpActionResult CreateSubType(SubType newSubType)
         {
@@ -39,7 +57,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("The new SubType record has been created successfully.\n");
-                return Ok();
+                return Ok(true);
 
             }
 
@@ -48,6 +66,10 @@ namespace drs_backend_phase1.Controllers
             return BadRequest($"Error creating new SubType. SubType cannot be null");
         }
 
+        /// <summary>
+        /// Fetches all SubTypes.
+        /// </summary>
+        /// <returns>A list of SubTypes</returns>
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllSubTypes()
@@ -67,6 +89,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Fetches a SubType by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A SubType object</returns>
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchSubTypeById(int id)
@@ -86,6 +113,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates a SubType.
+        /// </summary>
+        /// <param name="subTypeToUpdate">The sub type to update.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPut]
         public IHttpActionResult UpdateSubType(SubType subTypeToUpdate)
         {
@@ -99,7 +131,7 @@ namespace drs_backend_phase1.Controllers
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateSubType was successful.\n");
-                    return Ok(subTypeToUpdate);
+                    return Ok(true);
                 }
                 catch (Exception ex)
                 {
@@ -115,6 +147,11 @@ namespace drs_backend_phase1.Controllers
 
         }
 
+        /// <summary>
+        /// Deletes a SubType by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteSubTypeById(int id)
@@ -132,7 +169,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("Retrieval of DeleteSubTypeById was successful.\n");
-                return Ok(subType);
+                return Ok(true);
             }
             catch (Exception ex)
             {

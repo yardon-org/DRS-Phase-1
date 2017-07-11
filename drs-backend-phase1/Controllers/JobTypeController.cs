@@ -8,18 +8,36 @@ using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
+    /// <summary>
+    /// JobType Controller
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/job-type")]
     public class JobTypeController : ApiController
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         private readonly DRSEntities _db;
+        /// <summary>
+        /// The log
+        /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-    
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobTypeController"/> class.
+        /// </summary>
         public JobTypeController()
         {
             _db = new DRSEntities();
         }
 
+        /// <summary>
+        /// Adds a new JobType to the database.
+        /// </summary>
+        /// <param name="newJobType">New type of the job.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPost]
         public IHttpActionResult CreateJobType(JobType newJobType)
         {
@@ -39,7 +57,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("The new JobType record has been created successfully.\n");
-                return Ok();
+                return Ok(true);
 
             }
 
@@ -48,6 +66,10 @@ namespace drs_backend_phase1.Controllers
             return BadRequest($"Error creating new JobType. JobType cannot be null");
         }
 
+        /// <summary>
+        /// Fetches all job types.
+        /// </summary>
+        /// <returns>List of all JobTypes</returns>
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllJobTypes()
@@ -67,6 +89,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Fetches the job type by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A JobType</returns>
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchJobTypeById(int id)
@@ -86,6 +113,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates the JobType.
+        /// </summary>
+        /// <param name="jobTypeToUpdate">The job type to update.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPut]
         public IHttpActionResult UpdateJobType(JobType jobTypeToUpdate)
         {
@@ -99,7 +131,7 @@ namespace drs_backend_phase1.Controllers
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateJobType was successful.\n");
-                    return Ok(jobTypeToUpdate);
+                    return Ok(true);
                 }
                 catch (Exception ex)
                 {
@@ -115,6 +147,11 @@ namespace drs_backend_phase1.Controllers
 
         }
 
+        /// <summary>
+        /// Deletes the job type by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteJobTypeById(int id)
@@ -132,7 +169,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("Retrieval of DeleteJobTypeById was successful.\n");
-                return Ok(jobType);
+                return Ok(true);
             }
             catch (Exception ex)
             {

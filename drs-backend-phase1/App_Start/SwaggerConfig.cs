@@ -153,7 +153,7 @@ namespace drs_backend_phase1
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        //c.IncludeXmlComments(GetXmlCommentsPath());
+                        c.IncludeXmlComments(string.Format(@"{0}\bin\drs-backend-phase1.XML", System.AppDomain.CurrentDomain.BaseDirectory));
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swashbuckle will raise an exception if it encounters multiple actions
@@ -186,7 +186,7 @@ namespace drs_backend_phase1
                         // in a badge at the bottom of the page. Use these options to set a different validator URL or to disable the
                         // feature entirely.
                         //c.SetValidatorUrl("http://localhost/validator");
-                        //c.DisableValidator();
+                        c.DisableValidator();
 
                         // Use this option to control how the Operation listing is displayed.
                         // It can be set to "None" (default), "List" (shows operations for each resource),

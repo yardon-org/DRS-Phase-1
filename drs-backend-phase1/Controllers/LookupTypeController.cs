@@ -8,18 +8,36 @@ using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
+    /// <summary>
+    /// LookupType Controller
+    /// </summary>
+    /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/lookuptype")]
     public class LookupTypeController : ApiController
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         private readonly DRSEntities _db;
+        /// <summary>
+        /// The log
+        /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-    
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookupTypeController"/> class.
+        /// </summary>
         public LookupTypeController()
         {
             _db = new DRSEntities();
         }
 
+        /// <summary>
+        /// Creates a new LookupType.
+        /// </summary>
+        /// <param name="newLookupType">New type of the lookup.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPost]
         public IHttpActionResult CreateLookupType(LookupType newLookupType)
         {
@@ -39,7 +57,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("The new LookupType record has been created successfully.\n");
-                return Ok();
+                return Ok(true);
 
             }
 
@@ -48,6 +66,10 @@ namespace drs_backend_phase1.Controllers
             return BadRequest($"Error creating new LookupType. LookupType cannot be null");
         }
 
+        /// <summary>
+        /// Fetches all lookup types.
+        /// </summary>
+        /// <returns>List of LookupTypes</returns>
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllLookupTypes()
@@ -67,6 +89,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Fetches a LookupType by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A LookupType object</returns>
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchLookupTypeById(int id)
@@ -86,6 +113,11 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates a LookupType object.
+        /// </summary>
+        /// <param name="lookupTypeToUpdate">The lookup type to update.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpPut]
         public IHttpActionResult UpdateLookupType(LookupType lookupTypeToUpdate)
         {
@@ -99,7 +131,7 @@ namespace drs_backend_phase1.Controllers
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateLookupType was successful.\n");
-                    return Ok(lookupTypeToUpdate);
+                    return Ok(true);
                 }
                 catch (Exception ex)
                 {
@@ -115,6 +147,11 @@ namespace drs_backend_phase1.Controllers
 
         }
 
+        /// <summary>
+        /// Deletes a LookupType by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>HttpActionResult</returns>
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteLookupTypeById(int id)
@@ -132,7 +169,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("Retrieval of DeleteLookupTypeById was successful.\n");
-                return Ok(lookupType);
+                return Ok(true);
             }
             catch (Exception ex)
             {
