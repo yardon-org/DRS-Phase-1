@@ -38,6 +38,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="newJobType">New type of the job.</param>
         [HttpPost]
+        [Route("")]
         public void CreateJobType([FromBody]JobType newJobType)
         {
             if (newJobType != null)
@@ -113,6 +114,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="jobTypeToUpdate">The job type to update.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPut]
+        [Route("")]
         public IHttpActionResult UpdateJobType(JobType jobTypeToUpdate)
         {
             Log.DebugFormat("JobTypeController (UpdateJobType)\n");

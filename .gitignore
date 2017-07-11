@@ -140,7 +140,7 @@ publish/
 *.azurePubxml
 # TODO: Comment the next line if you want to checkin your web deploy settings 
 # but database connection strings (with potential passwords) will be unencrypted
-# *.pubxml
+*.pubxml
 *.publishproj
 
 # NuGet Packages
@@ -239,8 +239,3 @@ Thumbs.db
 #Ignore files build by Visual Studio
 *.exe
 *.bak
-*.zip
-*.message
-Source/SEH.Pathways.Transfer.Service_Backup.7z
-Deployments/Test_StagingN1/SEH.Pathways.Transfer.Web/SEH.Pathways.Transfer.Web_TEST_STAGINGN1.zip
-Deployments/Test_Staging01_pre_bamboo_version.7z

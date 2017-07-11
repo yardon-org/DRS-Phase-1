@@ -97,6 +97,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="profileToUpdate">The Profile to update.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPut]
+        [Route("")]
         public IHttpActionResult UpdateProfile(Profile profileToUpdate)
         {
             Log.DebugFormat("ProfileController (UpdateProfile)\n");

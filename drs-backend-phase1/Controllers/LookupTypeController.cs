@@ -39,6 +39,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="newLookupType">New type of the lookup.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPost]
+        [Route("")]
         public IHttpActionResult CreateLookupType([FromBody]LookupType newLookupType)
         {
             if (newLookupType != null)
@@ -119,6 +120,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="lookupTypeToUpdate">The lookup type to update.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPut]
+        [Route("")]
         public IHttpActionResult UpdateLookupType(LookupType lookupTypeToUpdate)
         {
             Log.DebugFormat("LookupTypeController (UpdateLookupType)\n");

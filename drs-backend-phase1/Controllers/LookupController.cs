@@ -34,6 +34,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="newLookup">The new Lookup object.</param>
         /// <returns></returns>
         [HttpPost]
+        [Route("")]
         public IHttpActionResult CreateLookup([FromBody]Lookup newLookup)
         {
             if (newLookup != null)
@@ -144,6 +145,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="lookupToUpdate">The updated Lookup object.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPut]
+        [Route("")]
         public IHttpActionResult UpdateLookup(Lookup lookupToUpdate)
         {
             Log.DebugFormat("LookupController (UpdateLookup)\n");

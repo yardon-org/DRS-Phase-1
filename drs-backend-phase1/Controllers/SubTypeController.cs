@@ -39,6 +39,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="newSubType">New type of the sub.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPost]
+        [Route("")]
         public IHttpActionResult CreateSubType([FromBody]SubType newSubType)
         {
             if (newSubType != null)
@@ -119,6 +120,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="subTypeToUpdate">The sub type to update.</param>
         /// <returns>HttpActionResult</returns>
         [HttpPut]
+        [Route("")]
         public IHttpActionResult UpdateSubType(SubType subTypeToUpdate)
         {
             Log.DebugFormat("SubTypeController (UpdateSubType)\n");
