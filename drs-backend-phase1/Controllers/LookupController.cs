@@ -4,6 +4,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 using log4net;
 
@@ -14,6 +15,8 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="ApiController" />
     [RoutePrefix("api/lookup")]
+    [Authorize]
+    [HMACAuthentication]
     public class LookupController : ApiController
     {
         private readonly DRSEntities _db;

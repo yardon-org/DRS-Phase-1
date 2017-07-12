@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
+using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 
 namespace drs_backend_phase1.Controllers
@@ -12,6 +13,8 @@ namespace drs_backend_phase1.Controllers
     /// Email Controller
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
+    [Authorize]
+    [HMACAuthentication]
     [RoutePrefix("api/email")]
     public class EmailController : ApiController
     {

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 using log4net;
 
@@ -12,6 +13,8 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/paf")]
+    [Authorize]
+    [HMACAuthentication]
     public class PafController : ApiController
     {
         /// <summary>

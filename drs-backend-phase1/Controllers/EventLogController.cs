@@ -5,6 +5,7 @@ using drs_backend_phase1.Models;
 using log4net;
 using System.Data.Entity;
 using System.Linq;
+using drs_backend_phase1.Filter;
 
 namespace drs_backend_phase1.Controllers
 {
@@ -13,6 +14,8 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/event-log")]
+    [Authorize]
+    [HMACAuthentication]
     public class EventLogController : ApiController
     {
         private readonly DRSEntities _db;
