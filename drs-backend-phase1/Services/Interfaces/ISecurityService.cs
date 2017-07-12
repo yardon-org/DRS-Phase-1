@@ -1,17 +1,17 @@
-﻿using drs_backend_phase1.Models;
+﻿using drs_backend_phase1.Entities;
+using drs_backend_phase1.Models;
 
 namespace drs_backend_phase1.Services.Interfaces
 {
     /// <summary>
-    /// 
     /// </summary>
     public interface ISecurityService
     {
         /// <summary>
         /// Finds the name of the security role by role.
         /// </summary>
-        /// <param name="rolename">The rolename.</param>
+        /// <param name="applicationUser">The application user.</param>
         /// <returns></returns>
-        SecurityRole FindSecurityRoleByRoleName(string rolename);
+        SecurityRole FindSecurityRoleByActiveDirectoryEmailAddress(ApplicationUser applicationUser);
     }
 }

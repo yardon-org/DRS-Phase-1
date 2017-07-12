@@ -19,5 +19,13 @@
         /// The active directory sid.
         /// </value>
         public string ActiveDirectorySid { get; set; }
+
+        /// <summary>
+        /// Gets or sets the AD email address.
+        /// </summary>
+        /// <value>
+        /// The ad email address.
+        /// </value>
+        public string ActiveDirectoryEmailAddress { get; set; }
     }
 }

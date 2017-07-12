@@ -35,8 +35,7 @@ namespace drs_backend_phase1.Provider
 
             // USE THIS TO GET THE ROLE OBJECT FOR THE USER
             // ********************************************
-            //var securityLayer = new SecurityService();
-            //var role = securityLayer.FindSecurityRoleByRoleName("PERSONNEL");
+           
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
@@ -52,14 +51,21 @@ namespace drs_backend_phase1.Provider
                 context.Rejected();
             }
 
+            // Fetch the Role for the User
+            var securityLayer = new SecurityService();
+            var role = securityLayer.FindSecurityRoleByActiveDirectoryEmailAddress(user);
+
             try
             {
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim("sub", context.UserName));
 
-                //Check to see if user is in the LiveExceptioningExecutiveGroup, if they are, add the following claim
                 PrincipalContext ctx = new PrincipalContext(ContextType.Domain);
                 UserPrincipal currentUser = UserPrincipal.FindByIdentity(ctx, context.UserName);
+
+             
+
+
                 GroupPrincipal liveExceptioningExecGroup = GroupPrincipal.FindByIdentity(ctx, ConfigurationManager.AppSettings["LiveExceptioningExecutiveGroup"]);
 
                 if (user != null)

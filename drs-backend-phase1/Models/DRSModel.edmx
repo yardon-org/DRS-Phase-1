@@ -111,6 +111,8 @@
           <Property Name="isDeleted" Type="bit" />
           <Property Name="profileProfessionalId" Type="int" />
           <Property Name="profileFinanceId" Type="int" />
+          <Property Name="adEmailAddress" Type="varchar" MaxLength="200" />
+          <Property Name="roleID" Type="tinyint" />
         </EntityType>
         <EntityType Name="ProfileDocument">
           <Key>
@@ -824,6 +826,8 @@
           <NavigationProperty Name="ProfileProfessional" Relationship="Self.fk_a68f954b809d3a2fc2a21cb61b5" FromRole="Profile" ToRole="ProfileProfessional" />
           <NavigationProperty Name="ProfileDocuments" Relationship="Self.fk_c000a0f2b66dd4a69ad36de6460" FromRole="Profile" ToRole="ProfileDocument" />
           <NavigationProperty Name="ProfileFinance" Relationship="Self.fk_e7569dcf417e285aff79a7581cb" FromRole="Profile" ToRole="ProfileFinance" />
+          <Property Name="adEmailAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="roleID" Type="Byte" />
         </EntityType>
         <EntityType Name="ProfileDocument">
           <Key>
@@ -1565,6 +1569,8 @@
           <EntitySetMapping Name="Profiles">
             <EntityTypeMapping TypeName="DRSModel.Profile">
               <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="adEmailAddress" ColumnName="adEmailAddress" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
                 <ScalarProperty Name="middleNames" ColumnName="middleNames" />
                 <ScalarProperty Name="lastName" ColumnName="lastName" />

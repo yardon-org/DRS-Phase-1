@@ -44,6 +44,8 @@ namespace drs_backend_phase1.Models
         public Nullable<bool> isDeleted { get; set; }
         public Nullable<int> profileProfessionalId { get; set; }
         public Nullable<int> profileFinanceId { get; set; }
+        public string adEmailAddress { get; set; }
+        public Nullable<byte> roleID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SpecialNote> SpecialNotes { get; set; }

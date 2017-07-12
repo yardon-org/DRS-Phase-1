@@ -62,7 +62,8 @@ namespace drs_backend_phase1.Repository
                     return new ApplicationUser
                     {
                         ActiveDirectoryGuid = personPrincipal.Guid.ToString(),
-                        ActiveDirectorySid = personPrincipal.Sid.ToString()
+                        ActiveDirectorySid = personPrincipal.Sid.ToString(),
+                        ActiveDirectoryEmailAddress = personPrincipal.EmailAddress 
                     };
                 }
                 catch (Exception ex)
