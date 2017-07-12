@@ -18,8 +18,6 @@ namespace drs_backend_phase1.Models
         public DRSEntities()
             : base("name=DRSEntities")
         {
-            Configuration.ProxyCreationEnabled = false;
-            Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -43,5 +41,9 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<EventLog> EventLogs { get; set; }
         public virtual DbSet<EventLogConfig> EventLogConfigs { get; set; }
         public virtual DbSet<EventLogType> EventLogTypes { get; set; }
+        public virtual DbSet<SecurityGroup> SecurityGroups { get; set; }
+        public virtual DbSet<SecurityPermission> SecurityPermissions { get; set; }
+        public virtual DbSet<SecurityRight> SecurityRights { get; set; }
+        public virtual DbSet<SecurityRole> SecurityRoles { get; set; }
     }
 }

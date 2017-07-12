@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using drs_backend_phase1.Repository;
+using drs_backend_phase1.Services;
 using log4net;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
@@ -31,6 +32,11 @@ namespace drs_backend_phase1.Provider
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             Log.DebugFormat("Attempting to log in via the internal service...\n");
+
+            // USE THIS TO GET THE ROLE OBJECT FOR THE USER
+            // ********************************************
+            //var securityLayer = new SecurityService();
+            //var role = securityLayer.FindSecurityRoleByRoleName("PERSONNEL");
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
@@ -88,6 +94,7 @@ namespace drs_backend_phase1.Provider
                     }
                 }
 
+           
 
                 Log.DebugFormat("Successfully retrieved active directory credentials for: " + context.UserName);
 

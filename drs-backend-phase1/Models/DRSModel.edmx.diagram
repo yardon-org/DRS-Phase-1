@@ -43,6 +43,14 @@
         <EntityTypeShape EntityType="DRSModel.EventLogType" Width="1.5" PointX="0.75" PointY="5.5" />
         <AssociationConnector Association="DRSModel.fk_7ff1130ed564e0a101e659e5860" />
         <AssociationConnector Association="DRSModel.fk_a61286fc3ad6b583e96516d1d63" />
+        <EntityTypeShape EntityType="DRSModel.SecurityGroup" Width="1.5" PointX="11.25" PointY="18.875" />
+        <EntityTypeShape EntityType="DRSModel.SecurityPermission" Width="1.5" PointX="3" PointY="14" />
+        <EntityTypeShape EntityType="DRSModel.SecurityRight" Width="1.5" PointX="0.75" PointY="14.375" />
+        <EntityTypeShape EntityType="DRSModel.SecurityRole" Width="1.5" PointX="6.75" PointY="18.75" />
+        <AssociationConnector Association="DRSModel.fk_1c19cf8556e5edb55657714e1e8" />
+        <AssociationConnector Association="DRSModel.FK__SecurityP__Group__382F5661" />
+        <AssociationConnector Association="DRSModel.FK__SecurityP__Right__3A179ED3" />
+        <AssociationConnector Association="DRSModel.FK__SecurityP__RoleI__39237A9A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

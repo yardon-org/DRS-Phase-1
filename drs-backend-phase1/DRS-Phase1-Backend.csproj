@@ -264,7 +264,21 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Filter\HMACAuthenticationAttribute.cs" />
+    <Compile Include="Models\SecurityGroup.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SecurityPermission.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SecurityRight.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SecurityRole.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repository\AuthRepository.cs" />
+    <Compile Include="Services\Interfaces\ISecurityService.cs" />
+    <Compile Include="Services\SecurityService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
