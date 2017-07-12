@@ -23,42 +23,44 @@ using log4net;
 namespace drs_backend_phase1.Filter
 {
     /// <summary>
-    /// 
     /// </summary>
     /// <seealso cref="System.Attribute" />
     /// <seealso cref="System.Web.Http.Filters.IAuthenticationFilter" />
     public class HMACAuthenticationAttribute : Attribute, IAuthenticationFilter
     {
         /// <summary>
-        /// The log
-        /// </summary>
-        private readonly ILog _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        /// <summary>
-        /// The authentication scheme
-        /// </summary>
-        private readonly string authenticationScheme = "amx";
-        /// <summary>
-        /// The request maximum age in seconds
-        /// </summary>
-        private readonly ulong requestMaxAgeInSeconds = 300;
-
-        /// <summary>
-        /// The internal service host name
+        ///     The internal service host name
         /// </summary>
         private readonly string _internalServiceHostName = ConfigurationManager.AppSettings["internalServiceHostName"];
+
         /// <summary>
-        /// The proxy service host name
+        ///     The log
+        /// </summary>
+        private readonly ILog _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        /// <summary>
+        ///     The proxy service host name
         /// </summary>
         private readonly string _proxyServiceHostName = ConfigurationManager.AppSettings["proxyServiceHostName"];
 
+        /// <summary>
+        ///     The authentication scheme
+        /// </summary>
+        private readonly string _authenticationScheme = "amx";
+
+        /// <summary>
+        ///     The request maximum age in seconds
+        /// </summary>
+        private readonly ulong _requestMaxAgeInSeconds = 300;
+
         // The following code implements the core authentication logic of validating the incoming signature in the request
         /// <summary>
-        /// Authenticates the request.
+        ///     Authenticates the request.
         /// </summary>
         /// <param name="context">The authentication context.</param>
         /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         /// <returns>
-        /// A Task that will perform authentication.
+        ///     A Task that will perform authentication.
         /// </returns>
         public Task AuthenticateAsync(HttpAuthenticationContext context, CancellationToken cancellationToken)
         {
@@ -68,9 +70,7 @@ namespace drs_backend_phase1.Filter
             var headerName = string.Empty;
 
             if (request.Headers.TryGetValues("X-Authorization", out customHeaderValue))
-            {
                 headerName = customHeaderValue.FirstOrDefault();
-            }
             _log.DebugFormat("\n \nHMAC Authentication - Header Name: {0}", headerName);
 
 
@@ -85,7 +85,7 @@ namespace drs_backend_phase1.Filter
                 // Splits on the space between amx and the header values.
                 var customAuthorization = new AuthenticationHeaderValue(headerScheme[0], headerScheme[1]);
 
-                if (authenticationScheme.Equals(customAuthorization.Scheme, StringComparison.OrdinalIgnoreCase))
+                if (_authenticationScheme.Equals(customAuthorization.Scheme, StringComparison.OrdinalIgnoreCase))
                 {
                     var rawAuthHeader = customAuthorization.Parameter;
                     var authHeaderArray = GetAuthHeaderValues(rawAuthHeader);
@@ -97,14 +97,14 @@ namespace drs_backend_phase1.Filter
                         var clientSecret = authHeaderArray[1];
                         var nonce = authHeaderArray[2];
                         var requestTimeStamp = authHeaderArray[3];
-                        _log.DebugFormat("Received Header Values: {0}, {1}, {2}, {3}", clientId, clientSecret, nonce, requestTimeStamp);
+                        _log.DebugFormat("Received Header Values: {0}, {1}, {2}, {3}", clientId, clientSecret, nonce,
+                            requestTimeStamp);
 
                         // Reconstruct the signature and compare against incoming signature
                         var isValid = IsValidRequest(clientId, request, clientSecret, nonce, requestTimeStamp);
 
                         try
                         {
-
                             if (isValid.Result)
                             {
                                 _log.DebugFormat("Request is valid");
@@ -117,7 +117,8 @@ namespace drs_backend_phase1.Filter
                             else
                             {
                                 _log.DebugFormat("Request is invalid\n");
-                                context.ErrorResult = new UnauthorizedResult(new AuthenticationHeaderValue[0], context.Request);
+                                context.ErrorResult =
+                                    new UnauthorizedResult(new AuthenticationHeaderValue[0], context.Request);
                             }
                         }
                         catch (Exception ex)
@@ -140,7 +141,7 @@ namespace drs_backend_phase1.Filter
         }
 
         /// <summary>
-        /// Challenges the asynchronous.
+        ///     Challenges the asynchronous.
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
@@ -152,13 +153,14 @@ namespace drs_backend_phase1.Filter
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether more than one instance of the indicated attribute can be specified for a single program element.
+        ///     Gets or sets a value indicating whether more than one instance of the indicated attribute can be specified for a
+        ///     single program element.
         /// </summary>
         public bool AllowMultiple => false;
 
         // Ensure that the parts of the HMAC are equal to 4 (clientId, clientSecret, nonce, timestamp)
         /// <summary>
-        /// Gets the authentication header values.
+        ///     Gets the authentication header values.
         /// </summary>
         /// <param name="rawAuthHeader">The raw authentication header.</param>
         /// <returns></returns>
@@ -167,16 +169,14 @@ namespace drs_backend_phase1.Filter
             var credentialArray = rawAuthHeader.Split(':');
 
             if (credentialArray.Length == 4)
-            {
                 return credentialArray;
-            }
 
             return null;
         }
 
         // Core implementation of reconstructing the request parameters and generating the signature on the server
         /// <summary>
-        /// Determines whether [is valid request] [the specified client identifier].
+        ///     Determines whether [is valid request] [the specified client identifier].
         /// </summary>
         /// <param name="clientId">The client identifier.</param>
         /// <param name="request">The request.</param>
@@ -184,7 +184,8 @@ namespace drs_backend_phase1.Filter
         /// <param name="nonce">The nonce.</param>
         /// <param name="requestTimeStamp">The request time stamp.</param>
         /// <returns></returns>
-        private async Task<bool> IsValidRequest(string clientId, HttpRequestMessage request, string clientSecret, string nonce, string requestTimeStamp)
+        private async Task<bool> IsValidRequest(string clientId, HttpRequestMessage request, string clientSecret,
+            string nonce, string requestTimeStamp)
         {
             try
             {
@@ -203,37 +204,32 @@ namespace drs_backend_phase1.Filter
                 var sharedKey = VerifyUser(clientId);
 
                 if (string.IsNullOrEmpty(sharedKey))
-                {
                     return false;
-                }
 
                 _log.DebugFormat($"Checking if replay request: [{nonce}], [{requestTimeStamp}]\n");
                 if (IsReplayRequest(nonce, requestTimeStamp))
-                {
                     return false;
-                }
 
                 var hash = await ComputeHash(request.Content);
                 if (hash != null)
-                {
                     requestContentBase64String = Convert.ToBase64String(hash);
-                }
 
-                var data = $"{clientId}{requestHttpMethod}{requestUri}{nonce}{requestTimeStamp}{requestContentBase64String}";
+                var data =
+                    $"{clientId}{requestHttpMethod}{requestUri}{nonce}{requestTimeStamp}{requestContentBase64String}";
                 _log.DebugFormat($"Request Content Base 64 String (Hash): {requestContentBase64String}");
                 _log.DebugFormat("Data: {0}", data);
 
                 var secretKeyBytes = Convert.FromBase64String(sharedKey);
 
-                byte[] signature = Encoding.UTF8.GetBytes(data);
+                var signature = Encoding.UTF8.GetBytes(data);
 
                 //var signature = Encoding.UTF8.GetBytes(data);
 
-                using (HMACSHA256 hmac = new HMACSHA256(secretKeyBytes))
+                using (var hmac = new HMACSHA256(secretKeyBytes))
                 {
                     //var signatureBytes = hmac.ComputeHash(signature);
 
-                    byte[] signatureBytes = hmac.ComputeHash(signature);
+                    var signatureBytes = hmac.ComputeHash(signature);
 
                     _log.DebugFormat("Signature: {0}", clientSecret);
                     _log.DebugFormat("Post HMAC String: {0}", Convert.ToBase64String(signatureBytes));
@@ -241,7 +237,6 @@ namespace drs_backend_phase1.Filter
                     //return clientSecret.Equals(Convert.ToBase64String(signatureBytes), StringComparison.Ordinal);
 
                     return clientSecret.Equals(Convert.ToBase64String(signatureBytes), StringComparison.Ordinal);
-
                 }
             }
             catch (Exception ex)
@@ -252,19 +247,17 @@ namespace drs_backend_phase1.Filter
         }
 
         /// <summary>
-        /// Determines whether [is replay request] [the specified nonce].
+        ///     Determines whether [is replay request] [the specified nonce].
         /// </summary>
         /// <param name="nonce">The nonce.</param>
         /// <param name="requestTimeStamp">The request time stamp.</param>
         /// <returns>
-        ///   <c>true</c> if [is replay request] [the specified nonce]; otherwise, <c>false</c>.
+        ///     <c>true</c> if [is replay request] [the specified nonce]; otherwise, <c>false</c>.
         /// </returns>
         private bool IsReplayRequest(string nonce, string requestTimeStamp)
         {
             if (MemoryCache.Default.Contains(nonce))
-            {
                 return true;
-            }
 
             var epochStart = new DateTime(1970, 01, 01, 0, 0, 0, 0, DateTimeKind.Utc);
             var currentTimeSpan = DateTime.UtcNow - epochStart;
@@ -272,19 +265,16 @@ namespace drs_backend_phase1.Filter
             var serverTotalSeconds = Convert.ToUInt64(currentTimeSpan.TotalSeconds);
             var requestTotalSeconds = Convert.ToUInt64(requestTimeStamp);
 
-            if (serverTotalSeconds - requestTotalSeconds > requestMaxAgeInSeconds)
-            {
+            if (serverTotalSeconds - requestTotalSeconds > _requestMaxAgeInSeconds)
                 return true;
-            }
 
-            MemoryCache.Default.Add(nonce, requestTimeStamp, DateTimeOffset.UtcNow.AddSeconds(requestMaxAgeInSeconds));
+            MemoryCache.Default.Add(nonce, requestTimeStamp, DateTimeOffset.UtcNow.AddSeconds(_requestMaxAgeInSeconds));
             return false;
-
         }
 
         // POST only: hash the content being sent
         /// <summary>
-        /// Computes the hash.
+        ///     Computes the hash.
         /// </summary>
         /// <param name="httpContent">Content of the HTTP.</param>
         /// <returns></returns>
@@ -295,15 +285,13 @@ namespace drs_backend_phase1.Filter
                 byte[] hash = null;
                 var content = await httpContent.ReadAsByteArrayAsync();
                 if (content.Length != 0)
-                {
                     hash = md5.ComputeHash(content);
-                }
                 return hash;
             }
         }
 
         /// <summary>
-        /// Verifies the user.
+        ///     Verifies the user.
         /// </summary>
         /// <param name="guidValue">The unique identifier value.</param>
         /// <returns></returns>
@@ -328,9 +316,8 @@ namespace drs_backend_phase1.Filter
 
                     // Is the person in the Active Directory? If not they will suffer a painful death OR throw an exception  
                     if (personPrincipal == null)
-                    {
-                        throw new SecurityAccessDeniedException("No valid active directory accounts had the GUID value");
-                    }
+                        throw new SecurityAccessDeniedException(
+                            "No valid active directory accounts had the GUID value");
 
                     _log.DebugFormat("Found user SID {0}", personPrincipal.Sid);
                     _log.DebugFormat("Active Directory Account for: {0}", personPrincipal.DistinguishedName);
@@ -352,22 +339,22 @@ namespace drs_backend_phase1.Filter
 
         // Authentication challenge to unauthorized responses
         /// <summary>
-        /// 
         /// </summary>
         /// <seealso cref="System.Web.Http.IHttpActionResult" />
         public class ResultWithChallenge : IHttpActionResult
         {
             /// <summary>
-            /// The authentication scheme
-            /// </summary>
-            private readonly string authenticationScheme = "amx";
-            /// <summary>
-            /// The next
+            ///     The next
             /// </summary>
             private readonly IHttpActionResult _next;
 
             /// <summary>
-            /// Initializes a new instance of the <see cref="ResultWithChallenge"/> class.
+            ///     The authentication scheme
+            /// </summary>
+            private readonly string authenticationScheme = "amx";
+
+            /// <summary>
+            ///     Initializes a new instance of the <see cref="ResultWithChallenge" /> class.
             /// </summary>
             /// <param name="next">The next.</param>
             public ResultWithChallenge(IHttpActionResult next)
@@ -376,20 +363,18 @@ namespace drs_backend_phase1.Filter
             }
 
             /// <summary>
-            /// Creates an <see cref="T:System.Net.Http.HttpResponseMessage" /> asynchronously.
+            ///     Creates an <see cref="T:System.Net.Http.HttpResponseMessage" /> asynchronously.
             /// </summary>
             /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
             /// <returns>
-            /// A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage" />.
+            ///     A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage" />.
             /// </returns>
             public async Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
             {
                 var response = await _next.ExecuteAsync(cancellationToken);
 
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
-                {
                     response.Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue(authenticationScheme));
-                }
 
                 return response;
             }
