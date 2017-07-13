@@ -27,5 +27,6 @@ namespace drs_backend_phase1.Models
         public Nullable<bool> isDeleted { get; set; }
     
         public virtual Profile Profile { get; set; }
+        public virtual Lookup Lookup { get; set; }
     }
 }

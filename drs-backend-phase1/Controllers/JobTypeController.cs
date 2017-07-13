@@ -40,6 +40,7 @@ namespace drs_backend_phase1.Controllers
         /// Adds a new JobType to the database.
         /// </summary>
         /// <param name="newJobType">New type of the job.</param>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
         public void CreateJobType([FromBody]JobType newJobType)
@@ -68,6 +69,7 @@ namespace drs_backend_phase1.Controllers
         /// Fetches all job types.
         /// </summary>
         /// <returns>List of all JobTypes</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllJobTypes()
@@ -92,6 +94,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A JobType</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchJobTypeById(int id)
@@ -116,6 +119,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="jobTypeToUpdate">The job type to update.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateJobType(JobType jobTypeToUpdate)
@@ -151,6 +155,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteJobTypeById(int id)

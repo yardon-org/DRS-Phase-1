@@ -3,8 +3,8 @@ using System.Reflection;
 using System.Web.Http;
 using drs_backend_phase1.Models;
 using log4net;
-using System.Data.Entity;
 using System.Linq;
+using System.Web.Security;
 using drs_backend_phase1.Filter;
 
 namespace drs_backend_phase1.Controllers
@@ -13,8 +13,10 @@ namespace drs_backend_phase1.Controllers
     /// EventLog Controller
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [RoutePrefix("api/event-log")]
     [HMACAuthentication]
+    //[Authorize]
+    [RoutePrefix("api/event-log")]
+   
     public class EventLogController : ApiController
     {
         private readonly DRSEntities _db;
@@ -51,6 +53,9 @@ namespace drs_backend_phase1.Controllers
                     .ToList();
 
                 Log.DebugFormat("Retrieval of EventLogs was successful.\n");
+
+            
+
                 return Ok(listOfEvents);
             }
             catch (Exception ex)

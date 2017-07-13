@@ -40,6 +40,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="postcode">The postcode to query.</param>
         /// <returns>List of Addresses</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("findaddresses")]
         public IHttpActionResult QueryPostcode(string postcode)

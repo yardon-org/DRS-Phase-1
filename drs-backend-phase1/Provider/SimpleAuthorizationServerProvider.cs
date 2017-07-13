@@ -81,8 +81,10 @@ namespace drs_backend_phase1.Provider
 
             try
             {
-                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                identity.AddClaim(new Claim(ClaimTypes.Role, role.RoleName));
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType, "id", "role");
+                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim("username", context.UserName));
+                identity.AddClaim(new Claim("role", role.RoleName));
 
                 // TODO: Add Group-based claims
                 //GroupPrincipal liveExceptioningExecGroup = GroupPrincipal.FindByIdentity(ctx, ConfigurationManager.AppSettings["LiveExceptioningExecutiveGroup"]);

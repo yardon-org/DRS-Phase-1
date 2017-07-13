@@ -50,6 +50,7 @@
         <AssociationConnector Association="DRSModel.FK__SecurityP__Group__382F5661" />
         <AssociationConnector Association="DRSModel.FK__SecurityP__Right__3A179ED3" />
         <AssociationConnector Association="DRSModel.FK__SecurityP__RoleI__39237A9A" />
+        <AssociationConnector Association="DRSModel.fk_acf4862a0cd563f13dd928abe8f" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

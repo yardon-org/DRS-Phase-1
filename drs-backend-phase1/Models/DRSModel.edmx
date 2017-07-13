@@ -781,6 +781,7 @@
           <NavigationProperty Name="ProfilePaymentCategories" Relationship="Self.fk_f2fc32d7e8f52761c4ef6e987d9" FromRole="Lookup" ToRole="ProfilePaymentCategory" />
           <NavigationProperty Name="ProfileShiftTypes" Relationship="Self.fk_f368a2ec3f354d1b68093b2dca6" FromRole="Lookup" ToRole="ProfileShiftType" />
           <NavigationProperty Name="ProfileProfessionals5" Relationship="Self.fk_fdb921f2951ecf3d1858bc7830b" FromRole="Lookup" ToRole="ProfileProfessional" />
+          <NavigationProperty Name="ProfileDocuments" Relationship="DRSModel.fk_acf4862a0cd563f13dd928abe8f" FromRole="Lookup" ToRole="ProfileDocument" />
         </EntityType>
         <EntityType Name="LookupType">
           <Key>
@@ -844,6 +845,7 @@
           <Property Name="dateModified" Type="DateTime" Precision="3" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profile" Relationship="Self.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
+          <NavigationProperty Name="Lookup" Relationship="DRSModel.fk_acf4862a0cd563f13dd928abe8f" FromRole="ProfileDocument" ToRole="Lookup" />
         </EntityType>
         <EntityType Name="ProfileFinance">
           <Key>
@@ -1321,6 +1323,10 @@
             <End Role="SecurityRole" EntitySet="SecurityRoles" />
             <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
           </AssociationSet>
+          <AssociationSet Name="fk_acf4862a0cd563f13dd928abe8f" Association="DRSModel.fk_acf4862a0cd563f13dd928abe8f">
+            <End Role="Lookup" EntitySet="Lookups" />
+            <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="EventLog">
           <Key>
@@ -1486,6 +1492,18 @@
             </Principal>
             <Dependent Role="SecurityPermission">
               <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_acf4862a0cd563f13dd928abe8f">
+          <End Type="DRSModel.Lookup" Role="Lookup" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileDocument" Role="ProfileDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProfileDocument">
+              <PropertyRef Name="documentTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

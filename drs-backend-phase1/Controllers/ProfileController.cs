@@ -42,6 +42,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns>List of Profiles</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchProfiles")]
         public IHttpActionResult FetchAllProfiles(bool includeDeleted)
@@ -74,6 +75,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A Profile object</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchProfileById(int id)
@@ -99,6 +101,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="profileToUpdate">The Profile to update.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateProfile(Profile profileToUpdate)
@@ -132,6 +135,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="profileToUpdate">The profile to update.</param>
         /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("performers")]
         public IHttpActionResult CheckPerformersList(Profile profileToUpdate)
@@ -169,6 +173,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="searchTerm">The search term.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("search/{searchTerm}/{includeDeleted}")]
         public IHttpActionResult FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false)
@@ -216,6 +221,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="teamId">The team identifier.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("filter/{teamId}/{includeDeleted}")]
         public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false)
@@ -263,6 +269,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteProfileById(int id)

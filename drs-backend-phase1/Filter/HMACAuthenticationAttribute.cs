@@ -9,7 +9,6 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Runtime.Caching;
 using System.Security.Cryptography;
-using System.Security.Principal;
 using System.ServiceModel.Security;
 using System.Text;
 using System.Threading;
@@ -29,6 +28,11 @@ namespace drs_backend_phase1.Filter
     public class HMACAuthenticationAttribute : Attribute, IAuthenticationFilter
     {
         /// <summary>
+        ///     The authentication scheme
+        /// </summary>
+        private readonly string _authenticationScheme = "amx";
+
+        /// <summary>
         ///     The internal service host name
         /// </summary>
         private readonly string _internalServiceHostName = ConfigurationManager.AppSettings["internalServiceHostName"];
@@ -42,11 +46,6 @@ namespace drs_backend_phase1.Filter
         ///     The proxy service host name
         /// </summary>
         private readonly string _proxyServiceHostName = ConfigurationManager.AppSettings["proxyServiceHostName"];
-
-        /// <summary>
-        ///     The authentication scheme
-        /// </summary>
-        private readonly string _authenticationScheme = "amx";
 
         /// <summary>
         ///     The request maximum age in seconds
@@ -103,27 +102,11 @@ namespace drs_backend_phase1.Filter
                         // Reconstruct the signature and compare against incoming signature
                         var isValid = IsValidRequest(clientId, request, clientSecret, nonce, requestTimeStamp);
 
-                        try
+                        if (!isValid.Result)
                         {
-                            if (isValid.Result)
-                            {
-                                _log.DebugFormat("Request is valid");
-                                IPrincipal currentPrincipal = new GenericPrincipal(
-                                    new GenericIdentity(clientId), null);
-                                Thread.CurrentPrincipal = currentPrincipal;
-                                HttpContext.Current.User = currentPrincipal;
-                                context.Principal = currentPrincipal;
-                            }
-                            else
-                            {
-                                _log.DebugFormat("Request is invalid\n");
-                                context.ErrorResult =
-                                    new UnauthorizedResult(new AuthenticationHeaderValue[0], context.Request);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            _log.DebugFormat("Error: " + ex.Message, ex.StackTrace, ex.InnerException, ex + "\n");
+                            _log.DebugFormat("Request is invalid\n");
+                            context.ErrorResult =
+                                new UnauthorizedResult(new AuthenticationHeaderValue[0], context.Request);
                         }
                     }
                     else
@@ -193,7 +176,9 @@ namespace drs_backend_phase1.Filter
 
                 var requestContentBase64String = "";
                 var requestUriRaw = request.RequestUri.AbsoluteUri.ToLower();
-                requestUriRaw = requestUriRaw.Replace(_internalServiceHostName, _proxyServiceHostName);
+
+
+                //requestUriRaw = requestUriRaw.Replace(_internalServiceHostName, _proxyServiceHostName);
 
                 _log.DebugFormat($"Raw Request Uri: {requestUriRaw}\n");
 

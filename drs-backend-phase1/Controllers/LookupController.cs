@@ -15,7 +15,6 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="ApiController" />
     [RoutePrefix("api/lookup")]
-    [Authorize]
     [HMACAuthentication]
     public class LookupController : ApiController
     {
@@ -36,6 +35,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="newLookup">The new Lookup object.</param>
         /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
         public IHttpActionResult CreateLookup([FromBody]Lookup newLookup)
@@ -69,6 +69,7 @@ namespace drs_backend_phase1.Controllers
         /// Fetches all Lookup objects in the database.
         /// </summary>
         /// <returns>A list of Lookup objects</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllLookups()
@@ -95,6 +96,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="typename">The typename.</param>
         /// <returns>A list of Lookup objects</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("bytypename")]
         public IHttpActionResult FetchLookupsByTypeName(string typename)
@@ -122,6 +124,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">Lookup identifier.</param>
         /// <returns>A Lookup object</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchLookupById(int id)
@@ -147,6 +150,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="lookupToUpdate">The updated Lookup object.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateLookup(Lookup lookupToUpdate)
@@ -182,6 +186,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The Lookup identifier.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteLookupById(int id)

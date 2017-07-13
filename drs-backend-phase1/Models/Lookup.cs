@@ -26,6 +26,7 @@ namespace drs_backend_phase1.Models
             this.ProfilePaymentCategories = new HashSet<ProfilePaymentCategory>();
             this.ProfileShiftTypes = new HashSet<ProfileShiftType>();
             this.ProfileProfessionals5 = new HashSet<ProfileProfessional>();
+            this.ProfileDocuments = new HashSet<ProfileDocument>();
         }
     
         public string name { get; set; }
@@ -54,5 +55,7 @@ namespace drs_backend_phase1.Models
         public virtual ICollection<ProfileShiftType> ProfileShiftTypes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfileProfessional> ProfileProfessionals5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProfileDocument> ProfileDocuments { get; set; }
     }
 }

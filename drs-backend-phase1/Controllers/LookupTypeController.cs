@@ -41,6 +41,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="newLookupType">New type of the lookup.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
         public IHttpActionResult CreateLookupType([FromBody]LookupType newLookupType)
@@ -74,6 +75,7 @@ namespace drs_backend_phase1.Controllers
         /// Fetches all lookup types.
         /// </summary>
         /// <returns>List of LookupTypes</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllLookupTypes()
@@ -98,6 +100,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A LookupType object</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchLookupTypeById(int id)
@@ -122,6 +125,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="lookupTypeToUpdate">The lookup type to update.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateLookupType(LookupType lookupTypeToUpdate)
@@ -157,6 +161,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteLookupTypeById(int id)
