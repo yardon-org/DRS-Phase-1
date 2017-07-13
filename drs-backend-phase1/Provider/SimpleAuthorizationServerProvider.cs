@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.DirectoryServices.AccountManagement;
 using System.Reflection;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using drs_backend_phase1.Models;
 using drs_backend_phase1.Repository;
 using drs_backend_phase1.Services;
 using log4net;
@@ -20,8 +19,6 @@ namespace drs_backend_phase1.Provider
     /// </summary>
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        private static readonly string PrivateKey = ConfigurationManager.AppSettings["privateKey"];
-        private static readonly string InitializeVector = ConfigurationManager.AppSettings["initializeVector"];
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
@@ -58,9 +55,9 @@ namespace drs_backend_phase1.Provider
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            var _repo = new AuthRepository();
+            var repo = new AuthRepository();
 
-            var user = await _repo.FindUserAsync(context.UserName, context.Password);
+            var user = await repo.FindUserAsync(context.UserName, context.Password);
 
             if (user == null)
             {
@@ -70,17 +67,24 @@ namespace drs_backend_phase1.Provider
             }
 
             // Fetch the Role for the User
-            var securityLayer = new SecurityService();
-            var role = securityLayer.FindSecurityRoleByActiveDirectoryEmailAddress(user);
+            SecurityRole role;
+            using (var securityLayer = new SecurityService())
+            {
+                role = securityLayer.FindSecurityRoleByActiveDirectoryEmailAddress(user);
+            }
+
+            if (role == null)
+            {
+                context.SetError("invalid_grant", "The user has no associated roles.");
+                return;
+            }
 
             try
             {
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim(ClaimTypes.Role, role.RoleName));
 
-                PrincipalContext ctx = new PrincipalContext(ContextType.Domain);
-                UserPrincipal currentUser = UserPrincipal.FindByIdentity(ctx, context.UserName);
-
+                // TODO: Add Group-based claims
                 //GroupPrincipal liveExceptioningExecGroup = GroupPrincipal.FindByIdentity(ctx, ConfigurationManager.AppSettings["LiveExceptioningExecutiveGroup"]);
 
                 if (user != null)
@@ -91,7 +95,6 @@ namespace drs_backend_phase1.Provider
                     {
                         {"clientId", user.ActiveDirectoryGuid},
                         {"clientSecret", Convert.ToBase64String(secretKeyBytes)},
-                        {"Forename", currentUser.GivenName},
                     });
 
                     var ticket = new AuthenticationTicket(identity, standardProps);

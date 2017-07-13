@@ -5,7 +5,6 @@ using drs_backend_phase1.Models;
 using log4net;
 using System.Data.Entity;
 using System.Linq;
-using drs_backend_phase1.Filter;
 
 namespace drs_backend_phase1.Controllers
 {
@@ -34,7 +33,6 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <returns>List of EventLogs</returns>
         [Authorize(Roles = "PERSONNEL")]
-
         [HttpGet]
         [Route("")]
         public IHttpActionResult ReadAllEventLogs()

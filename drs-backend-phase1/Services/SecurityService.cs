@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using drs_backend_phase1.Entities;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Services.Interfaces;
@@ -8,7 +9,7 @@ namespace drs_backend_phase1.Services
     /// <summary>
     /// Security Service
     /// </summary>
-    public class SecurityService : ISecurityService
+    public class SecurityService : ISecurityService, IDisposable
     {
         private readonly DRSEntities _db = new DRSEntities();
 
@@ -32,5 +33,12 @@ namespace drs_backend_phase1.Services
             return null;
         }
 
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            _db?.Dispose();
+        }
     }
 }
