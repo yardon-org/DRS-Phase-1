@@ -777,7 +777,6 @@
           <NavigationProperty Name="ProfileFinances" Relationship="Self.fk_6ba690537dabd13ee8fb4ab5bd5" FromRole="Lookup" ToRole="ProfileFinance" />
           <NavigationProperty Name="ProfileProfessionals2" Relationship="Self.fk_8876aa3ee193d532881f9b6cd5d" FromRole="Lookup" ToRole="ProfileProfessional" />
           <NavigationProperty Name="ProfileProfessionals3" Relationship="Self.fk_9471293e36e1cd29ba7727961a5" FromRole="Lookup" ToRole="ProfileProfessional" />
-          <NavigationProperty Name="ProfileDocuments" Relationship="Self.fk_acf4862a0cd563f13dd928abe8f" FromRole="Lookup" ToRole="ProfileDocument" />
           <NavigationProperty Name="ProfileProfessionals4" Relationship="Self.fk_e2c98fd24e3a6be988a12494962" FromRole="Lookup" ToRole="ProfileProfessional" />
           <NavigationProperty Name="ProfilePaymentCategories" Relationship="Self.fk_f2fc32d7e8f52761c4ef6e987d9" FromRole="Lookup" ToRole="ProfilePaymentCategory" />
           <NavigationProperty Name="ProfileShiftTypes" Relationship="Self.fk_f368a2ec3f354d1b68093b2dca6" FromRole="Lookup" ToRole="ProfileShiftType" />
@@ -844,7 +843,6 @@
           <Property Name="dateCreated" Type="DateTime" Precision="3" />
           <Property Name="dateModified" Type="DateTime" Precision="3" />
           <Property Name="isDeleted" Type="Boolean" />
-          <NavigationProperty Name="Lookup" Relationship="Self.fk_acf4862a0cd563f13dd928abe8f" FromRole="ProfileDocument" ToRole="Lookup" />
           <NavigationProperty Name="Profile" Relationship="Self.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
         </EntityType>
         <EntityType Name="ProfileFinance">
@@ -1070,18 +1068,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_acf4862a0cd563f13dd928abe8f">
-          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
-          <End Role="ProfileDocument" Type="Self.ProfileDocument" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lookup">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ProfileDocument">
-              <PropertyRef Name="documentTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_e2c98fd24e3a6be988a12494962">
           <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
@@ -1259,10 +1245,6 @@
           <AssociationSet Name="fk_9471293e36e1cd29ba7727961a5" Association="Self.fk_9471293e36e1cd29ba7727961a5">
             <End Role="Lookup" EntitySet="Lookups" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
-          </AssociationSet>
-          <AssociationSet Name="fk_acf4862a0cd563f13dd928abe8f" Association="Self.fk_acf4862a0cd563f13dd928abe8f">
-            <End Role="Lookup" EntitySet="Lookups" />
-            <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
           </AssociationSet>
           <AssociationSet Name="fk_e2c98fd24e3a6be988a12494962" Association="Self.fk_e2c98fd24e3a6be988a12494962">
             <End Role="Lookup" EntitySet="Lookups" />

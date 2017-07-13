@@ -43,8 +43,11 @@ namespace drs_backend_phase1.Controllers
             try
             {
                 var listOfEvents = _db.EventLogs
-                    .Include(b => b.EventLogConfig)
-                    .Include(b => b.EventLogType)
+                .Select(x => new
+                    {
+                     x.typeKey,
+                     x.configId
+                    })
                     .ToList();
 
                 Log.DebugFormat("Retrieval of EventLogs was successful.\n");

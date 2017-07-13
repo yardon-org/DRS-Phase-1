@@ -78,7 +78,7 @@ namespace drs_backend_phase1.Controllers
             try
             {
                 var listOfJobTypes = _db.Lookups.OrderBy(x=>x.name)
-                    .Include(x=>x.LookupType)
+                    .Select(x=>new  {x.type})
                     .ToList();
                 Log.DebugFormat("Retrieval of Lookups was successful.\n");
                 return Ok(listOfJobTypes);
@@ -97,15 +97,15 @@ namespace drs_backend_phase1.Controllers
         /// <returns>A list of Lookup objects</returns>
         [HttpGet]
         [Route("bytypename")]
-        public IHttpActionResult FetchLookupByTypeName(string typename)
+        public IHttpActionResult FetchLookupsByTypeName(string typename)
         {
             Log.DebugFormat("LookupController (FetchLookupByTypeName)\n");
 
             try
             {
                 var lookupList = _db.Lookups
-                    .Include(x => x.LookupType)
                     .Where(x => x.LookupType.name == typename)
+                    .Select(x => new { x.type })
                     .ToList();
                 Log.DebugFormat("Retrieval of FetchLookupByTypeName was successful.\n");
                 return Ok(lookupList);
