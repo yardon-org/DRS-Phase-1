@@ -207,5 +207,18 @@ namespace drs_backend_phase1.Controllers
                 return BadRequest($"Error retrieving DeleteLookupById. The reason is as follows: {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
