@@ -14,8 +14,7 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/event-log")]
-    [Authorize]
-    [HMACAuthentication]
+    //[HMACAuthentication]
     public class EventLogController : ApiController
     {
         private readonly DRSEntities _db;
@@ -34,6 +33,8 @@ namespace drs_backend_phase1.Controllers
         /// Reads all event logs.
         /// </summary>
         /// <returns>List of EventLogs</returns>
+        [Authorize(Roles = "PERSONNEL")]
+
         [HttpGet]
         [Route("")]
         public IHttpActionResult ReadAllEventLogs()

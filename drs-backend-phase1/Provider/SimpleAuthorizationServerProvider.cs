@@ -20,29 +20,47 @@ namespace drs_backend_phase1.Provider
     /// </summary>
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        private static readonly string _privateKey = ConfigurationManager.AppSettings["privateKey"];
-        private static readonly string _initializeVector = ConfigurationManager.AppSettings["initializeVector"];
+        private static readonly string PrivateKey = ConfigurationManager.AppSettings["privateKey"];
+        private static readonly string InitializeVector = ConfigurationManager.AppSettings["initializeVector"];
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
-        {
-            context.Validated();
-        }
+        /// <summary>
+        /// Called to validate that the origin of the request is a registered "client_id", and that the correct credentials for that client are
+        /// present on the request. If the web application accepts Basic authentication credentials,
+        /// context.TryGetBasicCredentials(out clientId, out clientSecret) may be called to acquire those values if present in the request header. If the web
+        /// application accepts "client_id" and "client_secret" as form encoded POST parameters,
+        /// context.TryGetFormCredentials(out clientId, out clientSecret) may be called to acquire those values if present in the request body.
+        /// If context.Validated is not called the request will not proceed further.
+        /// </summary>
+        /// <param name="context">The context of the event carries information in and results out.</param>
+        /// <returns>
+        /// Task to enable asynchronous execution
+        /// </returns>
+        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context) => context.Validated();
 
+        /// <summary>
+        /// Called when a request to the Token endpoint arrives with a "grant_type" of "password". This occurs when the user has provided name and password
+        /// credentials directly into the client application's user interface, and the client application is using those to acquire an "access_token" and
+        /// optional "refresh_token". If the web application supports the
+        /// resource owner credentials grant type it must validate the context.Username and context.Password as appropriate. To issue an
+        /// access token the context.Validated must be called with a new ticket containing the claims about the resource owner which should be associated
+        /// with the access token. The application should take appropriate measures to ensure that the endpoint isn’t abused by malicious callers.
+        /// The default behavior is to reject this grant type.
+        /// See also http://tools.ietf.org/html/rfc6749#section-4.3.2
+        /// </summary>
+        /// <param name="context">The context of the event carries information in and results out.</param>
+        /// <returns>
+        /// Task to enable asynchronous execution
+        /// </returns>
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             Log.DebugFormat("Attempting to log in via the internal service...\n");
-
-            // USE THIS TO GET THE ROLE OBJECT FOR THE USER
-            // ********************************************
-           
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             var _repo = new AuthRepository();
 
-            var decrypted = Decrypt(context.Password);
-            var user = await _repo.FindUserAsync(context.UserName, decrypted);
+            var user = await _repo.FindUserAsync(context.UserName, context.Password);
 
             if (user == null)
             {
@@ -58,49 +76,28 @@ namespace drs_backend_phase1.Provider
             try
             {
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.Role, role.RoleName));
 
                 PrincipalContext ctx = new PrincipalContext(ContextType.Domain);
                 UserPrincipal currentUser = UserPrincipal.FindByIdentity(ctx, context.UserName);
 
-             
-
-
-                GroupPrincipal liveExceptioningExecGroup = GroupPrincipal.FindByIdentity(ctx, ConfigurationManager.AppSettings["LiveExceptioningExecutiveGroup"]);
+                //GroupPrincipal liveExceptioningExecGroup = GroupPrincipal.FindByIdentity(ctx, ConfigurationManager.AppSettings["LiveExceptioningExecutiveGroup"]);
 
                 if (user != null)
                 {
                     var secretKeyBytes = Encoding.UTF8.GetBytes(user.ActiveDirectorySid);
 
-                    if (currentUser.IsMemberOf(liveExceptioningExecGroup))
+                    var standardProps = new AuthenticationProperties(new Dictionary<string, string>
                     {
-                        var liveExceptioningProps = new AuthenticationProperties(new Dictionary<string, string>
-                        {
-                            {"clientId", user.ActiveDirectoryGuid},
-                            {"clientSecret", Convert.ToBase64String(secretKeyBytes)},
-                            {"Forename", currentUser.GivenName},
-                            {"LE", "1"}
-                        });
-                        var ticket = new AuthenticationTicket(identity, liveExceptioningProps);
-                        context.Validated(ticket);
-                    }
+                        {"clientId", user.ActiveDirectoryGuid},
+                        {"clientSecret", Convert.ToBase64String(secretKeyBytes)},
+                        {"Forename", currentUser.GivenName},
+                    });
 
-                    if (!currentUser.IsMemberOf(liveExceptioningExecGroup))
-                    {
-                        var standardProps = new AuthenticationProperties(new Dictionary<string, string>
-                        {
-                            {"clientId", user.ActiveDirectoryGuid},
-                            {"clientSecret", Convert.ToBase64String(secretKeyBytes)},
-                            {"Forename", currentUser.GivenName },
-                            {"LE", "0" }
-                        });
-
-                        var ticket = new AuthenticationTicket(identity, standardProps);
-                        context.Validated(ticket);
-                    }
+                    var ticket = new AuthenticationTicket(identity, standardProps);
+                    context.Validated(ticket);
                 }
 
-           
 
                 Log.DebugFormat("Successfully retrieved active directory credentials for: " + context.UserName);
 
@@ -113,17 +110,15 @@ namespace drs_backend_phase1.Provider
 
         }
 
-        public static AuthenticationProperties CreateProperties(string clientId, string clientSecret)
-        {
-            IDictionary<string, string> props = new Dictionary<string, string>
-            {
-                {"clientId", clientId},
-                {"clientSecret", clientSecret}
-            };
-
-            return new AuthenticationProperties(props);
-        }
-
+        /// <summary>
+        /// Called at the final stage of a successful Token endpoint request. An application may implement this call in order to do any final
+        /// modification of the claims being used to issue access or refresh tokens. This call may also be used in order to add additional
+        /// response parameters to the Token endpoint's json response body.
+        /// </summary>
+        /// <param name="context">The context of the event carries information in and results out.</param>
+        /// <returns>
+        /// Task to enable asynchronous execution
+        /// </returns>
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
             foreach (var property in context.Properties.Dictionary)
@@ -132,56 +127,6 @@ namespace drs_backend_phase1.Provider
             }
 
             return Task.FromResult<object>(null);
-        }
-
-        public static string Decrypt(string encrypted)
-        {
-            // Convert the encrypted bytes from the value provided.
-            byte[] encryptedBytes = Convert.FromBase64String(encrypted);
-
-            AesCryptoServiceProvider aesServiceProvider = new AesCryptoServiceProvider
-            {
-                // Set the AES block size to be 128 bits.
-                BlockSize = 128,
-
-                // Set the AES key size to be 256 bits.
-                KeySize = 256,
-
-                // Ensure that the key provided is looking at the Key variable.
-                Key = Encoding.UTF8.GetBytes(_privateKey),
-                //Key = Encoding.ASCII.GetBytes("qwertyuiopasdfghjklzxcvbnmqwerty"),
-
-                // Set the AES Initialization Vector to be the IV variable.
-                IV = Encoding.UTF8.GetBytes(_initializeVector),
-                //IV = Encoding.ASCII.GetBytes("poiuytrewqlkjhgf"),
-
-                // Set the AES Padding to be that of PKCS7 (the value of each added byte is the number of bytes that are added. E.g:
-                // 01
-                // 02 02
-                // 03 03 03
-                // 04 04 04 04
-                // Etc.
-                Padding = PaddingMode.PKCS7,
-
-                // Set the AES Cipher Mode to CBC. In CBC mode, each block of plain text is XORed with the previous cipher block before being encrypted.
-                // See the following link for a more detailed explanation (https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_.28CBC.29).
-                Mode = CipherMode.CBC
-            };
-
-            // When decrypting, pass in the AES Key and IV.
-            ICryptoTransform cryptoTransform = aesServiceProvider.CreateDecryptor(aesServiceProvider.Key, aesServiceProvider.IV);
-
-            // Transforms the specified region of the input byte array and copies the resulting transform to the specified region of the output byte array.
-            byte[] secret = cryptoTransform.TransformFinalBlock(encryptedBytes, 0, encryptedBytes.Length);
-
-
-            // Chuck the cryptoTransform in the bin, no longer wanted or needed here on out.
-            cryptoTransform.Dispose();
-
-
-            // Return the decrypted value as plain text.
-            return Encoding.UTF8.GetString(secret);
-
         }
 
     }
