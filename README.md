@@ -1,4 +1,3 @@
-```js
 
 ## Installation
 
@@ -25,4 +24,3 @@
   * The 'privatekey' and 'initializevector' strings used in the HMAC encryption process are stored in the 'appSettings' segment of the web.config in the 'DRS-Phase1-Backend' project.  
   * If you want to test the web api without requiring HMAC or OAuth authentication, you need to comment-out the '[HMACAuthentication]' and '/[Authorize(Roles = "PERSONNEL")]' attributes in the controller classes.
   * Currently, two databases are used by the Wep API - DRS and PAF - the web.config currently points to these on AG_SQLStage02.
-'''
