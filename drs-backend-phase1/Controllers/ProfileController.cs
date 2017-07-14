@@ -14,7 +14,6 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/profile")]
-    [Authorize]
     [HMACAuthentication]
     public class ProfileController : ApiController
     {

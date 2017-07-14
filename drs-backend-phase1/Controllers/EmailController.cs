@@ -13,7 +13,6 @@ namespace drs_backend_phase1.Controllers
     /// Email Controller
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [Authorize]
     [HMACAuthentication]
     [RoutePrefix("api/email")]
     public class EmailController : ApiController

@@ -14,9 +14,7 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [HMACAuthentication]
-    //[Authorize]
     [RoutePrefix("api/event-log")]
-   
     public class EventLogController : ApiController
     {
         private readonly DRSEntities _db;
