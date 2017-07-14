@@ -25,8 +25,8 @@ namespace drs_backend_phase1.Repository
         /// <exception cref="Exception"></exception>
         public async Task<ApplicationUser> FindUserAsync(string username, string password)
         {
+            // TODO: put this into web.confog
             // Find the user within the active directory
-
             using (var context = new PrincipalContext(
                 ContextType.Domain,
                 @"ash-dc02.sehnp.nhs.uk:3268",

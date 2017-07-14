@@ -35,7 +35,7 @@ namespace drs_backend_phase1.Filter
         /// <summary>
         ///     The internal service host name
         /// </summary>
-        private readonly string _internalServiceHostName = ConfigurationManager.AppSettings["internalServiceHostName"];
+        //private readonly string _internalServiceHostName = ConfigurationManager.AppSettings["internalServiceHostName"];
 
         /// <summary>
         ///     The log
@@ -45,7 +45,7 @@ namespace drs_backend_phase1.Filter
         /// <summary>
         ///     The proxy service host name
         /// </summary>
-        private readonly string _proxyServiceHostName = ConfigurationManager.AppSettings["proxyServiceHostName"];
+        //private readonly string _proxyServiceHostName = ConfigurationManager.AppSettings["proxyServiceHostName"];
 
         /// <summary>
         ///     The request maximum age in seconds
@@ -284,6 +284,7 @@ namespace drs_backend_phase1.Filter
         /// <exception cref="Exception"></exception>
         private string VerifyUser(string guidValue)
         {
+            // TODO: put this into web.confog
             // Establish domain credentials
             using (var context = new PrincipalContext(
                 ContextType.Domain,

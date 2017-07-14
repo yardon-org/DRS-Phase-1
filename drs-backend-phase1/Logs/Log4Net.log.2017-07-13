@@ -1,0 +1,1252 @@
+2017-07-13 04:04:55,473 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:04:37,861 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:05:09,118 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:12:29,756 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:12:30,248 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:13:46,426 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:14:33,212 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:14:37,620 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:27:45,152 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:31:38,019 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:31:55,513 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:32:33,558 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:32:35,905 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:33:23,209 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:34:36,264 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:38:39,710 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:38:45,366 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:42:59,355 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:43:00,425 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:43:47,822 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:43:48,599 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:43:53,201 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 05:43:53,491 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 05:52:34,243 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:52:34,974 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:52:39,861 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 05:52:40,095 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 05:58:04,238 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 05:58:05,035 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 05:58:05,175 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 05:58:05,407 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 08:45:48,710 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 08:45:50,590 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 08:46:05,799 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:IN+vfpYKsu03X+6hFd7BgEWgDrX5jNrAoKT50UJQaK4=:286c8517d03d44268cb5af69947dd032:1499931951
+2017-07-13 08:46:14,553 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, IN+vfpYKsu03X+6hFd7BgEWgDrX5jNrAoKT50UJQaK4=, 286c8517d03d44268cb5af69947dd032, 1499931951
+2017-07-13 08:46:15,669 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 08:46:15,688 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 10:23:44,398 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: 
+2017-07-13 10:25:48,521 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 10:25:56,150 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 10:26:45,768 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 10:31:52,001 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 10:35:23,656 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 10:38:10,301 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 10:38:34,337 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 10:38:38,425 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:ur0J1xDhuJoRM9RBejaiGAcjbCDx6avbOqoZMn+wHcA=:c6928420a0b54b15a12273cae8ac0377:1499938718
+2017-07-13 10:38:38,425 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, ur0J1xDhuJoRM9RBejaiGAcjbCDx6avbOqoZMn+wHcA=, c6928420a0b54b15a12273cae8ac0377, 1499938718
+2017-07-13 10:38:38,427 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:00:13,458 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:00:19,607 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:00:19,747 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:NgWmHqZrmgtKWKrb/hCXhtXsV2dfjr0X5LQrAkuJQy4=:4a5e2929fc8a4a568345bda7cdf3d36b:1499940020
+2017-07-13 11:00:19,748 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, NgWmHqZrmgtKWKrb/hCXhtXsV2dfjr0X5LQrAkuJQy4=, 4a5e2929fc8a4a568345bda7cdf3d36b, 1499940020
+2017-07-13 11:00:19,749 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:00:35,321 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:00:37,229 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:00:38,514 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:00:39,111 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:00:39,112 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:00:41,853 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [4a5e2929fc8a4a568345bda7cdf3d36b], [1499940020]
+
+2017-07-13 11:00:45,821 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:00:46,395 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log4a5e2929fc8a4a568345bda7cdf3d36b1499940020
+2017-07-13 11:00:51,963 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: NgWmHqZrmgtKWKrb/hCXhtXsV2dfjr0X5LQrAkuJQy4=
+2017-07-13 11:00:52,597 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: NgWmHqZrmgtKWKrb/hCXhtXsV2dfjr0X5LQrAkuJQy4=
+2017-07-13 11:22:42,508 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:22:46,118 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:22:46,247 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:SrmcYD5zUELm77mXsb0KKOGGSgYnLHs8jd7TTmpxbx0=:11b8031466aa425589232ff9d6d2cf28:1499941366
+2017-07-13 11:22:46,248 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, SrmcYD5zUELm77mXsb0KKOGGSgYnLHs8jd7TTmpxbx0=, 11b8031466aa425589232ff9d6d2cf28, 1499941366
+2017-07-13 11:22:46,249 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:22:50,563 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:22:50,565 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:22:50,581 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:22:50,660 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:22:50,660 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:22:50,661 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [11b8031466aa425589232ff9d6d2cf28], [1499941366]
+
+2017-07-13 11:22:50,673 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:22:50,674 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log11b8031466aa425589232ff9d6d2cf281499941366
+2017-07-13 11:22:50,674 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: SrmcYD5zUELm77mXsb0KKOGGSgYnLHs8jd7TTmpxbx0=
+2017-07-13 11:22:50,675 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: SrmcYD5zUELm77mXsb0KKOGGSgYnLHs8jd7TTmpxbx0=
+2017-07-13 11:22:50,675 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:23:30,294 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:23:35,843 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:23:44,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:X4UD6OKPyeJIf5SuqVYbjfZ2oN4UZS+PNbq3jhNL21o=:6d4d6fb5549f4b5bb00e02941b8c425d:1499941425
+2017-07-13 11:23:44,801 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, X4UD6OKPyeJIf5SuqVYbjfZ2oN4UZS+PNbq3jhNL21o=, 6d4d6fb5549f4b5bb00e02941b8c425d, 1499941425
+2017-07-13 11:23:44,801 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:23:44,801 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:23:44,801 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:23:44,816 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:23:44,894 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:23:44,894 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:23:44,894 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [6d4d6fb5549f4b5bb00e02941b8c425d], [1499941425]
+
+2017-07-13 11:23:44,895 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:23:44,895 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log6d4d6fb5549f4b5bb00e02941b8c425d1499941425
+2017-07-13 11:23:44,895 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: X4UD6OKPyeJIf5SuqVYbjfZ2oN4UZS+PNbq3jhNL21o=
+2017-07-13 11:23:44,895 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: X4UD6OKPyeJIf5SuqVYbjfZ2oN4UZS+PNbq3jhNL21o=
+2017-07-13 11:23:44,895 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:24:44,622 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:25:40,751 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:25:44,728 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:sTK+pviBP+R5I1WRFkdR16L73QKqp4thb3yJ6+aCLzY=:f82906e55a074658bf45f8468aae0cb8:1499941545
+2017-07-13 11:25:44,728 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, sTK+pviBP+R5I1WRFkdR16L73QKqp4thb3yJ6+aCLzY=, f82906e55a074658bf45f8468aae0cb8, 1499941545
+2017-07-13 11:25:44,728 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:25:44,728 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:25:44,728 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:25:44,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:25:44,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:25:44,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:25:44,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [f82906e55a074658bf45f8468aae0cb8], [1499941545]
+
+2017-07-13 11:25:44,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:25:44,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logf82906e55a074658bf45f8468aae0cb81499941545
+2017-07-13 11:25:44,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: sTK+pviBP+R5I1WRFkdR16L73QKqp4thb3yJ6+aCLzY=
+2017-07-13 11:25:44,824 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: sTK+pviBP+R5I1WRFkdR16L73QKqp4thb3yJ6+aCLzY=
+2017-07-13 11:25:44,824 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:26:09,982 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:26:13,822 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:26:16,706 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:qN7v0nS9A9l2lDLr5OLUcCa6/+oAUX5OWqo0Rgx7YKc=:8e1f76b676674deab5ac5ec31e55ad69:1499941577
+2017-07-13 11:26:16,706 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, qN7v0nS9A9l2lDLr5OLUcCa6/+oAUX5OWqo0Rgx7YKc=, 8e1f76b676674deab5ac5ec31e55ad69, 1499941577
+2017-07-13 11:26:16,706 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:26:16,706 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:26:16,706 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:26:16,722 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:26:16,799 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:26:16,799 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:26:16,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [8e1f76b676674deab5ac5ec31e55ad69], [1499941577]
+
+2017-07-13 11:26:16,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:26:16,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log8e1f76b676674deab5ac5ec31e55ad691499941577
+2017-07-13 11:26:16,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: qN7v0nS9A9l2lDLr5OLUcCa6/+oAUX5OWqo0Rgx7YKc=
+2017-07-13 11:26:16,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: qN7v0nS9A9l2lDLr5OLUcCa6/+oAUX5OWqo0Rgx7YKc=
+2017-07-13 11:26:16,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:28:41,830 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:28:42,463 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:28:48,142 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:q08f1Or6V8XUmL6bFiAGGUTzaEkN5cthz1wsPOqMdfQ=:b149edfe0b0f47daa5f750a6d9352528:1499941728
+2017-07-13 11:28:48,142 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, q08f1Or6V8XUmL6bFiAGGUTzaEkN5cthz1wsPOqMdfQ=, b149edfe0b0f47daa5f750a6d9352528, 1499941728
+2017-07-13 11:28:51,537 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:28:53,970 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:28:55,439 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:28:56,790 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:28:56,867 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:28:56,868 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:28:58,424 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [b149edfe0b0f47daa5f750a6d9352528], [1499941728]
+
+2017-07-13 11:29:03,384 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:29:03,964 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logb149edfe0b0f47daa5f750a6d93525281499941728
+2017-07-13 11:29:08,409 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: q08f1Or6V8XUmL6bFiAGGUTzaEkN5cthz1wsPOqMdfQ=
+2017-07-13 11:29:08,944 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: q08f1Or6V8XUmL6bFiAGGUTzaEkN5cthz1wsPOqMdfQ=
+2017-07-13 11:29:12,487 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:30:15,611 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:30:16,323 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:30:23,800 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 11:30:23,830 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 11:30:54,685 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:30:54,837 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:30:58,924 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 11:30:58,934 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 11:31:25,490 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:31:26,140 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:31:36,015 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:XkSqXMnEJOvTlNtaGn3Dce2F3tnvt0+rLjFqZzvpTr8=:717a6e15457749c7a8fab86ef6ac9d44:1499941888
+2017-07-13 11:32:10,633 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, XkSqXMnEJOvTlNtaGn3Dce2F3tnvt0+rLjFqZzvpTr8=, 717a6e15457749c7a8fab86ef6ac9d44, 1499941888
+2017-07-13 11:32:16,169 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:32:22,838 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:32:29,670 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:32:33,079 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:32:33,158 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:32:33,158 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:32:37,870 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [717a6e15457749c7a8fab86ef6ac9d44], [1499941888]
+
+2017-07-13 11:33:08,768 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:33:09,390 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log717a6e15457749c7a8fab86ef6ac9d441499941888
+2017-07-13 11:33:20,042 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: XkSqXMnEJOvTlNtaGn3Dce2F3tnvt0+rLjFqZzvpTr8=
+2017-07-13 11:33:21,999 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: XkSqXMnEJOvTlNtaGn3Dce2F3tnvt0+rLjFqZzvpTr8=
+2017-07-13 11:34:03,758 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:35:04,325 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:35:04,477 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:35:11,619 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:QVX/VHd4ms3p1JKdxxqZVdxQe/AcoyF1bEbMWWn3UcI=:3c6acfa903764aa9b4e30635c2f736c1:1499942109
+2017-07-13 11:35:11,620 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, QVX/VHd4ms3p1JKdxxqZVdxQe/AcoyF1bEbMWWn3UcI=, 3c6acfa903764aa9b4e30635c2f736c1, 1499942109
+2017-07-13 11:35:12,781 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:35:12,781 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:35:12,781 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:35:12,796 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:35:12,875 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:35:12,876 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:35:12,876 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [3c6acfa903764aa9b4e30635c2f736c1], [1499942109]
+
+2017-07-13 11:35:12,876 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:35:12,876 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log3c6acfa903764aa9b4e30635c2f736c11499942109
+2017-07-13 11:35:12,877 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: QVX/VHd4ms3p1JKdxxqZVdxQe/AcoyF1bEbMWWn3UcI=
+2017-07-13 11:35:12,877 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: QVX/VHd4ms3p1JKdxxqZVdxQe/AcoyF1bEbMWWn3UcI=
+2017-07-13 11:35:12,877 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:36:13,941 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:36:14,706 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:36:17,783 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:o09BBNCg1LFQoxsZwiVYJf+53Fjw6MJJHhmCqdPYKl4=:29e0bb3d9ab54f2cbcecc37dc3a96cd3:1499942177
+2017-07-13 11:36:17,783 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, o09BBNCg1LFQoxsZwiVYJf+53Fjw6MJJHhmCqdPYKl4=, 29e0bb3d9ab54f2cbcecc37dc3a96cd3, 1499942177
+2017-07-13 11:36:18,479 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:36:18,490 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 11:36:18,493 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 11:38:10,021 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:38:10,702 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:38:13,953 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:8PBa99caxp54ceZIVh9DbaqIwIqHAHRcE+p7OgvwPEo=:bd7226a60c3541b3bb839247ba556093:1499942292
+2017-07-13 11:38:13,954 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 8PBa99caxp54ceZIVh9DbaqIwIqHAHRcE+p7OgvwPEo=, bd7226a60c3541b3bb839247ba556093, 1499942292
+2017-07-13 11:38:16,065 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:38:16,075 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 11:38:16,078 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 11:38:39,228 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:38:39,377 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:38:46,248 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:k6ZqV8GF79E7W73AJ+NtIB9Ke/ehtgQlX2Hn8gVoU0k=:1d857f06f5bc42b8b35948daa9979c85:1499942321
+2017-07-13 11:38:54,707 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, k6ZqV8GF79E7W73AJ+NtIB9Ke/ehtgQlX2Hn8gVoU0k=, 1d857f06f5bc42b8b35948daa9979c85, 1499942321
+2017-07-13 11:39:06,486 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:39:43,599 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:39:44,276 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:39:48,623 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:keE4zMzLcOcB00zYIONVqwWQasl+znrhPDC8DlKq9I0=:b3fc85e59e1f42cd95ffeb913de14b7d:1499942386
+2017-07-13 11:39:48,624 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, keE4zMzLcOcB00zYIONVqwWQasl+znrhPDC8DlKq9I0=, b3fc85e59e1f42cd95ffeb913de14b7d, 1499942386
+2017-07-13 11:39:48,625 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:40:36,832 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 11:40:36,835 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 11:40:44,927 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:40:45,096 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:40:49,606 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:kZvOnoZWfp8aPayXD7Ojkm/fk8bKMSGuYRAXM6RRhaY=:28f3729a3e1c49808515e9b336d93a11:1499942446
+2017-07-13 11:40:49,606 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, kZvOnoZWfp8aPayXD7Ojkm/fk8bKMSGuYRAXM6RRhaY=, 28f3729a3e1c49808515e9b336d93a11, 1499942446
+2017-07-13 11:40:49,606 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:41:00,599 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 11:41:00,600 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 11:41:06,623 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:41:06,778 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:41:10,683 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:0hxkwCpDbXfofy1ACicj4/lKTKqenZ4D4qMt/YXTWKA=:b9b6a2ad13a44461b24890c9b41372c0:1499942469
+2017-07-13 11:41:10,683 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 0hxkwCpDbXfofy1ACicj4/lKTKqenZ4D4qMt/YXTWKA=, b9b6a2ad13a44461b24890c9b41372c0, 1499942469
+2017-07-13 11:41:10,683 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:42:35,271 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:42:36,003 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:42:40,898 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:7mxTVHeDku8DwV5VUXgox06Mp/F2fKgroNDBcrxr3M0=:3e422ebe0d084b3299a23e431ab2648e:1499942557
+2017-07-13 11:42:40,898 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 7mxTVHeDku8DwV5VUXgox06Mp/F2fKgroNDBcrxr3M0=, 3e422ebe0d084b3299a23e431ab2648e, 1499942557
+2017-07-13 11:42:40,900 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:42:44,586 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:42:44,586 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:42:44,603 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:42:44,682 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:42:44,682 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:42:44,683 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [3e422ebe0d084b3299a23e431ab2648e], [1499942557]
+
+2017-07-13 11:42:44,688 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:42:44,688 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log3e422ebe0d084b3299a23e431ab2648e1499942557
+2017-07-13 11:42:44,688 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: 7mxTVHeDku8DwV5VUXgox06Mp/F2fKgroNDBcrxr3M0=
+2017-07-13 11:42:44,688 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: 7mxTVHeDku8DwV5VUXgox06Mp/F2fKgroNDBcrxr3M0=
+2017-07-13 11:42:53,863 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:49:16,293 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:49:17,674 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:49:22,509 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:wIbTukFU3hZXDx6FYvZdQtjTFoq1VHhKt6v9dZmi8vs=:ec1a681238e2408690a3b7c224315e92:1499942961
+2017-07-13 11:49:22,509 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, wIbTukFU3hZXDx6FYvZdQtjTFoq1VHhKt6v9dZmi8vs=, ec1a681238e2408690a3b7c224315e92, 1499942961
+2017-07-13 11:49:22,511 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:49:24,408 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:49:24,409 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:49:24,424 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:49:25,002 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:49:25,003 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:49:25,003 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [ec1a681238e2408690a3b7c224315e92], [1499942961]
+
+2017-07-13 11:49:25,007 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:49:25,007 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logec1a681238e2408690a3b7c224315e921499942961
+2017-07-13 11:49:25,008 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: wIbTukFU3hZXDx6FYvZdQtjTFoq1VHhKt6v9dZmi8vs=
+2017-07-13 11:49:25,008 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: wIbTukFU3hZXDx6FYvZdQtjTFoq1VHhKt6v9dZmi8vs=
+2017-07-13 11:49:25,967 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:50:44,236 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:50:45,445 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:50:53,177 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:3Jv1ypTLqgy1JOOrVqURNc8lgiWE0ljYOr9Wt5LvXXQ=:9200a572c5d94871a093e46a2bc499e1:1499943048
+2017-07-13 11:50:53,177 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 3Jv1ypTLqgy1JOOrVqURNc8lgiWE0ljYOr9Wt5LvXXQ=, 9200a572c5d94871a093e46a2bc499e1, 1499943048
+2017-07-13 11:50:53,179 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:50:55,753 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:50:55,753 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:50:55,769 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:50:56,358 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:50:56,358 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:50:56,358 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [9200a572c5d94871a093e46a2bc499e1], [1499943048]
+
+2017-07-13 11:50:56,363 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:50:56,363 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log9200a572c5d94871a093e46a2bc499e11499943048
+2017-07-13 11:50:56,363 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: 3Jv1ypTLqgy1JOOrVqURNc8lgiWE0ljYOr9Wt5LvXXQ=
+2017-07-13 11:50:56,363 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: 3Jv1ypTLqgy1JOOrVqURNc8lgiWE0ljYOr9Wt5LvXXQ=
+2017-07-13 11:51:12,132 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:53:24,762 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:53:25,511 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:53:29,931 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:33LbiaI5ls6/Jh5A5ZD+LqGpwse6MpAvEsc12B06x2M=:66c3d0be94214ed6b3af2a53254752e5:1499943207
+2017-07-13 11:53:29,932 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 33LbiaI5ls6/Jh5A5ZD+LqGpwse6MpAvEsc12B06x2M=, 66c3d0be94214ed6b3af2a53254752e5, 1499943207
+2017-07-13 11:53:29,934 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:53:32,145 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:53:32,145 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:53:32,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:53:32,238 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:53:32,238 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:53:32,239 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [66c3d0be94214ed6b3af2a53254752e5], [1499943207]
+
+2017-07-13 11:53:32,243 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:53:32,243 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log66c3d0be94214ed6b3af2a53254752e51499943207
+2017-07-13 11:53:32,243 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: 33LbiaI5ls6/Jh5A5ZD+LqGpwse6MpAvEsc12B06x2M=
+2017-07-13 11:53:32,243 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: 33LbiaI5ls6/Jh5A5ZD+LqGpwse6MpAvEsc12B06x2M=
+2017-07-13 11:53:34,014 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 11:59:10,911 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 11:59:11,677 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 11:59:13,552 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:pxuHEGm6jgCXpqRhLw+kyE7Iue1vOZCR4wA77yTm/0E=:258b78e1c59d4b9fa0c3d2461e34bb6d:1499943554
+2017-07-13 11:59:13,553 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, pxuHEGm6jgCXpqRhLw+kyE7Iue1vOZCR4wA77yTm/0E=, 258b78e1c59d4b9fa0c3d2461e34bb6d, 1499943554
+2017-07-13 11:59:13,554 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 11:59:13,555 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 11:59:13,555 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 11:59:13,569 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 11:59:13,648 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 11:59:13,649 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 11:59:13,649 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [258b78e1c59d4b9fa0c3d2461e34bb6d], [1499943554]
+
+2017-07-13 11:59:13,654 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 11:59:13,654 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log258b78e1c59d4b9fa0c3d2461e34bb6d1499943554
+2017-07-13 11:59:13,654 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: pxuHEGm6jgCXpqRhLw+kyE7Iue1vOZCR4wA77yTm/0E=
+2017-07-13 11:59:13,655 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: pxuHEGm6jgCXpqRhLw+kyE7Iue1vOZCR4wA77yTm/0E=
+2017-07-13 11:59:13,655 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 12:02:21,843 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 12:02:22,000 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 12:02:23,861 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:IbknmK2tU+ybnBlRFxxmDikUF2i6009SIVa6dxJ1+1s=:e24e56f5c9e8412a8bc83893749178ad:1499943744
+2017-07-13 12:02:23,861 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, IbknmK2tU+ybnBlRFxxmDikUF2i6009SIVa6dxJ1+1s=, e24e56f5c9e8412a8bc83893749178ad, 1499943744
+2017-07-13 12:02:23,861 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 12:02:23,862 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 12:02:23,862 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 12:02:23,876 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 12:02:23,953 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 12:02:23,954 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 12:02:23,954 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [e24e56f5c9e8412a8bc83893749178ad], [1499943744]
+
+2017-07-13 12:02:23,954 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 12:02:23,954 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-loge24e56f5c9e8412a8bc83893749178ad1499943744
+2017-07-13 12:02:23,955 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: IbknmK2tU+ybnBlRFxxmDikUF2i6009SIVa6dxJ1+1s=
+2017-07-13 12:02:23,955 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: IbknmK2tU+ybnBlRFxxmDikUF2i6009SIVa6dxJ1+1s=
+2017-07-13 12:02:23,955 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 12:10:15,292 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 12:10:16,193 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 12:10:18,923 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:wjANFg+tqufq/ZFytz5F65f88YAuDwkRwVSOrhjBjo8=:8df25e8c5e18407fa33f2b0622f3a5e5:1499944219
+2017-07-13 12:10:18,923 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, wjANFg+tqufq/ZFytz5F65f88YAuDwkRwVSOrhjBjo8=, 8df25e8c5e18407fa33f2b0622f3a5e5, 1499944219
+2017-07-13 12:10:25,834 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 12:10:25,834 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 12:10:25,834 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 12:10:25,850 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 12:10:25,929 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 12:10:25,929 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 12:10:25,930 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [8df25e8c5e18407fa33f2b0622f3a5e5], [1499944219]
+
+2017-07-13 12:10:29,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 12:10:29,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log8df25e8c5e18407fa33f2b0622f3a5e51499944219
+2017-07-13 12:10:29,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: wjANFg+tqufq/ZFytz5F65f88YAuDwkRwVSOrhjBjo8=
+2017-07-13 12:10:29,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: wjANFg+tqufq/ZFytz5F65f88YAuDwkRwVSOrhjBjo8=
+2017-07-13 12:10:29,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 12:11:51,651 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 12:11:51,803 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 12:11:53,555 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:pcEQSqqxoNWVhK2+x8WA7a9uVluxujkSJ9lJMbfTCpA=:293ef4125a0d43cea78673de0c9aacf1:1499944314
+2017-07-13 12:11:53,555 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, pcEQSqqxoNWVhK2+x8WA7a9uVluxujkSJ9lJMbfTCpA=, 293ef4125a0d43cea78673de0c9aacf1, 1499944314
+2017-07-13 12:11:57,940 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 12:11:57,940 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 12:11:57,941 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 12:11:59,832 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 12:11:59,911 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 12:11:59,911 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 12:12:30,854 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [293ef4125a0d43cea78673de0c9aacf1], [1499944314]
+
+2017-07-13 12:12:40,306 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:pcEQSqqxoNWVhK2+x8WA7a9uVluxujkSJ9lJMbfTCpA=:293ef4125a0d43cea78673de0c9aacf1:1499944314
+2017-07-13 12:12:40,320 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, pcEQSqqxoNWVhK2+x8WA7a9uVluxujkSJ9lJMbfTCpA=, 293ef4125a0d43cea78673de0c9aacf1, 1499944314
+2017-07-13 12:12:47,629 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 12:12:47,630 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 12:12:47,630 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 12:13:03,548 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 12:13:04,275 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 12:13:07,526 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:TAOLj+hQ5LxIiQTNgx0fierAZHdBQdx/afQd/1Gsef8=:6ecef96390e54142a7eeabfd7488ca7f:1499944387
+2017-07-13 12:13:07,527 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, TAOLj+hQ5LxIiQTNgx0fierAZHdBQdx/afQd/1Gsef8=, 6ecef96390e54142a7eeabfd7488ca7f, 1499944387
+2017-07-13 12:13:09,878 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 12:13:09,878 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 12:13:09,878 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 12:13:11,109 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 12:13:11,191 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 12:13:11,191 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 12:13:11,192 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [6ecef96390e54142a7eeabfd7488ca7f], [1499944387]
+
+2017-07-13 12:13:13,285 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 12:13:13,285 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log6ecef96390e54142a7eeabfd7488ca7f1499944387
+2017-07-13 12:13:13,286 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: TAOLj+hQ5LxIiQTNgx0fierAZHdBQdx/afQd/1Gsef8=
+2017-07-13 12:13:13,286 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: TAOLj+hQ5LxIiQTNgx0fierAZHdBQdx/afQd/1Gsef8=
+2017-07-13 12:13:13,286 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 12:15:05,390 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 12:15:05,541 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 12:53:56,544 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 12:53:57,273 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 12:54:06,027 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:thNVFhgyQyydVZIJY61WJH4mKlwiKpZ9mJmLCCPR8s4=:30feebea538048cb822eeb120c85c89f:1499946846
+2017-07-13 12:54:06,027 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, thNVFhgyQyydVZIJY61WJH4mKlwiKpZ9mJmLCCPR8s4=, 30feebea538048cb822eeb120c85c89f, 1499946846
+2017-07-13 12:54:06,029 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 12:54:06,029 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 12:54:06,029 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 12:54:06,044 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 12:54:06,123 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 12:54:06,124 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 12:54:06,125 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [30feebea538048cb822eeb120c85c89f], [1499946846]
+
+2017-07-13 12:54:06,139 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 12:54:06,140 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log30feebea538048cb822eeb120c85c89f1499946846
+2017-07-13 12:54:06,140 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: thNVFhgyQyydVZIJY61WJH4mKlwiKpZ9mJmLCCPR8s4=
+2017-07-13 12:54:06,141 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: thNVFhgyQyydVZIJY61WJH4mKlwiKpZ9mJmLCCPR8s4=
+2017-07-13 12:54:06,141 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 13:30:27,318 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 13:30:28,136 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 13:31:18,375 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:vLT4ycv9XOHtPw719oI2D9YrrFiNB2Ai4VtQA8sC5eg=:767ac9685af6445fb33c5f6e699614a2:1499949042
+2017-07-13 13:31:18,376 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, vLT4ycv9XOHtPw719oI2D9YrrFiNB2Ai4VtQA8sC5eg=, 767ac9685af6445fb33c5f6e699614a2, 1499949042
+2017-07-13 13:31:18,377 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 13:31:18,403 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 13:31:18,406 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 13:37:26,901 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 13:37:27,645 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 13:37:30,371 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:okvT623EgaIiVHWqrqi3MaYpth5AprQnJM7uqVXChPg=:2f9397556ccb436ab0c3978e48aedb45:1499949450
+2017-07-13 13:37:30,372 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, okvT623EgaIiVHWqrqi3MaYpth5AprQnJM7uqVXChPg=, 2f9397556ccb436ab0c3978e48aedb45, 1499949450
+2017-07-13 13:37:30,373 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 13:37:30,401 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 13:37:30,404 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 13:43:20,184 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 13:43:21,009 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 13:55:28,934 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 13:55:29,281 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 13:59:36,305 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:BZ2Res65IcOmn8PmGrZAI0d3KBGXrIz/+ISQJM5vJp4=:1743d6bead084d5b96bfe3386b541c62:1499950758
+2017-07-13 13:59:36,305 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, BZ2Res65IcOmn8PmGrZAI0d3KBGXrIz/+ISQJM5vJp4=, 1743d6bead084d5b96bfe3386b541c62, 1499950758
+2017-07-13 13:59:36,307 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 13:59:36,334 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 13:59:36,337 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 14:00:24,527 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:00:24,826 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:00:59,804 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:p9S2JMDO7lm7OI0TmB6k4lJPLlrJe+KZDA6ov8RBZAw=:ace59a3ce3e2470a874350afe4231220:1499950846
+2017-07-13 14:00:59,804 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, p9S2JMDO7lm7OI0TmB6k4lJPLlrJe+KZDA6ov8RBZAw=, ace59a3ce3e2470a874350afe4231220, 1499950846
+2017-07-13 14:00:59,804 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:00:59,814 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 14:00:59,815 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 14:03:28,832 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:03:28,994 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:04:45,768 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:9osYXSvFlwRSYBX6nVTHFZ3qpA/Lz8s+PV/u6HlWTSA=:ad48bd2317f34554ba35f9a2e88d2d21:1499951028
+2017-07-13 14:04:45,769 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 9osYXSvFlwRSYBX6nVTHFZ3qpA/Lz8s+PV/u6HlWTSA=, ad48bd2317f34554ba35f9a2e88d2d21, 1499951028
+2017-07-13 14:04:45,769 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:04:45,779 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 14:04:45,779 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is invalid
+
+2017-07-13 14:05:38,668 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:05:39,544 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:06:03,180 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:6b6lAKTGVuM7I3F8LkJUzdwcULPf9a30/PvuYT/LP3I=:85abe57fdd894cdd82d72ad7bb24c58b:1499951147
+2017-07-13 14:06:31,376 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 6b6lAKTGVuM7I3F8LkJUzdwcULPf9a30/PvuYT/LP3I=, 85abe57fdd894cdd82d72ad7bb24c58b, 1499951147
+2017-07-13 14:06:33,699 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:06:33,713 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 14:06:46,241 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:06:46,257 ERROR (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Value cannot be null.
+Parameter name: oldValue
+System.ArgumentNullException: Value cannot be null.
+Parameter name: oldValue
+   at System.String.Replace(String oldValue, String newValue)
+   at drs_backend_phase1.Filter.HMACAuthenticationAttribute.<IsValidRequest>d__10.MoveNext() in G:\Git\drs-backend-phase1\drs-backend-phase1\Filter\HMACAuthenticationAttribute.cs:line 196
+2017-07-13 14:07:02,719 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:07:46,307 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:07:47,065 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:07:59,393 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:UqsDQRjxTypC+ub3ht9xgsihKvQAB3xE/SOfovkDtq8=:e3d11b3c8d6b4fd399696df30b73f3da:1499951273
+2017-07-13 14:08:13,757 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, UqsDQRjxTypC+ub3ht9xgsihKvQAB3xE/SOfovkDtq8=, e3d11b3c8d6b4fd399696df30b73f3da, 1499951273
+2017-07-13 14:08:15,831 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:08:18,385 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:08:19,548 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:08:20,744 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:08:20,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:08:20,823 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:08:24,427 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [e3d11b3c8d6b4fd399696df30b73f3da], [1499951273]
+
+2017-07-13 14:08:29,108 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:08:30,983 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-loge3d11b3c8d6b4fd399696df30b73f3da1499951273
+2017-07-13 14:08:40,233 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: UqsDQRjxTypC+ub3ht9xgsihKvQAB3xE/SOfovkDtq8=
+2017-07-13 14:08:42,083 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: UqsDQRjxTypC+ub3ht9xgsihKvQAB3xE/SOfovkDtq8=
+2017-07-13 14:08:48,317 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:10:57,689 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:10:57,961 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:11:09,494 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:+adi11pmcEXjJLx1YxJKKYao6kVeU2o+a/pqM26tKPI=:adfd1e25356041088574e73662c4cc14:1499951461
+2017-07-13 14:11:25,134 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, +adi11pmcEXjJLx1YxJKKYao6kVeU2o+a/pqM26tKPI=, adfd1e25356041088574e73662c4cc14, 1499951461
+2017-07-13 14:11:31,493 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:11:31,494 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:11:31,494 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:11:31,509 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:11:31,588 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:11:31,588 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:11:31,588 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [adfd1e25356041088574e73662c4cc14], [1499951461]
+
+2017-07-13 14:11:31,589 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:11:31,589 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logadfd1e25356041088574e73662c4cc141499951461
+2017-07-13 14:11:31,589 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: +adi11pmcEXjJLx1YxJKKYao6kVeU2o+a/pqM26tKPI=
+2017-07-13 14:11:31,589 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: +adi11pmcEXjJLx1YxJKKYao6kVeU2o+a/pqM26tKPI=
+2017-07-13 14:11:36,702 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:14:30,161 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:14:30,932 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:14:38,965 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:ZHM1+PSdq+56rLjWMBCzE2t+HRvsIqfuJwLvFG3XX0M=:457fb91dccfe4d3e964a272f6ad1bef5:1499951674
+2017-07-13 14:14:42,731 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, ZHM1+PSdq+56rLjWMBCzE2t+HRvsIqfuJwLvFG3XX0M=, 457fb91dccfe4d3e964a272f6ad1bef5, 1499951674
+2017-07-13 14:14:42,919 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:14:42,920 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:14:42,920 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:14:42,940 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:14:43,017 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:14:43,017 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:14:43,018 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [457fb91dccfe4d3e964a272f6ad1bef5], [1499951674]
+
+2017-07-13 14:14:43,022 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:14:43,022 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log457fb91dccfe4d3e964a272f6ad1bef51499951674
+2017-07-13 14:14:43,022 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: ZHM1+PSdq+56rLjWMBCzE2t+HRvsIqfuJwLvFG3XX0M=
+2017-07-13 14:14:43,022 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: ZHM1+PSdq+56rLjWMBCzE2t+HRvsIqfuJwLvFG3XX0M=
+2017-07-13 14:14:44,350 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:14:58,066 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 14:14:59,214 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 14:17:21,510 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:17:22,762 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:18:12,220 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 14:18:12,249 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:18:12,263 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 14:18:12,909 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:18:31,454 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 14:18:31,464 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 14:21:07,287 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:21:08,640 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:21:24,133 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:UszlHFvRjN0rHHn9RlAalqcZrgmslM08N3e1kJ/2Xtw=:640bf9d80b854b878377d172d01070b9:1499952076
+2017-07-13 14:21:24,134 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, UszlHFvRjN0rHHn9RlAalqcZrgmslM08N3e1kJ/2Xtw=, 640bf9d80b854b878377d172d01070b9, 1499952076
+2017-07-13 14:21:24,136 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:21:24,136 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:21:24,136 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:21:24,152 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:21:24,740 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:21:24,740 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:21:24,741 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [640bf9d80b854b878377d172d01070b9], [1499952076]
+
+2017-07-13 14:21:24,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:21:24,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log640bf9d80b854b878377d172d01070b91499952076
+2017-07-13 14:21:24,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: UszlHFvRjN0rHHn9RlAalqcZrgmslM08N3e1kJ/2Xtw=
+2017-07-13 14:21:24,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: UszlHFvRjN0rHHn9RlAalqcZrgmslM08N3e1kJ/2Xtw=
+2017-07-13 14:21:24,746 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:29:00,734 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:29:02,158 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:29:04,914 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:r+ySEr1lWKJbB+Zh6wG9zMSANB/QPMoICNrcuQOP1OA=:68310a811c44480083089d8856394785:1499952545
+2017-07-13 14:29:04,915 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, r+ySEr1lWKJbB+Zh6wG9zMSANB/QPMoICNrcuQOP1OA=, 68310a811c44480083089d8856394785, 1499952545
+2017-07-13 14:29:04,916 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:29:04,917 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:29:04,917 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:29:04,931 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:29:05,523 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:29:05,524 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:29:05,525 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [68310a811c44480083089d8856394785], [1499952545]
+
+2017-07-13 14:29:05,537 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:29:05,537 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log68310a811c44480083089d88563947851499952545
+2017-07-13 14:29:05,538 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: r+ySEr1lWKJbB+Zh6wG9zMSANB/QPMoICNrcuQOP1OA=
+2017-07-13 14:29:05,538 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: r+ySEr1lWKJbB+Zh6wG9zMSANB/QPMoICNrcuQOP1OA=
+2017-07-13 14:29:05,538 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:29:11,332 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 14:29:11,353 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 14:30:29,240 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:30:31,108 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:30:34,986 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:1JxYXBGG43Y9eah5iQLaS3rFyX/AXWtfmJ+66REIaXE=:3e34a92d3a7f4935bdab9acf983308c6:1499952635
+2017-07-13 14:30:34,987 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, 1JxYXBGG43Y9eah5iQLaS3rFyX/AXWtfmJ+66REIaXE=, 3e34a92d3a7f4935bdab9acf983308c6, 1499952635
+2017-07-13 14:30:34,988 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:30:34,988 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:30:34,988 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:30:35,004 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:30:35,611 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:30:35,612 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:30:35,613 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [3e34a92d3a7f4935bdab9acf983308c6], [1499952635]
+
+2017-07-13 14:30:35,628 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:30:35,629 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log3e34a92d3a7f4935bdab9acf983308c61499952635
+2017-07-13 14:30:35,629 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: 1JxYXBGG43Y9eah5iQLaS3rFyX/AXWtfmJ+66REIaXE=
+2017-07-13 14:30:35,630 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: 1JxYXBGG43Y9eah5iQLaS3rFyX/AXWtfmJ+66REIaXE=
+2017-07-13 14:30:35,630 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:32:52,573 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:32:53,804 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:33:20,812 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:u79WqA7zz7YRS0A+gQb9sAjPkc+r6FiTBIXwN7V/o4Y=:d70c935102944f58b2ce2409be706f6c:1499952789
+2017-07-13 14:33:30,408 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, u79WqA7zz7YRS0A+gQb9sAjPkc+r6FiTBIXwN7V/o4Y=, d70c935102944f58b2ce2409be706f6c, 1499952789
+2017-07-13 14:33:31,689 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:33:31,689 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:33:31,689 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:33:31,707 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:33:32,293 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:33:32,294 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:33:32,294 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [d70c935102944f58b2ce2409be706f6c], [1499952789]
+
+2017-07-13 14:33:32,299 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:33:32,299 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logd70c935102944f58b2ce2409be706f6c1499952789
+2017-07-13 14:33:32,299 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: u79WqA7zz7YRS0A+gQb9sAjPkc+r6FiTBIXwN7V/o4Y=
+2017-07-13 14:33:32,299 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: u79WqA7zz7YRS0A+gQb9sAjPkc+r6FiTBIXwN7V/o4Y=
+2017-07-13 14:33:40,932 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:41:38,535 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:41:38,916 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:41:44,512 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:nkn7QEJusucmAznEBcWoJ7BE0jF200qfJP+TX3UBeRY=:ad3f7ff21bb74b0bb61ddfebb396cf34:1499953302
+2017-07-13 14:41:44,512 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, nkn7QEJusucmAznEBcWoJ7BE0jF200qfJP+TX3UBeRY=, ad3f7ff21bb74b0bb61ddfebb396cf34, 1499953302
+2017-07-13 14:41:44,514 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:41:44,515 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:41:44,515 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:41:44,531 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:41:44,610 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:41:44,610 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:41:44,610 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [ad3f7ff21bb74b0bb61ddfebb396cf34], [1499953302]
+
+2017-07-13 14:41:44,615 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:41:44,616 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logad3f7ff21bb74b0bb61ddfebb396cf341499953302
+2017-07-13 14:41:44,616 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: nkn7QEJusucmAznEBcWoJ7BE0jF200qfJP+TX3UBeRY=
+2017-07-13 14:41:44,616 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: nkn7QEJusucmAznEBcWoJ7BE0jF200qfJP+TX3UBeRY=
+2017-07-13 14:41:44,616 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:57:35,033 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:57:36,886 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:57:41,734 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:uOlgjBA7fRpjcNLvdr9GrW/w59QOS7e68kJflBQxAEg=:fb1fedbcd1e14441802330460d835d6c:1499954259
+2017-07-13 14:57:41,735 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, uOlgjBA7fRpjcNLvdr9GrW/w59QOS7e68kJflBQxAEg=, fb1fedbcd1e14441802330460d835d6c, 1499954259
+2017-07-13 14:57:41,737 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:57:41,737 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:57:41,737 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:57:41,753 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:57:42,343 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:57:42,344 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:57:42,344 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [fb1fedbcd1e14441802330460d835d6c], [1499954259]
+
+2017-07-13 14:57:42,349 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:57:42,349 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logfb1fedbcd1e14441802330460d835d6c1499954259
+2017-07-13 14:57:42,349 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: uOlgjBA7fRpjcNLvdr9GrW/w59QOS7e68kJflBQxAEg=
+2017-07-13 14:57:42,349 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: uOlgjBA7fRpjcNLvdr9GrW/w59QOS7e68kJflBQxAEg=
+2017-07-13 14:57:42,349 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:58:18,775 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:58:19,457 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 14:58:27,253 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:cpli3IKSQk7+78j7atzCYt7JzIB8BiRGKQjDj8s5H+E=:1a48f5f4998e410a9fc554e6f7e1f0a1:1499954304
+2017-07-13 14:58:27,253 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, cpli3IKSQk7+78j7atzCYt7JzIB8BiRGKQjDj8s5H+E=, 1a48f5f4998e410a9fc554e6f7e1f0a1, 1499954304
+2017-07-13 14:58:27,253 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 14:58:27,254 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 14:58:27,254 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 14:58:27,270 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 14:58:27,856 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 14:58:27,857 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 14:58:27,857 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [1a48f5f4998e410a9fc554e6f7e1f0a1], [1499954304]
+
+2017-07-13 14:58:27,857 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 14:58:27,858 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log1a48f5f4998e410a9fc554e6f7e1f0a11499954304
+2017-07-13 14:58:27,858 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: cpli3IKSQk7+78j7atzCYt7JzIB8BiRGKQjDj8s5H+E=
+2017-07-13 14:58:27,858 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: cpli3IKSQk7+78j7atzCYt7JzIB8BiRGKQjDj8s5H+E=
+2017-07-13 14:58:27,858 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 14:59:00,524 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 14:59:01,244 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 15:00:39,045 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:esjobLezCw6+rQ6qmtfTfbORx8hzA37GoH3yKrUIzzk=:9fa42d1ccbca441dad1ef7e74f449ed7:1499954367
+2017-07-13 15:00:39,046 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, esjobLezCw6+rQ6qmtfTfbORx8hzA37GoH3yKrUIzzk=, 9fa42d1ccbca441dad1ef7e74f449ed7, 1499954367
+2017-07-13 15:00:39,046 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 15:00:43,455 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 15:00:51,627 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 15:00:56,942 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 15:00:57,635 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 15:00:57,635 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 15:01:04,750 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [9fa42d1ccbca441dad1ef7e74f449ed7], [1499954367]
+
+2017-07-13 15:01:17,743 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 15:01:18,356 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log9fa42d1ccbca441dad1ef7e74f449ed71499954367
+2017-07-13 15:01:36,875 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: esjobLezCw6+rQ6qmtfTfbORx8hzA37GoH3yKrUIzzk=
+2017-07-13 15:01:37,478 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: esjobLezCw6+rQ6qmtfTfbORx8hzA37GoH3yKrUIzzk=
+2017-07-13 15:02:09,210 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 15:17:44,396 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 15:18:43,123 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 15:20:31,512 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 15:20:31,665 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 15:20:39,909 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:D8M+gSmZxq5ecpX9S+GaUd2SynUAZNPn5hAKLKUD7Ok=:7830d6bd7dcf427a922bfaa410631031:1499955638
+2017-07-13 15:20:39,910 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, D8M+gSmZxq5ecpX9S+GaUd2SynUAZNPn5hAKLKUD7Ok=, 7830d6bd7dcf427a922bfaa410631031, 1499955638
+2017-07-13 15:20:39,910 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 15:20:45,936 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 15:20:45,936 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 15:20:45,952 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 15:20:46,029 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 15:20:46,029 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 15:20:46,030 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [7830d6bd7dcf427a922bfaa410631031], [1499955638]
+
+2017-07-13 15:20:46,030 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 15:20:46,030 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log7830d6bd7dcf427a922bfaa4106310311499955638
+2017-07-13 15:20:46,030 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: D8M+gSmZxq5ecpX9S+GaUd2SynUAZNPn5hAKLKUD7Ok=
+2017-07-13 15:20:46,031 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: D8M+gSmZxq5ecpX9S+GaUd2SynUAZNPn5hAKLKUD7Ok=
+2017-07-13 15:20:46,031 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 15:30:36,715 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 15:30:37,560 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 15:31:07,495 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:UN35auWUBIg5S6FKJtT6KV2Uf4c3In0lhVyfdxdspyI=:ca549fc64339431e9a267f9fb8973761:1499956267
+2017-07-13 15:31:07,495 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, UN35auWUBIg5S6FKJtT6KV2Uf4c3In0lhVyfdxdspyI=, ca549fc64339431e9a267f9fb8973761, 1499956267
+2017-07-13 15:31:07,495 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 15:31:10,938 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 15:31:10,938 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 15:31:10,953 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 15:31:11,631 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 15:31:11,632 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 15:31:11,632 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [ca549fc64339431e9a267f9fb8973761], [1499956267]
+
+2017-07-13 15:31:11,633 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 15:31:11,633 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logca549fc64339431e9a267f9fb89737611499956267
+2017-07-13 15:31:11,633 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: UN35auWUBIg5S6FKJtT6KV2Uf4c3In0lhVyfdxdspyI=
+2017-07-13 15:31:11,633 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: UN35auWUBIg5S6FKJtT6KV2Uf4c3In0lhVyfdxdspyI=
+2017-07-13 15:31:11,633 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 15:31:34,988 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 15:31:35,641 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 16:43:34,315 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 16:43:34,935 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 16:43:43,378 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:RW/mqv6kIudEjIE29wZ2uTYGFP7deUCBEurZIrnQ0gI=:0f0337dd90ba4a658117b8c11a220268:1499960623
+2017-07-13 16:43:43,378 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, RW/mqv6kIudEjIE29wZ2uTYGFP7deUCBEurZIrnQ0gI=, 0f0337dd90ba4a658117b8c11a220268, 1499960623
+2017-07-13 16:43:43,380 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 16:43:49,563 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 16:43:49,565 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 16:43:49,581 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 16:43:49,659 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 16:43:49,659 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 16:43:49,659 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [0f0337dd90ba4a658117b8c11a220268], [1499960623]
+
+2017-07-13 16:43:49,663 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 16:43:49,663 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log0f0337dd90ba4a658117b8c11a2202681499960623
+2017-07-13 16:43:49,664 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: RW/mqv6kIudEjIE29wZ2uTYGFP7deUCBEurZIrnQ0gI=
+2017-07-13 16:43:49,664 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: RW/mqv6kIudEjIE29wZ2uTYGFP7deUCBEurZIrnQ0gI=
+2017-07-13 16:43:49,664 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 16:44:27,667 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 16:45:49,665 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 16:45:55,546 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:IcFF6HJSn7O81q1DttvUIg8mDKWbLCx4xX/O6jWjZ+A=:79852c6192e3466f9de778b2fb93021d:1499960756
+2017-07-13 16:45:55,546 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, IcFF6HJSn7O81q1DttvUIg8mDKWbLCx4xX/O6jWjZ+A=, 79852c6192e3466f9de778b2fb93021d, 1499960756
+2017-07-13 16:45:55,546 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 16:45:58,577 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 16:45:58,578 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 16:45:58,594 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 16:45:58,672 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 16:45:58,672 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 16:45:58,673 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [79852c6192e3466f9de778b2fb93021d], [1499960756]
+
+2017-07-13 16:45:58,673 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 16:45:58,674 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log79852c6192e3466f9de778b2fb93021d1499960756
+2017-07-13 16:45:58,674 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: IcFF6HJSn7O81q1DttvUIg8mDKWbLCx4xX/O6jWjZ+A=
+2017-07-13 16:45:58,674 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: IcFF6HJSn7O81q1DttvUIg8mDKWbLCx4xX/O6jWjZ+A=
+2017-07-13 16:45:58,674 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 16:48:15,916 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 16:49:02,722 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 16:49:08,317 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:iPeHHuWhAqY9X0kpEIVpZn11lpaqL6Z5ZAx6gBRt1dU=:24d8d04be9d34950a611e2e24f123651:1499960948
+2017-07-13 16:49:08,317 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, iPeHHuWhAqY9X0kpEIVpZn11lpaqL6Z5ZAx6gBRt1dU=, 24d8d04be9d34950a611e2e24f123651, 1499960948
+2017-07-13 16:49:08,318 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 16:49:13,632 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 16:49:13,632 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 16:49:13,649 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 16:49:13,743 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 16:49:13,744 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 16:49:13,744 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [24d8d04be9d34950a611e2e24f123651], [1499960948]
+
+2017-07-13 16:49:13,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 16:49:13,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log24d8d04be9d34950a611e2e24f1236511499960948
+2017-07-13 16:49:13,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: iPeHHuWhAqY9X0kpEIVpZn11lpaqL6Z5ZAx6gBRt1dU=
+2017-07-13 16:49:13,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: iPeHHuWhAqY9X0kpEIVpZn11lpaqL6Z5ZAx6gBRt1dU=
+2017-07-13 16:49:13,745 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 16:55:37,493 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 16:55:38,813 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 16:55:43,667 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:xnfBMjPRwt8W64XTqY2kvY10CO0z7K4QhkJlpsvYqe8=:d7b3f0c8dcfd45c5af0e6d84c87f135e:1499961344
+2017-07-13 16:55:43,668 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, xnfBMjPRwt8W64XTqY2kvY10CO0z7K4QhkJlpsvYqe8=, d7b3f0c8dcfd45c5af0e6d84c87f135e, 1499961344
+2017-07-13 16:55:43,669 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 16:55:45,339 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 16:55:45,339 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 16:55:45,355 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 16:55:45,973 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 16:55:45,974 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 16:55:45,975 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [d7b3f0c8dcfd45c5af0e6d84c87f135e], [1499961344]
+
+2017-07-13 16:55:45,985 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 16:55:45,985 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logd7b3f0c8dcfd45c5af0e6d84c87f135e1499961344
+2017-07-13 16:55:45,985 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: xnfBMjPRwt8W64XTqY2kvY10CO0z7K4QhkJlpsvYqe8=
+2017-07-13 16:55:45,986 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: xnfBMjPRwt8W64XTqY2kvY10CO0z7K4QhkJlpsvYqe8=
+2017-07-13 16:55:45,986 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 16:59:18,140 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 16:59:19,976 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 16:59:24,922 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:uRlc4ZHe/vOo7TPNn4NSlj39EavwWF8VtY2pkWtMOVk=:d4b4d215c0de4c5493c52d31b8e3bfd1:1499961565
+2017-07-13 16:59:24,923 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, uRlc4ZHe/vOo7TPNn4NSlj39EavwWF8VtY2pkWtMOVk=, d4b4d215c0de4c5493c52d31b8e3bfd1, 1499961565
+2017-07-13 16:59:24,925 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 16:59:27,092 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 16:59:27,092 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 16:59:27,108 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 16:59:27,697 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 16:59:27,697 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 16:59:27,698 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [d4b4d215c0de4c5493c52d31b8e3bfd1], [1499961565]
+
+2017-07-13 16:59:27,702 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 16:59:27,702 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-logd4b4d215c0de4c5493c52d31b8e3bfd11499961565
+2017-07-13 16:59:27,702 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: uRlc4ZHe/vOo7TPNn4NSlj39EavwWF8VtY2pkWtMOVk=
+2017-07-13 16:59:27,702 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: uRlc4ZHe/vOo7TPNn4NSlj39EavwWF8VtY2pkWtMOVk=
+2017-07-13 16:59:27,702 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 17:03:22,830 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 17:03:23,687 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 17:03:26,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:KYJPtQZ4pZIV1qO3dQ9WOKe5cAniZz5wL7J6UFZu/yQ=:4b006a20eb6a478599ff42d08b040dc4:1499961807
+2017-07-13 17:03:26,800 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, KYJPtQZ4pZIV1qO3dQ9WOKe5cAniZz5wL7J6UFZu/yQ=, 4b006a20eb6a478599ff42d08b040dc4, 1499961807
+2017-07-13 17:03:26,802 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 17:03:28,060 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 17:03:28,060 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 17:03:28,077 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 17:03:28,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 17:03:28,161 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 17:03:28,162 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [4b006a20eb6a478599ff42d08b040dc4], [1499961807]
+
+2017-07-13 17:03:28,166 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 17:03:28,166 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log4b006a20eb6a478599ff42d08b040dc41499961807
+2017-07-13 17:03:28,166 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: KYJPtQZ4pZIV1qO3dQ9WOKe5cAniZz5wL7J6UFZu/yQ=
+2017-07-13 17:03:28,166 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: KYJPtQZ4pZIV1qO3dQ9WOKe5cAniZz5wL7J6UFZu/yQ=
+2017-07-13 17:03:28,166 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 17:11:20,515 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 17:11:21,485 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 17:11:25,521 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:cbFz1Tunhd6mqd9ljNvikyEOlE5+nC73BV4M7yj+A8Q=:68d4219f6d3341acbca4bef9f76ff19a:1499962285
+2017-07-13 17:11:25,521 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, cbFz1Tunhd6mqd9ljNvikyEOlE5+nC73BV4M7yj+A8Q=, 68d4219f6d3341acbca4bef9f76ff19a, 1499962285
+2017-07-13 17:11:25,523 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 17:11:27,266 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 17:11:27,268 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 17:11:27,285 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 17:11:27,362 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 17:11:27,362 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 17:11:27,363 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [68d4219f6d3341acbca4bef9f76ff19a], [1499962285]
+
+2017-07-13 17:11:27,367 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 17:11:27,367 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log68d4219f6d3341acbca4bef9f76ff19a1499962285
+2017-07-13 17:11:27,367 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: cbFz1Tunhd6mqd9ljNvikyEOlE5+nC73BV4M7yj+A8Q=
+2017-07-13 17:11:27,367 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: cbFz1Tunhd6mqd9ljNvikyEOlE5+nC73BV4M7yj+A8Q=
+2017-07-13 17:11:27,368 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 17:39:08,717 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 17:39:09,658 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 17:39:16,477 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:xMVbAbNXRY8jPN0gKGKGBSW3Y4UQdIKqH1CWn9dv2V4=:9ed96f06bd1b46b9a264a6b1fcbdfa90:1499963956
+2017-07-13 17:39:16,477 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, xMVbAbNXRY8jPN0gKGKGBSW3Y4UQdIKqH1CWn9dv2V4=, 9ed96f06bd1b46b9a264a6b1fcbdfa90, 1499963956
+2017-07-13 17:39:16,479 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 17:39:21,252 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 17:39:21,252 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 17:39:30,968 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 17:39:47,264 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 17:39:48,545 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 17:41:01,142 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [9ed96f06bd1b46b9a264a6b1fcbdfa90], [1499963956]
+
+2017-07-13 17:41:10,954 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 17:41:32,101 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log9ed96f06bd1b46b9a264a6b1fcbdfa901499963956
+2017-07-13 17:42:01,457 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: xMVbAbNXRY8jPN0gKGKGBSW3Y4UQdIKqH1CWn9dv2V4=
+2017-07-13 17:42:02,238 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: xMVbAbNXRY8jPN0gKGKGBSW3Y4UQdIKqH1CWn9dv2V4=
+2017-07-13 17:42:12,764 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request is valid
+2017-07-13 17:52:29,337 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 17:52:30,304 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 17:52:35,727 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:lDzc+KBZ1hJ2ZMkZJObf3u3xKSgPHlCKP6PAIz/L+78=:79d82df4771841c1b831a360ef99f48d:1499964756
+2017-07-13 17:52:35,727 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, lDzc+KBZ1hJ2ZMkZJObf3u3xKSgPHlCKP6PAIz/L+78=, 79d82df4771841c1b831a360ef99f48d, 1499964756
+2017-07-13 17:52:35,729 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 17:52:37,967 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 17:52:37,967 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 17:52:50,053 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 17:52:53,084 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 17:52:53,832 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 17:53:01,954 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [79d82df4771841c1b831a360ef99f48d], [1499964756]
+
+2017-07-13 17:53:05,015 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 17:53:05,016 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log79d82df4771841c1b831a360ef99f48d1499964756
+2017-07-13 17:53:05,016 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: lDzc+KBZ1hJ2ZMkZJObf3u3xKSgPHlCKP6PAIz/L+78=
+2017-07-13 17:53:05,017 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: lDzc+KBZ1hJ2ZMkZJObf3u3xKSgPHlCKP6PAIz/L+78=
+2017-07-13 17:53:22,485 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 17:53:31,825 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 17:57:44,030 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 17:57:44,858 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 17:57:54,888 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:I7wOfKMuuMFU7PYOWdGE7YdF0Xq+3MnWP5ouOWrDBiU=:5e7bc365465a42e8be771d0792bfa72b:1499965075
+2017-07-13 17:57:54,889 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, I7wOfKMuuMFU7PYOWdGE7YdF0Xq+3MnWP5ouOWrDBiU=, 5e7bc365465a42e8be771d0792bfa72b, 1499965075
+2017-07-13 17:57:54,890 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 17:57:59,606 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 17:57:59,607 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 17:58:03,880 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 17:58:03,957 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 17:58:03,958 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 17:58:03,958 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [5e7bc365465a42e8be771d0792bfa72b], [1499965075]
+
+2017-07-13 17:58:03,962 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 17:58:03,962 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log5e7bc365465a42e8be771d0792bfa72b1499965075
+2017-07-13 17:58:03,962 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: I7wOfKMuuMFU7PYOWdGE7YdF0Xq+3MnWP5ouOWrDBiU=
+2017-07-13 17:58:03,963 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: I7wOfKMuuMFU7PYOWdGE7YdF0Xq+3MnWP5ouOWrDBiU=
+2017-07-13 17:58:12,583 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 17:58:14,554 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
+2017-07-13 18:00:12,976 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-13 18:00:13,705 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-13 18:00:13,836 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - 
+ 
+HMAC Authentication - Header Name: amx 8c95f663-14f9-4f91-a390-f1987aeb2cde:cgPsmgVjfCGlcYTFRkFDfJxkbS7iFt5hPA0vuacXxEw=:01c5158adbea47ebb3049c4375a68b13:1499965214
+2017-07-13 18:00:13,837 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Received Header Values: 8c95f663-14f9-4f91-a390-f1987aeb2cde, cgPsmgVjfCGlcYTFRkFDfJxkbS7iFt5hPA0vuacXxEw=, 01c5158adbea47ebb3049c4375a68b13, 1499965214
+2017-07-13 18:00:13,838 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Check if request is valid
+2017-07-13 18:00:13,838 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Raw Request Uri: http://localhost:53901/api/event-log
+
+2017-07-13 18:00:13,839 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Uri: http%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log
+
+2017-07-13 18:00:13,853 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Searching for user with GUID: 8c95f663-14f9-4f91-a390-f1987aeb2cde
+2017-07-13 18:00:13,929 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Found user SID S-1-5-21-3771836874-3994443948-3972399778-24448
+2017-07-13 18:00:13,930 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Active Directory Account for: CN=Peter Foster1,OU=Information Communications and Technology Team,OU=VPN,DC=sehnp,DC=nhs,DC=uk
+2017-07-13 18:00:13,930 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Checking if replay request: [01c5158adbea47ebb3049c4375a68b13], [1499965214]
+
+2017-07-13 18:00:13,935 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Request Content Base 64 String (Hash): 
+2017-07-13 18:00:13,935 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Data: 8c95f663-14f9-4f91-a390-f1987aeb2cdeGEThttp%3a%2f%2flocalhost%3a53901%2fapi%2fevent-log01c5158adbea47ebb3049c4375a68b131499965214
+2017-07-13 18:00:13,935 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Signature: cgPsmgVjfCGlcYTFRkFDfJxkbS7iFt5hPA0vuacXxEw=
+2017-07-13 18:00:13,935 DEBUG (null) (null) (null) drs_backend_phase1.Filter.HMACAuthenticationAttribute - Post HMAC String: cgPsmgVjfCGlcYTFRkFDfJxkbS7iFt5hPA0vuacXxEw=
+2017-07-13 18:00:27,251 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - EventLogController (ReadAllEventLogs)
+
+2017-07-13 18:00:30,681 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.EventLogController - Retrieval of EventLogs was successful.
+
