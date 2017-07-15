@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -38,16 +39,13 @@ namespace OAuthHMAC.ConsoleApplication
                 // The body that is being sent is using x-www-form-urlencoded and uses the following values
                 request.Content = new FormUrlEncodedContent(new Dictionary<string, string>
                 {
-                    {"username", "xxxxxxxx"}, // <------ replace with your AD username
-                    {"password", "xxxxxx"}, // <------ replace with your AD password
+                    {"username", "pfoster1"}, // <------ replace with your AD username
+                    {"password", "Piglet72!!"}, // <------ replace with your AD password
                     {"grant_type", "password"}
                 });
 
                 var response = await client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
-
-                // Get the authorisation headers
-                //authFields = request.Headers.Authorization;
 
                 // Strip each part of the response down so that it can be handled invidually
                 var payload = JObject.Parse(await response.Content.ReadAsStringAsync());

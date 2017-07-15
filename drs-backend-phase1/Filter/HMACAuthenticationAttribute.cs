@@ -177,7 +177,8 @@ namespace drs_backend_phase1.Filter
                 var requestContentBase64String = "";
                 var requestUriRaw = request.RequestUri.AbsoluteUri.ToLower();
 
-
+                // Save for later
+                // ==============
                 //requestUriRaw = requestUriRaw.Replace(_internalServiceHostName, _proxyServiceHostName);
 
                 _log.DebugFormat($"Raw Request Uri: {requestUriRaw}\n");
@@ -208,18 +209,12 @@ namespace drs_backend_phase1.Filter
 
                 var signature = Encoding.UTF8.GetBytes(data);
 
-                //var signature = Encoding.UTF8.GetBytes(data);
-
                 using (var hmac = new HMACSHA256(secretKeyBytes))
                 {
-                    //var signatureBytes = hmac.ComputeHash(signature);
-
                     var signatureBytes = hmac.ComputeHash(signature);
 
                     _log.DebugFormat("Signature: {0}", clientSecret);
                     _log.DebugFormat("Post HMAC String: {0}", Convert.ToBase64String(signatureBytes));
-
-                    //return clientSecret.Equals(Convert.ToBase64String(signatureBytes), StringComparison.Ordinal);
 
                     return clientSecret.Equals(Convert.ToBase64String(signatureBytes), StringComparison.Ordinal);
                 }

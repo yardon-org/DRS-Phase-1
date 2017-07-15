@@ -32,8 +32,6 @@ namespace OAuthHMAC.ConsoleApplication
                 var requestUri = HttpUtility.UrlEncode(request.RequestUri.AbsoluteUri.ToLower());
                 var requestHttpMethod = request.Method.Method;
 
-                
-
                 HttpResponseMessage response = null;
                 var requestContentBase64String = string.Empty;
 
@@ -78,16 +76,12 @@ namespace OAuthHMAC.ConsoleApplication
                     request.Headers.Add("X-Authorization",
                         $"amx {_clientId}:{requestSignatureBase64String}:{nonce}:{requestTimeStamp}");
 
-
                     var test = $"amx {_clientId}:{requestSignatureBase64String}:{nonce}:{requestTimeStamp}";
 
                     Console.WriteLine($"Header Name: {test}");
                 }
 
-
                 request.Headers.Authorization = new AuthenticationHeaderValue("bearer", _token);
-
-
                 response = await base.SendAsync(request, cancellationToken);
 
                 return response;

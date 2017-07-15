@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomDelegateHandler2.cs" />
     <Compile Include="CustomDelegatingHandler.cs" />
     <Compile Include="EncryptedData.cs" />
     <Compile Include="EncryptionManager.cs" />
