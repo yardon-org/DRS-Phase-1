@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-using Swashbuckle.Application;
 
 namespace drs_backend_phase1
 {

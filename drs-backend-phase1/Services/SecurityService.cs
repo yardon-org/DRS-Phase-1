@@ -5,7 +5,6 @@ using drs_backend_phase1.Entities;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Services.Interfaces;
 using log4net;
-using Microsoft.VisualBasic.Logging;
 
 namespace drs_backend_phase1.Services
 {
@@ -26,6 +25,7 @@ namespace drs_backend_phase1.Services
             Profile profile = null;
             try
             {
+                // TODO: check for case
                 profile = _db.Profiles.SingleOrDefault(x => x.adEmailAddress == applicationUser.ActiveDirectoryEmailAddress);
             }
             catch (Exception ex)

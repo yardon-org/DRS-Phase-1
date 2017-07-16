@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.DirectoryServices.AccountManagement;
 using System.Reflection;
 using System.Security.Claims;
 using System.Text;
@@ -56,7 +55,6 @@ namespace drs_backend_phase1.Provider
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             var repo = new AuthRepository();
-
             var user = await repo.FindUserAsync(context.UserName, context.Password);
 
             if (user == null)

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
 using System.Net;
@@ -147,7 +146,7 @@ namespace drs_backend_phase1.Filter
         /// </summary>
         /// <param name="rawAuthHeader">The raw authentication header.</param>
         /// <returns></returns>
-        private string[] GetAuthHeaderValues(string rawAuthHeader)
+        private static string[] GetAuthHeaderValues(string rawAuthHeader)
         {
             var credentialArray = rawAuthHeader.Split(':');
 
