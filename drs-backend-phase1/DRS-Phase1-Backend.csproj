@@ -451,6 +451,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Docs\DRS Terminology.xlsx" />
+    <Content Include="Docs\DRS2016_Domain_Identification.xlsx" />
     <None Include="Properties\PublishProfiles\AuthDirectToServer.pubxml" />
     <None Include="Properties\PublishProfiles\drsPhase1API.pubxml" />
     <None Include="Properties\PublishProfiles\NoAuth.pubxml" />

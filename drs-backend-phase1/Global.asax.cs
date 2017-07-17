@@ -35,6 +35,8 @@ namespace drs_backend_phase1
         /// </summary>
         protected void Application_BeginRequest()
         {
+
+            // Options added for Ajax stuff
             if (Request.HttpMethod == "OPTIONS")
             {
                 Response.StatusCode = (int)HttpStatusCode.OK;
