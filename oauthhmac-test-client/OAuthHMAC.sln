@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthHMAC.Data", "OAuthHMAC.Data\OAuthHMAC.Data.csproj", "{4C03E98D-760C-4500-915A-EF94834D5EB6}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthHMAC.Web", "OAuthHMAC.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthHMAC.Entity", "OAuthHMAC.Entity\OAuthHMAC.Entity.csproj", "{7B91A24F-177F-4622-A160-AED362B3699E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthHMAC.ConsoleApplication", "OAuthHMAC.ConsoleApplication\OAuthHMAC.ConsoleApplication.csproj", "{89408EEB-C442-4D0E-B3D2-9A3AEC50F3D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthHMAC-Test-Client", "OAuthHMAC.ConsoleApplication\OAuthHMAC-Test-Client.csproj", "{89408EEB-C442-4D0E-B3D2-9A3AEC50F3D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

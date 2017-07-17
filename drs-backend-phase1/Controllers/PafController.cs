@@ -13,7 +13,7 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/paf")]
-    [HMACAuthentication]
+    //[HMACAuthentication]
     public class PafController : ApiController
     {
         /// <summary>

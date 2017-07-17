@@ -14,7 +14,7 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/profile")]
-    [HMACAuthentication]
+    //[HMACAuthentication]
     public class ProfileController : ApiController
     {
         /// <summary>
@@ -186,8 +186,6 @@ namespace drs_backend_phase1.Controllers
                                 (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
                     .Select(x => new
                     {
-                        jobTypeName = x.ProfileProfessional.JobType.name,
-                        subTypeName = x.ProfileProfessional.SubType.name,
                         //x.ProfileDocuments,
                         //x.SpecialNotes,
                         x.ProfileProfessional.teamId,
@@ -196,7 +194,9 @@ namespace drs_backend_phase1.Controllers
                         x.ProfileProfessional.registeredSurgeryId,
                         x.ProfileProfessional.ccgId,
                         x.ProfileProfessional.indemnityProviderId,
-                        x.ProfileFinance.bankId
+                        x.ProfileFinance.bankId,
+                        jobTypeName = x.ProfileProfessional.JobType.name,
+                        subTypeName = x.ProfileProfessional.SubType.name,
                     })
                     .ToList();
 
@@ -233,8 +233,6 @@ namespace drs_backend_phase1.Controllers
                                 (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
                     .Select(x => new
                     {
-                        jobTypeName=x.ProfileProfessional.JobType,
-                        subTypeName=x.ProfileProfessional.SubType,
                         //x.ProfileDocuments,
                         //x.SpecialNotes,
                         x.ProfileProfessional.teamId,
@@ -243,7 +241,9 @@ namespace drs_backend_phase1.Controllers
                         x.ProfileProfessional.registeredSurgeryId,
                         x.ProfileProfessional.ccgId,
                         x.ProfileProfessional.indemnityProviderId,
-                        x.ProfileFinance.bankId
+                        x.ProfileFinance.bankId,
+                        jobTypeName = x.ProfileProfessional.JobType.name,
+                        subTypeName = x.ProfileProfessional.SubType.name,
                     })
                     .ToList();
 
@@ -274,7 +274,41 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
+                var profile = _db.Profiles
+                    .Where(p => p.id == id)
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.firstName,
+                                p.middleNames,
+                                p.lastName,
+                                p.dateOfBirth,
+                                p.address1,
+                                p.address2,
+                                p.address3,
+                                p.address4,
+                                p.address5,
+                                p.postcode,
+                                p.homePhone,
+                                p.mobilePhone,
+                                p.homeEmail,
+                                p.nhsEmail,
+                                p.smsEnabled,
+                                p.isInactive,
+                                p.isComplete,
+                                p.id,
+                                p.dateCreated,
+                                p.dateModified,
+                                p.isDeleted,
+                                p.profileProfessionalId,
+                                p.profileFinanceId,
+                                p.adEmailAddress,
+                                p.roleID,
+                                jobTypeName = p.ProfileProfessional.JobType.name,
+                                subTypeName = p.ProfileProfessional.SubType.name
+                            }).SingleOrDefault();
+
                 Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
                 return Ok(profile);
             }

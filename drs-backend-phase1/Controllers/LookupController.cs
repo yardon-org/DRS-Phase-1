@@ -14,7 +14,7 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="ApiController" />
     [RoutePrefix("api/lookup")]
-    [HMACAuthentication]
+    //[HMACAuthentication]
     public class LookupController : ApiController
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

@@ -12,7 +12,7 @@ namespace drs_backend_phase1.Controllers
     /// EventLog Controller
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
-    [HMACAuthentication]
+    //[HMACAuthentication]
     [RoutePrefix("api/event-log")]
     public class EventLogController : ApiController
     {

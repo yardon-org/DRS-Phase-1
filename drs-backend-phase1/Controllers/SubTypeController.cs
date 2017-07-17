@@ -14,7 +14,7 @@ namespace drs_backend_phase1.Controllers
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/sub-type")]
-    [HMACAuthentication]
+    //[HMACAuthentication]
     public class SubTypeController : ApiController
     {
         /// <summary>

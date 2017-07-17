@@ -64,7 +64,7 @@ namespace OAuthHMAC.ConsoleApplication
                 var customDelegatingHandler = new CustomDelegatingHandler(clientId, clientSecret, token);
                 var client = HttpClientFactory.Create(customDelegatingHandler);
 
-                var response = await client.GetAsync(apiBaseAddress + "/api/event-log");
+                var response = await client.GetAsync(apiBaseAddress + "/api/profile/fetchProfiles");
 
                 if (response.IsSuccessStatusCode)
                 {
