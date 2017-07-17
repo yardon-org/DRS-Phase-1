@@ -32,7 +32,7 @@ namespace drs_backend_phase1.Controllers
         /// Reads all event logs.
         /// </summary>
         /// <returns>List of EventLogs</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult ReadAllEventLogs()

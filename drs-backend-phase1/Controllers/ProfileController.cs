@@ -37,104 +37,11 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        ///     Fetches all profiles.
-        /// </summary>
-        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
-        /// <returns>List of Profiles</returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("fetchProfiles")]
-        public IHttpActionResult FetchAllProfiles(bool includeDeleted)
-        {
-            Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
-
-            try
-            {
-                var listOfProfiles = _db.Profiles
-                    .Select(x => new
-                    {
-                        x.SpecialNotes,
-                        x.ProfileProfessional.JobType,
-                        x.ProfileProfessional.SubType,
-                        x.ProfileDocuments
-                    }).ToList();
-
-                Log.DebugFormat("Retrieval of Profiles was successful.\n");
-                return Ok(listOfProfiles);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving Profiles. The reason is as follows: {ex.Message}");
-            }
-        }
-
-        /// <summary>
-        ///     Fetches a Profile by identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>A Profile object</returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("{id}")]
-        public IHttpActionResult FetchProfileById(int id)
-        {
-            Log.DebugFormat("ProfileController (ReadAllProfileById)\n");
-
-            try
-            {
-                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
-                Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
-                return Ok(profile);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message}");
-            }
-        }
-
-        /// <summary>
-        ///     Updates a Profile.
-        /// </summary>
-        /// <param name="profileToUpdate">The Profile to update.</param>
-        /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpPut]
-        [Route("")]
-        public IHttpActionResult UpdateProfile(Profile profileToUpdate)
-        {
-            Log.DebugFormat("ProfileController (UpdateProfile)\n");
-
-            if (profileToUpdate != null)
-                try
-                {
-                    _db.Profiles.AddOrUpdate(profileToUpdate);
-                    _db.SaveChanges();
-
-                    Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
-                    return Ok(true);
-                }
-                catch (Exception ex)
-                {
-                    Log.DebugFormat(
-                        $"Error retrieving UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error retrieving UpdateProfile. The reason is as follows: {ex.Message}");
-                }
-
-            Log.DebugFormat(
-                $"Error updating Profile. Profile cannot be null\n");
-            return BadRequest($"Error creating new Profile. Profile cannot be null");
-        }
-
-
-        /// <summary>
-        /// Checks the performers list.
+        ///     Checks the performers list.
         /// </summary>
         /// <param name="profileToUpdate">The profile to update.</param>
         /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("performers")]
         public IHttpActionResult CheckPerformersList(Profile profileToUpdate)
@@ -167,108 +74,11 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Fetches the last name of the many by first or.
-        /// </summary>
-        /// <param name="searchTerm">The search term.</param>
-        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
-        /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("search/{searchTerm}/{includeDeleted}")]
-        public IHttpActionResult FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false)
-        {
-            Log.DebugFormat("ProfileController (FetchManyByFirstOrLastName)\n");
-
-            try
-            {
-                var listOfProfiles = _db.Profiles
-                    .Where(x => (x.firstName.ToLower().Contains(searchTerm.ToLower()) ||
-                                 x.lastName.ToLower().Contains(searchTerm.ToLower())) &&
-                                (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
-                    .Select(x => new
-                    {
-                        x.ProfileProfessional.JobType,
-                        x.ProfileProfessional.SubType,
-                        x.ProfileDocuments,
-                        x.SpecialNotes,
-                        x.ProfileProfessional.teamId,
-                        x.ProfileProfessional.registrarLevelId,
-                        x.ProfileProfessional.agencyId,
-                        x.ProfileProfessional.registeredSurgeryId,
-                        x.ProfileProfessional.ccgId,
-                        x.ProfileProfessional.indemnityProviderId,
-                        x.ProfileFinance.bankId
-                    })
-                    .ToList();
-
-
-                Log.DebugFormat("Retrieval of FetchManyByFirstOrLastName was successful.\n");
-                return Ok(listOfProfiles);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest(
-                    $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message}");
-            }
-        }
-
-        /// <summary>
-        /// Fetches the many by team identifier.
-        /// </summary>
-        /// <param name="teamId">The team identifier.</param>
-        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
-        /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("filter/{teamId}/{includeDeleted}")]
-        public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false)
-        {
-            Log.DebugFormat("ProfileController (FetchManyByTeamId)\n");
-
-            try
-            {
-                var listOfProfiles = _db.Profiles
-                    .Where(x => x.ProfileProfessional.teamId == teamId &&
-                                (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
-                    .Select(x => new
-                     {
-                         x.ProfileProfessional.JobType,
-                         x.ProfileProfessional.SubType,
-                         x.ProfileDocuments,
-                         x.SpecialNotes,
-                         x.ProfileProfessional.teamId,
-                         x.ProfileProfessional.registrarLevelId,
-                         x.ProfileProfessional.agencyId,
-                         x.ProfileProfessional.registeredSurgeryId,
-                         x.ProfileProfessional.ccgId,
-                         x.ProfileProfessional.indemnityProviderId,
-                         x.ProfileFinance.bankId
-                     })
-                    .ToList();
-
-
-                Log.DebugFormat("Retrieval of FetchManyByTeamId was successful.\n");
-                return Ok(listOfProfiles);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest(
-                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message}");
-            }
-        }
-
-
-
-        /// <summary>
         ///     Deletes a Profile by identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteProfileById(int id)
@@ -296,6 +106,218 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        ///     Fetches all profiles.
+        /// </summary>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <returns>List of Profiles</returns>
+       [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("fetchProfiles")]
+        public IHttpActionResult FetchAllProfiles(bool includeDeleted=false)
+        {
+            Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
+
+            try
+            {
+                var listOfProfiles = _db.Profiles
+                    .Where(p => (p.isDeleted == null || p.isDeleted == false) || (includeDeleted && p.isDeleted == true))
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.firstName,
+                                p.middleNames,
+                                p.lastName,
+                                p.dateOfBirth,
+                                p.address1,
+                                p.address2,
+                                p.address3,
+                                p.address4,
+                                p.address5,
+                                p.postcode,
+                                p.homePhone,
+                                p.mobilePhone,
+                                p.homeEmail,
+                                p.nhsEmail,
+                                p.smsEnabled,
+                                p.isInactive,
+                                p.isComplete,
+                                p.id,
+                                p.dateCreated,
+                                p.dateModified,
+                                p.isDeleted,
+                                p.profileProfessionalId,
+                                p.profileFinanceId,
+                                p.adEmailAddress,
+                                p.roleID,
+                                jobTypeName = p.ProfileProfessional.JobType.name,
+                                subTypeName = p.ProfileProfessional.SubType.name
+                            }).ToList();
+
+                Log.DebugFormat("Retrieval of Profiles was successful.\n");
+                return Ok(listOfProfiles);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving Profiles. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Fetches the last name of the many by first or.
+        /// </summary>
+        /// <param name="searchTerm">The search term.</param>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <returns></returns>
+       [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("search/{searchTerm}/{includeDeleted}")]
+        public IHttpActionResult FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false)
+        {
+            Log.DebugFormat("ProfileController (FetchManyByFirstOrLastName)\n");
+
+            try
+            {
+                var listOfProfiles = _db.Profiles
+                    .Where(x => (x.firstName.ToLower().Contains(searchTerm.ToLower()) ||
+                                 x.lastName.ToLower().Contains(searchTerm.ToLower())) &&
+                                (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
+                    .Select(x => new
+                    {
+                        jobTypeName = x.ProfileProfessional.JobType.name,
+                        subTypeName = x.ProfileProfessional.SubType.name,
+                        //x.ProfileDocuments,
+                        //x.SpecialNotes,
+                        x.ProfileProfessional.teamId,
+                        x.ProfileProfessional.registrarLevelId,
+                        x.ProfileProfessional.agencyId,
+                        x.ProfileProfessional.registeredSurgeryId,
+                        x.ProfileProfessional.ccgId,
+                        x.ProfileProfessional.indemnityProviderId,
+                        x.ProfileFinance.bankId
+                    })
+                    .ToList();
+
+
+                Log.DebugFormat("Retrieval of FetchManyByFirstOrLastName was successful.\n");
+                return Ok(listOfProfiles);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest(
+                    $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Fetches the many by team identifier.
+        /// </summary>
+        /// <param name="teamId">The team identifier.</param>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <returns></returns>
+       [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("filter/{teamId}/{includeDeleted}")]
+        public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false)
+        {
+            Log.DebugFormat("ProfileController (FetchManyByTeamId)\n");
+
+            try
+            {
+                var listOfProfiles = _db.Profiles
+                    .Where(x => x.ProfileProfessional.teamId == teamId &&
+                                (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
+                    .Select(x => new
+                    {
+                        jobTypeName=x.ProfileProfessional.JobType,
+                        subTypeName=x.ProfileProfessional.SubType,
+                        //x.ProfileDocuments,
+                        //x.SpecialNotes,
+                        x.ProfileProfessional.teamId,
+                        x.ProfileProfessional.registrarLevelId,
+                        x.ProfileProfessional.agencyId,
+                        x.ProfileProfessional.registeredSurgeryId,
+                        x.ProfileProfessional.ccgId,
+                        x.ProfileProfessional.indemnityProviderId,
+                        x.ProfileFinance.bankId
+                    })
+                    .ToList();
+
+
+                Log.DebugFormat("Retrieval of FetchManyByTeamId was successful.\n");
+                return Ok(listOfProfiles);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest(
+                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Fetches a Profile by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A Profile object</returns>
+       [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("{id}")]
+        public IHttpActionResult FetchProfileById(int id)
+        {
+            Log.DebugFormat("ProfileController (ReadAllProfileById)\n");
+
+            try
+            {
+                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
+                Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
+                return Ok(profile);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Updates a Profile.
+        /// </summary>
+        /// <param name="profileToUpdate">The Profile to update.</param>
+        /// <returns>HttpActionResult</returns>
+       [Authorize(Roles = "PERSONNEL")]
+        [HttpPut]
+        [Route("")]
+        public IHttpActionResult UpdateProfile(Profile profileToUpdate)
+        {
+            Log.DebugFormat("ProfileController (UpdateProfile)\n");
+
+            if (profileToUpdate != null)
+                try
+                {
+                    _db.Profiles.AddOrUpdate(profileToUpdate);
+                    _db.SaveChanges();
+
+                    Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
+                    return Ok(true);
+                }
+                catch (Exception ex)
+                {
+                    Log.DebugFormat(
+                        $"Error retrieving UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                    return BadRequest($"Error retrieving UpdateProfile. The reason is as follows: {ex.Message}");
+                }
+
+            Log.DebugFormat(
+                $"Error updating Profile. Profile cannot be null\n");
+            return BadRequest($"Error creating new Profile. Profile cannot be null");
+        }
         /// <summary>
         ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
         /// </summary>
