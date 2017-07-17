@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -27,6 +28,24 @@ namespace drs_backend_phase1
             XmlConfigurator.ConfigureAndWatch(new FileInfo(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile));
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+        }
+
+        /// <summary>
+        /// Begin request
+        /// </summary>
+        protected void Application_BeginRequest()
+        {
+            if (Request.HttpMethod == "OPTIONS")
+            {
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                Response.AppendHeader("Access-Control-Allow-Origin","*");
+                Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+                Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+                Response.AppendHeader("Access-Control-Allow-Credentials", "true");
+
+               
+                Response.End();
+            }
         }
     }
 }
