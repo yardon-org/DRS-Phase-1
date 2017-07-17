@@ -40,12 +40,11 @@ namespace drs_backend_phase1
             if (Request.HttpMethod == "OPTIONS")
             {
                 Response.StatusCode = (int)HttpStatusCode.OK;
-                Response.AppendHeader("Access-Control-Allow-Origin","*");
-                Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
-                Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+                Response.AppendHeader("Access-Control-Allow-Origin", "*");
+                Response.AddHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+                Response.AddHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTIONS");
                 Response.AppendHeader("Access-Control-Allow-Credentials", "true");
 
-               
                 Response.End();
             }
         }
