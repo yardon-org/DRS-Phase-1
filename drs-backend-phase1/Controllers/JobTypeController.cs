@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using log4net;
 
@@ -90,21 +91,7 @@ namespace drs_backend_phase1.Controllers
                             p.isHcpcRequired,
                             p.isNmcRequired
                         }).OrderBy(x => x.name);
-
-                var totalCount = query.Count();
-                var totalPages = (int) Math.Ceiling((double) totalCount / pageSize);
-
-                var results = query
-                    .Skip(pageSize * page)
-                    .Take(pageSize)
-                    .ToList();
-
-                return new
-                {
-                    TotalCount = totalCount,
-                    TotalPages = totalPages,
-                    Results = results
-                };
+                return query.DoPaging(page, pageSize);
             }
             catch (Exception ex)
             {

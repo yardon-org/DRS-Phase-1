@@ -3,6 +3,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using log4net;
 
@@ -76,15 +77,24 @@ namespace drs_backend_phase1.Controllers
        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
-        public IHttpActionResult FetchAllSubTypes()
+        public object FetchAllSubTypes(int page = 0, int pageSize = 10)
         {   
             Log.DebugFormat("SubTypeController (ReadAllSubTypes)\n");
 
             try
             {
-                var listOfSubTypes = _db.SubTypes.OrderBy(x=>x.name).ToList();
+                var query = _db.SubTypes
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.id,
+                                p.name,
+                                p.isAgency,
+                                p.isRegistrar
+                            }).OrderBy(x => x.name);
                 Log.DebugFormat("Retrieval of SubTypes was successful.\n");
-                return Ok(listOfSubTypes);
+                return query.DoPaging(page, pageSize);
             }
             catch (Exception ex)
             {

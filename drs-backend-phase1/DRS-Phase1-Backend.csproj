@@ -287,8 +287,6 @@
     <Compile Include="Controllers\SubTypeController.cs" />
     <Compile Include="Controllers\PafController.cs" />
     <Compile Include="Controllers\JobTypeController.cs" />
-    <Compile Include="Controllers\LookupController.cs" />
-    <Compile Include="Controllers\LookupTypeController.cs" />
     <Compile Include="Controllers\EventLogController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

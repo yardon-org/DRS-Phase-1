@@ -166,24 +166,25 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
-      
 
         /// <summary>
         ///     Fetches the last name of the many by first or.
         /// </summary>
         /// <param name="searchTerm">The search term.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <param name="page">No.Pages</param>
+        /// <param name="pageSize">No. of Items per Page</param>
         /// <returns></returns>
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("search/{searchTerm}/{includeDeleted}")]
-        public IHttpActionResult FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false)
+        public object FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false, int page = 0, int pageSize = 10)
         {
             Log.DebugFormat("ProfileController (FetchManyByFirstOrLastName)\n");
 
             try
             {
-                var listOfProfiles = _db.Profiles
+                IOrderedQueryable<object> query = _db.Profiles
                     .Where(x => (x.firstName.ToLower().Contains(searchTerm.ToLower()) ||
                                  x.lastName.ToLower().Contains(searchTerm.ToLower())) &&
                                 (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
@@ -191,6 +192,7 @@ namespace drs_backend_phase1.Controllers
                     {
                         //x.ProfileDocuments,
                         //x.SpecialNotes,
+                        x.id,
                         x.ProfileProfessional.teamId,
                         x.ProfileProfessional.registrarLevelId,
                         x.ProfileProfessional.agencyId,
@@ -200,12 +202,10 @@ namespace drs_backend_phase1.Controllers
                         x.ProfileFinance.bankId,
                         jobTypeName = x.ProfileProfessional.JobType.name,
                         subTypeName = x.ProfileProfessional.SubType.name
-                    })
-                    .ToList();
+                    }).OrderBy(x => x.id);
 
 
-                Log.DebugFormat("Retrieval of FetchManyByFirstOrLastName was successful.\n");
-                return Ok(listOfProfiles);
+                return query.DoPaging(page, pageSize);
             }
             catch (Exception ex)
             {
@@ -217,21 +217,23 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        ///     Fetches the many by team identifier.
+        /// Fetches the many by team identifier.
         /// </summary>
         /// <param name="teamId">The team identifier.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("filter/{teamId}/{includeDeleted}")]
-        public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false)
+        public object FetchManyByTeamId(int teamId, bool includeDeleted = false, int page = 0, int pageSize = 10)
         {
             Log.DebugFormat("ProfileController (FetchManyByTeamId)\n");
 
             try
             {
-                var listOfProfiles = _db.Profiles
+                var query = _db.Profiles
                     .Where(x => x.ProfileProfessional.teamId == teamId &&
                                 (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
                     .Select(
@@ -291,11 +293,10 @@ namespace drs_backend_phase1.Controllers
                                 }
                             }
                     )
-                    .ToList();
+                    .OrderBy(x => x.id);
 
 
-                Log.DebugFormat("Retrieval of FetchManyByTeamId was successful.\n");
-                return Ok(listOfProfiles);
+                return query.DoPaging(page, pageSize);
             }
             catch (Exception ex)
             {

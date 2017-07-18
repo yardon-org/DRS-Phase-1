@@ -12,7 +12,7 @@ namespace drs_backend_phase1.Extensions
         /// <summary>
         /// Does WebAPI paging.
         /// </summary>
-        /// <param name="query">The query.</param>
+        /// <param name="query">The query - must be of type IOrderedQueryable.</param>
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
