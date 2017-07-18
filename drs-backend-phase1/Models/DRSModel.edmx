@@ -238,6 +238,8 @@
           <Property Name="ModifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DRS.dbo.SecurityPermission_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SecurityRight">
           <Key>
             <PropertyRef Name="RightID" />
@@ -252,6 +254,8 @@
           <Property Name="ModifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DRS.dbo.SecurityRight_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SecurityRole">
           <Key>
             <PropertyRef Name="RoleID" />
@@ -266,6 +270,8 @@
           <Property Name="ModifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SpecialNote">
           <Key>
             <PropertyRef Name="id" />
@@ -602,6 +608,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Profile_SecurityRole">
+          <End Role="SecurityRole" Type="Self.SecurityRole" Multiplicity="0..1" />
+          <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DRSModelStoreContainer">
           <EntitySet Name="Email" EntityType="Self.Email" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventLog" EntityType="Self.EventLog" Schema="dbo" store:Type="Tables" />
@@ -727,6 +745,10 @@
             <End Role="Lookup" EntitySet="Lookup" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
+          <AssociationSet Name="FK_Profile_SecurityRole" Association="Self.FK_Profile_SecurityRole">
+            <End Role="SecurityRole" EntitySet="SecurityRole" />
+            <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -828,6 +850,7 @@
           <NavigationProperty Name="ProfileFinance" Relationship="Self.fk_e7569dcf417e285aff79a7581cb" FromRole="Profile" ToRole="ProfileFinance" />
           <Property Name="adEmailAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="roleID" Type="Byte" />
+          <NavigationProperty Name="SecurityRole" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="Profile" ToRole="SecurityRole" />
         </EntityType>
         <EntityType Name="ProfileDocument">
           <Key>
@@ -1327,6 +1350,10 @@
             <End Role="Lookup" EntitySet="Lookups" />
             <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
           </AssociationSet>
+          <AssociationSet Name="FK_Profile_SecurityRole" Association="DRSModel.FK_Profile_SecurityRole">
+            <End Role="SecurityRole" EntitySet="SecurityRoles" />
+            <End Role="Profile" EntitySet="Profiles" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="EventLog">
           <Key>
@@ -1446,6 +1473,7 @@
           <Property Name="ModifiedProfileID" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityRole" ToRole="SecurityPermission" />
+          <NavigationProperty Name="Profiles" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="SecurityRole" ToRole="Profile" />
         </EntityType>
         <Association Name="fk_1c19cf8556e5edb55657714e1e8">
           <End Type="DRSModel.EventLogType" Role="EventLogType" Multiplicity="0..1" />
@@ -1504,6 +1532,18 @@
             </Principal>
             <Dependent Role="ProfileDocument">
               <PropertyRef Name="documentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_SecurityRole">
+          <End Type="DRSModel.SecurityRole" Role="SecurityRole" Multiplicity="0..1" />
+          <End Type="DRSModel.Profile" Role="Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="roleID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

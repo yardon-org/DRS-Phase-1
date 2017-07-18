@@ -53,5 +53,6 @@ namespace drs_backend_phase1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfileDocument> ProfileDocuments { get; set; }
         public virtual ProfileFinance ProfileFinance { get; set; }
+        public virtual SecurityRole SecurityRole { get; set; }
     }
 }

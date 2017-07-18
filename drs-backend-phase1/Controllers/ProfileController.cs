@@ -3,7 +3,6 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
-using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 using log4net;
 
@@ -41,7 +40,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="profileToUpdate">The profile to update.</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("performers")]
         public IHttpActionResult CheckPerformersList(Profile profileToUpdate)
@@ -78,7 +77,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteProfileById(int id)
@@ -111,17 +110,17 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns>List of Profiles</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchProfiles")]
-        public IHttpActionResult FetchAllProfiles(bool includeDeleted=false)
+        public IHttpActionResult FetchAllProfiles(bool includeDeleted = false)
         {
             Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
 
             try
             {
                 var listOfProfiles = _db.Profiles
-                    .Where(p => (p.isDeleted == null || p.isDeleted == false) || (includeDeleted && p.isDeleted == true))
+                    .Where(p => p.isDeleted == null || p.isDeleted == false || includeDeleted && p.isDeleted == true)
                     .Select(
                         p =>
                             new
@@ -171,7 +170,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="searchTerm">The search term.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("search/{searchTerm}/{includeDeleted}")]
         public IHttpActionResult FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false)
@@ -196,7 +195,7 @@ namespace drs_backend_phase1.Controllers
                         x.ProfileProfessional.indemnityProviderId,
                         x.ProfileFinance.bankId,
                         jobTypeName = x.ProfileProfessional.JobType.name,
-                        subTypeName = x.ProfileProfessional.SubType.name,
+                        subTypeName = x.ProfileProfessional.SubType.name
                     })
                     .ToList();
 
@@ -219,7 +218,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="teamId">The team identifier.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("filter/{teamId}/{includeDeleted}")]
         public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false)
@@ -231,20 +230,61 @@ namespace drs_backend_phase1.Controllers
                 var listOfProfiles = _db.Profiles
                     .Where(x => x.ProfileProfessional.teamId == teamId &&
                                 (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
-                    .Select(x => new
-                    {
-                        //x.ProfileDocuments,
-                        //x.SpecialNotes,
-                        x.ProfileProfessional.teamId,
-                        x.ProfileProfessional.registrarLevelId,
-                        x.ProfileProfessional.agencyId,
-                        x.ProfileProfessional.registeredSurgeryId,
-                        x.ProfileProfessional.ccgId,
-                        x.ProfileProfessional.indemnityProviderId,
-                        x.ProfileFinance.bankId,
-                        jobTypeName = x.ProfileProfessional.JobType.name,
-                        subTypeName = x.ProfileProfessional.SubType.name,
-                    })
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.firstName,
+                                p.middleNames,
+                                p.lastName,
+                                p.dateOfBirth,
+                                p.address1,
+                                p.address2,
+                                p.address3,
+                                p.address4,
+                                p.address5,
+                                p.postcode,
+                                p.homePhone,
+                                p.mobilePhone,
+                                p.homeEmail,
+                                p.nhsEmail,
+                                p.smsEnabled,
+                                p.isInactive,
+                                p.isComplete,
+                                p.id,
+                                p.dateCreated,
+                                p.dateModified,
+                                p.isDeleted,
+                                p.profileProfessionalId,
+                                p.profileFinanceId,
+                                p.adEmailAddress,
+                                role = new
+                                {
+                                    p.SecurityRole.RoleID,
+                                    p.SecurityRole.RoleName
+                                },
+                                finance = new
+                                {
+                                    p.ProfileFinance.payrollNumber,
+                                    p.ProfileFinance.isIc24Staff,
+                                    p.ProfileFinance.bankId,
+                                    p.ProfileFinance.bankSortCode,
+                                    p.ProfileFinance.bankAccountNumber,
+                                    p.ProfileFinance.buildingSocietyRollNumber
+                                },
+                                professional = new
+                                {
+                                    p.ProfileProfessional.gmcNumber,
+                                    p.ProfileProfessional.hcpcNumber,
+                                    p.ProfileProfessional.indemnityExpiryDate,
+                                    p.ProfileProfessional.isPremium,
+                                    p.ProfileProfessional.isTrainer,
+                                    p.ProfileProfessional.nmcNumber,
+                                    p.ProfileProfessional.performersListChecked,
+                                    p.ProfileProfessional.registrarTrainer
+                                }
+                            }
+                    )
                     .ToList();
 
 
@@ -265,7 +305,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A Profile object</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchProfileById(int id)
@@ -304,10 +344,34 @@ namespace drs_backend_phase1.Controllers
                                 p.profileProfessionalId,
                                 p.profileFinanceId,
                                 p.adEmailAddress,
-                                p.roleID,
-                                jobTypeName = p.ProfileProfessional.JobType.name,
-                                subTypeName = p.ProfileProfessional.SubType.name
-                            }).SingleOrDefault();
+                                role = new
+                                {
+                                    p.SecurityRole.RoleID,
+                                    p.SecurityRole.RoleName
+                                },
+                                finance = new
+                                {
+                                    p.ProfileFinance.payrollNumber,
+                                    p.ProfileFinance.isIc24Staff,
+                                    p.ProfileFinance.bankId,
+                                    p.ProfileFinance.bankSortCode,
+                                    p.ProfileFinance.bankAccountNumber,
+                                    p.ProfileFinance.buildingSocietyRollNumber
+                                },
+                                professional = new
+                                {
+                                    p.ProfileProfessional.gmcNumber,
+                                    p.ProfileProfessional.hcpcNumber,
+                                    p.ProfileProfessional.indemnityExpiryDate,
+                                    p.ProfileProfessional.isPremium,
+                                    p.ProfileProfessional.isTrainer,
+                                    p.ProfileProfessional.nmcNumber,
+                                    p.ProfileProfessional.performersListChecked,
+                                    p.ProfileProfessional.registrarTrainer
+                                }
+                            }
+                    )
+                    .SingleOrDefault();
 
                 Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
                 return Ok(profile);
@@ -325,7 +389,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="profileToUpdate">The Profile to update.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateProfile(Profile profileToUpdate)
@@ -352,6 +416,7 @@ namespace drs_backend_phase1.Controllers
                 $"Error updating Profile. Profile cannot be null\n");
             return BadRequest($"Error creating new Profile. Profile cannot be null");
         }
+
         /// <summary>
         ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
         /// </summary>
