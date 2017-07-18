@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace drs_backend_phase1.Extensions
 {
     /// <summary>
-    /// 
+    ///     Paging Extensions
     /// </summary>
-    public static class Extensions
+    public static class PagingExtensions
     {
         /// <summary>
-        /// Does WebAPI paging.
+        ///     Does WebAPI paging.
         /// </summary>
         /// <param name="query">The query - must be of type IOrderedQueryable.</param>
         /// <param name="page">The page.</param>
@@ -20,11 +19,9 @@ namespace drs_backend_phase1.Extensions
         {
             if (pageSize > 200) pageSize = 200; // Correct for too large a pagesize
             if (page == 0) page = 1;
-            page -=1;
+            page -= 1;
             var totalCount = query.Count();
-            var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
-
-
+            var totalPages = (int) Math.Ceiling((double) totalCount / pageSize);
 
             var results = query
                 .Skip(pageSize * page)
@@ -35,7 +32,7 @@ namespace drs_backend_phase1.Extensions
             {
                 TotalPages = totalPages,
                 TotalCount = totalCount,
-                CurrentPage = page+1,
+                CurrentPage = page + 1,
                 CountPerPage = pageSize,
                 Results = results
             };

@@ -264,7 +264,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
-    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Extensions\PagingExtensions.cs" />
     <Compile Include="Filter\HMACAuthenticationAttribute.cs" />
     <Compile Include="Models\Agency.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
