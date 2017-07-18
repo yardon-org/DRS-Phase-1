@@ -453,10 +453,7 @@
     <Content Include="Docs\DRS Terminology.xlsx" />
     <Content Include="Docs\DRS2016_Domain_Identification.xlsx" />
     <None Include="Properties\PublishProfiles\AuthDirectToServer.pubxml" />
-    <None Include="Properties\PublishProfiles\drsPhase1API.pubxml" />
-    <None Include="Properties\PublishProfiles\NoAuth.pubxml" />
     <None Include="Properties\PublishProfiles\NoAuthDirectToServer.pubxml" />
-    <None Include="Properties\PublishProfiles\Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

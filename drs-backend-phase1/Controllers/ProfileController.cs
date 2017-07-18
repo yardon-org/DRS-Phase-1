@@ -152,10 +152,36 @@ namespace drs_backend_phase1.Controllers
                                 p.profileProfessionalId,
                                 p.profileFinanceId,
                                 p.adEmailAddress,
-                                p.roleID,
-                                jobTypeName = p.ProfileProfessional.JobType.name,
-                                subTypeName = p.ProfileProfessional.SubType.name
-                            }).OrderBy(x=>x.id);
+                                role = new
+                                {
+                                    p.SecurityRole.RoleID,
+                                    p.SecurityRole.RoleName
+                                },
+                                finance = new
+                                {
+                                    p.ProfileFinance.id,
+                                    p.ProfileFinance.payrollNumber,
+                                    p.ProfileFinance.isIc24Staff,
+                                    p.ProfileFinance.bankId,
+                                    p.ProfileFinance.bankSortCode,
+                                    p.ProfileFinance.bankAccountNumber,
+                                    p.ProfileFinance.buildingSocietyRollNumber
+                                },
+                                professional = new
+                                {
+                                    p.ProfileProfessional.id,
+                                    p.ProfileProfessional.gmcNumber,
+                                    p.ProfileProfessional.hcpcNumber,
+                                    p.ProfileProfessional.indemnityExpiryDate,
+                                    p.ProfileProfessional.isPremium,
+                                    p.ProfileProfessional.isTrainer,
+                                    p.ProfileProfessional.nmcNumber,
+                                    p.ProfileProfessional.performersListChecked,
+                                    p.ProfileProfessional.registrarTrainer,
+                                }
+                            }
+                    )
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
