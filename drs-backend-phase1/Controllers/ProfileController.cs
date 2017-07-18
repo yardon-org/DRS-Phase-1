@@ -3,6 +3,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using log4net;
 
@@ -109,17 +110,19 @@ namespace drs_backend_phase1.Controllers
         ///     Fetches all profiles.
         /// </summary>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <param name="page">No. of Pages</param>
+        /// <param name="pageSize">No. of Items per Page</param>
         /// <returns>List of Profiles</returns>
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchProfiles")]
-        public IHttpActionResult FetchAllProfiles(bool includeDeleted = false)
+        public object FetchAllProfiles(bool includeDeleted = false, int page = 0, int pageSize = 10)
         {
             Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
 
             try
             {
-                var listOfProfiles = _db.Profiles
+                IOrderedQueryable<object> query = _db.Profiles
                     .Where(p => p.isDeleted == null || p.isDeleted == false || includeDeleted && p.isDeleted == true)
                     .Select(
                         p =>
@@ -152,10 +155,9 @@ namespace drs_backend_phase1.Controllers
                                 p.roleID,
                                 jobTypeName = p.ProfileProfessional.JobType.name,
                                 subTypeName = p.ProfileProfessional.SubType.name
-                            }).ToList();
+                            }).OrderBy(x=>x.id);
 
-                Log.DebugFormat("Retrieval of Profiles was successful.\n");
-                return Ok(listOfProfiles);
+                return query.DoPaging(page, pageSize);
             }
             catch (Exception ex)
             {
@@ -163,6 +165,8 @@ namespace drs_backend_phase1.Controllers
                 return BadRequest($"Error retrieving Profiles. The reason is as follows: {ex.Message}");
             }
         }
+
+      
 
         /// <summary>
         ///     Fetches the last name of the many by first or.
