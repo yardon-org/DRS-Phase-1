@@ -21,12 +21,12 @@ namespace drs_backend_phase1.Models
         }
     
         public string name { get; set; }
-        public Nullable<bool> isAgency { get; set; }
-        public Nullable<bool> isRegistrar { get; set; }
+        public bool isAgency { get; set; }
+        public bool isRegistrar { get; set; }
         public int id { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
-        public Nullable<bool> isDeleted { get; set; }
+        public bool isDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfileProfessional> ProfileProfessionals { get; set; }

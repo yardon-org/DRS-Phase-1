@@ -123,7 +123,7 @@ namespace drs_backend_phase1.Controllers
             try
             {
                 IOrderedQueryable<object> query = _db.Profiles
-                    .Where(p => p.isDeleted == null || p.isDeleted == false || includeDeleted && p.isDeleted == true)
+                    .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted)
                     .Select(
                         p =>
                             new
@@ -218,7 +218,7 @@ namespace drs_backend_phase1.Controllers
             {
                 IOrderedQueryable<object> query = _db.Profiles
                     .Where(p => 
-                    (p.isDeleted == null || p.isDeleted == false || includeDeleted && p.isDeleted == true) 
+                    (p.isDeleted == false || includeDeleted && p.isDeleted) 
                         && (p.lastName.ToLower().Contains(searchTerm.ToLower()) 
                         || p.firstName.ToLower().Contains(searchTerm.ToLower())
                         || p.middleNames.ToLower().Contains(searchTerm.ToLower())
@@ -319,7 +319,7 @@ namespace drs_backend_phase1.Controllers
                 IOrderedQueryable<object> query = _db.Profiles
                     .Where(x => (x.firstName.ToLower().Contains(searchTerm.ToLower()) ||
                                  x.lastName.ToLower().Contains(searchTerm.ToLower())) &&
-                                (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
+                                (x.isDeleted == false) || includeDeleted && x.isDeleted)
                     .Select(x => new
                     {
                         //x.ProfileDocuments,
@@ -367,7 +367,7 @@ namespace drs_backend_phase1.Controllers
             {
                 var query = _db.Profiles
                     .Where(x => x.ProfileProfessional.teamId == teamId &&
-                                (x.isDeleted == null || x.isDeleted == false) || includeDeleted && x.isDeleted == true)
+                                (x.isDeleted == false) || includeDeleted && x.isDeleted)
                     .Select(
                         p =>
                             new

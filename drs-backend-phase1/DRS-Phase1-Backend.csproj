@@ -284,9 +284,6 @@
     <Compile Include="Models\IndemnityProvider.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\migration.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\PaymentCategory.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>

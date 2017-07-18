@@ -21,7 +21,7 @@ namespace drs_backend_phase1.Models
         }
     
         public string payrollNumber { get; set; }
-        public Nullable<bool> isIc24Staff { get; set; }
+        public bool isIc24Staff { get; set; }
         public string nationalInsuranceNumber { get; set; }
         public Nullable<int> bankId { get; set; }
         public string bankAccountNumber { get; set; }
@@ -30,7 +30,7 @@ namespace drs_backend_phase1.Models
         public int id { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
-        public Nullable<bool> isDeleted { get; set; }
+        public bool isDeleted { get; set; }
     
         public virtual Lookup Lookup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

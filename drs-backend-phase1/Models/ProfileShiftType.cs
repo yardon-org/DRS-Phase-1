@@ -20,7 +20,7 @@ namespace drs_backend_phase1.Models
         public int id { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
-        public Nullable<bool> isDeleted { get; set; }
+        public bool isDeleted { get; set; }
     
         public virtual Lookup Lookup { get; set; }
         public virtual ProfileProfessional ProfileProfessional { get; set; }

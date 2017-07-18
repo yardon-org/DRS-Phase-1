@@ -51,7 +51,6 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<CCG> CCGs { get; set; }
         public virtual DbSet<DocumentType> DocumentTypes { get; set; }
         public virtual DbSet<IndemnityProvider> IndemnityProviders { get; set; }
-        public virtual DbSet<migration> migrations { get; set; }
         public virtual DbSet<PaymentCategory> PaymentCategories { get; set; }
         public virtual DbSet<RegisteredSurgery> RegisteredSurgeries { get; set; }
         public virtual DbSet<RegistrarLevel> RegistrarLevels { get; set; }

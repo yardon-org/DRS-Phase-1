@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
-using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 
 namespace drs_backend_phase1.Controllers

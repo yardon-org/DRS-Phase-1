@@ -31,23 +31,23 @@ namespace drs_backend_phase1.Models
         public Nullable<int> subTypeId { get; set; }
         public Nullable<int> registrarLevelId { get; set; }
         public string registrarTrainer { get; set; }
-        public Nullable<bool> isRegistrarGreen { get; set; }
+        public bool isRegistrarGreen { get; set; }
         public Nullable<int> agencyId { get; set; }
         public Nullable<int> registeredSurgeryId { get; set; }
         public Nullable<int> ccgId { get; set; }
         public Nullable<int> indemnityProviderId { get; set; }
         public string performersList { get; set; }
-        public Nullable<bool> performersListChecked { get; set; }
+        public bool performersListChecked { get; set; }
         public Nullable<System.DateTime> performersListCheckedDate { get; set; }
         public string performersListCheckedBy { get; set; }
         public string indemnityNumber { get; set; }
         public Nullable<System.DateTime> indemnityExpiryDate { get; set; }
-        public Nullable<bool> isPremium { get; set; }
-        public Nullable<bool> isTrainer { get; set; }
+        public bool isPremium { get; set; }
+        public bool isTrainer { get; set; }
         public int id { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
-        public Nullable<bool> isDeleted { get; set; }
+        public bool isDeleted { get; set; }
         public Nullable<int> baseId { get; set; }
     
         public virtual JobType JobType { get; set; }
