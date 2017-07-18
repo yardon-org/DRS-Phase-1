@@ -200,7 +200,7 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Searches  profiles firstname/lastname by keyword.
+        /// Searches  profiles firstname/middlename/lastname by keyword.
         /// </summary>
         /// <param name="searchTerm">The search term.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
@@ -299,54 +299,54 @@ namespace drs_backend_phase1.Controllers
         }
 
 
-        /// <summary>
-        ///     Fetches the last name of the many by first or.
-        /// </summary>
-        /// <param name="searchTerm">The search term.</param>
-        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
-        /// <param name="page">No.Pages</param>
-        /// <param name="pageSize">No. of Items per Page</param>
-        /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("search/{searchTerm}/{includeDeleted}")]
-        public object FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false, int page = 0, int pageSize = 10)
-        {
-            Log.DebugFormat("ProfileController (FetchManyByFirstOrLastName)\n");
+        ///// <summary>
+        /////     Fetches the last name of the many by first or.
+        ///// </summary>
+        ///// <param name="searchTerm">The search term.</param>
+        ///// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        ///// <param name="page">No.Pages</param>
+        ///// <param name="pageSize">No. of Items per Page</param>
+        ///// <returns></returns>
+        //[Authorize(Roles = "PERSONNEL")]
+        //[HttpGet]
+        //[Route("search/{searchTerm}/{includeDeleted}")]
+        //public object FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false, int page = 0, int pageSize = 10)
+        //{
+        //    Log.DebugFormat("ProfileController (FetchManyByFirstOrLastName)\n");
 
-            try
-            {
-                IOrderedQueryable<object> query = _db.Profiles
-                    .Where(x => (x.firstName.ToLower().Contains(searchTerm.ToLower()) ||
-                                 x.lastName.ToLower().Contains(searchTerm.ToLower())) &&
-                                (x.isDeleted == false) || includeDeleted && x.isDeleted)
-                    .Select(x => new
-                    {
-                        //x.ProfileDocuments,
-                        //x.SpecialNotes,
-                        x.id,
-                        x.ProfileProfessional.teamId,
-                        x.ProfileProfessional.registrarLevelId,
-                        x.ProfileProfessional.agencyId,
-                        x.ProfileProfessional.registeredSurgeryId,
-                        x.ProfileProfessional.ccgId,
-                        x.ProfileProfessional.indemnityProviderId,
-                        x.ProfileFinance.bankId,
-                        jobTypeName = x.ProfileProfessional.JobType.name,
-                        subTypeName = x.ProfileProfessional.SubType.name
-                    }).OrderBy(x => x.id);
+        //    try
+        //    {
+        //        IOrderedQueryable<object> query = _db.Profiles
+        //            .Where(x => (x.firstName.ToLower().Contains(searchTerm.ToLower()) ||
+        //                         x.lastName.ToLower().Contains(searchTerm.ToLower())) &&
+        //                        (x.isDeleted == false) || includeDeleted && x.isDeleted)
+        //            .Select(x => new
+        //            {
+        //                //x.ProfileDocuments,
+        //                //x.SpecialNotes,
+        //                x.id,
+        //                x.ProfileProfessional.teamId,
+        //                x.ProfileProfessional.registrarLevelId,
+        //                x.ProfileProfessional.agencyId,
+        //                x.ProfileProfessional.registeredSurgeryId,
+        //                x.ProfileProfessional.ccgId,
+        //                x.ProfileProfessional.indemnityProviderId,
+        //                x.ProfileFinance.bankId,
+        //                jobTypeName = x.ProfileProfessional.JobType.name,
+        //                subTypeName = x.ProfileProfessional.SubType.name
+        //            }).OrderBy(x => x.id);
 
 
-                return query.DoPaging(page, pageSize);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest(
-                    $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message}");
-            }
-        }
+        //        return query.DoPaging(page, pageSize);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.DebugFormat(
+        //            $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message} {ex.StackTrace}");
+        //        return BadRequest(
+        //            $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message}");
+        //    }
+        //}
 
         /// <summary>
         /// Fetches the many by team identifier.
