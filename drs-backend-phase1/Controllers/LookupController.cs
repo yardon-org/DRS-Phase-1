@@ -74,9 +74,9 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Searches for agencies by keyword.
+        /// Searches for agencies by searchTerm.
         /// </summary>
-        /// <param name="keyword">The keyword.</param>
+        /// <param name="searchTerm">The searchTerm.</param>
         /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
@@ -84,7 +84,7 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchAgencies")]
-        public object SearchAgencies(string keyword, bool isDeleted = false, int page = 0, int pageSize = 10)
+        public object SearchAgencies(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (SearchAgencies)\n");
 
@@ -92,7 +92,7 @@ namespace drs_backend_phase1.Controllers
             {
                 IOrderedQueryable<object> query = _db.Agencies
                     .Where(x => x.isDeleted == isDeleted
-                                && x.Name.ToLower().Contains(keyword.ToLower()))
+                                && x.Name.ToLower().Contains(searchTerm.ToLower()))
                     .Select(
                         p =>
                             new
@@ -345,7 +345,7 @@ namespace drs_backend_phase1.Controllers
         /// <summary>
         ///     Searches for registered surgeries by name.
         /// </summary>
-        /// <param name="keyword">The keyword.</param>
+        /// <param name="searchTerm">The searchTerm.</param>
         /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
@@ -353,7 +353,7 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchRegisteredSurgeries")]
-        public object SearchRegisteredSurgeries(string keyword, bool isDeleted = false, int page = 0, int pageSize = 10)
+        public object SearchRegisteredSurgeries(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (SearchRegisteredSurgeries)\n");
 
@@ -362,7 +362,7 @@ namespace drs_backend_phase1.Controllers
                 IOrderedQueryable<object> query = _db.RegisteredSurgeries
                     .Where(x => x.isDeleted == isDeleted
                                 &&
-                                x.Name.ToLower().Contains(keyword.ToLower())
+                                x.Name.ToLower().Contains(searchTerm.ToLower())
                     )
                     .Select(
                         p =>

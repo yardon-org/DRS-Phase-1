@@ -200,7 +200,7 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Searches  profiles firstname/middlename/lastname by keyword.
+        /// Searches  profiles firstname/middlename/lastname by searchTerm.
         /// </summary>
         /// <param name="searchTerm">The search term.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
