@@ -12,22 +12,18 @@ namespace drs_backend_phase1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LookupType
+    public partial class ProfileDocumentBackup
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LookupType()
-        {
-            this.Lookups = new HashSet<Lookup>();
-        }
-    
-        public string name { get; set; }
-        public string namePlural { get; set; }
+        public Nullable<int> documentTypeId { get; set; }
+        public string originalFileName { get; set; }
+        public string multerFileName { get; set; }
+        public string mimeType { get; set; }
+        public Nullable<System.DateTime> dateObtained { get; set; }
+        public Nullable<System.DateTime> dateExpires { get; set; }
+        public Nullable<int> profileId { get; set; }
         public int id { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
         public Nullable<bool> isDeleted { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lookup> Lookups { get; set; }
     }
 }

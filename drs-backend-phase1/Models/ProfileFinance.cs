@@ -32,9 +32,8 @@ namespace drs_backend_phase1.Models
         public Nullable<System.DateTime> dateModified { get; set; }
         public bool isDeleted { get; set; }
     
-        public virtual Lookup Lookup { get; set; }
+        public virtual Bank Bank { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile> Profiles { get; set; }
-        public virtual Bank Bank { get; set; }
     }
 }

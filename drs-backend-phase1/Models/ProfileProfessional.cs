@@ -50,13 +50,11 @@ namespace drs_backend_phase1.Models
         public bool isDeleted { get; set; }
         public Nullable<int> baseId { get; set; }
     
+        public virtual Agency Agency { get; set; }
+        public virtual Base Base { get; set; }
+        public virtual CCG CCG { get; set; }
+        public virtual IndemnityProvider IndemnityProvider { get; set; }
         public virtual JobType JobType { get; set; }
-        public virtual Lookup Lookup { get; set; }
-        public virtual Lookup Lookup1 { get; set; }
-        public virtual Lookup Lookup2 { get; set; }
-        public virtual Lookup Lookup3 { get; set; }
-        public virtual Lookup Lookup4 { get; set; }
-        public virtual Lookup Lookup5 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile> Profiles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -64,10 +62,6 @@ namespace drs_backend_phase1.Models
         public virtual SubType SubType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfileShiftType> ProfileShiftTypes { get; set; }
-        public virtual Agency Agency { get; set; }
-        public virtual Base Base { get; set; }
-        public virtual CCG CCG { get; set; }
-        public virtual IndemnityProvider IndemnityProvider { get; set; }
         public virtual RegisteredSurgery RegisteredSurgery { get; set; }
         public virtual RegistrarLevel RegistrarLevel { get; set; }
         public virtual Team Team { get; set; }

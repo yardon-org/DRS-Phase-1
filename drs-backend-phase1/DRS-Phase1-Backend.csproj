@@ -287,6 +287,9 @@
     <Compile Include="Models\PaymentCategory.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProfileDocumentBackup.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RegisteredSurgery.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
@@ -356,12 +359,6 @@
       <DependentUpon>PAFModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\JobType.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Lookup.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LookupType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PAFModel.Context.cs">

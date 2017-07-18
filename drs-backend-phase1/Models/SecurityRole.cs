@@ -17,8 +17,8 @@ namespace drs_backend_phase1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SecurityRole()
         {
-            this.SecurityPermissions = new HashSet<SecurityPermission>();
             this.Profiles = new HashSet<Profile>();
+            this.SecurityPermissions = new HashSet<SecurityPermission>();
         }
     
         public byte RoleID { get; set; }
@@ -32,8 +32,8 @@ namespace drs_backend_phase1.Models
         public Nullable<bool> isDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SecurityPermission> SecurityPermissions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile> Profiles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SecurityPermission> SecurityPermissions { get; set; }
     }
 }

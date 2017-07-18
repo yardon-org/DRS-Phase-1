@@ -25,10 +25,18 @@ namespace drs_backend_phase1.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Agency> Agencies { get; set; }
+        public virtual DbSet<Bank> Banks { get; set; }
+        public virtual DbSet<Base> Bases { get; set; }
+        public virtual DbSet<CCG> CCGs { get; set; }
+        public virtual DbSet<DocumentType> DocumentTypes { get; set; }
         public virtual DbSet<Email> Emails { get; set; }
+        public virtual DbSet<EventLog> EventLogs { get; set; }
+        public virtual DbSet<EventLogConfig> EventLogConfigs { get; set; }
+        public virtual DbSet<EventLogType> EventLogTypes { get; set; }
+        public virtual DbSet<IndemnityProvider> IndemnityProviders { get; set; }
         public virtual DbSet<JobType> JobTypes { get; set; }
-        public virtual DbSet<Lookup> Lookups { get; set; }
-        public virtual DbSet<LookupType> LookupTypes { get; set; }
+        public virtual DbSet<PaymentCategory> PaymentCategories { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<ProfileDocument> ProfileDocuments { get; set; }
         public virtual DbSet<ProfileFinance> ProfileFinances { get; set; }
@@ -36,25 +44,16 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<ProfileProfessional> ProfileProfessionals { get; set; }
         public virtual DbSet<ProfileShiftType> ProfileShiftTypes { get; set; }
         public virtual DbSet<QueuedEmail> QueuedEmails { get; set; }
-        public virtual DbSet<SpecialNote> SpecialNotes { get; set; }
-        public virtual DbSet<SubType> SubTypes { get; set; }
-        public virtual DbSet<EventLog> EventLogs { get; set; }
-        public virtual DbSet<EventLogConfig> EventLogConfigs { get; set; }
-        public virtual DbSet<EventLogType> EventLogTypes { get; set; }
+        public virtual DbSet<RegisteredSurgery> RegisteredSurgeries { get; set; }
+        public virtual DbSet<RegistrarLevel> RegistrarLevels { get; set; }
         public virtual DbSet<SecurityGroup> SecurityGroups { get; set; }
         public virtual DbSet<SecurityPermission> SecurityPermissions { get; set; }
         public virtual DbSet<SecurityRight> SecurityRights { get; set; }
         public virtual DbSet<SecurityRole> SecurityRoles { get; set; }
-        public virtual DbSet<Agency> Agencies { get; set; }
-        public virtual DbSet<Bank> Banks { get; set; }
-        public virtual DbSet<Base> Bases { get; set; }
-        public virtual DbSet<CCG> CCGs { get; set; }
-        public virtual DbSet<DocumentType> DocumentTypes { get; set; }
-        public virtual DbSet<IndemnityProvider> IndemnityProviders { get; set; }
-        public virtual DbSet<PaymentCategory> PaymentCategories { get; set; }
-        public virtual DbSet<RegisteredSurgery> RegisteredSurgeries { get; set; }
-        public virtual DbSet<RegistrarLevel> RegistrarLevels { get; set; }
         public virtual DbSet<ShiftType> ShiftTypes { get; set; }
+        public virtual DbSet<SpecialNote> SpecialNotes { get; set; }
+        public virtual DbSet<SubType> SubTypes { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
+        public virtual DbSet<ProfileDocumentBackup> ProfileDocumentBackups { get; set; }
     }
 }
