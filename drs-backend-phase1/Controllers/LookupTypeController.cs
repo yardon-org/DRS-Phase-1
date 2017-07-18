@@ -3,14 +3,13 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
-using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 using log4net;
 
 namespace drs_backend_phase1.Controllers
 {
     /// <summary>
-    /// LookupType Controller
+    ///     LookupType Controller
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/lookuptype")]
@@ -18,17 +17,18 @@ namespace drs_backend_phase1.Controllers
     public class LookupTypeController : ApiController
     {
         /// <summary>
-        /// The database
-        /// </summary>
-        private readonly DRSEntities _db;
-        /// <summary>
-        /// The log
+        ///     The log
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+        /// <summary>
+        ///     The database
+        /// </summary>
+        private readonly DRSEntities _db;
+
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LookupTypeController"/> class.
+        ///     Initializes a new instance of the <see cref="LookupTypeController" /> class.
         /// </summary>
         public LookupTypeController()
         {
@@ -36,14 +36,14 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Creates a new LookupType.
+        ///     Creates a new LookupType.
         /// </summary>
         /// <param name="newLookupType">New type of the lookup.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
-        public IHttpActionResult CreateLookupType([FromBody]LookupType newLookupType)
+        public IHttpActionResult CreateLookupType([FromBody] LookupType newLookupType)
         {
             if (newLookupType != null)
             {
@@ -57,12 +57,10 @@ namespace drs_backend_phase1.Controllers
                     Log.DebugFormat(
                         $"Error creating new LookupType. The reason is as follows: {ex.Message} {ex.StackTrace}\n");
                     return BadRequest($"Error creating new LookupType. The reason is as follows: {ex.Message}");
-
                 }
 
                 Log.DebugFormat("The new LookupType record has been created successfully.\n");
                 return Ok(true);
-
             }
 
             Log.DebugFormat(
@@ -71,35 +69,36 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Fetches all lookup types.
+        ///     Fetches all lookup types.
         /// </summary>
         /// <returns>List of LookupTypes</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllLookupTypes()
-        {   
+        {
             Log.DebugFormat("LookupTypeController (ReadAllLookupTypes)\n");
 
             try
             {
-                var listOfLookupTypes = _db.LookupTypes.OrderBy(x=>x.name).ToList();
+                var listOfLookupTypes = _db.LookupTypes.OrderBy(x => x.name).ToList();
                 Log.DebugFormat("Retrieval of LookupTypes was successful.\n");
                 return Ok(listOfLookupTypes);
             }
             catch (Exception ex)
             {
-                Log.DebugFormat($"Error retrieving LookupTypes. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                Log.DebugFormat(
+                    $"Error retrieving LookupTypes. The reason is as follows: {ex.Message} {ex.StackTrace}");
                 return BadRequest($"Error retrieving LookupTypes. The reason is as follows: {ex.Message}");
             }
         }
 
         /// <summary>
-        /// Fetches a LookupType by identifier.
+        ///     Fetches a LookupType by identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A LookupType object</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchLookupTypeById(int id)
@@ -108,23 +107,24 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var lookupType = _db.LookupTypes.SingleOrDefault(x => x.id==id);
+                var lookupType = _db.LookupTypes.SingleOrDefault(x => x.id == id);
                 Log.DebugFormat("Retrieval of FetchLookupTypeById was successful.\n");
                 return Ok(lookupType);
             }
             catch (Exception ex)
             {
-                Log.DebugFormat($"Error retrieving FetchLookupTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                Log.DebugFormat(
+                    $"Error retrieving FetchLookupTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
                 return BadRequest($"Error retrieving FetchLookupTypeById. The reason is as follows: {ex.Message}");
             }
         }
 
         /// <summary>
-        /// Updates a LookupType object.
+        ///     Updates a LookupType object.
         /// </summary>
         /// <param name="lookupTypeToUpdate">The lookup type to update.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateLookupType(LookupType lookupTypeToUpdate)
@@ -132,7 +132,6 @@ namespace drs_backend_phase1.Controllers
             Log.DebugFormat("LookupTypeController (UpdateLookupType)\n");
 
             if (lookupTypeToUpdate != null)
-            {
                 try
                 {
                     _db.LookupTypes.AddOrUpdate(lookupTypeToUpdate);
@@ -147,20 +146,18 @@ namespace drs_backend_phase1.Controllers
                         $"Error retrieving UpdateLookupType. The reason is as follows: {ex.Message} {ex.StackTrace}");
                     return BadRequest($"Error retrieving UpdateLookupType. The reason is as follows: {ex.Message}");
                 }
-            }
 
             Log.DebugFormat(
                 $"Error updating LookupType. LookupType cannot be null\n");
             return BadRequest($"Error creating new LookupType. LookupType cannot be null");
-
         }
 
         /// <summary>
-        /// Deletes a LookupType by identifier.
+        ///     Deletes a LookupType by identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteLookupTypeById(int id)
@@ -182,21 +179,23 @@ namespace drs_backend_phase1.Controllers
             }
             catch (Exception ex)
             {
-                Log.DebugFormat($"Error retrieving DeleteLookupTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                Log.DebugFormat(
+                    $"Error retrieving DeleteLookupTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
                 return BadRequest($"Error retrieving DeleteLookupTypeById. The reason is as follows: {ex.Message}");
             }
         }
 
         /// <summary>
-        /// Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
         /// </summary>
-        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        /// <param name="disposing">
+        ///     true to release both managed and unmanaged resources; false to release only unmanaged
+        ///     resources.
+        /// </param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
-            {
                 _db.Dispose();
-            }
             base.Dispose(disposing);
         }
     }

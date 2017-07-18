@@ -265,6 +265,7 @@ namespace drs_backend_phase1.Controllers
                                 },
                                 finance = new
                                 {
+                                    p.ProfileFinance.id,
                                     p.ProfileFinance.payrollNumber,
                                     p.ProfileFinance.isIc24Staff,
                                     p.ProfileFinance.bankId,
@@ -274,6 +275,7 @@ namespace drs_backend_phase1.Controllers
                                 },
                                 professional = new
                                 {
+                                    p.ProfileProfessional.id,
                                     p.ProfileProfessional.gmcNumber,
                                     p.ProfileProfessional.hcpcNumber,
                                     p.ProfileProfessional.indemnityExpiryDate,
@@ -281,7 +283,7 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.isTrainer,
                                     p.ProfileProfessional.nmcNumber,
                                     p.ProfileProfessional.performersListChecked,
-                                    p.ProfileProfessional.registrarTrainer
+                                    p.ProfileProfessional.registrarTrainer,
                                 }
                             }
                     )
@@ -351,6 +353,7 @@ namespace drs_backend_phase1.Controllers
                                 },
                                 finance = new
                                 {
+                                    p.ProfileFinance.id,
                                     p.ProfileFinance.payrollNumber,
                                     p.ProfileFinance.isIc24Staff,
                                     p.ProfileFinance.bankId,
@@ -360,6 +363,7 @@ namespace drs_backend_phase1.Controllers
                                 },
                                 professional = new
                                 {
+                                    p.ProfileProfessional.id,
                                     p.ProfileProfessional.gmcNumber,
                                     p.ProfileProfessional.hcpcNumber,
                                     p.ProfileProfessional.indemnityExpiryDate,
@@ -367,7 +371,7 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.isTrainer,
                                     p.ProfileProfessional.nmcNumber,
                                     p.ProfileProfessional.performersListChecked,
-                                    p.ProfileProfessional.registrarTrainer
+                                    p.ProfileProfessional.registrarTrainer,
                                 }
                             }
                     )
