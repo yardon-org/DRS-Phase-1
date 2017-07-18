@@ -178,9 +178,16 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.nmcNumber,
                                     p.ProfileProfessional.performersListChecked,
                                     p.ProfileProfessional.registrarTrainer,
+                                    jobRole = new
+                                    {
+                                        p.ProfileProfessional.JobType.id,
+                                        p.ProfileProfessional.JobType.name,
+                                        p.ProfileProfessional.JobType.isGmcRequired,
+                                        p.ProfileProfessional.JobType.isHcpcRequired,
+                                        p.ProfileProfessional.JobType.isNmcRequired
+                                    }
                                 }
-                            }
-                    )
+                            })
                     .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
@@ -316,11 +323,17 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.nmcNumber,
                                     p.ProfileProfessional.performersListChecked,
                                     p.ProfileProfessional.registrarTrainer,
+                                    jobRole = new
+                                    {
+                                        p.ProfileProfessional.JobType.id,
+                                        p.ProfileProfessional.JobType.name,
+                                        p.ProfileProfessional.JobType.isGmcRequired,
+                                        p.ProfileProfessional.JobType.isHcpcRequired,
+                                        p.ProfileProfessional.JobType.isNmcRequired
+                                    }
                                 }
-                            }
-                    )
+                            })
                     .OrderBy(x => x.id);
-
 
                 return query.DoPaging(page, pageSize);
             }
