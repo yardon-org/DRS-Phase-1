@@ -5,6 +5,56 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DRSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Base">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="CCG">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
         <EntityType Name="Email">
           <Key>
             <PropertyRef Name="id" />
@@ -48,6 +98,16 @@
           <Property Name="description" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="cssClass" Type="nvarchar" MaxLength="40" Nullable="false" />
         </EntityType>
+        <EntityType Name="IndemnityProvider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
         <EntityType Name="JobType">
           <Key>
             <PropertyRef Name="id" />
@@ -82,6 +142,23 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCreated" Type="datetime" />
           <Property Name="dateModified" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="migrations">
+          <Key>
+            <PropertyRef Name="timestamp" />
+          </Key>
+          <Property Name="timestamp" Type="real" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="Profile">
@@ -188,6 +265,7 @@
           <Property Name="dateCreated" Type="datetime" />
           <Property Name="dateModified" Type="datetime" />
           <Property Name="isDeleted" Type="bit" />
+          <Property Name="baseId" Type="int" />
         </EntityType>
         <EntityType Name="ProfileShiftType">
           <Key>
@@ -212,6 +290,26 @@
           <Property Name="dateModified" Type="datetime" />
           <Property Name="isDeleted" Type="bit" />
           <Property Name="email" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RegisteredSurgery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="RegistrarLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="SecurityGroup">
           <Key>
@@ -238,8 +336,6 @@
           <Property Name="ModifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DRS.dbo.SecurityPermission_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SecurityRight">
           <Key>
             <PropertyRef Name="RightID" />
@@ -254,8 +350,6 @@ warning 6002: The table/view 'DRS.dbo.SecurityPermission_History' does not have 
           <Property Name="ModifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DRS.dbo.SecurityRight_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SecurityRole">
           <Key>
             <PropertyRef Name="RoleID" />
@@ -270,8 +364,16 @@ warning 6002: The table/view 'DRS.dbo.SecurityRight_History' does not have a pri
           <Property Name="ModifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ShiftType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
         <EntityType Name="SpecialNote">
           <Key>
             <PropertyRef Name="id" />
@@ -294,6 +396,16 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCreated" Type="datetime" />
           <Property Name="dateModified" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <Association Name="FK__SecurityP__Group__382F5661">
@@ -512,6 +624,18 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_Agency">
+          <End Role="Agency" Type="Self.Agency" Multiplicity="0..1" />
+          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="agencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_b9e3709fcadd3d69eb7b7c8cc03">
           <End Role="SubType" Type="Self.SubType" Multiplicity="0..1" />
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
@@ -524,6 +648,30 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_Bank">
+          <End Role="Bank" Type="Self.Bank" Multiplicity="0..1" />
+          <End Role="ProfileFinance" Type="Self.ProfileFinance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileFinance">
+              <PropertyRef Name="bankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Base">
+          <End Role="Base" Type="Self.Base" Multiplicity="0..1" />
+          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="baseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_c000a0f2b66dd4a69ad36de6460">
           <End Role="Profile" Type="Self.Profile" Multiplicity="0..1" />
           <End Role="ProfileDocument" Type="Self.ProfileDocument" Multiplicity="*" />
@@ -533,6 +681,30 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             </Principal>
             <Dependent Role="ProfileDocument">
               <PropertyRef Name="profileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CCG">
+          <End Role="CCG" Type="Self.CCG" Multiplicity="0..1" />
+          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CCG">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="ccgId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_DocumentType">
+          <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="0..1" />
+          <End Role="ProfileDocument" Type="Self.ProfileDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileDocument">
+              <PropertyRef Name="documentTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -608,6 +780,18 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_Indemnity">
+          <End Role="IndemnityProvider" Type="Self.IndemnityProvider" Multiplicity="0..1" />
+          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IndemnityProvider">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="indemnityProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Profile_SecurityRole">
           <End Role="SecurityRole" Type="Self.SecurityRole" Multiplicity="0..1" />
           <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
@@ -620,14 +804,70 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_RegisteredSurgery">
+          <End Role="RegisteredSurgery" Type="Self.RegisteredSurgery" Multiplicity="0..1" />
+          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegisteredSurgery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="registeredSurgeryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RegistrarLevel">
+          <End Role="RegistrarLevel" Type="Self.RegistrarLevel" Multiplicity="0..1" />
+          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrarLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="registrarLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ShiftType">
+          <End Role="ShiftType" Type="Self.ShiftType" Multiplicity="0..1" />
+          <End Role="ProfileShiftType" Type="Self.ProfileShiftType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShiftType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileShiftType">
+              <PropertyRef Name="shiftTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Team">
+          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="teamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DRSModelStoreContainer">
+          <EntitySet Name="Agency" EntityType="Self.Agency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base" EntityType="Self.Base" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CCG" EntityType="Self.CCG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Email" EntityType="Self.Email" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventLog" EntityType="Self.EventLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventLogConfig" EntityType="Self.EventLogConfig" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EventLogType" EntityType="Self.EventLogType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndemnityProvider" EntityType="Self.IndemnityProvider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JobType" EntityType="Self.JobType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lookup" EntityType="Self.Lookup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupType" EntityType="Self.LookupType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="migrations" EntityType="Self.migrations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentCategory" EntityType="Self.PaymentCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProfileDocument" EntityType="Self.ProfileDocument" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProfileFinance" EntityType="Self.ProfileFinance" Schema="dbo" store:Type="Tables" />
@@ -635,12 +875,16 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySet Name="ProfileProfessional" EntityType="Self.ProfileProfessional" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProfileShiftType" EntityType="Self.ProfileShiftType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QueuedEmail" EntityType="Self.QueuedEmail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegisteredSurgery" EntityType="Self.RegisteredSurgery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegistrarLevel" EntityType="Self.RegistrarLevel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityGroup" EntityType="Self.SecurityGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityPermission" EntityType="Self.SecurityPermission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityRight" EntityType="Self.SecurityRight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityRole" EntityType="Self.SecurityRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShiftType" EntityType="Self.ShiftType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SpecialNote" EntityType="Self.SpecialNote" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubType" EntityType="Self.SubType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__SecurityP__Group__382F5661" Association="Self.FK__SecurityP__Group__382F5661">
             <End Role="SecurityGroup" EntitySet="SecurityGroup" />
             <End Role="SecurityPermission" EntitySet="SecurityPermission" />
@@ -713,12 +957,32 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             <End Role="Lookup" EntitySet="Lookup" />
             <End Role="ProfileDocument" EntitySet="ProfileDocument" />
           </AssociationSet>
+          <AssociationSet Name="fk_Agency" Association="Self.fk_Agency">
+            <End Role="Agency" EntitySet="Agency" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
+          </AssociationSet>
           <AssociationSet Name="fk_b9e3709fcadd3d69eb7b7c8cc03" Association="Self.fk_b9e3709fcadd3d69eb7b7c8cc03">
             <End Role="SubType" EntitySet="SubType" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
+          <AssociationSet Name="fk_Bank" Association="Self.fk_Bank">
+            <End Role="Bank" EntitySet="Bank" />
+            <End Role="ProfileFinance" EntitySet="ProfileFinance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Base" Association="Self.fk_Base">
+            <End Role="Base" EntitySet="Base" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
+          </AssociationSet>
           <AssociationSet Name="fk_c000a0f2b66dd4a69ad36de6460" Association="Self.fk_c000a0f2b66dd4a69ad36de6460">
             <End Role="Profile" EntitySet="Profile" />
+            <End Role="ProfileDocument" EntitySet="ProfileDocument" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CCG" Association="Self.fk_CCG">
+            <End Role="CCG" EntitySet="CCG" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DocumentType" Association="Self.fk_DocumentType">
+            <End Role="DocumentType" EntitySet="DocumentType" />
             <End Role="ProfileDocument" EntitySet="ProfileDocument" />
           </AssociationSet>
           <AssociationSet Name="fk_e2c98fd24e3a6be988a12494962" Association="Self.fk_e2c98fd24e3a6be988a12494962">
@@ -745,9 +1009,29 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             <End Role="Lookup" EntitySet="Lookup" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
+          <AssociationSet Name="fk_Indemnity" Association="Self.fk_Indemnity">
+            <End Role="IndemnityProvider" EntitySet="IndemnityProvider" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
+          </AssociationSet>
           <AssociationSet Name="FK_Profile_SecurityRole" Association="Self.FK_Profile_SecurityRole">
             <End Role="SecurityRole" EntitySet="SecurityRole" />
             <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RegisteredSurgery" Association="Self.fk_RegisteredSurgery">
+            <End Role="RegisteredSurgery" EntitySet="RegisteredSurgery" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RegistrarLevel" Association="Self.fk_RegistrarLevel">
+            <End Role="RegistrarLevel" EntitySet="RegistrarLevel" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ShiftType" Association="Self.fk_ShiftType">
+            <End Role="ShiftType" EntitySet="ShiftType" />
+            <End Role="ProfileShiftType" EntitySet="ProfileShiftType" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Team" Association="Self.fk_Team">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -869,6 +1153,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profile" Relationship="Self.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
           <NavigationProperty Name="Lookup" Relationship="DRSModel.fk_acf4862a0cd563f13dd928abe8f" FromRole="ProfileDocument" ToRole="Lookup" />
+          <NavigationProperty Name="DocumentType" Relationship="DRSModel.fk_DocumentType" FromRole="ProfileDocument" ToRole="DocumentType" />
         </EntityType>
         <EntityType Name="ProfileFinance">
           <Key>
@@ -887,6 +1172,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Lookup" Relationship="Self.fk_6ba690537dabd13ee8fb4ab5bd5" FromRole="ProfileFinance" ToRole="Lookup" />
           <NavigationProperty Name="Profiles" Relationship="Self.fk_e7569dcf417e285aff79a7581cb" FromRole="ProfileFinance" ToRole="Profile" />
+          <NavigationProperty Name="Bank" Relationship="DRSModel.fk_Bank" FromRole="ProfileFinance" ToRole="Bank" />
         </EntityType>
         <EntityType Name="ProfilePaymentCategory">
           <Key>
@@ -943,6 +1229,14 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <NavigationProperty Name="ProfilePaymentCategories" Relationship="Self.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfileProfessional" ToRole="ProfilePaymentCategory" />
           <NavigationProperty Name="SubType" Relationship="Self.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="ProfileProfessional" ToRole="SubType" />
           <NavigationProperty Name="ProfileShiftTypes" Relationship="Self.fk_eab3618488d653242b55e486b64" FromRole="ProfileProfessional" ToRole="ProfileShiftType" />
+          <Property Name="baseId" Type="Int32" />
+          <NavigationProperty Name="Agency" Relationship="DRSModel.fk_Agency" FromRole="ProfileProfessional" ToRole="Agency" />
+          <NavigationProperty Name="Base" Relationship="DRSModel.fk_Base" FromRole="ProfileProfessional" ToRole="Base" />
+          <NavigationProperty Name="CCG" Relationship="DRSModel.fk_CCG" FromRole="ProfileProfessional" ToRole="CCG" />
+          <NavigationProperty Name="IndemnityProvider" Relationship="DRSModel.fk_Indemnity" FromRole="ProfileProfessional" ToRole="IndemnityProvider" />
+          <NavigationProperty Name="RegisteredSurgery" Relationship="DRSModel.fk_RegisteredSurgery" FromRole="ProfileProfessional" ToRole="RegisteredSurgery" />
+          <NavigationProperty Name="RegistrarLevel" Relationship="DRSModel.fk_RegistrarLevel" FromRole="ProfileProfessional" ToRole="RegistrarLevel" />
+          <NavigationProperty Name="Team" Relationship="DRSModel.fk_Team" FromRole="ProfileProfessional" ToRole="Team" />
         </EntityType>
         <EntityType Name="ProfileShiftType">
           <Key>
@@ -957,6 +1251,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Lookup" Relationship="Self.fk_f368a2ec3f354d1b68093b2dca6" FromRole="ProfileShiftType" ToRole="Lookup" />
           <NavigationProperty Name="ProfileProfessional" Relationship="Self.fk_eab3618488d653242b55e486b64" FromRole="ProfileShiftType" ToRole="ProfileProfessional" />
+          <NavigationProperty Name="ShiftType" Relationship="DRSModel.fk_ShiftType" FromRole="ProfileShiftType" ToRole="ShiftType" />
         </EntityType>
         <EntityType Name="QueuedEmail">
           <Key>
@@ -1354,6 +1649,58 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             <End Role="SecurityRole" EntitySet="SecurityRoles" />
             <End Role="Profile" EntitySet="Profiles" />
           </AssociationSet>
+          <EntitySet Name="Agencies" EntityType="DRSModel.Agency" />
+          <EntitySet Name="Banks" EntityType="DRSModel.Bank" />
+          <EntitySet Name="Bases" EntityType="DRSModel.Base" />
+          <EntitySet Name="CCGs" EntityType="DRSModel.CCG" />
+          <EntitySet Name="DocumentTypes" EntityType="DRSModel.DocumentType" />
+          <EntitySet Name="IndemnityProviders" EntityType="DRSModel.IndemnityProvider" />
+          <EntitySet Name="migrations" EntityType="DRSModel.migration" />
+          <EntitySet Name="PaymentCategories" EntityType="DRSModel.PaymentCategory" />
+          <EntitySet Name="RegisteredSurgeries" EntityType="DRSModel.RegisteredSurgery" />
+          <EntitySet Name="RegistrarLevels" EntityType="DRSModel.RegistrarLevel" />
+          <EntitySet Name="ShiftTypes" EntityType="DRSModel.ShiftType" />
+          <EntitySet Name="Teams" EntityType="DRSModel.Team" />
+          <AssociationSet Name="fk_Agency" Association="DRSModel.fk_Agency">
+            <End Role="Agency" EntitySet="Agencies" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Bank" Association="DRSModel.fk_Bank">
+            <End Role="Bank" EntitySet="Banks" />
+            <End Role="ProfileFinance" EntitySet="ProfileFinances" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Base" Association="DRSModel.fk_Base">
+            <End Role="Base" EntitySet="Bases" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CCG" Association="DRSModel.fk_CCG">
+            <End Role="CCG" EntitySet="CCGs" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DocumentType" Association="DRSModel.fk_DocumentType">
+            <End Role="DocumentType" EntitySet="DocumentTypes" />
+            <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Indemnity" Association="DRSModel.fk_Indemnity">
+            <End Role="IndemnityProvider" EntitySet="IndemnityProviders" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RegisteredSurgery" Association="DRSModel.fk_RegisteredSurgery">
+            <End Role="RegisteredSurgery" EntitySet="RegisteredSurgeries" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RegistrarLevel" Association="DRSModel.fk_RegistrarLevel">
+            <End Role="RegistrarLevel" EntitySet="RegistrarLevels" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Team" Association="DRSModel.fk_Team">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ShiftType" Association="DRSModel.fk_ShiftType">
+            <End Role="ShiftType" EntitySet="ShiftTypes" />
+            <End Role="ProfileShiftType" EntitySet="ProfileShiftTypes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="EventLog">
           <Key>
@@ -1547,6 +1894,253 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Agency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Agency" FromRole="Agency" ToRole="ProfileProfessional" />
+        </EntityType>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileFinances" Relationship="DRSModel.fk_Bank" FromRole="Bank" ToRole="ProfileFinance" />
+        </EntityType>
+        <EntityType Name="Base">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Base" FromRole="Base" ToRole="ProfileProfessional" />
+        </EntityType>
+        <EntityType Name="CCG">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_CCG" FromRole="CCG" ToRole="ProfileProfessional" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileDocuments" Relationship="DRSModel.fk_DocumentType" FromRole="DocumentType" ToRole="ProfileDocument" />
+        </EntityType>
+        <EntityType Name="IndemnityProvider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Indemnity" FromRole="IndemnityProvider" ToRole="ProfileProfessional" />
+        </EntityType>
+        <EntityType Name="migration">
+          <Key>
+            <PropertyRef Name="timestamp" />
+          </Key>
+          <Property Name="timestamp" Type="Single" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PaymentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="RegisteredSurgery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_RegisteredSurgery" FromRole="RegisteredSurgery" ToRole="ProfileProfessional" />
+        </EntityType>
+        <EntityType Name="RegistrarLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_RegistrarLevel" FromRole="RegistrarLevel" ToRole="ProfileProfessional" />
+        </EntityType>
+        <EntityType Name="ShiftType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileShiftTypes" Relationship="DRSModel.fk_ShiftType" FromRole="ShiftType" ToRole="ProfileShiftType" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Team" FromRole="Team" ToRole="ProfileProfessional" />
+        </EntityType>
+        <Association Name="fk_Agency">
+          <End Type="DRSModel.Agency" Role="Agency" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="agencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Bank">
+          <End Type="DRSModel.Bank" Role="Bank" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileFinance" Role="ProfileFinance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileFinance">
+              <PropertyRef Name="bankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Base">
+          <End Type="DRSModel.Base" Role="Base" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="baseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CCG">
+          <End Type="DRSModel.CCG" Role="CCG" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CCG">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="ccgId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_DocumentType">
+          <End Type="DRSModel.DocumentType" Role="DocumentType" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileDocument" Role="ProfileDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileDocument">
+              <PropertyRef Name="documentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Indemnity">
+          <End Type="DRSModel.IndemnityProvider" Role="IndemnityProvider" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IndemnityProvider">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="indemnityProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RegisteredSurgery">
+          <End Type="DRSModel.RegisteredSurgery" Role="RegisteredSurgery" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegisteredSurgery">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="registeredSurgeryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RegistrarLevel">
+          <End Type="DRSModel.RegistrarLevel" Role="RegistrarLevel" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrarLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="registrarLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Team">
+          <End Type="DRSModel.Team" Role="Team" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileProfessional">
+              <PropertyRef Name="teamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ShiftType">
+          <End Type="DRSModel.ShiftType" Role="ShiftType" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileShiftType" Role="ProfileShiftType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShiftType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfileShiftType">
+              <PropertyRef Name="shiftTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1687,6 +2281,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="ProfileProfessionals">
             <EntityTypeMapping TypeName="DRSModel.ProfileProfessional">
               <MappingFragment StoreEntitySet="ProfileProfessional">
+                <ScalarProperty Name="baseId" ColumnName="baseId" />
                 <ScalarProperty Name="teamId" ColumnName="teamId" />
                 <ScalarProperty Name="jobTypeId" ColumnName="jobTypeId" />
                 <ScalarProperty Name="gmcNumber" ColumnName="gmcNumber" />
@@ -1855,6 +2450,135 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
                 <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agencies">
+            <EntityTypeMapping TypeName="DRSModel.Agency">
+              <MappingFragment StoreEntitySet="Agency">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Banks">
+            <EntityTypeMapping TypeName="DRSModel.Bank">
+              <MappingFragment StoreEntitySet="Bank">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bases">
+            <EntityTypeMapping TypeName="DRSModel.Base">
+              <MappingFragment StoreEntitySet="Base">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CCGs">
+            <EntityTypeMapping TypeName="DRSModel.CCG">
+              <MappingFragment StoreEntitySet="CCG">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentTypes">
+            <EntityTypeMapping TypeName="DRSModel.DocumentType">
+              <MappingFragment StoreEntitySet="DocumentType">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndemnityProviders">
+            <EntityTypeMapping TypeName="DRSModel.IndemnityProvider">
+              <MappingFragment StoreEntitySet="IndemnityProvider">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="migrations">
+            <EntityTypeMapping TypeName="DRSModel.migration">
+              <MappingFragment StoreEntitySet="migrations">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentCategories">
+            <EntityTypeMapping TypeName="DRSModel.PaymentCategory">
+              <MappingFragment StoreEntitySet="PaymentCategory">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegisteredSurgeries">
+            <EntityTypeMapping TypeName="DRSModel.RegisteredSurgery">
+              <MappingFragment StoreEntitySet="RegisteredSurgery">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegistrarLevels">
+            <EntityTypeMapping TypeName="DRSModel.RegistrarLevel">
+              <MappingFragment StoreEntitySet="RegistrarLevel">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShiftTypes">
+            <EntityTypeMapping TypeName="DRSModel.ShiftType">
+              <MappingFragment StoreEntitySet="ShiftType">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="DRSModel.Team">
+              <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

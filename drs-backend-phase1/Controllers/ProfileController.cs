@@ -199,6 +199,105 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Searches  profiles firstname/lastname by keyword.
+        /// </summary>
+        /// <param name="searchTerm">The search term.</param>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <returns>Array object</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("searchProfiles")]
+        public object SearchProfiles(string searchTerm, bool includeDeleted = false, int page = 0, int pageSize = 10)
+        {
+            Log.DebugFormat("ProfileController (SearchProfiles)\n");
+
+            try
+            {
+                IOrderedQueryable<object> query = _db.Profiles
+                    .Where(p => 
+                    (p.isDeleted == null || p.isDeleted == false || includeDeleted && p.isDeleted == true) 
+                        && (p.lastName.ToLower().Contains(searchTerm.ToLower()) 
+                        || p.firstName.ToLower().Contains(searchTerm.ToLower())
+                        || p.middleNames.ToLower().Contains(searchTerm.ToLower())
+                        ))
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.firstName,
+                                p.middleNames,
+                                p.lastName,
+                                p.dateOfBirth,
+                                p.address1,
+                                p.address2,
+                                p.address3,
+                                p.address4,
+                                p.address5,
+                                p.postcode,
+                                p.homePhone,
+                                p.mobilePhone,
+                                p.homeEmail,
+                                p.nhsEmail,
+                                p.smsEnabled,
+                                p.isInactive,
+                                p.isComplete,
+                                p.id,
+                                p.dateCreated,
+                                p.dateModified,
+                                p.isDeleted,
+                                p.profileProfessionalId,
+                                p.profileFinanceId,
+                                p.adEmailAddress,
+                                role = new
+                                {
+                                    p.SecurityRole.RoleID,
+                                    p.SecurityRole.RoleName
+                                },
+                                finance = new
+                                {
+                                    p.ProfileFinance.id,
+                                    p.ProfileFinance.payrollNumber,
+                                    p.ProfileFinance.isIc24Staff,
+                                    p.ProfileFinance.bankId,
+                                    p.ProfileFinance.bankSortCode,
+                                    p.ProfileFinance.bankAccountNumber,
+                                    p.ProfileFinance.buildingSocietyRollNumber
+                                },
+                                professional = new
+                                {
+                                    p.ProfileProfessional.id,
+                                    p.ProfileProfessional.gmcNumber,
+                                    p.ProfileProfessional.hcpcNumber,
+                                    p.ProfileProfessional.indemnityExpiryDate,
+                                    p.ProfileProfessional.isPremium,
+                                    p.ProfileProfessional.isTrainer,
+                                    p.ProfileProfessional.nmcNumber,
+                                    p.ProfileProfessional.performersListChecked,
+                                    p.ProfileProfessional.registrarTrainer,
+                                    jobRole = new
+                                    {
+                                        p.ProfileProfessional.JobType.id,
+                                        p.ProfileProfessional.JobType.name,
+                                        p.ProfileProfessional.JobType.isGmcRequired,
+                                        p.ProfileProfessional.JobType.isHcpcRequired,
+                                        p.ProfileProfessional.JobType.isNmcRequired
+                                    }
+                                }
+                            })
+                    .OrderBy(x => x.id);
+
+                return query.DoPaging(page, pageSize);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message}");
+            }
+        }
+
 
         /// <summary>
         ///     Fetches the last name of the many by first or.

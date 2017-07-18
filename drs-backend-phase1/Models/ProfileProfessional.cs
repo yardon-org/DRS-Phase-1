@@ -48,6 +48,7 @@ namespace drs_backend_phase1.Models
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
         public Nullable<bool> isDeleted { get; set; }
+        public Nullable<int> baseId { get; set; }
     
         public virtual JobType JobType { get; set; }
         public virtual Lookup Lookup { get; set; }
@@ -63,5 +64,12 @@ namespace drs_backend_phase1.Models
         public virtual SubType SubType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfileShiftType> ProfileShiftTypes { get; set; }
+        public virtual Agency Agency { get; set; }
+        public virtual Base Base { get; set; }
+        public virtual CCG CCG { get; set; }
+        public virtual IndemnityProvider IndemnityProvider { get; set; }
+        public virtual RegisteredSurgery RegisteredSurgery { get; set; }
+        public virtual RegistrarLevel RegistrarLevel { get; set; }
+        public virtual Team Team { get; set; }
     }
 }

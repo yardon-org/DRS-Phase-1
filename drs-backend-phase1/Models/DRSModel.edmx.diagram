@@ -52,6 +52,28 @@
         <AssociationConnector Association="DRSModel.FK__SecurityP__RoleI__39237A9A" />
         <AssociationConnector Association="DRSModel.fk_acf4862a0cd563f13dd928abe8f" />
         <AssociationConnector Association="DRSModel.FK_Profile_SecurityRole" />
+        <EntityTypeShape EntityType="DRSModel.Agency" Width="1.5" PointX="6" PointY="26.125" />
+        <EntityTypeShape EntityType="DRSModel.Bank" Width="1.5" PointX="3.625" PointY="4.875" />
+        <EntityTypeShape EntityType="DRSModel.Base" Width="1.5" PointX="6" PointY="29" />
+        <EntityTypeShape EntityType="DRSModel.CCG" Width="1.5" PointX="6" PointY="34.875" />
+        <EntityTypeShape EntityType="DRSModel.DocumentType" Width="1.5" PointX="13.5" PointY="1.75" />
+        <EntityTypeShape EntityType="DRSModel.IndemnityProvider" Width="1.5" PointX="6" PointY="23.25" />
+        <EntityTypeShape EntityType="DRSModel.migration" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="1.5" PointX="15.375" PointY="13.75" />
+        <EntityTypeShape EntityType="DRSModel.RegisteredSurgery" Width="1.5" PointX="6" PointY="37.75" />
+        <EntityTypeShape EntityType="DRSModel.RegistrarLevel" Width="1.5" PointX="6" PointY="32" />
+        <EntityTypeShape EntityType="DRSModel.ShiftType" Width="1.5" PointX="11.25" PointY="21.75" />
+        <EntityTypeShape EntityType="DRSModel.Team" Width="1.5" PointX="5.375" PointY="0.875" />
+        <AssociationConnector Association="DRSModel.fk_Agency" />
+        <AssociationConnector Association="DRSModel.fk_Bank" />
+        <AssociationConnector Association="DRSModel.fk_Base" />
+        <AssociationConnector Association="DRSModel.fk_CCG" />
+        <AssociationConnector Association="DRSModel.fk_DocumentType" />
+        <AssociationConnector Association="DRSModel.fk_Indemnity" />
+        <AssociationConnector Association="DRSModel.fk_RegisteredSurgery" />
+        <AssociationConnector Association="DRSModel.fk_RegistrarLevel" />
+        <AssociationConnector Association="DRSModel.fk_Team" />
+        <AssociationConnector Association="DRSModel.fk_ShiftType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

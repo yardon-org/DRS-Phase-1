@@ -35,5 +35,6 @@ namespace drs_backend_phase1.Models
         public virtual Lookup Lookup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile> Profiles { get; set; }
+        public virtual Bank Bank { get; set; }
     }
 }
