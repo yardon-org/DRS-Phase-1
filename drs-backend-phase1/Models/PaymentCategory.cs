@@ -14,10 +14,19 @@ namespace drs_backend_phase1.Models
     
     public partial class PaymentCategory
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PaymentCategory()
+        {
+            this.ProfilePaymentCategories = new HashSet<ProfilePaymentCategory>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
         public bool isDeleted { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProfilePaymentCategory> ProfilePaymentCategories { get; set; }
     }
 }

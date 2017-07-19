@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="DRSModel.EventLogType" Width="1.5" PointX="12.75" PointY="9.375" />
         <EntityTypeShape EntityType="DRSModel.IndemnityProvider" Width="1.5" PointX="0.75" PointY="14.625" />
         <EntityTypeShape EntityType="DRSModel.JobType" Width="1.5" PointX="0.75" PointY="7.375" />
-        <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="1.5" PointX="13.75" PointY="5.25" />
         <EntityTypeShape EntityType="DRSModel.Profile" Width="1.5" PointX="8.25" PointY="5.5" />
         <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="10.5" PointY="7.125" />
         <EntityTypeShape EntityType="DRSModel.ProfileFinance" Width="1.5" PointX="6" PointY="14" />
@@ -61,6 +60,8 @@
         <AssociationConnector Association="DRSModel.FK__SecurityP__Group__382F5661" />
         <AssociationConnector Association="DRSModel.FK__SecurityP__Right__3A179ED3" />
         <AssociationConnector Association="DRSModel.FK__SecurityP__RoleI__39237A9A" />
+        <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="1.5" PointX="13.375" PointY="5.875" />
+        <AssociationConnector Association="DRSModel.fk_PaymentCategory" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

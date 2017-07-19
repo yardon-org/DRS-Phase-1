@@ -9,7 +9,7 @@ using log4net;
 namespace drs_backend_phase1.Controllers
 {
     /// <summary>
-    ///     Lookup Controller - handles small table lookups
+    /// Lookup Controller - handles small table lookups
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     [RoutePrefix("api/lookup")]

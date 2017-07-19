@@ -36,7 +36,6 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<EventLogType> EventLogTypes { get; set; }
         public virtual DbSet<IndemnityProvider> IndemnityProviders { get; set; }
         public virtual DbSet<JobType> JobTypes { get; set; }
-        public virtual DbSet<PaymentCategory> PaymentCategories { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<ProfileDocument> ProfileDocuments { get; set; }
         public virtual DbSet<ProfileFinance> ProfileFinances { get; set; }
@@ -55,5 +54,6 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<SubType> SubTypes { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<ProfileDocumentBackup> ProfileDocumentBackups { get; set; }
+        public virtual DbSet<PaymentCategory> PaymentCategories { get; set; }
     }
 }

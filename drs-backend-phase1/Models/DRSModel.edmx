@@ -649,6 +649,18 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_PaymentCategory">
+          <End Role="PaymentCategory" Type="Self.PaymentCategory" Multiplicity="0..1" />
+          <End Role="ProfilePaymentCategory" Type="Self.ProfilePaymentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfilePaymentCategory">
+              <PropertyRef Name="paymentCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Profile_SecurityRole">
           <End Role="SecurityRole" Type="Self.SecurityRole" Multiplicity="0..1" />
           <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
@@ -838,6 +850,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             <End Role="JobType" EntitySet="JobType" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
+          <AssociationSet Name="fk_PaymentCategory" Association="Self.fk_PaymentCategory">
+            <End Role="PaymentCategory" EntitySet="PaymentCategory" />
+            <End Role="ProfilePaymentCategory" EntitySet="ProfilePaymentCategory" />
+          </AssociationSet>
           <AssociationSet Name="FK_Profile_SecurityRole" Association="Self.FK_Profile_SecurityRole">
             <End Role="SecurityRole" EntitySet="SecurityRole" />
             <End Role="Profile" EntitySet="Profile" />
@@ -875,7 +891,6 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <EntitySet Name="EventLogTypes" EntityType="DRSModel.EventLogType" />
           <EntitySet Name="IndemnityProviders" EntityType="DRSModel.IndemnityProvider" />
           <EntitySet Name="JobTypes" EntityType="DRSModel.JobType" />
-          <EntitySet Name="PaymentCategories" EntityType="DRSModel.PaymentCategory" />
           <EntitySet Name="Profiles" EntityType="DRSModel.Profile" />
           <EntitySet Name="ProfileDocuments" EntityType="DRSModel.ProfileDocument" />
           <EntitySet Name="ProfileFinances" EntityType="DRSModel.ProfileFinance" />
@@ -997,6 +1012,11 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <AssociationSet Name="FK__SecurityP__RoleI__39237A9A" Association="DRSModel.FK__SecurityP__RoleI__39237A9A">
             <End Role="SecurityRole" EntitySet="SecurityRoles" />
             <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
+          </AssociationSet>
+          <EntitySet Name="PaymentCategories" EntityType="DRSModel.PaymentCategory" />
+          <AssociationSet Name="fk_PaymentCategory" Association="DRSModel.fk_PaymentCategory">
+            <End Role="PaymentCategory" EntitySet="PaymentCategories" />
+            <End Role="ProfilePaymentCategory" EntitySet="ProfilePaymentCategories" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Agency">
@@ -1130,16 +1150,6 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_JobType" FromRole="JobType" ToRole="ProfileProfessional" />
         </EntityType>
-        <EntityType Name="PaymentCategory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
-          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="Profile">
           <Key>
             <PropertyRef Name="id" />
@@ -1223,6 +1233,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <Property Name="dateModified" Type="DateTime" Precision="3" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfilePaymentCategory" ToRole="ProfileProfessional" />
+          <NavigationProperty Name="PaymentCategory" Relationship="DRSModel.fk_PaymentCategory" FromRole="ProfilePaymentCategory" ToRole="PaymentCategory" />
         </EntityType>
         <EntityType Name="ProfileProfessional">
           <Key>
@@ -1753,6 +1764,29 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="PaymentCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProfilePaymentCategories" Relationship="DRSModel.fk_PaymentCategory" FromRole="PaymentCategory" ToRole="ProfilePaymentCategory" />
+        </EntityType>
+        <Association Name="fk_PaymentCategory">
+          <End Type="DRSModel.PaymentCategory" Role="PaymentCategory" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfilePaymentCategory" Role="ProfilePaymentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfilePaymentCategory">
+              <PropertyRef Name="paymentCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1884,17 +1918,6 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isGmcRequired" ColumnName="isGmcRequired" />
                 <ScalarProperty Name="isClinical" ColumnName="isClinical" />
                 <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PaymentCategories">
-            <EntityTypeMapping TypeName="DRSModel.PaymentCategory">
-              <MappingFragment StoreEntitySet="PaymentCategory">
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2176,6 +2199,17 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="multerFileName" ColumnName="multerFileName" />
                 <ScalarProperty Name="originalFileName" ColumnName="originalFileName" />
                 <ScalarProperty Name="documentTypeId" ColumnName="documentTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentCategories">
+            <EntityTypeMapping TypeName="DRSModel.PaymentCategory">
+              <MappingFragment StoreEntitySet="PaymentCategory">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
