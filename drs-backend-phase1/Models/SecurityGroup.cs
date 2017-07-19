@@ -20,10 +20,10 @@ namespace drs_backend_phase1.Models
             this.SecurityPermissions = new HashSet<SecurityPermission>();
         }
     
-        public byte GroupID { get; set; }
-        public string GroupName { get; set; }
-        public System.DateTime ValidFrom { get; set; }
-        public System.DateTime ValidTo { get; set; }
+        public byte groupId { get; set; }
+        public string groupName { get; set; }
+        public System.DateTime validFrom { get; set; }
+        public System.DateTime validTo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SecurityPermission> SecurityPermissions { get; set; }

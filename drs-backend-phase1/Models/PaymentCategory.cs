@@ -20,8 +20,8 @@ namespace drs_backend_phase1.Models
             this.ProfilePaymentCategories = new HashSet<ProfilePaymentCategory>();
         }
     
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
         public bool isDeleted { get; set; }

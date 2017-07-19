@@ -281,13 +281,46 @@
     <Compile Include="Models\DocumentType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Email.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventLog.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventLogConfig.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventLogType.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IndemnityProvider.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PaymentCategory.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProfileDocumentBackup.cs">
+    <Compile Include="Models\Profile.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfileDocument.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfileFinance.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfilePaymentCategory.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfileProfessional.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfileShiftType.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QueuedEmail.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RegisteredSurgery.cs">
@@ -309,6 +342,12 @@
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ShiftType.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpecialNote.cs">
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Team.cs">
@@ -343,23 +382,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DRSModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Email.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EventLog.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EventLogConfig.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EventLogType.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Get_AddressesForPostCodeSimple_Result.cs">
       <DependentUpon>PAFModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\JobType.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PAFModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -375,33 +399,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PAFModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Profile.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProfileDocument.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProfileFinance.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProfilePaymentCategory.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProfileProfessional.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProfileShiftType.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QueuedEmail.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpecialNote.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SubType.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\SimpleAuthorizationServerProvider.cs" />

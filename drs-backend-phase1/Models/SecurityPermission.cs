@@ -14,16 +14,16 @@ namespace drs_backend_phase1.Models
     
     public partial class SecurityPermission
     {
-        public int PermissionID { get; set; }
-        public byte GroupID { get; set; }
-        public byte RoleID { get; set; }
-        public byte RightID { get; set; }
-        public System.DateTime ValidFrom { get; set; }
-        public System.DateTime ValidTo { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
-        public Nullable<System.DateTime> DateModified { get; set; }
-        public Nullable<int> CreatedProfileID { get; set; }
-        public Nullable<int> ModifiedProfileID { get; set; }
+        public int permissionId { get; set; }
+        public byte groupId { get; set; }
+        public byte roleId { get; set; }
+        public byte rightId { get; set; }
+        public System.DateTime validFrom { get; set; }
+        public System.DateTime validTo { get; set; }
+        public Nullable<System.DateTime> dateCreated { get; set; }
+        public Nullable<System.DateTime> dateModified { get; set; }
+        public Nullable<int> createdProfileId { get; set; }
+        public Nullable<int> modifiedProfileId { get; set; }
         public Nullable<bool> isDeleted { get; set; }
     
         public virtual SecurityGroup SecurityGroup { get; set; }

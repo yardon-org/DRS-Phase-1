@@ -36,7 +36,7 @@ namespace drs_backend_phase1.Services
 
             if (profile != null && profile.roleID!=0)
             {
-                return _db.SecurityRoles.SingleOrDefault(x => x.RoleID == profile.roleID);
+                return _db.SecurityRoles.SingleOrDefault(x => x.roleId == profile.roleID);
             }
 
             return null;

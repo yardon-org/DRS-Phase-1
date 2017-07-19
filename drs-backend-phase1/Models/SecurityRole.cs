@@ -21,14 +21,14 @@ namespace drs_backend_phase1.Models
             this.SecurityPermissions = new HashSet<SecurityPermission>();
         }
     
-        public byte RoleID { get; set; }
-        public string RoleName { get; set; }
-        public System.DateTime ValidFrom { get; set; }
-        public System.DateTime ValidTo { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
-        public Nullable<System.DateTime> DateModified { get; set; }
-        public Nullable<int> CreatedProfileID { get; set; }
-        public Nullable<int> ModifiedProfileID { get; set; }
+        public byte roleId { get; set; }
+        public string roleName { get; set; }
+        public System.DateTime validFrom { get; set; }
+        public System.DateTime validTo { get; set; }
+        public Nullable<System.DateTime> dateCreated { get; set; }
+        public Nullable<System.DateTime> dateModified { get; set; }
+        public Nullable<int> createdProfileID { get; set; }
+        public Nullable<int> modifiedProfileID { get; set; }
         public Nullable<bool> isDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

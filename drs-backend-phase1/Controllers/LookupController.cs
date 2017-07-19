@@ -59,10 +59,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -97,10 +97,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -136,10 +136,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -173,10 +173,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -210,10 +210,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -247,10 +247,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -285,10 +285,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -323,10 +323,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -361,10 +361,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -398,10 +398,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -435,10 +435,10 @@ namespace drs_backend_phase1.Controllers
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -469,15 +469,15 @@ namespace drs_backend_phase1.Controllers
             {
                 IOrderedQueryable<object> query = _db.Agencies
                     .Where(x => x.isDeleted == isDeleted
-                                && x.Name.ToLower().Contains(searchTerm.ToLower()))
+                                && x.name.ToLower().Contains(searchTerm.ToLower()))
                     .Select(
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }
@@ -507,16 +507,16 @@ namespace drs_backend_phase1.Controllers
                 IOrderedQueryable<object> query = _db.RegisteredSurgeries
                     .Where(x => x.isDeleted == isDeleted
                                 &&
-                                x.Name.ToLower().Contains(searchTerm.ToLower())
+                                x.name.ToLower().Contains(searchTerm.ToLower())
                     )
                     .Select(
                         p =>
                             new
                             {
-                                p.Id,
-                                p.Name
+                                p.id,
+                                p.name
                             })
-                    .OrderBy(x => x.Id);
+                    .OrderBy(x => x.id);
 
                 return query.DoPaging(page, pageSize);
             }

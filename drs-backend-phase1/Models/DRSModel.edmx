@@ -7,50 +7,51 @@
     <Schema Namespace="DRSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Agency">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Bank">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Base">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" />
+          <Property Name="teamId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="CCG">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="DocumentType">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
@@ -100,10 +101,10 @@
         </EntityType>
         <EntityType Name="IndemnityProvider">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
@@ -124,10 +125,10 @@
         </EntityType>
         <EntityType Name="PaymentCategory">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
@@ -177,24 +178,6 @@
           <Property Name="dateCreated" Type="datetime" />
           <Property Name="dateModified" Type="datetime" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ProfileDocumentBackup">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="documentTypeId" Type="int" />
-          <Property Name="originalFileName" Type="nvarchar" MaxLength="255" />
-          <Property Name="multerFileName" Type="nvarchar" MaxLength="255" />
-          <Property Name="mimeType" Type="nvarchar" MaxLength="255" />
-          <Property Name="dateObtained" Type="datetime" />
-          <Property Name="dateExpires" Type="datetime" />
-          <Property Name="profileId" Type="int" />
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
-          <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="ProfileFinance">
           <Key>
@@ -282,83 +265,83 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="RegisteredSurgery">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="RegistrarLevel">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="SecurityGroup">
           <Key>
-            <PropertyRef Name="GroupID" />
+            <PropertyRef Name="groupId" />
           </Key>
-          <Property Name="GroupID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GroupName" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="ValidFrom" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ValidTo" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="groupId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="groupName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="SecurityPermission">
           <Key>
-            <PropertyRef Name="PermissionID" />
+            <PropertyRef Name="permissionId" />
           </Key>
-          <Property Name="PermissionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GroupID" Type="tinyint" Nullable="false" />
-          <Property Name="RoleID" Type="tinyint" Nullable="false" />
-          <Property Name="RightID" Type="tinyint" Nullable="false" />
-          <Property Name="ValidFrom" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ValidTo" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="DateCreated" Type="datetime" />
-          <Property Name="DateModified" Type="datetime" />
-          <Property Name="CreatedProfileID" Type="int" />
-          <Property Name="ModifiedProfileID" Type="int" />
+          <Property Name="permissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="groupId" Type="tinyint" Nullable="false" />
+          <Property Name="roleId" Type="tinyint" Nullable="false" />
+          <Property Name="rightId" Type="tinyint" Nullable="false" />
+          <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" />
+          <Property Name="dateModified" Type="datetime" />
+          <Property Name="createdProfileId" Type="int" />
+          <Property Name="modifiedProfileId" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
-            <PropertyRef Name="RightID" />
+            <PropertyRef Name="rightID" />
           </Key>
-          <Property Name="RightID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RightName" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="ValidFrom" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ValidTo" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="DateCreated" Type="datetime" />
-          <Property Name="DateModified" Type="datetime" />
-          <Property Name="CreatedProfileID" Type="int" />
-          <Property Name="ModifiedProfileID" Type="int" />
+          <Property Name="rightID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rightName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" />
+          <Property Name="dateModified" Type="datetime" />
+          <Property Name="createdProfileId" Type="int" />
+          <Property Name="modifiedProfileId" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="SecurityRole">
           <Key>
-            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="roleId" />
           </Key>
-          <Property Name="RoleID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RoleName" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="ValidFrom" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ValidTo" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="DateCreated" Type="datetime" />
-          <Property Name="DateModified" Type="datetime" />
-          <Property Name="CreatedProfileID" Type="int" />
-          <Property Name="ModifiedProfileID" Type="int" />
+          <Property Name="roleId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roleName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" />
+          <Property Name="dateModified" Type="datetime" />
+          <Property Name="createdProfileID" Type="int" />
+          <Property Name="modifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="ShiftType">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
@@ -389,10 +372,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="Team">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
@@ -402,10 +385,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityGroup">
-              <PropertyRef Name="GroupID" />
+              <PropertyRef Name="groupId" />
             </Principal>
             <Dependent Role="SecurityPermission">
-              <PropertyRef Name="GroupID" />
+              <PropertyRef Name="groupId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -414,10 +397,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityRight">
-              <PropertyRef Name="RightID" />
+              <PropertyRef Name="rightID" />
             </Principal>
             <Dependent Role="SecurityPermission">
-              <PropertyRef Name="RightID" />
+              <PropertyRef Name="rightId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -426,10 +409,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityRole">
-              <PropertyRef Name="RoleID" />
+              <PropertyRef Name="roleId" />
             </Principal>
             <Dependent Role="SecurityPermission">
-              <PropertyRef Name="RoleID" />
+              <PropertyRef Name="roleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -522,7 +505,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Agency">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="agencyId" />
@@ -546,7 +529,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileFinance" Type="Self.ProfileFinance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bank">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileFinance">
               <PropertyRef Name="bankId" />
@@ -558,7 +541,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Base">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="baseId" />
@@ -582,7 +565,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CCG">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="ccgId" />
@@ -594,7 +577,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileDocument" Type="Self.ProfileDocument" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DocumentType">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileDocument">
               <PropertyRef Name="documentTypeId" />
@@ -630,7 +613,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IndemnityProvider">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="indemnityProviderId" />
@@ -654,7 +637,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfilePaymentCategory" Type="Self.ProfilePaymentCategory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PaymentCategory">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfilePaymentCategory">
               <PropertyRef Name="paymentCategoryId" />
@@ -666,7 +649,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityRole">
-              <PropertyRef Name="RoleID" />
+              <PropertyRef Name="roleId" />
             </Principal>
             <Dependent Role="Profile">
               <PropertyRef Name="roleID" />
@@ -678,7 +661,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RegisteredSurgery">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="registeredSurgeryId" />
@@ -690,7 +673,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RegistrarLevel">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="registrarLevelId" />
@@ -702,7 +685,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Role="ProfileShiftType" Type="Self.ProfileShiftType" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ShiftType">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileShiftType">
               <PropertyRef Name="shiftTypeId" />
@@ -710,13 +693,13 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Team">
-          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
-          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="Base" Type="Self.Base" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Team">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ProfileProfessional">
+            <Dependent Role="Base">
               <PropertyRef Name="teamId" />
             </Dependent>
           </ReferentialConstraint>
@@ -751,21 +734,6 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <EntitySet Name="SpecialNote" EntityType="Self.SpecialNote" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubType" EntityType="Self.SubType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProfileDocumentBackup" EntityType="Self.ProfileDocumentBackup" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ProfileDocumentBackup].[documentTypeId] AS [documentTypeId], 
-    [ProfileDocumentBackup].[originalFileName] AS [originalFileName], 
-    [ProfileDocumentBackup].[multerFileName] AS [multerFileName], 
-    [ProfileDocumentBackup].[mimeType] AS [mimeType], 
-    [ProfileDocumentBackup].[dateObtained] AS [dateObtained], 
-    [ProfileDocumentBackup].[dateExpires] AS [dateExpires], 
-    [ProfileDocumentBackup].[profileId] AS [profileId], 
-    [ProfileDocumentBackup].[id] AS [id], 
-    [ProfileDocumentBackup].[dateCreated] AS [dateCreated], 
-    [ProfileDocumentBackup].[dateModified] AS [dateModified], 
-    [ProfileDocumentBackup].[isDeleted] AS [isDeleted]
-    FROM [dbo].[ProfileDocumentBackup] AS [ProfileDocumentBackup]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__SecurityP__Group__382F5661" Association="Self.FK__SecurityP__Group__382F5661">
             <End Role="SecurityGroup" EntitySet="SecurityGroup" />
             <End Role="SecurityPermission" EntitySet="SecurityPermission" />
@@ -872,7 +840,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           </AssociationSet>
           <AssociationSet Name="fk_Team" Association="Self.fk_Team">
             <End Role="Team" EntitySet="Team" />
-            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
+            <End Role="Base" EntitySet="Base" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -891,6 +859,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <EntitySet Name="EventLogTypes" EntityType="DRSModel.EventLogType" />
           <EntitySet Name="IndemnityProviders" EntityType="DRSModel.IndemnityProvider" />
           <EntitySet Name="JobTypes" EntityType="DRSModel.JobType" />
+          <EntitySet Name="PaymentCategories" EntityType="DRSModel.PaymentCategory" />
           <EntitySet Name="Profiles" EntityType="DRSModel.Profile" />
           <EntitySet Name="ProfileDocuments" EntityType="DRSModel.ProfileDocument" />
           <EntitySet Name="ProfileFinances" EntityType="DRSModel.ProfileFinance" />
@@ -908,7 +877,6 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <EntitySet Name="SpecialNotes" EntityType="DRSModel.SpecialNote" />
           <EntitySet Name="SubTypes" EntityType="DRSModel.SubType" />
           <EntitySet Name="Teams" EntityType="DRSModel.Team" />
-          <EntitySet Name="ProfileDocumentBackups" EntityType="DRSModel.ProfileDocumentBackup" />
           <AssociationSet Name="fk_Agency" Association="DRSModel.fk_Agency">
             <End Role="Agency" EntitySet="Agencies" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
@@ -920,6 +888,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <AssociationSet Name="fk_Base" Association="DRSModel.fk_Base">
             <End Role="Base" EntitySet="Bases" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Team" Association="DRSModel.fk_Team">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="Base" EntitySet="Bases" />
           </AssociationSet>
           <AssociationSet Name="fk_CCG" Association="DRSModel.fk_CCG">
             <End Role="CCG" EntitySet="CCGs" />
@@ -952,6 +924,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <AssociationSet Name="fk_JobType" Association="DRSModel.fk_JobType">
             <End Role="JobType" EntitySet="JobTypes" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
+          </AssociationSet>
+          <AssociationSet Name="fk_PaymentCategory" Association="DRSModel.fk_PaymentCategory">
+            <End Role="PaymentCategory" EntitySet="PaymentCategories" />
+            <End Role="ProfilePaymentCategory" EntitySet="ProfilePaymentCategories" />
           </AssociationSet>
           <AssociationSet Name="fk_97adea54804aa384c890cd6c3ae" Association="DRSModel.fk_97adea54804aa384c890cd6c3ae">
             <End Role="Profile" EntitySet="Profiles" />
@@ -993,10 +969,6 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             <End Role="RegistrarLevel" EntitySet="RegistrarLevels" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
           </AssociationSet>
-          <AssociationSet Name="fk_Team" Association="DRSModel.fk_Team">
-            <End Role="Team" EntitySet="Teams" />
-            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
-          </AssociationSet>
           <AssociationSet Name="fk_ShiftType" Association="DRSModel.fk_ShiftType">
             <End Role="ShiftType" EntitySet="ShiftTypes" />
             <End Role="ProfileShiftType" EntitySet="ProfileShiftTypes" />
@@ -1013,18 +985,13 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             <End Role="SecurityRole" EntitySet="SecurityRoles" />
             <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
           </AssociationSet>
-          <EntitySet Name="PaymentCategories" EntityType="DRSModel.PaymentCategory" />
-          <AssociationSet Name="fk_PaymentCategory" Association="DRSModel.fk_PaymentCategory">
-            <End Role="PaymentCategory" EntitySet="PaymentCategories" />
-            <End Role="ProfilePaymentCategory" EntitySet="ProfilePaymentCategories" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Agency">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1032,10 +999,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="Bank">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1043,21 +1010,23 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="Base">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="teamId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Base" FromRole="Base" ToRole="ProfileProfessional" />
+          <NavigationProperty Name="Team" Relationship="DRSModel.fk_Team" FromRole="Base" ToRole="Team" />
         </EntityType>
         <EntityType Name="CCG">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1065,10 +1034,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="DocumentType">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1126,10 +1095,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="IndemnityProvider">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1149,6 +1118,17 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <Property Name="dateModified" Type="DateTime" Precision="3" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_JobType" FromRole="JobType" ToRole="ProfileProfessional" />
+        </EntityType>
+        <EntityType Name="PaymentCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="dateCreated" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProfilePaymentCategories" Relationship="DRSModel.fk_PaymentCategory" FromRole="PaymentCategory" ToRole="ProfilePaymentCategory" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -1232,8 +1212,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <Property Name="dateCreated" Type="DateTime" Precision="3" />
           <Property Name="dateModified" Type="DateTime" Precision="3" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfilePaymentCategory" ToRole="ProfileProfessional" />
           <NavigationProperty Name="PaymentCategory" Relationship="DRSModel.fk_PaymentCategory" FromRole="ProfilePaymentCategory" ToRole="PaymentCategory" />
+          <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfilePaymentCategory" ToRole="ProfileProfessional" />
         </EntityType>
         <EntityType Name="ProfileProfessional">
           <Key>
@@ -1277,7 +1257,6 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <NavigationProperty Name="ProfileShiftTypes" Relationship="DRSModel.fk_eab3618488d653242b55e486b64" FromRole="ProfileProfessional" ToRole="ProfileShiftType" />
           <NavigationProperty Name="RegisteredSurgery" Relationship="DRSModel.fk_RegisteredSurgery" FromRole="ProfileProfessional" ToRole="RegisteredSurgery" />
           <NavigationProperty Name="RegistrarLevel" Relationship="DRSModel.fk_RegistrarLevel" FromRole="ProfileProfessional" ToRole="RegistrarLevel" />
-          <NavigationProperty Name="Team" Relationship="DRSModel.fk_Team" FromRole="ProfileProfessional" ToRole="Team" />
         </EntityType>
         <EntityType Name="ProfileShiftType">
           <Key>
@@ -1308,10 +1287,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="RegisteredSurgery">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1319,10 +1298,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="RegistrarLevel">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1330,28 +1309,28 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="SecurityGroup">
           <Key>
-            <PropertyRef Name="GroupID" />
+            <PropertyRef Name="groupId" />
           </Key>
-          <Property Name="GroupID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GroupName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="groupId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="groupName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityGroup" ToRole="SecurityPermission" />
         </EntityType>
         <EntityType Name="SecurityPermission">
           <Key>
-            <PropertyRef Name="PermissionID" />
+            <PropertyRef Name="permissionId" />
           </Key>
-          <Property Name="PermissionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GroupID" Type="Byte" Nullable="false" />
-          <Property Name="RoleID" Type="Byte" Nullable="false" />
-          <Property Name="RightID" Type="Byte" Nullable="false" />
-          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="DateCreated" Type="DateTime" Precision="3" />
-          <Property Name="DateModified" Type="DateTime" Precision="3" />
-          <Property Name="CreatedProfileID" Type="Int32" />
-          <Property Name="ModifiedProfileID" Type="Int32" />
+          <Property Name="permissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="groupId" Type="Byte" Nullable="false" />
+          <Property Name="roleId" Type="Byte" Nullable="false" />
+          <Property Name="rightId" Type="Byte" Nullable="false" />
+          <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Precision="3" />
+          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="createdProfileId" Type="Int32" />
+          <Property Name="modifiedProfileId" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="SecurityGroup" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityPermission" ToRole="SecurityGroup" />
           <NavigationProperty Name="SecurityRight" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityPermission" ToRole="SecurityRight" />
@@ -1359,41 +1338,41 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
-            <PropertyRef Name="RightID" />
+            <PropertyRef Name="rightID" />
           </Key>
-          <Property Name="RightID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RightName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="DateCreated" Type="DateTime" Precision="3" />
-          <Property Name="DateModified" Type="DateTime" Precision="3" />
-          <Property Name="CreatedProfileID" Type="Int32" />
-          <Property Name="ModifiedProfileID" Type="Int32" />
+          <Property Name="rightID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rightName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Precision="3" />
+          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="createdProfileId" Type="Int32" />
+          <Property Name="modifiedProfileId" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityRight" ToRole="SecurityPermission" />
         </EntityType>
         <EntityType Name="SecurityRole">
           <Key>
-            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="roleId" />
           </Key>
-          <Property Name="RoleID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="DateCreated" Type="DateTime" Precision="3" />
-          <Property Name="DateModified" Type="DateTime" Precision="3" />
-          <Property Name="CreatedProfileID" Type="Int32" />
-          <Property Name="ModifiedProfileID" Type="Int32" />
+          <Property Name="roleId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roleName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Precision="3" />
+          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="createdProfileID" Type="Int32" />
+          <Property Name="modifiedProfileID" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profiles" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="SecurityRole" ToRole="Profile" />
           <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityRole" ToRole="SecurityPermission" />
         </EntityType>
         <EntityType Name="ShiftType">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
@@ -1427,37 +1406,21 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
         </EntityType>
         <EntityType Name="Team">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Team" FromRole="Team" ToRole="ProfileProfessional" />
-        </EntityType>
-        <EntityType Name="ProfileDocumentBackup">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="documentTypeId" Type="Int32" />
-          <Property Name="originalFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="multerFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="mimeType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="dateObtained" Type="DateTime" Precision="3" />
-          <Property Name="dateExpires" Type="DateTime" Precision="3" />
-          <Property Name="profileId" Type="Int32" />
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
-          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="Bases" Relationship="DRSModel.fk_Team" FromRole="Team" ToRole="Base" />
         </EntityType>
         <Association Name="fk_Agency">
           <End Type="DRSModel.Agency" Role="Agency" Multiplicity="0..1" />
           <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Agency">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="agencyId" />
@@ -1469,7 +1432,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileFinance" Role="ProfileFinance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Bank">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileFinance">
               <PropertyRef Name="bankId" />
@@ -1481,10 +1444,22 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Base">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="baseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Team">
+          <End Type="DRSModel.Team" Role="Team" Multiplicity="1" />
+          <End Type="DRSModel.Base" Role="Base" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Base">
+              <PropertyRef Name="teamId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1493,7 +1468,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CCG">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="ccgId" />
@@ -1505,7 +1480,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileDocument" Role="ProfileDocument" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DocumentType">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileDocument">
               <PropertyRef Name="documentTypeId" />
@@ -1565,7 +1540,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IndemnityProvider">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="indemnityProviderId" />
@@ -1581,6 +1556,18 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="jobTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_PaymentCategory">
+          <End Type="DRSModel.PaymentCategory" Role="PaymentCategory" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfilePaymentCategory" Role="ProfilePaymentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProfilePaymentCategory">
+              <PropertyRef Name="paymentCategoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1637,7 +1624,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.Profile" Role="Profile" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityRole">
-              <PropertyRef Name="RoleID" />
+              <PropertyRef Name="roleId" />
             </Principal>
             <Dependent Role="Profile">
               <PropertyRef Name="roleID" />
@@ -1685,7 +1672,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RegisteredSurgery">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="registeredSurgeryId" />
@@ -1697,22 +1684,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RegistrarLevel">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="registrarLevelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_Team">
-          <End Type="DRSModel.Team" Role="Team" Multiplicity="0..1" />
-          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Team">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProfileProfessional">
-              <PropertyRef Name="teamId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1721,7 +1696,7 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.ProfileShiftType" Role="ProfileShiftType" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ShiftType">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="ProfileShiftType">
               <PropertyRef Name="shiftTypeId" />
@@ -1733,10 +1708,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityGroup">
-              <PropertyRef Name="GroupID" />
+              <PropertyRef Name="groupId" />
             </Principal>
             <Dependent Role="SecurityPermission">
-              <PropertyRef Name="GroupID" />
+              <PropertyRef Name="groupId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1745,10 +1720,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityRight">
-              <PropertyRef Name="RightID" />
+              <PropertyRef Name="rightID" />
             </Principal>
             <Dependent Role="SecurityPermission">
-              <PropertyRef Name="RightID" />
+              <PropertyRef Name="rightId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1757,33 +1732,10 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
           <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SecurityRole">
-              <PropertyRef Name="RoleID" />
+              <PropertyRef Name="roleId" />
             </Principal>
             <Dependent Role="SecurityPermission">
-              <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="PaymentCategory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
-          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ProfilePaymentCategories" Relationship="DRSModel.fk_PaymentCategory" FromRole="PaymentCategory" ToRole="ProfilePaymentCategory" />
-        </EntityType>
-        <Association Name="fk_PaymentCategory">
-          <End Type="DRSModel.PaymentCategory" Role="PaymentCategory" Multiplicity="0..1" />
-          <End Type="DRSModel.ProfilePaymentCategory" Role="ProfilePaymentCategory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PaymentCategory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProfilePaymentCategory">
-              <PropertyRef Name="paymentCategoryId" />
+              <PropertyRef Name="roleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1799,8 +1751,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1810,19 +1762,20 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Bases">
             <EntityTypeMapping TypeName="DRSModel.Base">
               <MappingFragment StoreEntitySet="Base">
+                <ScalarProperty Name="teamId" ColumnName="teamId" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1832,8 +1785,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1843,8 +1796,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1901,8 +1854,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1918,6 +1871,17 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isGmcRequired" ColumnName="isGmcRequired" />
                 <ScalarProperty Name="isClinical" ColumnName="isClinical" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentCategories">
+            <EntityTypeMapping TypeName="DRSModel.PaymentCategory">
+              <MappingFragment StoreEntitySet="PaymentCategory">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2064,8 +2028,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2075,18 +2039,18 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SecurityGroups">
             <EntityTypeMapping TypeName="DRSModel.SecurityGroup">
               <MappingFragment StoreEntitySet="SecurityGroup">
-                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
-                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
-                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="validTo" ColumnName="validTo" />
+                <ScalarProperty Name="validFrom" ColumnName="validFrom" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2094,16 +2058,16 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             <EntityTypeMapping TypeName="DRSModel.SecurityPermission">
               <MappingFragment StoreEntitySet="SecurityPermission">
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="ModifiedProfileID" ColumnName="ModifiedProfileID" />
-                <ScalarProperty Name="CreatedProfileID" ColumnName="CreatedProfileID" />
-                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
-                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
-                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
-                <ScalarProperty Name="RightID" ColumnName="RightID" />
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-                <ScalarProperty Name="PermissionID" ColumnName="PermissionID" />
+                <ScalarProperty Name="modifiedProfileId" ColumnName="modifiedProfileId" />
+                <ScalarProperty Name="createdProfileId" ColumnName="createdProfileId" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="validTo" ColumnName="validTo" />
+                <ScalarProperty Name="validFrom" ColumnName="validFrom" />
+                <ScalarProperty Name="rightId" ColumnName="rightId" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+                <ScalarProperty Name="permissionId" ColumnName="permissionId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2111,14 +2075,14 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             <EntityTypeMapping TypeName="DRSModel.SecurityRight">
               <MappingFragment StoreEntitySet="SecurityRight">
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="ModifiedProfileID" ColumnName="ModifiedProfileID" />
-                <ScalarProperty Name="CreatedProfileID" ColumnName="CreatedProfileID" />
-                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
-                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
-                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
-                <ScalarProperty Name="RightName" ColumnName="RightName" />
-                <ScalarProperty Name="RightID" ColumnName="RightID" />
+                <ScalarProperty Name="modifiedProfileId" ColumnName="modifiedProfileId" />
+                <ScalarProperty Name="createdProfileId" ColumnName="createdProfileId" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="validTo" ColumnName="validTo" />
+                <ScalarProperty Name="validFrom" ColumnName="validFrom" />
+                <ScalarProperty Name="rightName" ColumnName="rightName" />
+                <ScalarProperty Name="rightID" ColumnName="rightID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2126,14 +2090,14 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
             <EntityTypeMapping TypeName="DRSModel.SecurityRole">
               <MappingFragment StoreEntitySet="SecurityRole">
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="ModifiedProfileID" ColumnName="ModifiedProfileID" />
-                <ScalarProperty Name="CreatedProfileID" ColumnName="CreatedProfileID" />
-                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
-                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
-                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
-                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="modifiedProfileID" ColumnName="modifiedProfileID" />
+                <ScalarProperty Name="createdProfileID" ColumnName="createdProfileID" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="validTo" ColumnName="validTo" />
+                <ScalarProperty Name="validFrom" ColumnName="validFrom" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2143,8 +2107,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2180,36 +2144,8 @@ warning 6002: The table/view 'DRS.dbo.ProfileDocumentBackup' does not have a pri
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProfileDocumentBackups">
-            <EntityTypeMapping TypeName="DRSModel.ProfileDocumentBackup">
-              <MappingFragment StoreEntitySet="ProfileDocumentBackup">
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="profileId" ColumnName="profileId" />
-                <ScalarProperty Name="dateExpires" ColumnName="dateExpires" />
-                <ScalarProperty Name="dateObtained" ColumnName="dateObtained" />
-                <ScalarProperty Name="mimeType" ColumnName="mimeType" />
-                <ScalarProperty Name="multerFileName" ColumnName="multerFileName" />
-                <ScalarProperty Name="originalFileName" ColumnName="originalFileName" />
-                <ScalarProperty Name="documentTypeId" ColumnName="documentTypeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PaymentCategories">
-            <EntityTypeMapping TypeName="DRSModel.PaymentCategory">
-              <MappingFragment StoreEntitySet="PaymentCategory">
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

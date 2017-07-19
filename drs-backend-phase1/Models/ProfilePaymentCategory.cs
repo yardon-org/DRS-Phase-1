@@ -22,7 +22,7 @@ namespace drs_backend_phase1.Models
         public Nullable<System.DateTime> dateModified { get; set; }
         public bool isDeleted { get; set; }
     
-        public virtual ProfileProfessional ProfileProfessional { get; set; }
         public virtual PaymentCategory PaymentCategory { get; set; }
+        public virtual ProfileProfessional ProfileProfessional { get; set; }
     }
 }

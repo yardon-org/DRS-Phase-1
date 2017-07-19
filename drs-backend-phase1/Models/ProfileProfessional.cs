@@ -64,6 +64,5 @@ namespace drs_backend_phase1.Models
         public virtual ICollection<ProfileShiftType> ProfileShiftTypes { get; set; }
         public virtual RegisteredSurgery RegisteredSurgery { get; set; }
         public virtual RegistrarLevel RegistrarLevel { get; set; }
-        public virtual Team Team { get; set; }
     }
 }

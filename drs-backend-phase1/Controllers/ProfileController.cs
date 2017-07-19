@@ -154,8 +154,8 @@ namespace drs_backend_phase1.Controllers
                                 p.adEmailAddress,
                                 role = new
                                 {
-                                    p.SecurityRole.RoleID,
-                                    p.SecurityRole.RoleName,
+                                    p.SecurityRole.roleId,
+                                    p.SecurityRole.roleName,
                                     p.SecurityRole.isDeleted
                                 },
                                 finance = new
@@ -183,45 +183,45 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.registrarTrainer,
                                     ccg = new
                                     {
-                                        p.ProfileProfessional.CCG.Id,
-                                        p.ProfileProfessional.CCG.Name,
+                                        p.ProfileProfessional.CCG.id,
+                                        p.ProfileProfessional.CCG.name,
                                         p.ProfileProfessional.CCG.isDeleted
                                     },
                                     registrarLevel = new
                                     {
-                                        p.ProfileProfessional.RegistrarLevel.Id,
-                                        p.ProfileProfessional.RegistrarLevel.Name,
+                                        p.ProfileProfessional.RegistrarLevel.id,
+                                        p.ProfileProfessional.RegistrarLevel.name,
                                         p.ProfileProfessional.RegistrarLevel.isDeleted
                                     },
                                     @base = new
                                     {
-                                        p.ProfileProfessional.Base.Id,
-                                        p.ProfileProfessional.Base.Name,
+                                        p.ProfileProfessional.Base.id,
+                                        p.ProfileProfessional.Base.name,
                                         p.ProfileProfessional.Base.isDeleted
                                     },
                                     indemnityProvider = new
                                     {
-                                        p.ProfileProfessional.IndemnityProvider.Id,
-                                        p.ProfileProfessional.IndemnityProvider.Name,
+                                        p.ProfileProfessional.IndemnityProvider.id,
+                                        p.ProfileProfessional.IndemnityProvider.name,
                                         p.ProfileProfessional.IndemnityProvider.isDeleted
                                     },
                                     registeredSurgery = new
                                     {
-                                        p.ProfileProfessional.RegisteredSurgery.Id,
-                                        p.ProfileProfessional.RegisteredSurgery.Name,
+                                        p.ProfileProfessional.RegisteredSurgery.id,
+                                        p.ProfileProfessional.RegisteredSurgery.name,
                                         p.ProfileProfessional.RegisteredSurgery.isDeleted
                                     },
                                     agency = new
                                     {
-                                        p.ProfileProfessional.Agency.Id,
-                                        p.ProfileProfessional.Agency.Name,
+                                        p.ProfileProfessional.Agency.id,
+                                        p.ProfileProfessional.Agency.name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
                                     team = new
                                     {
-                                        p.ProfileProfessional.Team.Id,
-                                        p.ProfileProfessional.Team.Name,
-                                        p.ProfileProfessional.Team.isDeleted
+                                        p.ProfileProfessional.Base.Team.id,
+                                        p.ProfileProfessional.Base.Team.name,
+                                        p.ProfileProfessional.Base.Team.isDeleted
                                     },
                                     jobRole = new
                                     {
@@ -246,7 +246,7 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Searches  profiles firstname/middlename/lastname by searchTerm.
+        ///     Searches  profiles firstName/middlename/lastName by searchTerm.
         /// </summary>
         /// <param name="searchTerm">The search term.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
@@ -263,11 +263,11 @@ namespace drs_backend_phase1.Controllers
             try
             {
                 IOrderedQueryable<object> query = _db.Profiles
-                    .Where(p => 
-                    (p.isDeleted == false || includeDeleted && p.isDeleted) 
-                        && (p.lastName.ToLower().Contains(searchTerm.ToLower()) 
-                        || p.firstName.ToLower().Contains(searchTerm.ToLower())
-                        || p.middleNames.ToLower().Contains(searchTerm.ToLower())
+                    .Where(p =>
+                        (p.isDeleted == false || includeDeleted && p.isDeleted)
+                        && (p.lastName.ToLower().Contains(searchTerm.ToLower())
+                            || p.firstName.ToLower().Contains(searchTerm.ToLower())
+                            || p.middleNames.ToLower().Contains(searchTerm.ToLower())
                         ))
                     .Select(
                         p =>
@@ -299,8 +299,8 @@ namespace drs_backend_phase1.Controllers
                                 p.adEmailAddress,
                                 role = new
                                 {
-                                    p.SecurityRole.RoleID,
-                                    p.SecurityRole.RoleName,
+                                    p.SecurityRole.roleId,
+                                    p.SecurityRole.roleName,
                                     p.SecurityRole.isDeleted
                                 },
                                 finance = new
@@ -328,45 +328,45 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.registrarTrainer,
                                     ccg = new
                                     {
-                                        p.ProfileProfessional.CCG.Id,
-                                        p.ProfileProfessional.CCG.Name,
+                                        p.ProfileProfessional.CCG.id,
+                                        p.ProfileProfessional.CCG.name,
                                         p.ProfileProfessional.CCG.isDeleted
                                     },
                                     registrarLevel = new
                                     {
-                                        p.ProfileProfessional.RegistrarLevel.Id,
-                                        p.ProfileProfessional.RegistrarLevel.Name,
+                                        p.ProfileProfessional.RegistrarLevel.id,
+                                        p.ProfileProfessional.RegistrarLevel.name,
                                         p.ProfileProfessional.RegistrarLevel.isDeleted
                                     },
                                     @base = new
                                     {
-                                        p.ProfileProfessional.Base.Id,
-                                        p.ProfileProfessional.Base.Name,
+                                        p.ProfileProfessional.Base.id,
+                                        p.ProfileProfessional.Base.name,
                                         p.ProfileProfessional.Base.isDeleted
                                     },
                                     indemnityProvider = new
                                     {
-                                        p.ProfileProfessional.IndemnityProvider.Id,
-                                        p.ProfileProfessional.IndemnityProvider.Name,
+                                        p.ProfileProfessional.IndemnityProvider.id,
+                                        p.ProfileProfessional.IndemnityProvider.name,
                                         p.ProfileProfessional.IndemnityProvider.isDeleted
                                     },
                                     registeredSurgery = new
                                     {
-                                        p.ProfileProfessional.RegisteredSurgery.Id,
-                                        p.ProfileProfessional.RegisteredSurgery.Name,
+                                        p.ProfileProfessional.RegisteredSurgery.id,
+                                        p.ProfileProfessional.RegisteredSurgery.name,
                                         p.ProfileProfessional.RegisteredSurgery.isDeleted
                                     },
                                     agency = new
                                     {
-                                        p.ProfileProfessional.Agency.Id,
-                                        p.ProfileProfessional.Agency.Name,
+                                        p.ProfileProfessional.Agency.id,
+                                        p.ProfileProfessional.Agency.name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
                                     team = new
                                     {
-                                        p.ProfileProfessional.Team.Id,
-                                        p.ProfileProfessional.Team.Name,
-                                        p.ProfileProfessional.Team.isDeleted
+                                        p.ProfileProfessional.Base.Team.id,
+                                        p.ProfileProfessional.Base.Team.name,
+                                        p.ProfileProfessional.Base.Team.isDeleted
                                     },
                                     jobRole = new
                                     {
@@ -385,7 +385,8 @@ namespace drs_backend_phase1.Controllers
             }
             catch (Exception ex)
             {
-                Log.DebugFormat($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                Log.DebugFormat(
+                    $"Error retrieving SearchProfiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
                 return BadRequest($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message}");
             }
         }
@@ -401,9 +402,9 @@ namespace drs_backend_phase1.Controllers
         //[Authorize(Roles = "PERSONNEL")]
         //[HttpGet]
         //[Route("search/{searchTerm}/{includeDeleted}")]
-        //public object FetchManyByFirstOrLastName(string searchTerm, bool includeDeleted = false, int page = 0, int pageSize = 10)
+        //public object FetchManyByFirstOrLastname(string searchTerm, bool includeDeleted = false, int page = 0, int pageSize = 10)
         //{
-        //    Log.DebugFormat("ProfileController (FetchManyByFirstOrLastName)\n");
+        //    Log.DebugFormat("ProfileController (FetchManyByFirstOrLastname)\n");
 
         //    try
         //    {
@@ -423,8 +424,8 @@ namespace drs_backend_phase1.Controllers
         //                x.ProfileProfessional.ccgId,
         //                x.ProfileProfessional.indemnityProviderId,
         //                x.ProfileFinance.bankId,
-        //                jobTypeName = x.ProfileProfessional.JobType.name,
-        //                subTypeName = x.ProfileProfessional.SubType.name
+        //                jobTypename = x.ProfileProfessional.JobType.name,
+        //                subTypename = x.ProfileProfessional.SubType.name
         //            }).OrderBy(x => x.id);
 
 
@@ -433,14 +434,14 @@ namespace drs_backend_phase1.Controllers
         //    catch (Exception ex)
         //    {
         //        Log.DebugFormat(
-        //            $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message} {ex.StackTrace}");
+        //            $"Error retrieving FetchManyByFirstOrLastname. The reason is as follows: {ex.Message} {ex.StackTrace}");
         //        return BadRequest(
-        //            $"Error retrieving FetchManyByFirstOrLastName. The reason is as follows: {ex.Message}");
+        //            $"Error retrieving FetchManyByFirstOrLastname. The reason is as follows: {ex.Message}");
         //    }
         //}
 
         /// <summary>
-        /// Fetches the many by team identifier.
+        ///     Fetches the many by team identifier.
         /// </summary>
         /// <param name="teamId">The team identifier.</param>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
@@ -458,7 +459,7 @@ namespace drs_backend_phase1.Controllers
             {
                 var query = _db.Profiles
                     .Where(x => x.ProfileProfessional.teamId == teamId &&
-                                (x.isDeleted == false) || includeDeleted && x.isDeleted)
+                                x.isDeleted == false || includeDeleted && x.isDeleted)
                     .Select(
                         p =>
                             new
@@ -489,8 +490,8 @@ namespace drs_backend_phase1.Controllers
                                 p.adEmailAddress,
                                 role = new
                                 {
-                                    p.SecurityRole.RoleID,
-                                    p.SecurityRole.RoleName,
+                                    p.SecurityRole.roleId,
+                                    p.SecurityRole.roleName,
                                     p.SecurityRole.isDeleted
                                 },
                                 finance = new
@@ -518,45 +519,45 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.registrarTrainer,
                                     ccg = new
                                     {
-                                        p.ProfileProfessional.CCG.Id,
-                                        p.ProfileProfessional.CCG.Name,
+                                        p.ProfileProfessional.CCG.id,
+                                        p.ProfileProfessional.CCG.name,
                                         p.ProfileProfessional.CCG.isDeleted
                                     },
                                     registrarLevel = new
                                     {
-                                        p.ProfileProfessional.RegistrarLevel.Id,
-                                        p.ProfileProfessional.RegistrarLevel.Name,
+                                        p.ProfileProfessional.RegistrarLevel.id,
+                                        p.ProfileProfessional.RegistrarLevel.name,
                                         p.ProfileProfessional.RegistrarLevel.isDeleted
                                     },
                                     @base = new
                                     {
-                                        p.ProfileProfessional.Base.Id,
-                                        p.ProfileProfessional.Base.Name,
+                                        p.ProfileProfessional.Base.id,
+                                        p.ProfileProfessional.Base.name,
                                         p.ProfileProfessional.Base.isDeleted
                                     },
                                     indemnityProvider = new
                                     {
-                                        p.ProfileProfessional.IndemnityProvider.Id,
-                                        p.ProfileProfessional.IndemnityProvider.Name,
+                                        p.ProfileProfessional.IndemnityProvider.id,
+                                        p.ProfileProfessional.IndemnityProvider.name,
                                         p.ProfileProfessional.IndemnityProvider.isDeleted
                                     },
                                     registeredSurgery = new
                                     {
-                                        p.ProfileProfessional.RegisteredSurgery.Id,
-                                        p.ProfileProfessional.RegisteredSurgery.Name,
+                                        p.ProfileProfessional.RegisteredSurgery.id,
+                                        p.ProfileProfessional.RegisteredSurgery.name,
                                         p.ProfileProfessional.RegisteredSurgery.isDeleted
                                     },
                                     agency = new
                                     {
-                                        p.ProfileProfessional.Agency.Id,
-                                        p.ProfileProfessional.Agency.Name,
+                                        p.ProfileProfessional.Agency.id,
+                                        p.ProfileProfessional.Agency.name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
                                     team = new
                                     {
-                                        p.ProfileProfessional.Team.Id,
-                                        p.ProfileProfessional.Team.Name,
-                                        p.ProfileProfessional.Team.isDeleted
+                                        p.ProfileProfessional.Base.Team.id,
+                                        p.ProfileProfessional.Base.Team.name,
+                                        p.ProfileProfessional.Base.Team.isDeleted
                                     },
                                     jobRole = new
                                     {
@@ -628,8 +629,8 @@ namespace drs_backend_phase1.Controllers
                                 p.adEmailAddress,
                                 role = new
                                 {
-                                    p.SecurityRole.RoleID,
-                                    p.SecurityRole.RoleName,
+                                    p.SecurityRole.roleId,
+                                    p.SecurityRole.roleName,
                                     p.SecurityRole.isDeleted
                                 },
                                 finance = new
@@ -658,45 +659,45 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileProfessional.registrarTrainer,
                                     ccg = new
                                     {
-                                        p.ProfileProfessional.CCG.Id,
-                                        p.ProfileProfessional.CCG.Name,
+                                        p.ProfileProfessional.CCG.id,
+                                        p.ProfileProfessional.CCG.name,
                                         p.ProfileProfessional.CCG.isDeleted
                                     },
                                     registrarLevel = new
                                     {
-                                        p.ProfileProfessional.RegistrarLevel.Id,
-                                        p.ProfileProfessional.RegistrarLevel.Name,
+                                        p.ProfileProfessional.RegistrarLevel.id,
+                                        p.ProfileProfessional.RegistrarLevel.name,
                                         p.ProfileProfessional.RegistrarLevel.isDeleted
                                     },
                                     @base = new
                                     {
-                                        p.ProfileProfessional.Base.Id,
-                                        p.ProfileProfessional.Base.Name,
+                                        p.ProfileProfessional.Base.id,
+                                        p.ProfileProfessional.Base.name,
                                         p.ProfileProfessional.Base.isDeleted
                                     },
                                     indemnityProvider = new
                                     {
-                                        p.ProfileProfessional.IndemnityProvider.Id,
-                                        p.ProfileProfessional.IndemnityProvider.Name,
+                                        p.ProfileProfessional.IndemnityProvider.id,
+                                        p.ProfileProfessional.IndemnityProvider.name,
                                         p.ProfileProfessional.IndemnityProvider.isDeleted
                                     },
                                     registeredSurgery = new
                                     {
-                                        p.ProfileProfessional.RegisteredSurgery.Id,
-                                        p.ProfileProfessional.RegisteredSurgery.Name,
+                                        p.ProfileProfessional.RegisteredSurgery.id,
+                                        p.ProfileProfessional.RegisteredSurgery.name,
                                         p.ProfileProfessional.RegisteredSurgery.isDeleted
                                     },
                                     agency = new
                                     {
-                                        p.ProfileProfessional.Agency.Id,
-                                        p.ProfileProfessional.Agency.Name,
+                                        p.ProfileProfessional.Agency.id,
+                                        p.ProfileProfessional.Agency.name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
                                     team = new
                                     {
-                                        p.ProfileProfessional.Team.Id,
-                                        p.ProfileProfessional.Team.Name,
-                                        p.ProfileProfessional.Team.isDeleted
+                                        p.ProfileProfessional.Base.Team.id,
+                                        p.ProfileProfessional.Base.Team.name,
+                                        p.ProfileProfessional.Base.Team.isDeleted
                                     },
                                     jobRole = new
                                     {
