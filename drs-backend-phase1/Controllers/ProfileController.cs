@@ -167,6 +167,7 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileFinance.bankSortCode,
                                     p.ProfileFinance.bankAccountNumber,
                                     p.ProfileFinance.buildingSocietyRollNumber,
+                                    p.ProfileFinance.nationalInsuranceNumber,
                                     p.ProfileFinance.isDeleted
                                 },
                                 professional = new
@@ -216,7 +217,7 @@ namespace drs_backend_phase1.Controllers
                                         p.ProfileProfessional.Agency.Name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
-                                    Team = new
+                                    team = new
                                     {
                                         p.ProfileProfessional.Team.Id,
                                         p.ProfileProfessional.Team.Name,
@@ -311,6 +312,7 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileFinance.bankSortCode,
                                     p.ProfileFinance.bankAccountNumber,
                                     p.ProfileFinance.buildingSocietyRollNumber,
+                                    p.ProfileFinance.nationalInsuranceNumber,
                                     p.ProfileFinance.isDeleted
                                 },
                                 professional = new
@@ -360,7 +362,7 @@ namespace drs_backend_phase1.Controllers
                                         p.ProfileProfessional.Agency.Name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
-                                    Team = new
+                                    team = new
                                     {
                                         p.ProfileProfessional.Team.Id,
                                         p.ProfileProfessional.Team.Name,
@@ -500,6 +502,7 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileFinance.bankSortCode,
                                     p.ProfileFinance.bankAccountNumber,
                                     p.ProfileFinance.buildingSocietyRollNumber,
+                                    p.ProfileFinance.nationalInsuranceNumber,
                                     p.ProfileFinance.isDeleted
                                 },
                                 professional = new
@@ -549,7 +552,7 @@ namespace drs_backend_phase1.Controllers
                                         p.ProfileProfessional.Agency.Name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
-                                    Team = new
+                                    team = new
                                     {
                                         p.ProfileProfessional.Team.Id,
                                         p.ProfileProfessional.Team.Name,
@@ -638,6 +641,8 @@ namespace drs_backend_phase1.Controllers
                                     p.ProfileFinance.bankSortCode,
                                     p.ProfileFinance.bankAccountNumber,
                                     p.ProfileFinance.buildingSocietyRollNumber,
+                                    p.ProfileFinance.nationalInsuranceNumber,
+
                                     p.ProfileFinance.isDeleted
                                 },
                                 professional = new
@@ -687,7 +692,7 @@ namespace drs_backend_phase1.Controllers
                                         p.ProfileProfessional.Agency.Name,
                                         p.ProfileProfessional.Agency.isDeleted
                                     },
-                                    Team = new
+                                    team = new
                                     {
                                         p.ProfileProfessional.Team.Id,
                                         p.ProfileProfessional.Team.Name,
