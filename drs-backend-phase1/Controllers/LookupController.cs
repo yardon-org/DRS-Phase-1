@@ -74,44 +74,6 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Searches for agencies by searchTerm.
-        /// </summary>
-        /// <param name="searchTerm">The searchTerm.</param>
-        /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
-        /// <param name="page">The page.</param>
-        /// <param name="pageSize">Size of the page.</param>
-        /// <returns>A list of Agencies</returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("searchAgencies")]
-        public object SearchAgencies(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
-        {
-            Log.DebugFormat("LookupController (SearchAgencies)\n");
-
-            try
-            {
-                IOrderedQueryable<object> query = _db.Agencies
-                    .Where(x => x.isDeleted == isDeleted
-                                && x.Name.ToLower().Contains(searchTerm.ToLower()))
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.Id,
-                                p.Name
-                            })
-                    .OrderBy(x => x.Id);
-
-                return query.DoPaging(page, pageSize);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat($"Error searching for Agencies. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error searching for Agencies. The reason is as follows: {ex.Message}");
-            }
-        }
-
-        /// <summary>
         ///     Fetches all banks.
         /// </summary>
         /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
@@ -149,7 +111,6 @@ namespace drs_backend_phase1.Controllers
                 return BadRequest($"Error retrieving FetchAllBanks. The reason is as follows: {ex.Message}");
             }
         }
-
 
         /// <summary>
         ///     Fetches all banks.
@@ -265,6 +226,44 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
+        /// Fetches all indemnity providers.
+        /// </summary>
+        /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <returns>List of Indemnity Providers</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("fetchAllIndemnityProviders")]
+        public object FetchAllIndemnityProviders(bool isDeleted = false, int page = 0, int pageSize = 10)
+        {
+            Log.DebugFormat("LookupController (FetchAllIndemnityProviders)\n");
+
+            try
+            {
+                IOrderedQueryable<object> query = _db.IndemnityProviders
+                    .Where(x => x.isDeleted == isDeleted)
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.Id,
+                                p.Name
+                            })
+                    .OrderBy(x => x.Id);
+
+                return query.DoPaging(page, pageSize);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving FetchAllIndemnityProviders. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest(
+                    $"Error retrieving FetchAllIndemnityProviders. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
         ///     Fetches all payment categories.
         /// </summary>
         /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
@@ -302,7 +301,6 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
-
         /// <summary>
         ///     Fetches all registered surgeries.
         /// </summary>
@@ -338,49 +336,6 @@ namespace drs_backend_phase1.Controllers
                     $"Error retrieving FetchAllRegisteredSurgeries. The reason is as follows: {ex.Message} {ex.StackTrace}");
                 return BadRequest(
                     $"Error retrieving FetchAllRegisteredSurgeries. The reason is as follows: {ex.Message}");
-            }
-        }
-
-
-        /// <summary>
-        ///     Searches for registered surgeries by name.
-        /// </summary>
-        /// <param name="searchTerm">The searchTerm.</param>
-        /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
-        /// <param name="page">The page.</param>
-        /// <param name="pageSize">Size of the page.</param>
-        /// <returns>Array of Surgeries</returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("searchRegisteredSurgeries")]
-        public object SearchRegisteredSurgeries(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
-        {
-            Log.DebugFormat("LookupController (SearchRegisteredSurgeries)\n");
-
-            try
-            {
-                IOrderedQueryable<object> query = _db.RegisteredSurgeries
-                    .Where(x => x.isDeleted == isDeleted
-                                &&
-                                x.Name.ToLower().Contains(searchTerm.ToLower())
-                    )
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.Id,
-                                p.Name
-                            })
-                    .OrderBy(x => x.Id);
-
-                return query.DoPaging(page, pageSize);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving SearchRegisteredSurgeries. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest(
-                    $"Error retrieving SearchRegisteredSurgeries. The reason is as follows: {ex.Message}");
             }
         }
 
@@ -495,6 +450,84 @@ namespace drs_backend_phase1.Controllers
             }
         }
 
+        /// <summary>
+        /// Searches for agencies by searchTerm.
+        /// </summary>
+        /// <param name="searchTerm">The searchTerm.</param>
+        /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <returns>A list of Agencies</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("searchAgencies")]
+        public object SearchAgencies(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
+        {
+            Log.DebugFormat("LookupController (SearchAgencies)\n");
+
+            try
+            {
+                IOrderedQueryable<object> query = _db.Agencies
+                    .Where(x => x.isDeleted == isDeleted
+                                && x.Name.ToLower().Contains(searchTerm.ToLower()))
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.Id,
+                                p.Name
+                            })
+                    .OrderBy(x => x.Id);
+
+                return query.DoPaging(page, pageSize);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error searching for Agencies. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error searching for Agencies. The reason is as follows: {ex.Message}");
+            }
+        }
+        /// <summary>
+        ///     Searches for registered surgeries by name.
+        /// </summary>
+        /// <param name="searchTerm">The searchTerm.</param>
+        /// <param name="isDeleted">if set to <c>true</c> [is deleted].</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <returns>Array of Surgeries</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("searchRegisteredSurgeries")]
+        public object SearchRegisteredSurgeries(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
+        {
+            Log.DebugFormat("LookupController (SearchRegisteredSurgeries)\n");
+
+            try
+            {
+                IOrderedQueryable<object> query = _db.RegisteredSurgeries
+                    .Where(x => x.isDeleted == isDeleted
+                                &&
+                                x.Name.ToLower().Contains(searchTerm.ToLower())
+                    )
+                    .Select(
+                        p =>
+                            new
+                            {
+                                p.Id,
+                                p.Name
+                            })
+                    .OrderBy(x => x.Id);
+
+                return query.DoPaging(page, pageSize);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving SearchRegisteredSurgeries. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest(
+                    $"Error retrieving SearchRegisteredSurgeries. The reason is as follows: {ex.Message}");
+            }
+        }
         /// <summary>
         ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
         /// </summary>
