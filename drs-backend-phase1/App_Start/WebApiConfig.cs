@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.OData;
 
 namespace drs_backend_phase1
 {
@@ -13,7 +14,9 @@ namespace drs_backend_phase1
         /// <param name="config">The configuration.</param>
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            // Allow OData Queries on all methods that return IQueryable
+            System.Web.Http.OData.Extensions
+                .HttpConfigurationExtensions.AddODataQueryFilter(config);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
