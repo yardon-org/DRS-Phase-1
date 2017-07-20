@@ -41,6 +41,7 @@ namespace drs_backend_phase1.Controllers
         /// Gets the profiles.
         /// </summary>
         /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
         [EnableQuery]
         [Route("odata")]
         public IQueryable<object> GetProfiles(bool includeDeleted = false)
