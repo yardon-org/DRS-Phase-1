@@ -3,6 +3,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.OData;
 using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using log4net;
@@ -34,6 +35,37 @@ namespace drs_backend_phase1.Controllers
         public JobTypeController()
         {
             _db = new DRSEntities();
+        }
+
+        /// <summary>
+        /// Gets the job types o data.
+        /// </summary>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [EnableQuery(PageSize = 200)]
+        [Route("odata")]
+        public IQueryable<object> GetJobTypesOData(bool includeDeleted = false)
+        {
+            Log.DebugFormat("JobTypeController (GetJobTypesOData)\n");
+
+            try
+            {
+                IQueryable<object> query = _db.EventLogs
+                    .Select(x => new
+                    {
+                        x.typeKey,
+                        x.configId
+                    });
+
+                return query.AsQueryable();
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error retrieving GetJobTypesOData. The reason is as follows: {ex.Message} {ex.StackTrace}");
+            }
+
+            return null;
         }
 
         /// <summary>

@@ -4,6 +4,7 @@ using System.Web.Http;
 using drs_backend_phase1.Models;
 using log4net;
 using System.Linq;
+using System.Web.Http.OData;
 
 namespace drs_backend_phase1.Controllers
 {
@@ -28,10 +29,41 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
+        /// Gets the event logs o data.
+        /// </summary>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [EnableQuery(PageSize = 200)]
+        [Route("odata")]
+        public IQueryable<object> GetEventLogsOData(bool includeDeleted = false)
+        {
+            Log.DebugFormat("EventLogController (GetEventLogsOData)\n");
+
+            try
+            {
+                IQueryable<object> query = _db.EventLogs
+                    .Select(x => new
+                    {
+                        x.typeKey,
+                        x.configId
+                    });
+
+                return query.AsQueryable();
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error retrieving GetEventLogsOData. The reason is as follows: {ex.Message} {ex.StackTrace}");
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Reads all event logs.
         /// </summary>
         /// <returns>List of EventLogs</returns>
-       [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult ReadAllEventLogs()

@@ -42,9 +42,9 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <returns></returns>
         [Authorize(Roles = "PERSONNEL")]
-        [EnableQuery]
+        [EnableQuery(PageSize = 200)]
         [Route("odata")]
-        public IQueryable<object> GetProfiles(bool includeDeleted = false)
+        public IQueryable<object> GetProfilesOData(bool includeDeleted = false)
         {
             Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
 
