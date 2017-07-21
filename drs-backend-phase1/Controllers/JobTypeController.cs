@@ -159,11 +159,14 @@ namespace drs_backend_phase1.Controllers
       [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-        public IHttpActionResult UpdateJobType(JobTypeDTO jobTypeToUpdate)
+        public IHttpActionResult UpdateJobType(JobTypeDTO incomingJobTypeDTO)
         {
             Log.DebugFormat("JobTypeController (UpdateJobType)\n");
 
-            if (jobTypeToUpdate != null)
+            var fetchedJobType = _db.JobTypes.SingleOrDefault(x => x.id == incomingJobTypeDTO.id);
+            var jobTypeToUpdate = Mapper.Map(incomingJobTypeDTO, fetchedJobType);
+
+            if (fetchedJobType != null)
                 try
                 {
                     var localJobTypeToUpdate = Mapper.Map<JobType>(jobTypeToUpdate);

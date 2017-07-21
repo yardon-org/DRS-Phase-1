@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.OData;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Models.DTOs;
-using drs_backend_phase1.Paging;
 using log4net;
 using Profile = drs_backend_phase1.Models.Profile;
 
@@ -44,10 +41,179 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        /// Gets the profiles.
+        ///     Checks the performers list.
+        /// </summary>
+        /// <param name="profileToUpdate">The profile to update.</param>
+        /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpPut]
+        [Route("performers")]
+        public IHttpActionResult CheckPerformersList(ProfileDTO incomingProfileDTO)
+        {
+            Log.DebugFormat("ProfileController (CheckPerformersList)\n");
+
+
+            var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
+            var profileToUpdate = Mapper.Map(incomingProfileDTO, fetchedProfile);
+
+            if (profileToUpdate != null)
+                try
+                {
+                    profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
+                    profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
+                    _db.Profiles.AddOrUpdate(profileToUpdate);
+                    _db.SaveChanges();
+
+                    // TODO: Add to eventlog here
+
+                    Log.DebugFormat("Retrieval of CheckPerformersList was successful.\n");
+                    return Ok(true);
+                }
+                catch (Exception ex)
+                {
+                    Log.DebugFormat(
+                        $"Error retrieving CheckPerformersList. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                    return BadRequest($"Error retrieving CheckPerformersList. The reason is as follows: {ex.Message}");
+                }
+
+            Log.DebugFormat(
+                $"Error updating Profile. Profile cannot be null\n");
+            return BadRequest($"Error creating new Profile. Profile cannot be null");
+        }
+
+        /// <summary>
+        ///     Deletes a Profile by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpDelete]
+        [Route("{id}")]
+        public IHttpActionResult DeleteProfileById(int id)
+        {
+            Log.DebugFormat("ProfileController (DeleteProfileById)\n");
+
+            try
+            {
+                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
+
+                if (profile != null)
+                {
+                    _db.Profiles.Remove(profile);
+                    _db.SaveChanges();
+                }
+
+                Log.DebugFormat("Retrieval of DeleteProfileById was successful.\n");
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Fetches all profiles.
+        /// </summary>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <param name="page">No. of Pages</param>
+        /// <param name="pageSize">No. of Items per Page</param>
+        /// <returns>List of Profiles</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("fetchProfiles")]
+        public IHttpActionResult FetchAllProfiles(bool includeDeleted = false, int page = 1, int pageSize = 10)
+        {
+            Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
+
+            try
+            {
+                var profs = _db.Profiles
+                    .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted)
+                    .OrderBy(x => x.id)
+                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
+
+                return Ok(new { metaData = profs.GetMetaData(), items = profs });
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving Profiles. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Fetches the many by team identifier.
+        /// </summary>
+        /// <param name="teamId">The team identifier.</param>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("filter/{teamId}/{includeDeleted}")]
+        public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false, int page = 1,
+            int pageSize = 10)
+        {
+            Log.DebugFormat("ProfileController (FetchManyByTeamId)\n");
+
+            try
+            {
+                var profs = _db.Profiles
+                    .Where(x => x.ProfileProfessional.teamId == teamId &&
+                                x.isDeleted == false || includeDeleted && x.isDeleted)
+                    .OrderBy(x => x.id)
+                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
+
+                return Ok(new { metaData = profs.GetMetaData(), items = profs });
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest(
+                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Fetches a Profile by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A Profile object</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("{id}")]
+        public IHttpActionResult FetchProfileById(int id)
+        {
+            Log.DebugFormat("ProfileController (ReadAllProfileById)\n");
+
+            try
+            {
+                var profile = _db.Profiles
+                    .Where(p => p.id == id).OrderBy(x => x.id).SingleOrDefault();
+
+                var dto = Mapper.Map<ProfileDTO>(profile);
+                Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
+
+                return Ok(dto);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        ///     Gets the profiles.
         /// </summary>
         /// <returns></returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [EnableQuery(PageSize = 200)]
         [Route("odata")]
         public IQueryable<object> GetProfilesOData(bool includeDeleted = false)
@@ -178,108 +344,6 @@ namespace drs_backend_phase1.Controllers
 
             return null;
         }
-    
-
-    /// <summary>
-        ///     Checks the performers list.
-        /// </summary>
-        /// <param name="profileToUpdate">The profile to update.</param>
-        /// <returns></returns>
-      [Authorize(Roles = "PERSONNEL")]
-        [HttpPut]
-        [Route("performers")]
-        public IHttpActionResult CheckPerformersList(Profile profileToUpdate)
-        {
-            Log.DebugFormat("ProfileController (CheckPerformersList)\n");
-
-            if (profileToUpdate != null)
-                try
-                {
-                    profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
-                    profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
-                    _db.Profiles.AddOrUpdate(profileToUpdate);
-                    _db.SaveChanges();
-
-                    // TODO: Add to eventlog here
-
-                    Log.DebugFormat("Retrieval of CheckPerformersList was successful.\n");
-                    return Ok(true);
-                }
-                catch (Exception ex)
-                {
-                    Log.DebugFormat(
-                        $"Error retrieving CheckPerformersList. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error retrieving CheckPerformersList. The reason is as follows: {ex.Message}");
-                }
-
-            Log.DebugFormat(
-                $"Error updating Profile. Profile cannot be null\n");
-            return BadRequest($"Error creating new Profile. Profile cannot be null");
-        }
-
-        /// <summary>
-        ///     Deletes a Profile by identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>HttpActionResult</returns>
-      [Authorize(Roles = "PERSONNEL")]
-        [HttpDelete]
-        [Route("{id}")]
-        public IHttpActionResult DeleteProfileById(int id)
-        {
-            Log.DebugFormat("ProfileController (DeleteProfileById)\n");
-
-            try
-            {
-                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
-
-                if (profile != null)
-                {
-                    _db.Profiles.Remove(profile);
-                    _db.SaveChanges();
-                }
-
-                Log.DebugFormat("Retrieval of DeleteProfileById was successful.\n");
-                return Ok(true);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message}");
-            }
-        }
-
-        /// <summary>
-        ///     Fetches all profiles.
-        /// </summary>
-        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
-        /// <param name="page">No. of Pages</param>
-        /// <param name="pageSize">No. of Items per Page</param>
-        /// <returns>List of Profiles</returns>
-      [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("fetchProfiles")]
-        public IHttpActionResult FetchAllProfiles(bool includeDeleted = false, int page = 1, int pageSize = 10)
-        {
-            Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
-
-            try
-            {
-                var profs = _db.Profiles
-                    .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted)
-                                        .OrderBy(x => x.id)
-                                        .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
-
-                return Ok(new { metaData = profs.GetMetaData(), items = profs});
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving Profiles. The reason is as follows: {ex.Message}");
-            }
-        }
-
         /// <summary>
         ///     Searches  profiles firstName/middlename/lastName by searchTerm.
         /// </summary>
@@ -288,16 +352,17 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns>Array object</returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchProfiles")]
-        public IHttpActionResult SearchProfiles(string searchTerm, bool includeDeleted = false, int page = 1, int pageSize = 10)
+        public IHttpActionResult SearchProfiles(string searchTerm, bool includeDeleted = false, int page = 1,
+            int pageSize = 10)
         {
             Log.DebugFormat("ProfileController (SearchProfiles)\n");
 
             try
             {
-               var profs = _db.Profiles
+                var profs = _db.Profiles
                     .Where(p =>
                         (p.isDeleted == false || includeDeleted && p.isDeleted)
                         && (p.lastName.ToLower().Contains(searchTerm.ToLower())
@@ -307,7 +372,7 @@ namespace drs_backend_phase1.Controllers
                     .OrderBy(x => x.id)
                     .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
 
-                return Ok(new { metaData = profs.GetMetaData(), items = profs });
+                return Ok(new {metaData = profs.GetMetaData(), items = profs});
             }
             catch (Exception ex)
             {
@@ -316,91 +381,32 @@ namespace drs_backend_phase1.Controllers
                 return BadRequest($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message}");
             }
         }
-
-        /// <summary>
-        ///     Fetches the many by team identifier.
-        /// </summary>
-        /// <param name="teamId">The team identifier.</param>
-        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
-        /// <param name="page">The page.</param>
-        /// <param name="pageSize">Size of the page.</param>
-        /// <returns></returns>
-      [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("filter/{teamId}/{includeDeleted}")]
-        public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false, int page = 1, int pageSize = 10)
-        {
-            Log.DebugFormat("ProfileController (FetchManyByTeamId)\n");
-
-            try
-            {
-             var profs = _db.Profiles
-                    .Where(x => x.ProfileProfessional.teamId == teamId &&
-                                x.isDeleted == false || includeDeleted && x.isDeleted)
-                    .OrderBy(x => x.id)
-                 .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
-
-                return Ok(new { metaData = profs.GetMetaData(), items = profs });
-
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest(
-                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message}");
-            }
-        }
-
-        /// <summary>
-        ///     Fetches a Profile by identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>A Profile object</returns>
-      [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("{id}")]
-        public IHttpActionResult FetchProfileById(int id)
-        {
-            Log.DebugFormat("ProfileController (ReadAllProfileById)\n");
-
-            try
-            {
-                var profile = _db.Profiles
-                    .Where(p => p.id == id).OrderBy(x => x.id).SingleOrDefault();
-
-                ProfileDTO dto = Mapper.Map<ProfileDTO>(profile);
-                Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
-
-                return Ok(dto);
-
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message}");
-            }
-        }
-
         /// <summary>
         ///     Updates a Profile.
         /// </summary>
-        /// <param name="profileToUpdate">The Profile to update.</param>
+        /// <param name="incomingProfileDTO">The Profile to update.</param>
         /// <returns>HttpActionResult</returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-        public IHttpActionResult UpdateProfile(ProfileDTO profileToUpdate)
+        public IHttpActionResult UpdateProfile(ProfileDTO incomingProfileDTO)
         {
             Log.DebugFormat("ProfileController (UpdateProfile)\n");
 
-            if (profileToUpdate != null)
+            if (incomingProfileDTO != null)
                 try
                 {
                     // TODO: Test this
-                    var localProfileToUpdate = Mapper.Map<Profile>(profileToUpdate);
-                    _db.Profiles.AddOrUpdate(localProfileToUpdate);
+                    var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
+
+                    if (fetchedProfile == null)
+                    {
+                        return BadRequest($"Error retrieving UpdateProfile. The object to update is null");
+                    }
+
+                    var profileToUpdate= Mapper.Map(incomingProfileDTO, fetchedProfile);
+
+                    _db.Profiles.AddOrUpdate(profileToUpdate);
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");

@@ -155,22 +155,23 @@ namespace drs_backend_phase1.Controllers
         /// <summary>
         /// Updates a SubType.
         /// </summary>
-        /// <param name="subTypeToUpdate">The sub type to update.</param>
+        /// <param name="incomingSubTypeDTO">The sub type to update.</param>
         /// <returns>HttpActionResult</returns>
       [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-        public IHttpActionResult UpdateSubType(SubTypeDTO subTypeToUpdate)
+        public IHttpActionResult UpdateSubType(SubTypeDTO incomingSubTypeDTO)
         {
             Log.DebugFormat("SubTypeController (UpdateSubType)\n");
 
-            if (subTypeToUpdate != null)
+            var fetchedJobType = _db.SubTypes.SingleOrDefault(x => x.id == incomingSubTypeDTO.id);
+       
+            if (fetchedJobType != null)
             {
                 try
                 {
-                    // TODO: Test this
-                    var localSubTypeToUpdate = Mapper.Map<SubType>(subTypeToUpdate);
-                    _db.SubTypes.AddOrUpdate(localSubTypeToUpdate);
+                    var subTypeToUpdate = Mapper.Map(incomingSubTypeDTO, fetchedJobType);
+                    _db.SubTypes.AddOrUpdate(subTypeToUpdate);
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateSubType was successful.\n");
