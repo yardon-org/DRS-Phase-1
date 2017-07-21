@@ -4,8 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.OData;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
+using drs_backend_phase1.Models.DTOs;
 using log4net;
 
 namespace drs_backend_phase1.Controllers
@@ -75,13 +78,14 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
-        public void CreateJobType([FromBody] JobType newJobType)
+        public void CreateJobType(JobTypeDTO newJobType)
         {
             if (newJobType != null)
             {
                 try
                 {
-                    _db.JobTypes.Add(newJobType);
+                    var localJobTypeToUpdate = Mapper.Map<JobType>(newJobType);
+                    _db.JobTypes.Add(localJobTypeToUpdate);
                     _db.SaveChanges();
                 }
                 catch (Exception ex)
@@ -104,25 +108,14 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
-        public object FetchAllJobTypes(int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllJobTypes(int page = 1, int pageSize = 10)
         {
             try
             {
                 Log.DebugFormat("JobTypeController (ReadAllJobTypes)\n");
 
-                var query = _db.JobTypes.Select(
-                    p =>
-                        new
-                        {
-                            p.id,
-                            p.name,
-                            p.isClinical,
-                            p.isDeleted,
-                            p.isGmcRequired,
-                            p.isHcpcRequired,
-                            p.isNmcRequired
-                        }).OrderBy(x => x.name);
-                return query.DoPaging(page, pageSize);
+                var jobtypes = _db.JobTypes.OrderBy(x=>x.id).ToPagedList(page, pageSize).ToMappedPagedList<JobType, JobTypeDTO>();
+                return Ok(jobtypes);
             }
             catch (Exception ex)
             {
@@ -145,7 +138,7 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var jobType = _db.JobTypes.SingleOrDefault(x => x.id == id);
+                var jobType = _db.JobTypes.OrderBy(x => x.id).Where(p => p.id == id).ProjectTo<JobTypeDTO>().SingleOrDefault(); ;
                 Log.DebugFormat("Retrieval of ReadAllJobTypeById was successful.\n");
                 return Ok(jobType);
             }
@@ -165,14 +158,15 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-        public IHttpActionResult UpdateJobType(JobType jobTypeToUpdate)
+        public IHttpActionResult UpdateJobType(JobTypeDTO jobTypeToUpdate)
         {
             Log.DebugFormat("JobTypeController (UpdateJobType)\n");
 
             if (jobTypeToUpdate != null)
                 try
                 {
-                    _db.JobTypes.AddOrUpdate(jobTypeToUpdate);
+                    var localJobTypeToUpdate = Mapper.Map<JobType>(jobTypeToUpdate);
+                    _db.JobTypes.AddOrUpdate(localJobTypeToUpdate);
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateJobType was successful.\n");

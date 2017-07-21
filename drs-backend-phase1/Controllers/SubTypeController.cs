@@ -1,5 +1,4 @@
-﻿using drs_backend_phase1.Extensions;
-using drs_backend_phase1.Models;
+﻿using drs_backend_phase1.Models;
 using log4net;
 using System;
 using System.Data.Entity.Migrations;
@@ -7,6 +6,12 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.OData;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using drs_backend_phase1.Extensions;
+using drs_backend_phase1.Models.DTOs;
+using drs_backend_phase1.Paging;
+using Profile = drs_backend_phase1.Models.Profile;
 
 namespace drs_backend_phase1.Controllers
 {
@@ -50,17 +55,7 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                IQueryable<object> query = _db.SubTypes
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name,
-                                p.isAgency,
-                                p.isRegistrar
-                            });
-
+                IQueryable<object> query = _db.SubTypes;
                 return query.AsQueryable();
             }
             catch (Exception ex)
@@ -79,29 +74,33 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
-        public IHttpActionResult CreateSubType([FromBody]SubType newSubType)
+        public bool CreateSubType(SubTypeDTO newSubType)
         {
             if (newSubType != null)
             {
+                var localSubTypeToUpdate = Mapper.Map<SubType>(newSubType);
+
                 try
                 {
-                    _db.SubTypes.Add(newSubType);
+                    _db.SubTypes.Add(localSubTypeToUpdate);
                     _db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
                     Log.DebugFormat(
                         $"Error creating new SubType. The reason is as follows: {ex.Message} {ex.StackTrace}\n");
-                    return BadRequest($"Error creating new SubType. The reason is as follows: {ex.Message}");
+                    //return BadRequest($"Error creating new SubType. The reason is as follows: {ex.Message}");
                 }
 
                 Log.DebugFormat("The new SubType record has been created successfully.\n");
-                return Ok(true);
+                return true;
             }
 
             Log.DebugFormat(
                 $"Error creating new SubType. SubType cannot be null\n");
-            return BadRequest($"Error creating new SubType. SubType cannot be null");
+            //return BadRequest($"Error creating new SubType. SubType cannot be null");
+
+            return false;
         }
 
         /// <summary>
@@ -111,30 +110,21 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
-        public object FetchAllSubTypes(int page = 0, int pageSize = 10)
+        public IPagedList<SubTypeDTO> FetchAllSubTypes(int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("SubTypeController (ReadAllSubTypes)\n");
 
             try
             {
-                var query = _db.SubTypes
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name,
-                                p.isAgency,
-                                p.isRegistrar
-                            }).OrderBy(x => x.name);
-                Log.DebugFormat("Retrieval of SubTypes was successful.\n");
-                return query.DoPaging(page, pageSize);
+                return _db.SubTypes.OrderBy(x => x.name).ToPagedList(page, pageSize).ToMappedPagedList<SubType, SubTypeDTO>(); ;
             }
             catch (Exception ex)
             {
                 Log.DebugFormat($"Error retrieving SubTypes. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving SubTypes. The reason is as follows: {ex.Message}");
+                //return BadRequest($"Error retrieving SubTypes. The reason is as follows: {ex.Message}");
             }
+
+            return null;
         }
 
         /// <summary>
@@ -151,7 +141,7 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var subType = _db.SubTypes.SingleOrDefault(x => x.id == id);
+                var subType = _db.SubTypes.Where(p => p.id == id).ProjectTo<SubTypeDTO>().SingleOrDefault(); ;
                 Log.DebugFormat("Retrieval of ReadAllSubTypeById was successful.\n");
                 return Ok(subType);
             }
@@ -170,7 +160,7 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-        public IHttpActionResult UpdateSubType(SubType subTypeToUpdate)
+        public IHttpActionResult UpdateSubType(SubTypeDTO subTypeToUpdate)
         {
             Log.DebugFormat("SubTypeController (UpdateSubType)\n");
 
@@ -178,7 +168,9 @@ namespace drs_backend_phase1.Controllers
             {
                 try
                 {
-                    _db.SubTypes.AddOrUpdate(subTypeToUpdate);
+                    // TODO: Test this
+                    var localSubTypeToUpdate = Mapper.Map<SubType>(subTypeToUpdate);
+                    _db.SubTypes.AddOrUpdate(localSubTypeToUpdate);
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateSubType was successful.\n");

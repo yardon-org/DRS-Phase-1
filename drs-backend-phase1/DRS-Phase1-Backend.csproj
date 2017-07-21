@@ -50,6 +50,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -297,6 +301,35 @@
     <Compile Include="Models\DocumentType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTOs\AgencyDTO.cs" />
+    <Compile Include="Models\DTOs\BankDTO.cs" />
+    <Compile Include="Models\DTOs\BaseDTO.cs" />
+    <Compile Include="Models\DTOs\CCGDTO.cs" />
+    <Compile Include="Models\DTOs\DocumentTypeDTO.cs" />
+    <Compile Include="Models\DTOs\EmailDTO.cs" />
+    <Compile Include="Models\DTOs\EventLogConfigDTO.cs" />
+    <Compile Include="Models\DTOs\EventLogDTO.cs" />
+    <Compile Include="Models\DTOs\EventLogTypeDTO.cs" />
+    <Compile Include="Models\DTOs\IndemnityProviderDTO.cs" />
+    <Compile Include="Models\DTOs\JobTypeDTO.cs" />
+    <Compile Include="Models\DTOs\PaymentCategoryDTO.cs" />
+    <Compile Include="Models\DTOs\ProfileDocumentDTO.cs" />
+    <Compile Include="Models\DTOs\ProfileDTO.cs" />
+    <Compile Include="Models\DTOs\ProfileFinanceDTO.cs" />
+    <Compile Include="Models\DTOs\ProfilePaymentCategoryDTO.cs" />
+    <Compile Include="Models\DTOs\ProfileProfessionalDTO.cs" />
+    <Compile Include="Models\DTOs\ProfileShiftTypeDTO.cs" />
+    <Compile Include="Models\DTOs\QueuedEmailDTO.cs" />
+    <Compile Include="Models\DTOs\RegisteredSurgeryDTO.cs" />
+    <Compile Include="Models\DTOs\RegistrarLevelDTO.cs" />
+    <Compile Include="Models\DTOs\SecurityGroupDTO.cs" />
+    <Compile Include="Models\DTOs\SecurityPermissionDTO.cs" />
+    <Compile Include="Models\DTOs\SecurityRightDTO.cs" />
+    <Compile Include="Models\DTOs\SecurityRoleDTO.cs" />
+    <Compile Include="Models\DTOs\ShiftTypeDTO.cs" />
+    <Compile Include="Models\DTOs\SpecialNoteDTO.cs" />
+    <Compile Include="Models\DTOs\SubTypeDTO.cs" />
+    <Compile Include="Models\DTOs\TeamDTO.cs" />
     <Compile Include="Models\Email.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
@@ -369,6 +402,11 @@
     <Compile Include="Models\Team.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Paging\BasePagedList.cs" />
+    <Compile Include="Paging\PagedList.cs" />
+    <Compile Include="Paging\StaticPagedList.cs" />
+    <Compile Include="Paging\IPagedList.cs" />
+    <Compile Include="Paging\PagedListMetaData.cs" />
     <Compile Include="Repository\AuthRepository.cs" />
     <Compile Include="Services\Interfaces\ISecurityService.cs" />
     <Compile Include="Services\SecurityService.cs" />
@@ -379,7 +417,6 @@
     <Compile Include="Controllers\SubTypeController.cs" />
     <Compile Include="Controllers\PafController.cs" />
     <Compile Include="Controllers\JobTypeController.cs" />
-    <Compile Include="Controllers\EventLogController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

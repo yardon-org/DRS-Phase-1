@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using drs_backend_phase1.Models;
+using drs_backend_phase1.Models.DTOs;
 using log4net.Config;
+using Profile = drs_backend_phase1.Models.Profile;
 
 namespace drs_backend_phase1
 {
@@ -28,6 +33,34 @@ namespace drs_backend_phase1
             XmlConfigurator.ConfigureAndWatch(new FileInfo(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile));
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+
+            Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMissingTypeMaps = true;
+                    cfg.CreateMap<SubType, SubTypeDTO>();
+                  
+                    cfg.CreateMap<List<Profile>, List<ProfileDTO>>();
+                    cfg.CreateMap<SecurityRole, SecurityRoleDTO>();
+                    cfg.CreateMap<CCG, CCGDTO>();
+                    cfg.CreateMap<RegistrarLevel, RegistrarLevelDTO>();
+                    cfg.CreateMap<Base, BaseDTO>();
+                    cfg.CreateMap<Team, TeamDTO>();
+                    cfg.CreateMap<IndemnityProvider, IndemnityProviderDTO>();
+                    cfg.CreateMap<RegisteredSurgery, RegisteredSurgeryDTO>();
+                    cfg.CreateMap<Agency, AgencyDTO>();
+                    cfg.CreateMap<JobType, JobTypeDTO>();
+                    cfg.CreateMap<ProfileDocument, ProfileDocumentDTO>();
+                    cfg.CreateMap<ProfileShiftType, ProfileShiftTypeDTO>();
+                    cfg.CreateMap<ShiftType, ShiftTypeDTO>();
+                    cfg.CreateMap<SpecialNote, SpecialNoteDTO>();
+                    cfg.CreateMap<ProfileFinance, ProfileFinanceDTO>();
+                    cfg.CreateMap<Profile, ProfileDTO>();
+                    cfg.CreateMap<ProfileProfessional, ProfileProfessionalDTO>();
+
+                }
+            );
+
+            Mapper.AssertConfigurationIsValid();
         }
 
         /// <summary>
@@ -49,4 +82,8 @@ namespace drs_backend_phase1
             }
         }
     }
+
+   
+
+
 }

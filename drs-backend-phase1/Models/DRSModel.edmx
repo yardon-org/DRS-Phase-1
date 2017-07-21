@@ -1402,7 +1402,6 @@
           <Property Name="dateCreated" Type="DateTime" Precision="3" />
           <Property Name="dateModified" Type="DateTime" Precision="3" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="SubType" ToRole="ProfileProfessional" />
         </EntityType>
         <EntityType Name="Team">
           <Key>

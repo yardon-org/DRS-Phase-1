@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Web.Http;
 using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
+using drs_backend_phase1.Models.DTOs;
 using log4net;
 
 namespace drs_backend_phase1.Controllers
@@ -47,24 +48,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllAgencies")]
-        public object FetchAllAgencies(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllAgencies(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllAgencies)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.Agencies
+                var agencies = _db.Agencies
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Agency, AgencyDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(agencies);
             }
             catch (Exception ex)
             {
@@ -85,24 +79,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllBanks")]
-        public object FetchAllBanks(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllBanks(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllBanks)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.Banks
+                var banks = _db.Banks
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Bank, BankDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(banks);
             }
             catch (Exception ex)
             {
@@ -124,24 +111,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllBases")]
-        public object FetchAllBases(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllBases(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllBases)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.Bases
+                var bases = _db.Bases
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Base, BaseDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(bases);
             }
             catch (Exception ex)
             {
@@ -161,24 +141,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllCCGs")]
-        public object FetchAllCCGs(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllCCGs(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllCCGs)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.CCGs
+                var ccgs = _db.CCGs
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<CCG, CCGDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(ccgs);
             }
             catch (Exception ex)
             {
@@ -198,24 +171,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllDocumentTypes")]
-        public object FetchAllDocumentTypes(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllDocumentTypes(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllDocumentTypes)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.DocumentTypes
+                var docTypes = _db.DocumentTypes
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<DocumentType, DocumentTypeDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(docTypes);
             }
             catch (Exception ex)
             {
@@ -235,24 +201,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllIndemnityProviders")]
-        public object FetchAllIndemnityProviders(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllIndemnityProviders(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllIndemnityProviders)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.IndemnityProviders
+                var indProviders = _db.IndemnityProviders
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<IndemnityProvider, IndemnityProviderDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(indProviders);
             }
             catch (Exception ex)
             {
@@ -273,24 +232,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllPaymentCategories")]
-        public object FetchAllPaymentCategories(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllPaymentCategories(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllPaymentCategories)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.PaymentCategories
+                var payCats = _db.PaymentCategories
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<PaymentCategory, PaymentCategoryDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(payCats);
             }
             catch (Exception ex)
             {
@@ -311,24 +263,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllRegisteredSurgeries")]
-        public object FetchAllRegisteredSurgeries(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllRegisteredSurgeries(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllRegisteredSurgeries)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.RegisteredSurgeries
+                var regSurgs = _db.RegisteredSurgeries
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<RegisteredSurgery, RegisteredSurgeryDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(regSurgs);
             }
             catch (Exception ex)
             {
@@ -349,24 +294,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllRegistrarLevels")]
-        public object FetchAllRegistrarLevels(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllRegistrarLevels(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllRegistrarLevels)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.RegistrarLevels
+                var regLevs = _db.RegistrarLevels
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<RegistrarLevel, RegistrarLevelDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(regLevs);
             }
             catch (Exception ex)
             {
@@ -386,24 +324,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllShiftTypes")]
-        public object FetchAllShiftTypes(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllShiftTypes(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllShiftTypes)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.ShiftTypes
+                var shiftTypes = _db.ShiftTypes
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<ShiftType, ShiftTypeDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(shiftTypes);
             }
             catch (Exception ex)
             {
@@ -423,24 +354,17 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllTeams")]
-        public object FetchAllTeams(bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult FetchAllTeams(bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (FetchAllTeams)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.Teams
+                var teams = _db.Teams
                     .Where(x => x.isDeleted == isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Team, TeamDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(teams);
             }
             catch (Exception ex)
             {
@@ -461,25 +385,18 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchAgencies")]
-        public object SearchAgencies(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult SearchAgencies(string searchTerm, bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (SearchAgencies)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.Agencies
+                var agenciesuery = _db.Agencies
                     .Where(x => x.isDeleted == isDeleted
                                 && x.name.ToLower().Contains(searchTerm.ToLower()))
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Agency, AgencyDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(agenciesuery);
             }
             catch (Exception ex)
             {
@@ -498,27 +415,20 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchRegisteredSurgeries")]
-        public object SearchRegisteredSurgeries(string searchTerm, bool isDeleted = false, int page = 0, int pageSize = 10)
+        public IHttpActionResult SearchRegisteredSurgeries(string searchTerm, bool isDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("LookupController (SearchRegisteredSurgeries)\n");
 
             try
             {
-                IOrderedQueryable<object> query = _db.RegisteredSurgeries
+                var regSurgs = _db.RegisteredSurgeries
                     .Where(x => x.isDeleted == isDeleted
                                 &&
                                 x.name.ToLower().Contains(searchTerm.ToLower())
                     )
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.id,
-                                p.name
-                            })
-                    .OrderBy(x => x.id);
+                    .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<RegisteredSurgery, RegisteredSurgeryDTO>();
 
-                return query.DoPaging(page, pageSize);
+                return Ok(regSurgs);
             }
             catch (Exception ex)
             {

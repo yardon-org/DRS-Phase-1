@@ -14,12 +14,6 @@ namespace drs_backend_phase1.Models
     
     public partial class SubType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SubType()
-        {
-            this.ProfileProfessionals = new HashSet<ProfileProfessional>();
-        }
-    
         public string name { get; set; }
         public bool isAgency { get; set; }
         public bool isRegistrar { get; set; }
@@ -27,8 +21,5 @@ namespace drs_backend_phase1.Models
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
         public bool isDeleted { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProfileProfessional> ProfileProfessionals { get; set; }
     }
 }
