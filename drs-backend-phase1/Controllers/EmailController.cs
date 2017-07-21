@@ -39,7 +39,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("")]
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [ResponseType(typeof(Email))]
         public IHttpActionResult GetEmail(int id)
         {
@@ -61,7 +61,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("")]
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutEmail(int id, Email email)
         {
@@ -104,7 +104,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("")]
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [ResponseType(typeof(Email))]
         public IHttpActionResult PostEmail(Email email)
         {
@@ -127,7 +127,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("")]
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [ResponseType(typeof(Email))]
         public IHttpActionResult DeleteEmail(int id)
         {

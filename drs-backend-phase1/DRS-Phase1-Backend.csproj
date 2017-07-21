@@ -381,9 +381,6 @@
     <Compile Include="Models\SecurityGroup.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SecurityPermission.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SecurityRight.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>

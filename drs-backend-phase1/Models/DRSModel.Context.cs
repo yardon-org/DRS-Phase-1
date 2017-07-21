@@ -47,7 +47,6 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<RegisteredSurgery> RegisteredSurgeries { get; set; }
         public virtual DbSet<RegistrarLevel> RegistrarLevels { get; set; }
         public virtual DbSet<SecurityGroup> SecurityGroups { get; set; }
-        public virtual DbSet<SecurityPermission> SecurityPermissions { get; set; }
         public virtual DbSet<SecurityRight> SecurityRights { get; set; }
         public virtual DbSet<SecurityRole> SecurityRoles { get; set; }
         public virtual DbSet<ShiftType> ShiftTypes { get; set; }

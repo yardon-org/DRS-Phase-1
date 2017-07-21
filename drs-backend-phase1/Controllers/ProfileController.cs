@@ -47,7 +47,7 @@ namespace drs_backend_phase1.Controllers
         /// Gets the profiles.
         /// </summary>
         /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [EnableQuery(PageSize = 200)]
         [Route("odata")]
         public IQueryable<object> GetProfilesOData(bool includeDeleted = false)
@@ -185,7 +185,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="profileToUpdate">The profile to update.</param>
         /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("performers")]
         public IHttpActionResult CheckPerformersList(Profile profileToUpdate)
@@ -222,7 +222,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteProfileById(int id)
@@ -257,7 +257,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">No. of Pages</param>
         /// <param name="pageSize">No. of Items per Page</param>
         /// <returns>List of Profiles</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchProfiles")]
         public IHttpActionResult FetchAllProfiles(bool includeDeleted = false, int page = 1, int pageSize = 10)
@@ -288,7 +288,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns>Array object</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchProfiles")]
         public IHttpActionResult SearchProfiles(string searchTerm, bool includeDeleted = false, int page = 1, int pageSize = 10)
@@ -325,7 +325,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("filter/{teamId}/{includeDeleted}")]
         public IHttpActionResult FetchManyByTeamId(int teamId, bool includeDeleted = false, int page = 1, int pageSize = 10)
@@ -357,7 +357,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A Profile object</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchProfileById(int id)
@@ -367,10 +367,13 @@ namespace drs_backend_phase1.Controllers
             try
             {
                 var profile = _db.Profiles
-                    .Where(p => p.id == id).ProjectTo<ProfileDTO>().SingleOrDefault();
+                    .Where(p => p.id == id).OrderBy(x => x.id).SingleOrDefault();
 
+                ProfileDTO dto = Mapper.Map<ProfileDTO>(profile);
                 Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
-                return Ok(profile);
+
+                return Ok(dto);
+
             }
             catch (Exception ex)
             {
@@ -385,7 +388,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="profileToUpdate">The Profile to update.</param>
         /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateProfile(ProfileDTO profileToUpdate)

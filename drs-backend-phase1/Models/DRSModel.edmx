@@ -292,22 +292,6 @@
           <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
-        <EntityType Name="SecurityPermission">
-          <Key>
-            <PropertyRef Name="permissionId" />
-          </Key>
-          <Property Name="permissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="groupId" Type="tinyint" Nullable="false" />
-          <Property Name="roleId" Type="tinyint" Nullable="false" />
-          <Property Name="rightId" Type="tinyint" Nullable="false" />
-          <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
-          <Property Name="createdProfileId" Type="int" />
-          <Property Name="modifiedProfileId" Type="int" />
-          <Property Name="isDeleted" Type="bit" />
-        </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
             <PropertyRef Name="rightID" />
@@ -380,42 +364,6 @@
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__SecurityP__Group__382F5661">
-          <End Role="SecurityGroup" Type="Self.SecurityGroup" Multiplicity="1" />
-          <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SecurityGroup">
-              <PropertyRef Name="groupId" />
-            </Principal>
-            <Dependent Role="SecurityPermission">
-              <PropertyRef Name="groupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SecurityP__Right__3A179ED3">
-          <End Role="SecurityRight" Type="Self.SecurityRight" Multiplicity="1" />
-          <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SecurityRight">
-              <PropertyRef Name="rightID" />
-            </Principal>
-            <Dependent Role="SecurityPermission">
-              <PropertyRef Name="rightId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SecurityP__RoleI__39237A9A">
-          <End Role="SecurityRole" Type="Self.SecurityRole" Multiplicity="1" />
-          <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SecurityRole">
-              <PropertyRef Name="roleId" />
-            </Principal>
-            <Dependent Role="SecurityPermission">
-              <PropertyRef Name="roleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_1c19cf8556e5edb55657714e1e8">
           <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="0..1" />
           <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="*" />
@@ -727,25 +675,12 @@
           <EntitySet Name="RegisteredSurgery" EntityType="Self.RegisteredSurgery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegistrarLevel" EntityType="Self.RegistrarLevel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityGroup" EntityType="Self.SecurityGroup" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SecurityPermission" EntityType="Self.SecurityPermission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityRight" EntityType="Self.SecurityRight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityRole" EntityType="Self.SecurityRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShiftType" EntityType="Self.ShiftType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SpecialNote" EntityType="Self.SpecialNote" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubType" EntityType="Self.SubType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__SecurityP__Group__382F5661" Association="Self.FK__SecurityP__Group__382F5661">
-            <End Role="SecurityGroup" EntitySet="SecurityGroup" />
-            <End Role="SecurityPermission" EntitySet="SecurityPermission" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SecurityP__Right__3A179ED3" Association="Self.FK__SecurityP__Right__3A179ED3">
-            <End Role="SecurityRight" EntitySet="SecurityRight" />
-            <End Role="SecurityPermission" EntitySet="SecurityPermission" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SecurityP__RoleI__39237A9A" Association="Self.FK__SecurityP__RoleI__39237A9A">
-            <End Role="SecurityRole" EntitySet="SecurityRole" />
-            <End Role="SecurityPermission" EntitySet="SecurityPermission" />
-          </AssociationSet>
           <AssociationSet Name="fk_1c19cf8556e5edb55657714e1e8" Association="Self.fk_1c19cf8556e5edb55657714e1e8">
             <End Role="EventLogType" EntitySet="EventLogType" />
             <End Role="EventLogConfig" EntitySet="EventLogConfig" />
@@ -870,7 +805,6 @@
           <EntitySet Name="RegisteredSurgeries" EntityType="DRSModel.RegisteredSurgery" />
           <EntitySet Name="RegistrarLevels" EntityType="DRSModel.RegistrarLevel" />
           <EntitySet Name="SecurityGroups" EntityType="DRSModel.SecurityGroup" />
-          <EntitySet Name="SecurityPermissions" EntityType="DRSModel.SecurityPermission" />
           <EntitySet Name="SecurityRights" EntityType="DRSModel.SecurityRight" />
           <EntitySet Name="SecurityRoles" EntityType="DRSModel.SecurityRole" />
           <EntitySet Name="ShiftTypes" EntityType="DRSModel.ShiftType" />
@@ -973,19 +907,7 @@
             <End Role="ShiftType" EntitySet="ShiftTypes" />
             <End Role="ProfileShiftType" EntitySet="ProfileShiftTypes" />
           </AssociationSet>
-          <AssociationSet Name="FK__SecurityP__Group__382F5661" Association="DRSModel.FK__SecurityP__Group__382F5661">
-            <End Role="SecurityGroup" EntitySet="SecurityGroups" />
-            <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SecurityP__Right__3A179ED3" Association="DRSModel.FK__SecurityP__Right__3A179ED3">
-            <End Role="SecurityRight" EntitySet="SecurityRights" />
-            <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SecurityP__RoleI__39237A9A" Association="DRSModel.FK__SecurityP__RoleI__39237A9A">
-            <End Role="SecurityRole" EntitySet="SecurityRoles" />
-            <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="id" />
@@ -1315,26 +1237,6 @@
           <Property Name="groupName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
-          <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityGroup" ToRole="SecurityPermission" />
-        </EntityType>
-        <EntityType Name="SecurityPermission">
-          <Key>
-            <PropertyRef Name="permissionId" />
-          </Key>
-          <Property Name="permissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="groupId" Type="Byte" Nullable="false" />
-          <Property Name="roleId" Type="Byte" Nullable="false" />
-          <Property Name="rightId" Type="Byte" Nullable="false" />
-          <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
-          <Property Name="createdProfileId" Type="Int32" />
-          <Property Name="modifiedProfileId" Type="Int32" />
-          <Property Name="isDeleted" Type="Boolean" />
-          <NavigationProperty Name="SecurityGroup" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityPermission" ToRole="SecurityGroup" />
-          <NavigationProperty Name="SecurityRight" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityPermission" ToRole="SecurityRight" />
-          <NavigationProperty Name="SecurityRole" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityPermission" ToRole="SecurityRole" />
         </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
@@ -1349,7 +1251,6 @@
           <Property Name="createdProfileId" Type="Int32" />
           <Property Name="modifiedProfileId" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
-          <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityRight" ToRole="SecurityPermission" />
         </EntityType>
         <EntityType Name="SecurityRole">
           <Key>
@@ -1365,7 +1266,6 @@
           <Property Name="modifiedProfileID" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profiles" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="SecurityRole" ToRole="Profile" />
-          <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityRole" ToRole="SecurityPermission" />
         </EntityType>
         <EntityType Name="ShiftType">
           <Key>
@@ -1702,42 +1602,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SecurityP__Group__382F5661">
-          <End Type="DRSModel.SecurityGroup" Role="SecurityGroup" Multiplicity="1" />
-          <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SecurityGroup">
-              <PropertyRef Name="groupId" />
-            </Principal>
-            <Dependent Role="SecurityPermission">
-              <PropertyRef Name="groupId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SecurityP__Right__3A179ED3">
-          <End Type="DRSModel.SecurityRight" Role="SecurityRight" Multiplicity="1" />
-          <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SecurityRight">
-              <PropertyRef Name="rightID" />
-            </Principal>
-            <Dependent Role="SecurityPermission">
-              <PropertyRef Name="rightId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__SecurityP__RoleI__39237A9A">
-          <End Type="DRSModel.SecurityRole" Role="SecurityRole" Multiplicity="1" />
-          <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SecurityRole">
-              <PropertyRef Name="roleId" />
-            </Principal>
-            <Dependent Role="SecurityPermission">
-              <PropertyRef Name="roleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2050,23 +1914,6 @@
                 <ScalarProperty Name="validFrom" ColumnName="validFrom" />
                 <ScalarProperty Name="groupName" ColumnName="groupName" />
                 <ScalarProperty Name="groupId" ColumnName="groupId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SecurityPermissions">
-            <EntityTypeMapping TypeName="DRSModel.SecurityPermission">
-              <MappingFragment StoreEntitySet="SecurityPermission">
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="modifiedProfileId" ColumnName="modifiedProfileId" />
-                <ScalarProperty Name="createdProfileId" ColumnName="createdProfileId" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="validTo" ColumnName="validTo" />
-                <ScalarProperty Name="validFrom" ColumnName="validFrom" />
-                <ScalarProperty Name="rightId" ColumnName="rightId" />
-                <ScalarProperty Name="roleId" ColumnName="roleId" />
-                <ScalarProperty Name="groupId" ColumnName="groupId" />
-                <ScalarProperty Name="permissionId" ColumnName="permissionId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

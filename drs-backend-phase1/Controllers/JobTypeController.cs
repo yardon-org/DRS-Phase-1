@@ -45,7 +45,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [EnableQuery(PageSize = 200)]
         [Route("odata")]
         public IQueryable<object> GetJobTypesOData(bool includeDeleted = false)
@@ -75,7 +75,7 @@ namespace drs_backend_phase1.Controllers
         ///     Adds a new JobType to the database.
         /// </summary>
         /// <param name="newJobType">New type of the job.</param>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
         public void CreateJobType(JobTypeDTO newJobType)
@@ -105,7 +105,7 @@ namespace drs_backend_phase1.Controllers
         ///     Fetches all job types.
         /// </summary>
         /// <returns>List of all JobTypes</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllJobTypes(int page = 1, int pageSize = 10)
@@ -129,7 +129,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A JobType</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchJobTypeById(int id)
@@ -138,9 +138,10 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                var jobType = _db.JobTypes.OrderBy(x => x.id).Where(p => p.id == id).ProjectTo<JobTypeDTO>().SingleOrDefault(); ;
+                var jobType = _db.JobTypes.OrderBy(x => x.id).Where(p => p.id == id).ProjectTo<JobTypeDTO>().SingleOrDefault();
+                JobTypeDTO dto = Mapper.Map<JobTypeDTO>(jobType);
                 Log.DebugFormat("Retrieval of ReadAllJobTypeById was successful.\n");
-                return Ok(jobType);
+                return Ok(dto);
             }
             catch (Exception ex)
             {
@@ -155,7 +156,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="jobTypeToUpdate">The job type to update.</param>
         /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateJobType(JobTypeDTO jobTypeToUpdate)
@@ -189,7 +190,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
+       [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteJobTypeById(int id)
