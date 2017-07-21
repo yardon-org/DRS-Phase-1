@@ -14,9 +14,9 @@ namespace drs_backend_phase1.Models.DTOs
 {
     public partial class ProfileProfessionalDTO
     {
-        public int? teamId { get; set; }
+        //public int? teamId { get; set; }
 
-        public int? jobTypeId { get; set; }
+        //public int? jobTypeId { get; set; }
 
         public string gmcNumber { get; set; }
 
@@ -24,33 +24,33 @@ namespace drs_backend_phase1.Models.DTOs
 
         public string hcpcNumber { get; set; }
 
-        public DateTime? registrationExpiryDate { get; set; }
+        //public DateTime? registrationExpiryDate { get; set; }
 
-        public int? subTypeId { get; set; }
+        //public int? subTypeId { get; set; }
 
-        public int? registrarLevelId { get; set; }
+        //public int? registrarLevelId { get; set; }
 
-        public string registrarTrainer { get; set; }
+        //public string registrarTrainer { get; set; }
 
-        public bool isRegistrarGreen { get; set; }
+        //public bool isRegistrarGreen { get; set; }
 
-        public int? agencyId { get; set; }
+        //public int? agencyId { get; set; }
 
-        public int? registeredSurgeryId { get; set; }
+        //public int? registeredSurgeryId { get; set; }
 
-        public int? ccgId { get; set; }
+        //public int? ccgId { get; set; }
 
-        public int? indemnityProviderId { get; set; }
+        //public int? indemnityProviderId { get; set; }
 
-        public string performersList { get; set; }
+        //public string performersList { get; set; }
 
         public bool performersListChecked { get; set; }
 
-        public DateTime? performersListCheckedDate { get; set; }
+        //public DateTime? performersListCheckedDate { get; set; }
 
-        public string performersListCheckedBy { get; set; }
+        //public string performersListCheckedBy { get; set; }
 
-        public string indemnityNumber { get; set; }
+        //public string indemnityNumber { get; set; }
 
         public DateTime? indemnityExpiryDate { get; set; }
 
@@ -60,13 +60,13 @@ namespace drs_backend_phase1.Models.DTOs
 
         public int id { get; set; }
 
-        public DateTime? dateCreated { get; set; }
+        //public DateTime? dateCreated { get; set; }
 
-        public DateTime? dateModified { get; set; }
+        //public DateTime? dateModified { get; set; }
 
-        public bool isDeleted { get; set; }
+        //public bool isDeleted { get; set; }
 
-        public int? baseId { get; set; }
+        //public int? baseId { get; set; }
 
         public SubTypeDTO SubType { get; set; }
 
@@ -79,40 +79,6 @@ namespace drs_backend_phase1.Models.DTOs
         public ProfileProfessionalDTO()
         {
         }
-
-        public ProfileProfessionalDTO(int? teamId, int? jobTypeId, string gmcNumber, string nmcNumber, string hcpcNumber, DateTime? registrationExpiryDate, int? subTypeId, int? registrarLevelId, string registrarTrainer, bool isRegistrarGreen, int? agencyId, int? registeredSurgeryId, int? ccgId, int? indemnityProviderId, string performersList, bool performersListChecked, DateTime? performersListCheckedDate, string performersListCheckedBy, string indemnityNumber, DateTime? indemnityExpiryDate, bool isPremium, bool isTrainer, int id, DateTime? dateCreated, DateTime? dateModified, bool isDeleted, int? baseId, SubTypeDTO subType, List<ProfileShiftTypeDTO> profileShiftTypes, RegisteredSurgeryDTO registeredSurgery, RegistrarLevelDTO registrarLevel)
-        {
-			this.teamId = teamId;
-			this.jobTypeId = jobTypeId;
-			this.gmcNumber = gmcNumber;
-			this.nmcNumber = nmcNumber;
-			this.hcpcNumber = hcpcNumber;
-			this.registrationExpiryDate = registrationExpiryDate;
-			this.subTypeId = subTypeId;
-			this.registrarLevelId = registrarLevelId;
-			this.registrarTrainer = registrarTrainer;
-			this.isRegistrarGreen = isRegistrarGreen;
-			this.agencyId = agencyId;
-			this.registeredSurgeryId = registeredSurgeryId;
-			this.ccgId = ccgId;
-			this.indemnityProviderId = indemnityProviderId;
-			this.performersList = performersList;
-			this.performersListChecked = performersListChecked;
-			this.performersListCheckedDate = performersListCheckedDate;
-			this.performersListCheckedBy = performersListCheckedBy;
-			this.indemnityNumber = indemnityNumber;
-			this.indemnityExpiryDate = indemnityExpiryDate;
-			this.isPremium = isPremium;
-			this.isTrainer = isTrainer;
-			this.id = id;
-			this.dateCreated = dateCreated;
-			this.dateModified = dateModified;
-			this.isDeleted = isDeleted;
-			this.baseId = baseId;
-			this.SubType = subType;
-			this.ProfileShiftTypes = profileShiftTypes;
-			this.RegisteredSurgery = registeredSurgery;
-			this.RegistrarLevel = registrarLevel;
-        }
+        
     }
 }

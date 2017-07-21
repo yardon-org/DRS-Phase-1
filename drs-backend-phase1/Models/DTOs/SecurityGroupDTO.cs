@@ -18,9 +18,9 @@ namespace drs_backend_phase1.Models.DTOs
 
         public string groupName { get; set; }
 
-        public DateTime validFrom { get; set; }
+        //public DateTime validFrom { get; set; }
 
-        public DateTime validTo { get; set; }
+        //public DateTime validTo { get; set; }
 
         public List<SecurityPermissionDTO> SecurityPermissions { get; set; }
 
@@ -28,13 +28,5 @@ namespace drs_backend_phase1.Models.DTOs
         {
         }
 
-        public SecurityGroupDTO(byte groupId, string groupName, DateTime validFrom, DateTime validTo, List<SecurityPermissionDTO> securityPermissions)
-        {
-			this.groupId = groupId;
-			this.groupName = groupName;
-			this.validFrom = validFrom;
-			this.validTo = validTo;
-			this.SecurityPermissions = securityPermissions;
-        }
     }
 }

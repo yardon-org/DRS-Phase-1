@@ -18,10 +18,10 @@ namespace drs_backend_phase1.Models.DTOs
 
         public string rightName { get; set; }
 
-        public DateTime validFrom { get; set; }
+        //public DateTime validFrom { get; set; }
 
-        public DateTime validTo { get; set; }
+        //public DateTime validTo { get; set; }
 
-        public DateTime? dateCreated { get; set; }
+        //public DateTime? dateCreated { get; set; }
     }
 }

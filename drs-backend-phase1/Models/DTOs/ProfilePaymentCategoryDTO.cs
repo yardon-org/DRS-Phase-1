@@ -16,14 +16,14 @@ namespace drs_backend_phase1.Models.DTOs
     {
         public int? paymentCategoryId { get; set; }
 
-        public int? profileProfessionalId { get; set; }
+        //public int? profileProfessionalId { get; set; }
 
         public bool isDefault { get; set; }
 
         public int id { get; set; }
 
-        public DateTime? dateCreated { get; set; }
+        //public DateTime? dateCreated { get; set; }
 
-        public DateTime? dateModified { get; set; }
+        //public DateTime? dateModified { get; set; }
     }
 }

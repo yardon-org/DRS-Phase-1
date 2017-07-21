@@ -18,13 +18,13 @@ namespace drs_backend_phase1.Models.DTOs
 
         public string noteText { get; set; }
 
-        public int profileId { get; set; }
+        //public int profileId { get; set; }
 
         public int id { get; set; }
 
-        public DateTime? dateCreated { get; set; }
+        //public DateTime? dateCreated { get; set; }
 
-        public DateTime? dateModified { get; set; }
+        //public DateTime? dateModified { get; set; }
 
         public bool? isDeleted { get; set; }
 
@@ -32,15 +32,5 @@ namespace drs_backend_phase1.Models.DTOs
         {
         }
 
-        public SpecialNoteDTO(string userName, string noteText, int profileId, int id, DateTime? dateCreated, DateTime? dateModified, bool? isDeleted)
-        {
-			this.userName = userName;
-			this.noteText = noteText;
-			this.profileId = profileId;
-			this.id = id;
-			this.dateCreated = dateCreated;
-			this.dateModified = dateModified;
-			this.isDeleted = isDeleted;
-        }
     }
 }

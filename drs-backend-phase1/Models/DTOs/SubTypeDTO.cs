@@ -22,9 +22,9 @@ namespace drs_backend_phase1.Models.DTOs
 
         public int id { get; set; }
 
-        public DateTime? dateCreated { get; set; }
+        //public DateTime? dateCreated { get; set; }
 
-        public DateTime? dateModified { get; set; }
+        //public DateTime? dateModified { get; set; }
 
         public bool isDeleted { get; set; }
     }

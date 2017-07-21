@@ -18,9 +18,9 @@ namespace drs_backend_phase1.Models.DTOs
 
         public string name { get; set; }
 
-        public DateTime? dateCreated { get; set; }
+        //public DateTime? dateCreated { get; set; }
 
-        public DateTime? dateModified { get; set; }
+        //public DateTime? dateModified { get; set; }
 
         public bool isDeleted { get; set; }
 
@@ -28,13 +28,5 @@ namespace drs_backend_phase1.Models.DTOs
         {
         }
 
-        public TeamDTO(int id, string name, DateTime? dateCreated, DateTime? dateModified, bool isDeleted)
-        {
-			this.id = id;
-			this.name = name;
-			this.dateCreated = dateCreated;
-			this.dateModified = dateModified;
-			this.isDeleted = isDeleted;
-        }
     }
 }

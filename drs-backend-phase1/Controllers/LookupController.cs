@@ -45,7 +45,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns>
         ///     List of Agencies
         /// </returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllAgencies")]
         public IHttpActionResult FetchAllAgencies(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -76,7 +76,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns>
         ///     List of Banks
         /// </returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllBanks")]
         public IHttpActionResult FetchAllBanks(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -108,7 +108,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns>
         ///     List of Banks
         /// </returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllBases")]
         public IHttpActionResult FetchAllBases(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -138,7 +138,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllCCGs")]
         public IHttpActionResult FetchAllCCGs(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -168,7 +168,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllDocumentTypes")]
         public IHttpActionResult FetchAllDocumentTypes(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -198,7 +198,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns>List of Indemnity Providers</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllIndemnityProviders")]
         public IHttpActionResult FetchAllIndemnityProviders(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -229,7 +229,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns>List of PaymentCategories</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllPaymentCategories")]
         public IHttpActionResult FetchAllPaymentCategories(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -260,7 +260,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllRegisteredSurgeries")]
         public IHttpActionResult FetchAllRegisteredSurgeries(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -291,7 +291,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllRegistrarLevels")]
         public IHttpActionResult FetchAllRegistrarLevels(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -321,7 +321,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllShiftTypes")]
         public IHttpActionResult FetchAllShiftTypes(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -351,7 +351,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllTeams")]
         public IHttpActionResult FetchAllTeams(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -382,7 +382,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns>A list of Agencies</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchAgencies")]
         public IHttpActionResult SearchAgencies(string searchTerm, bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -412,7 +412,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns>Array of Surgeries</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchRegisteredSurgeries")]
         public IHttpActionResult SearchRegisteredSurgeries(string searchTerm, bool isDeleted = false, int page = 1, int pageSize = 10)

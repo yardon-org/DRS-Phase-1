@@ -46,7 +46,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
         /// <returns></returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [EnableQuery(PageSize = 200)]
         [Route("odata")]
         public IQueryable<object> GetSubTypesOData(bool includeDeleted = false)
@@ -71,7 +71,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="newSubType">New type of the sub.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
         public bool CreateSubType(SubTypeDTO newSubType)
@@ -107,7 +107,7 @@ namespace drs_backend_phase1.Controllers
         /// Fetches all SubTypes.
         /// </summary>
         /// <returns>A list of SubTypes</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
         public IHttpActionResult FetchAllSubTypes(int page = 1, int pageSize = 10)
@@ -131,7 +131,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A SubType object</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchSubTypeById(int id)
@@ -157,7 +157,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="subTypeToUpdate">The sub type to update.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateSubType(SubTypeDTO subTypeToUpdate)
@@ -194,7 +194,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>HttpActionResult</returns>
-       [Authorize(Roles = "PERSONNEL")]
+      [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteSubTypeById(int id)
