@@ -58,7 +58,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Agency, AgencyDTO>();
 
-                return Ok(agencies);
+                return Ok(new { metaData = agencies.GetMetaData(), items = agencies });
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Bank, BankDTO>();
 
-                return Ok(banks);
+                return Ok(new { metaData = banks.GetMetaData(), items = banks });
             }
             catch (Exception ex)
             {
@@ -121,7 +121,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Base, BaseDTO>();
 
-                return Ok(bases);
+                return Ok(new { metaData = bases.GetMetaData(), items = bases });
             }
             catch (Exception ex)
             {
@@ -151,7 +151,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<CCG, CCGDTO>();
 
-                return Ok(ccgs);
+                return Ok(new { metaData = ccgs.GetMetaData(), items = ccgs });
             }
             catch (Exception ex)
             {
@@ -181,7 +181,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<DocumentType, DocumentTypeDTO>();
 
-                return Ok(docTypes);
+                return Ok(new { metaData = docTypes.GetMetaData(), items = docTypes});
             }
             catch (Exception ex)
             {
@@ -211,7 +211,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<IndemnityProvider, IndemnityProviderDTO>();
 
-                return Ok(indProviders);
+                return Ok(new { metaData = indProviders.GetMetaData(), items = indProviders });
             }
             catch (Exception ex)
             {
@@ -242,7 +242,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<PaymentCategory, PaymentCategoryDTO>();
 
-                return Ok(payCats);
+                return Ok(new { metaData = payCats.GetMetaData(), items = payCats });
             }
             catch (Exception ex)
             {
@@ -273,7 +273,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<RegisteredSurgery, RegisteredSurgeryDTO>();
 
-                return Ok(regSurgs);
+                return Ok(new { metaData = regSurgs.GetMetaData(), items = regSurgs });
             }
             catch (Exception ex)
             {
@@ -304,7 +304,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<RegistrarLevel, RegistrarLevelDTO>();
 
-                return Ok(regLevs);
+                return Ok(new { metaData = regLevs.GetMetaData(), items = regLevs });
             }
             catch (Exception ex)
             {
@@ -334,7 +334,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<ShiftType, ShiftTypeDTO>();
 
-                return Ok(shiftTypes);
+                return Ok(new { metaData = shiftTypes.GetMetaData(), items = shiftTypes });
             }
             catch (Exception ex)
             {
@@ -364,7 +364,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.isDeleted == isDeleted)
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Team, TeamDTO>();
 
-                return Ok(teams);
+                return Ok(new { metaData = teams.GetMetaData(), items = teams });
             }
             catch (Exception ex)
             {
@@ -396,7 +396,7 @@ namespace drs_backend_phase1.Controllers
                                 && x.name.ToLower().Contains(searchTerm.ToLower()))
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<Agency, AgencyDTO>();
 
-                return Ok(agenciesuery);
+                return Ok(new { metaData = agenciesuery.GetMetaData(), items = agenciesuery });
             }
             catch (Exception ex)
             {
@@ -428,7 +428,7 @@ namespace drs_backend_phase1.Controllers
                     )
                     .OrderBy(x => x.id).ToPagedList(page, pageSize).ToMappedPagedList<RegisteredSurgery, RegisteredSurgeryDTO>();
 
-                return Ok(regSurgs);
+                return Ok(new { metaData = regSurgs.GetMetaData(), items = regSurgs });
             }
             catch (Exception ex)
             {

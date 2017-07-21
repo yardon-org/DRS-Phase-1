@@ -116,7 +116,7 @@ namespace drs_backend_phase1.Controllers
             _db.Emails.Add(email);
             _db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = email.id }, email);
+            return CreatedAtRoute("DefaultApi", new {email.id }, email);
         }
 
         // DELETE: api/Email/5

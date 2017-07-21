@@ -110,21 +110,20 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("")]
-        public IPagedList<SubTypeDTO> FetchAllSubTypes(int page = 1, int pageSize = 10)
+        public IHttpActionResult FetchAllSubTypes(int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("SubTypeController (ReadAllSubTypes)\n");
 
             try
             {
-                return _db.SubTypes.OrderBy(x => x.name).ToPagedList(page, pageSize).ToMappedPagedList<SubType, SubTypeDTO>(); ;
+                var subTypes = _db.SubTypes.OrderBy(x => x.name).ToPagedList(page, pageSize).ToMappedPagedList<SubType, SubTypeDTO>();
+                return Ok(new { metaData = subTypes.GetMetaData(), items = subTypes});
             }
             catch (Exception ex)
             {
                 Log.DebugFormat($"Error retrieving SubTypes. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                //return BadRequest($"Error retrieving SubTypes. The reason is as follows: {ex.Message}");
+                return BadRequest($"Error retrieving SubTypes. The reason is as follows: {ex.Message}");
             }
-
-            return null;
         }
 
         /// <summary>

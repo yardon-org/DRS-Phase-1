@@ -5,7 +5,6 @@ namespace drs_backend_phase1.Paging
     ///<summary>
     /// Non-enumerable version of the PagedList class.
     ///</summary>
-    [Serializable]
     public class PagedListMetaData : IPagedList
     {
         /// <summary>

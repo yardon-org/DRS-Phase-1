@@ -14,7 +14,6 @@ namespace drs_backend_phase1.Paging
     /// <seealso cref="BasePagedList{T}"/>
     /// <seealso cref="PagedList{T}"/>
     /// <seealso cref="List{T}"/>
-    [Serializable]
     public class StaticPagedList<T> : BasePagedList<T>
     {
         /// <summary>

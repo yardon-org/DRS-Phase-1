@@ -9,9 +9,12 @@
 using System.Text;
 using System.Collections.Generic;
 using System;
+using Newtonsoft.Json;
 
 namespace drs_backend_phase1.Models.DTOs
 {
+    [Serializable]
+    [JsonObject]
     public partial class ProfileDTO
     {
         public string firstName { get; set; }

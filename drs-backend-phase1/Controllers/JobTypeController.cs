@@ -115,7 +115,7 @@ namespace drs_backend_phase1.Controllers
                 Log.DebugFormat("JobTypeController (ReadAllJobTypes)\n");
 
                 var jobtypes = _db.JobTypes.OrderBy(x=>x.id).ToPagedList(page, pageSize).ToMappedPagedList<JobType, JobTypeDTO>();
-                return Ok(jobtypes);
+                return Ok(new { metaData = jobtypes.GetMetaData(), items = jobtypes });
             }
             catch (Exception ex)
             {

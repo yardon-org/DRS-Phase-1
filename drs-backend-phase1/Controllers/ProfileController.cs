@@ -257,7 +257,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">No. of Pages</param>
         /// <param name="pageSize">No. of Items per Page</param>
         /// <returns>List of Profiles</returns>
-        //[Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchProfiles")]
         public IHttpActionResult FetchAllProfiles(bool includeDeleted = false, int page = 1, int pageSize = 10)
@@ -271,14 +271,13 @@ namespace drs_backend_phase1.Controllers
                                         .OrderBy(x => x.id)
                                         .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
 
-                return Ok(profs);
+                return Ok(new { metaData = profs.GetMetaData(), items = profs});
             }
             catch (Exception ex)
             {
                 Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
                 return BadRequest($"Error retrieving Profiles. The reason is as follows: {ex.Message}");
             }
-
         }
 
         /// <summary>
@@ -308,7 +307,7 @@ namespace drs_backend_phase1.Controllers
                     .OrderBy(x => x.id)
                     .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
 
-                return Ok(profs);
+                return Ok(new { metaData = profs.GetMetaData(), items = profs });
             }
             catch (Exception ex)
             {
@@ -341,7 +340,7 @@ namespace drs_backend_phase1.Controllers
                     .OrderBy(x => x.id)
                  .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
 
-                return Ok(profs);
+                return Ok(new { metaData = profs.GetMetaData(), items = profs });
 
             }
             catch (Exception ex)
