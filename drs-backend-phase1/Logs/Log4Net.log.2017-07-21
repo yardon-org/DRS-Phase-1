@@ -1,0 +1,324 @@
+2017-07-21 07:20:37,901 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:27:58,970 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:29:08,777 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:31:37,690 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:44:05,937 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:46:06,998 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:50:18,785 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:56:13,192 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:57:43,609 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:58:49,564 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:59:38,323 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 07:59:38,726 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Error retrieving Profiles. The reason is as follows: The entity or complex type 'DRSModel.Profile' cannot be constructed in a LINQ to Entities query.    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.CheckInitializerType(Type type)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberInitTranslator.TypedTranslate(ExpressionConverter parent, MemberInitExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at drs_backend_phase1.Controllers.ProfileController.FetchAllProfiles(Boolean includeDeleted, Int32 page, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Controllers\ProfileController.cs:line 268
+2017-07-21 07:59:50,550 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:05:02,347 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:05:02,596 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Error retrieving Profiles. The reason is as follows: The entity or complex type 'DRSModel.Profile' cannot be constructed in a LINQ to Entities query.    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.CheckInitializerType(Type type)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberInitTranslator.TypedTranslate(ExpressionConverter parent, MemberInitExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at drs_backend_phase1.Controllers.ProfileController.FetchAllProfiles(Boolean includeDeleted, Int32 page, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Controllers\ProfileController.cs:line 268
+2017-07-21 08:05:12,224 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:05:12,238 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Error retrieving Profiles. The reason is as follows: The entity or complex type 'DRSModel.Profile' cannot be constructed in a LINQ to Entities query.    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.CheckInitializerType(Type type)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberInitTranslator.TypedTranslate(ExpressionConverter parent, MemberInitExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at drs_backend_phase1.Controllers.ProfileController.FetchAllProfiles(Boolean includeDeleted, Int32 page, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Controllers\ProfileController.cs:line 268
+2017-07-21 08:05:17,525 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:06:28,226 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:07:46,954 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:09:49,217 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:28:06,112 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:54:14,352 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:55:13,032 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:56:18,415 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 08:57:25,420 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 09:01:53,956 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 09:05:05,136 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Error retrieving Profiles. The reason is as follows: Expression of type 'drs_backend_phase1.Models.SubType' cannot be used for constructor parameter of type 'drs_backend_phase1.Models.DTOs.SubTypeDTO'    at System.Linq.Expressions.Expression.ValidateOneArgument(MethodBase method, ExpressionType nodeKind, Expression arg, ParameterInfo pi)
+   at System.Linq.Expressions.Expression.ValidateArgumentTypes(MethodBase method, ExpressionType nodeKind, ReadOnlyCollection`1& arguments)
+   at System.Linq.Expressions.Expression.New(ConstructorInfo constructor, IEnumerable`1 arguments)
+   at AutoMapper.ConstructorMap.NewExpression(Expression instanceParameter)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.DestinationConstructorExpression(TypeMap typeMap, Expression instanceParameter)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpression(ExpressionRequest request, Expression instanceParameter, ConcurrentDictionary`2 typePairCount)
+   at AutoMapper.QueryableExtensions.Impl.MappedTypeExpressionBinder.BindMappedTypeExpression(IConfigurationProvider configuration, PropertyMap propertyMap, ExpressionRequest request, ExpressionResolutionResult result, ConcurrentDictionary`2 typePairCount)
+   at AutoMapper.QueryableExtensions.Impl.MappedTypeExpressionBinder.Build(IConfigurationProvider configuration, PropertyMap propertyMap, TypeMap propertyTypeMap, ExpressionRequest request, ExpressionResolutionResult result, ConcurrentDictionary`2 typePairCount)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMemberBindings(ExpressionRequest request, TypeMap typeMap, Expression instanceParameter, ConcurrentDictionary`2 typePairCount)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpression(ExpressionRequest request, Expression instanceParameter, ConcurrentDictionary`2 typePairCount)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpression(ExpressionRequest request, ConcurrentDictionary`2 typePairCount)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.<CreateMapExpression>b__5_0(ExpressionRequest tp)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpression(Type sourceType, Type destinationType, IDictionary`2 parameters, MemberInfo[] membersToExpand)
+   at AutoMapper.QueryableExtensions.ProjectionExpression.To[TResult](IDictionary`2 parameters, IEnumerable`1 memberPathsToExpand)
+   at AutoMapper.QueryableExtensions.ProjectionExpression.To[TResult](Object parameters, Expression`1[] membersToExpand)
+   at AutoMapper.QueryableExtensions.Extensions.ProjectTo[TDestination](IQueryable source, IConfigurationProvider configuration, Object parameters, Expression`1[] membersToExpand)
+   at AutoMapper.QueryableExtensions.Extensions.ProjectTo[TDestination](IQueryable source, Expression`1[] membersToExpand)
+   at drs_backend_phase1.Controllers.ProfileController.FetchAllProfiles(Boolean includeDeleted, Int32 page, Int32 pageSize)
+2017-07-21 09:05:15,107 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 09:09:53,074 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 09:11:12,799 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 09:13:43,652 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 09:21:46,778 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 09:24:04,422 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 10:13:26,750 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 10:27:53,015 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 10:27:53,155 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Error retrieving Profiles. The reason is as follows: PageNumber cannot be below 1.
+Parameter name: pageNumber
+Actual value was 0.    at drs_backend_phase1.Paging.PagedList`1..ctor(IQueryable`1 superset, Int32 pageNumber, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Paging\PagedList.cs:line 32
+   at drs_backend_phase1.Extensions.PagingExtensions.ToPagedList[T](IQueryable`1 superset, Int32 pageNumber, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Extensions\PagingExtensions.cs:line 47
+   at drs_backend_phase1.Controllers.ProfileController.FetchAllProfiles(Boolean includeDeleted, Int32 page, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Controllers\ProfileController.cs:line 266
+2017-07-21 10:28:09,069 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 10:28:41,011 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 11:43:04,782 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 11:58:03,664 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.JobTypeController - JobTypeController (ReadAllJobTypes)
+
+2017-07-21 11:58:03,706 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.JobTypeController - Error retrieving JobTypes. The reason is as follows: PageNumber cannot be below 1.
+Parameter name: pageNumber
+Actual value was 0.    at drs_backend_phase1.Paging.PagedList`1..ctor(IQueryable`1 superset, Int32 pageNumber, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Paging\PagedList.cs:line 32
+   at drs_backend_phase1.Extensions.PagingExtensions.ToPagedList[T](IQueryable`1 superset, Int32 pageNumber, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Extensions\PagingExtensions.cs:line 47
+   at drs_backend_phase1.Controllers.JobTypeController.FetchAllJobTypes(Int32 page, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Controllers\JobTypeController.cs:line 117
+2017-07-21 11:59:32,713 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.JobTypeController - JobTypeController (ReadAllJobTypes)
+
+2017-07-21 11:59:33,110 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.JobTypeController - Error retrieving JobTypes. The reason is as follows: The method 'Skip' is only supported for sorted input in LINQ to Entities. The method 'OrderBy' must be called before the method 'Skip'.    at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.OrderByLifter.PassthroughOrderByLifter.Skip(DbExpression k)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.OrderByLifter.Skip(DbExpressionBinding input, DbExpression skipCount)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Skip(DbExpressionBinding input, DbExpression skipCount)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SkipTranslator.TranslatePagingOperator(ExpressionConverter parent, DbExpression operand, DbExpression count)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.PagingTranslator.TranslateUnary(ExpressionConverter parent, DbExpression operand, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.UnarySequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.UnarySequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at drs_backend_phase1.Paging.PagedList`1..ctor(IQueryable`1 superset, Int32 pageNumber, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Paging\PagedList.cs:line 55
+   at drs_backend_phase1.Extensions.PagingExtensions.ToPagedList[T](IQueryable`1 superset, Int32 pageNumber, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Extensions\PagingExtensions.cs:line 47
+   at drs_backend_phase1.Controllers.JobTypeController.FetchAllJobTypes(Int32 page, Int32 pageSize) in G:\Git\drs-backend-phase1\drs-backend-phase1\Controllers\JobTypeController.cs:line 117
+2017-07-21 12:02:39,789 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.JobTypeController - JobTypeController (ReadAllJobTypes)
+
+2017-07-21 12:03:10,117 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:03:57,317 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.SubTypeController - SubTypeController (ReadAllSubTypes)
+
+2017-07-21 12:17:28,596 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (UpdateProfile)
+
+2017-07-21 12:17:56,862 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of UpdateProfile was successful.
+
+2017-07-21 12:30:01,338 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:31:57,401 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:37:58,306 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:39:52,933 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:42:13,006 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:46:05,840 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:51:15,872 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:51:45,186 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:54:35,396 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:58:31,686 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 12:58:35,536 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 13:00:13,424 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 13:01:15,895 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 13:08:21,472 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 13:10:29,439 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 13:19:17,479 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 13:52:10,166 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-21 13:52:10,320 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Error retrieving ReadAllProfileById. The reason is as follows: Expression of type 'drs_backend_phase1.Models.SubType' cannot be used for constructor parameter of type 'drs_backend_phase1.Models.DTOs.SubTypeDTO'    at System.Linq.Expressions.Expression.ValidateOneArgument(MethodBase method, ExpressionType nodeKind, Expression arg, ParameterInfo pi)
+   at System.Linq.Expressions.Expression.ValidateArgumentTypes(MethodBase method, ExpressionType nodeKind, ReadOnlyCollection`1& arguments)
+   at System.Linq.Expressions.Expression.New(ConstructorInfo constructor, IEnumerable`1 arguments)
+   at AutoMapper.ConstructorMap.NewExpression(Expression instanceParameter)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.DestinationConstructorExpression(TypeMap typeMap, Expression instanceParameter)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpressionCore(ExpressionRequest request, Expression instanceParameter, IDictionary`2 typePairCount, TypeMap typeMap, LetPropertyMaps letPropertyMaps)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpressionCore(ExpressionRequest request, Expression instanceParameter, IDictionary`2 typePairCount, LetPropertyMaps letPropertyMaps, TypeMap& typeMap)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpression(ExpressionRequest request, Expression instanceParameter, IDictionary`2 typePairCount, LetPropertyMaps letPropertyMaps)
+   at AutoMapper.QueryableExtensions.Impl.MappedTypeExpressionBinder.BindMappedTypeExpression(IConfigurationProvider configuration, PropertyMap propertyMap, ExpressionRequest request, ExpressionResolutionResult result, IDictionary`2 typePairCount, LetPropertyMaps letPropertyMaps)
+   at AutoMapper.QueryableExtensions.Impl.MappedTypeExpressionBinder.Build(IConfigurationProvider configuration, PropertyMap propertyMap, TypeMap propertyTypeMap, ExpressionRequest request, ExpressionResolutionResult result, IDictionary`2 typePairCount, LetPropertyMaps letPropertyMaps)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.<CreateMemberBindings>g__CreateMemberBinding15_1(PropertyMap propertyMap, <>c__DisplayClass15_0& )
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMemberBindings(ExpressionRequest request, TypeMap typeMap, Expression instanceParameter, IDictionary`2 typePairCount, LetPropertyMaps letPropertyMaps)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpressionCore(ExpressionRequest request, Expression instanceParameter, IDictionary`2 typePairCount, TypeMap typeMap, LetPropertyMaps letPropertyMaps)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpressionCore(ExpressionRequest request, Expression instanceParameter, IDictionary`2 typePairCount, LetPropertyMaps letPropertyMaps, TypeMap& typeMap)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpression(ExpressionRequest request, IDictionary`2 typePairCount, LetPropertyMaps letPropertyMaps)
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.CreateMapExpression(ExpressionRequest request)
+   at AutoMapper.LockingConcurrentDictionary`2.<>c__DisplayClass2_1.<.ctor>b__1()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at AutoMapper.QueryableExtensions.ExpressionBuilder.GetMapExpression(Type sourceType, Type destinationType, IDictionary`2 parameters, MemberInfo[] membersToExpand)
+   at AutoMapper.QueryableExtensions.ProjectionExpression.To[TResult](IDictionary`2 parameters, IEnumerable`1 memberPathsToExpand)
+   at AutoMapper.QueryableExtensions.ProjectionExpression.To[TResult](Object parameters, Expression`1[] membersToExpand)
+   at AutoMapper.QueryableExtensions.Extensions.ProjectTo[TDestination](IQueryable source, IConfigurationProvider configuration, Object parameters, Expression`1[] membersToExpand)
+   at AutoMapper.QueryableExtensions.Extensions.ProjectTo[TDestination](IQueryable source, Expression`1[] membersToExpand)
+   at drs_backend_phase1.Controllers.ProfileController.FetchProfileById(Int32 id) in G:\Git\drs-backend-phase1\drs-backend-phase1\Controllers\ProfileController.cs:line 369
+2017-07-21 13:53:00,430 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 13:57:40,547 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-21 13:57:43,881 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-21 14:05:54,038 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-21 14:05:54,854 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-21 14:06:24,102 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 14:11:57,061 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-21 14:12:14,409 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-21 14:12:14,736 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-21 14:20:33,090 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-21 14:20:33,784 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-21 14:24:54,389 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-21 14:24:55,006 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-21 14:44:35,954 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (UpdateProfile)
+
+2017-07-21 15:02:08,661 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (UpdateProfile)
+
+2017-07-21 15:21:48,498 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (UpdateProfile)
+

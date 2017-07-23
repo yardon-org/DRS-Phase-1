@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
@@ -9,6 +8,7 @@ using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Models.DTOs;
 using log4net;
+using RefactorThis.GraphDiff;
 using Profile = drs_backend_phase1.Models.Profile;
 
 namespace drs_backend_phase1.Controllers
@@ -43,7 +43,7 @@ namespace drs_backend_phase1.Controllers
         /// <summary>
         ///     Checks the performers list.
         /// </summary>
-        /// <param name="profileToUpdate">The profile to update.</param>
+        /// <param name="incomingProfileDTO">The incoming profile dto.</param>
         /// <returns></returns>
         [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
@@ -52,16 +52,22 @@ namespace drs_backend_phase1.Controllers
         {
             Log.DebugFormat("ProfileController (CheckPerformersList)\n");
 
-
             var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
-            var profileToUpdate = Mapper.Map(incomingProfileDTO, fetchedProfile);
+
+            if (fetchedProfile == null)
+                return BadRequest($"Error retrieving UpdateProfile. The object to update is null");
+
+            var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
+
+            // Create a graph of the Profile entity
+            ConfigureGraphDif(profileToUpdate);
+
 
             if (profileToUpdate != null)
                 try
                 {
                     profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
                     profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
-                    _db.Profiles.AddOrUpdate(profileToUpdate);
                     _db.SaveChanges();
 
                     // TODO: Add to eventlog here
@@ -135,7 +141,7 @@ namespace drs_backend_phase1.Controllers
                     .OrderBy(x => x.id)
                     .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
 
-                return Ok(new { metaData = profs.GetMetaData(), items = profs });
+                return Ok(new {metaData = profs.GetMetaData(), items = profs});
             }
             catch (Exception ex)
             {
@@ -168,7 +174,7 @@ namespace drs_backend_phase1.Controllers
                     .OrderBy(x => x.id)
                     .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
 
-                return Ok(new { metaData = profs.GetMetaData(), items = profs });
+                return Ok(new {metaData = profs.GetMetaData(), items = profs});
             }
             catch (Exception ex)
             {
@@ -223,117 +229,7 @@ namespace drs_backend_phase1.Controllers
             try
             {
                 IQueryable<object> query = _db.Profiles
-                    .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted)
-                    .Select(
-                        p =>
-                            new
-                            {
-                                p.firstName,
-                                p.middleNames,
-                                p.lastName,
-                                p.dateOfBirth,
-                                p.address1,
-                                p.address2,
-                                p.address3,
-                                p.address4,
-                                p.address5,
-                                p.postcode,
-                                p.homePhone,
-                                p.mobilePhone,
-                                p.homeEmail,
-                                p.nhsEmail,
-                                p.smsEnabled,
-                                p.isInactive,
-                                p.isComplete,
-                                p.id,
-                                p.dateCreated,
-                                p.dateModified,
-                                p.isDeleted,
-                                p.profileProfessionalId,
-                                p.profileFinanceId,
-                                p.adEmailAddress,
-                                role = new
-                                {
-                                    p.SecurityRole.roleId,
-                                    p.SecurityRole.roleName,
-                                    p.SecurityRole.isDeleted
-                                },
-                                finance = new
-                                {
-                                    p.ProfileFinance.id,
-                                    p.ProfileFinance.payrollNumber,
-                                    p.ProfileFinance.isIc24Staff,
-                                    p.ProfileFinance.bankId,
-                                    p.ProfileFinance.bankSortCode,
-                                    p.ProfileFinance.bankAccountNumber,
-                                    p.ProfileFinance.buildingSocietyRollNumber,
-                                    p.ProfileFinance.nationalInsuranceNumber,
-                                    p.ProfileFinance.isDeleted
-                                },
-                                professional = new
-                                {
-                                    p.ProfileProfessional.id,
-                                    p.ProfileProfessional.gmcNumber,
-                                    p.ProfileProfessional.hcpcNumber,
-                                    p.ProfileProfessional.indemnityExpiryDate,
-                                    p.ProfileProfessional.isPremium,
-                                    p.ProfileProfessional.isTrainer,
-                                    p.ProfileProfessional.nmcNumber,
-                                    p.ProfileProfessional.performersListChecked,
-                                    p.ProfileProfessional.registrarTrainer,
-                                    ccg = new
-                                    {
-                                        p.ProfileProfessional.CCG.id,
-                                        p.ProfileProfessional.CCG.name,
-                                        p.ProfileProfessional.CCG.isDeleted
-                                    },
-                                    registrarLevel = new
-                                    {
-                                        p.ProfileProfessional.RegistrarLevel.id,
-                                        p.ProfileProfessional.RegistrarLevel.name,
-                                        p.ProfileProfessional.RegistrarLevel.isDeleted
-                                    },
-                                    @base = new
-                                    {
-                                        p.ProfileProfessional.Base.id,
-                                        p.ProfileProfessional.Base.name,
-                                        p.ProfileProfessional.Base.isDeleted
-                                    },
-                                    indemnityProvider = new
-                                    {
-                                        p.ProfileProfessional.IndemnityProvider.id,
-                                        p.ProfileProfessional.IndemnityProvider.name,
-                                        p.ProfileProfessional.IndemnityProvider.isDeleted
-                                    },
-                                    registeredSurgery = new
-                                    {
-                                        p.ProfileProfessional.RegisteredSurgery.id,
-                                        p.ProfileProfessional.RegisteredSurgery.name,
-                                        p.ProfileProfessional.RegisteredSurgery.isDeleted
-                                    },
-                                    agency = new
-                                    {
-                                        p.ProfileProfessional.Agency.id,
-                                        p.ProfileProfessional.Agency.name,
-                                        p.ProfileProfessional.Agency.isDeleted
-                                    },
-                                    team = new
-                                    {
-                                        p.ProfileProfessional.Base.Team.id,
-                                        p.ProfileProfessional.Base.Team.name,
-                                        p.ProfileProfessional.Base.Team.isDeleted
-                                    },
-                                    jobRole = new
-                                    {
-                                        p.ProfileProfessional.JobType.id,
-                                        p.ProfileProfessional.JobType.name,
-                                        p.ProfileProfessional.JobType.isGmcRequired,
-                                        p.ProfileProfessional.JobType.isHcpcRequired,
-                                        p.ProfileProfessional.JobType.isNmcRequired,
-                                        p.ProfileProfessional.JobType.isDeleted
-                                    }
-                                }
-                            });
+                    .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted);
 
                 return query.AsQueryable();
             }
@@ -344,6 +240,7 @@ namespace drs_backend_phase1.Controllers
 
             return null;
         }
+
         /// <summary>
         ///     Searches  profiles firstName/middlename/lastName by searchTerm.
         /// </summary>
@@ -381,12 +278,13 @@ namespace drs_backend_phase1.Controllers
                 return BadRequest($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message}");
             }
         }
+
         /// <summary>
         ///     Updates a Profile.
         /// </summary>
         /// <param name="incomingProfileDTO">The Profile to update.</param>
         /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
+        //[Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
         public IHttpActionResult UpdateProfile(ProfileDTO incomingProfileDTO)
@@ -400,13 +298,12 @@ namespace drs_backend_phase1.Controllers
                     var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
 
                     if (fetchedProfile == null)
-                    {
                         return BadRequest($"Error retrieving UpdateProfile. The object to update is null");
-                    }
 
-                    var profileToUpdate= Mapper.Map(incomingProfileDTO, fetchedProfile);
+                    var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
-                    _db.Profiles.AddOrUpdate(profileToUpdate);
+                    // Create a graph of the Profile entity
+                    ConfigureGraphDif(profileToUpdate);
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
@@ -422,6 +319,35 @@ namespace drs_backend_phase1.Controllers
             Log.DebugFormat(
                 $"Error updating Profile. Profile cannot be null\n");
             return BadRequest($"Error creating new Profile. Profile cannot be null");
+        }
+
+        /// <summary>
+        ///     Configures the graph dif.
+        /// </summary>
+        /// <param name="profileToUpdate">The profile to update.</param>
+        private void ConfigureGraphDif(Profile profileToUpdate)
+        {
+            _db.UpdateGraph(profileToUpdate,
+                map => map.OwnedEntity(
+                        p => p.ProfileProfessional,
+                        with =>
+                            with.OwnedEntity(p => p.Agency)
+                                .OwnedEntity(p => p.Base, x => x.OwnedEntity(p => p.Team))
+                                .OwnedEntity(p => p.CCG)
+                                .OwnedEntity(p => p.IndemnityProvider)
+                                .OwnedEntity(p => p.JobType)
+                                .AssociatedCollection(p => p.ProfilePaymentCategories)
+                                .AssociatedCollection(p => p.ProfileShiftTypes)
+                                .OwnedEntity(p => p.RegisteredSurgery)
+                                .OwnedEntity(p => p.RegistrarLevel)
+                                .OwnedEntity(p => p.SubType)
+                    )
+                    .OwnedCollection(p => p.ProfileDocuments)
+                    .OwnedCollection(p => p.SpecialNotes)
+                    .AssociatedEntity(p => p.SecurityRole)
+                    .OwnedEntity(p => p.ProfileFinance, with => with.OwnedEntity(p => p.Bank)
+                    )
+            );
         }
 
         /// <summary>
