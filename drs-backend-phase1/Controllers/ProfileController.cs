@@ -40,6 +40,8 @@ namespace drs_backend_phase1.Controllers
             _db = new DRSEntities();
         }
 
+        #region Put_Endpoints
+
         /// <summary>
         ///     Checks the performers list.
         /// </summary>
@@ -59,13 +61,12 @@ namespace drs_backend_phase1.Controllers
 
             var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
-            // Create a graph of the Profile entity
-            ConfigureGraphDif(profileToUpdate);
-
-
             if (profileToUpdate != null)
                 try
                 {
+                    // Create a graph of the Profile entity
+                    ConfigureGraphDiff(profileToUpdate);
+
                     profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
                     profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
                     _db.SaveChanges();
@@ -88,6 +89,55 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
+        ///     Updates a Profile.
+        /// </summary>
+        /// <param name="incomingProfileDTO">The Profile to update.</param>
+        /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpPut]
+        [Route("")]
+        public IHttpActionResult UpdateProfile(ProfileDTO incomingProfileDTO)
+        {
+            Log.DebugFormat("ProfileController (UpdateProfile)\n");
+
+            if (incomingProfileDTO != null)
+                try
+                {
+                    // TODO: Test this
+                    var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
+
+                    if (fetchedProfile == null)
+                        return BadRequest($"Error retrieving UpdateProfile. The object to update is null");
+
+                    var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
+
+                    // Create a graph of the Profile entity
+                    ConfigureGraphDiff(profileToUpdate);
+                    _db.SaveChanges();
+
+                    Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
+                    return Ok(true);
+                }
+                catch (Exception ex)
+                {
+                    Log.DebugFormat(
+                        $"Error retrieving UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                    return BadRequest($"Error retrieving UpdateProfile. The reason is as follows: {ex.Message}");
+                }
+
+            Log.DebugFormat(
+                $"Error updating Profile. Profile cannot be null\n");
+            return BadRequest($"Error creating new Profile. Profile cannot be null");
+        }
+
+
+
+
+        #endregion
+
+        #region Delete_Endpoints
+
+        /// <summary>
         ///     Deletes a Profile by identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
@@ -95,7 +145,7 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
-        public IHttpActionResult DeleteProfileById(int id)
+        public virtual IHttpActionResult DeleteProfileById(int id)
         {
             Log.DebugFormat("ProfileController (DeleteProfileById)\n");
 
@@ -119,6 +169,10 @@ namespace drs_backend_phase1.Controllers
                 return BadRequest($"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message}");
             }
         }
+
+            #endregion
+
+        #region Get_Endpoints
 
         /// <summary>
         ///     Fetches all profiles.
@@ -190,7 +244,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A Profile object</returns>
-        //[Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchProfileById(int id)
@@ -216,7 +270,49 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
-        ///     Gets the profiles.
+        ///     Searches  profiles firstName/middlename/lastName by searchTerm.
+        /// </summary>
+        /// <param name="searchTerm">The search term.</param>
+        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <returns>Array object</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpGet]
+        [Route("searchProfiles")]
+        public IHttpActionResult SearchProfiles(string searchTerm, bool includeDeleted = false, int page = 1, int pageSize = 10)
+        {
+            Log.DebugFormat("ProfileController (SearchProfiles)\n");
+
+            try
+            {
+                var profs = _db.Profiles
+                    .Where(p =>
+                        (p.isDeleted == false || includeDeleted && p.isDeleted)
+                        && (p.lastName.ToLower().Contains(searchTerm.ToLower())
+                            || p.firstName.ToLower().Contains(searchTerm.ToLower())
+                            || p.middleNames.ToLower().Contains(searchTerm.ToLower())
+                        ))
+                    .OrderBy(x => x.id)
+                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
+
+                return Ok(new { metaData = profs.GetMetaData(), items = profs });
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving SearchProfiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                return BadRequest($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message}");
+            }
+        }
+
+
+        #endregion
+
+        #region OData_Endpoints
+
+        /// <summary>
+        ///     OData endpoit.
         /// </summary>
         /// <returns></returns>
         [Authorize(Roles = "PERSONNEL")]
@@ -241,91 +337,33 @@ namespace drs_backend_phase1.Controllers
             return null;
         }
 
-        /// <summary>
-        ///     Searches  profiles firstName/middlename/lastName by searchTerm.
-        /// </summary>
-        /// <param name="searchTerm">The search term.</param>
-        /// <param name="includeDeleted">if set to <c>true</c> [include deleted].</param>
-        /// <param name="page">The page.</param>
-        /// <param name="pageSize">Size of the page.</param>
-        /// <returns>Array object</returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpGet]
-        [Route("searchProfiles")]
-        public IHttpActionResult SearchProfiles(string searchTerm, bool includeDeleted = false, int page = 1,
-            int pageSize = 10)
-        {
-            Log.DebugFormat("ProfileController (SearchProfiles)\n");
+            #endregion
 
-            try
-            {
-                var profs = _db.Profiles
-                    .Where(p =>
-                        (p.isDeleted == false || includeDeleted && p.isDeleted)
-                        && (p.lastName.ToLower().Contains(searchTerm.ToLower())
-                            || p.firstName.ToLower().Contains(searchTerm.ToLower())
-                            || p.middleNames.ToLower().Contains(searchTerm.ToLower())
-                        ))
-                    .OrderBy(x => x.id)
-                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
-
-                return Ok(new {metaData = profs.GetMetaData(), items = profs});
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving SearchProfiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message}");
-            }
-        }
+        #region Disposing
 
         /// <summary>
-        ///     Updates a Profile.
+        ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
         /// </summary>
-        /// <param name="incomingProfileDTO">The Profile to update.</param>
-        /// <returns>HttpActionResult</returns>
-        //[Authorize(Roles = "PERSONNEL")]
-        [HttpPut]
-        [Route("")]
-        public IHttpActionResult UpdateProfile(ProfileDTO incomingProfileDTO)
+        /// <param name="disposing">
+        ///     true to release both managed and unmanaged resources; false to release only unmanaged
+        ///     resources.
+        /// </param>
+        protected override void Dispose(bool disposing)
         {
-            Log.DebugFormat("ProfileController (UpdateProfile)\n");
-
-            if (incomingProfileDTO != null)
-                try
-                {
-                    // TODO: Test this
-                    var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
-
-                    if (fetchedProfile == null)
-                        return BadRequest($"Error retrieving UpdateProfile. The object to update is null");
-
-                    var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
-
-                    // Create a graph of the Profile entity
-                    ConfigureGraphDif(profileToUpdate);
-                    _db.SaveChanges();
-
-                    Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
-                    return Ok(true);
-                }
-                catch (Exception ex)
-                {
-                    Log.DebugFormat(
-                        $"Error retrieving UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error retrieving UpdateProfile. The reason is as follows: {ex.Message}");
-                }
-
-            Log.DebugFormat(
-                $"Error updating Profile. Profile cannot be null\n");
-            return BadRequest($"Error creating new Profile. Profile cannot be null");
+            if (disposing)
+                _db.Dispose();
+            base.Dispose(disposing);
         }
+
+        #endregion
+
+        #region GraphDiff_Configuration
 
         /// <summary>
         ///     Configures the graph dif.
         /// </summary>
         /// <param name="profileToUpdate">The profile to update.</param>
-        private void ConfigureGraphDif(Profile profileToUpdate)
+        private void ConfigureGraphDiff(Profile profileToUpdate)
         {
             _db.UpdateGraph(profileToUpdate,
                 map => map.OwnedEntity(
@@ -344,24 +382,12 @@ namespace drs_backend_phase1.Controllers
                     )
                     .OwnedCollection(p => p.ProfileDocuments)
                     .OwnedCollection(p => p.SpecialNotes)
-                    .AssociatedEntity(p => p.SecurityRole)
+                    .OwnedEntity(p => p.SecurityRole)
                     .OwnedEntity(p => p.ProfileFinance, with => with.OwnedEntity(p => p.Bank)
                     )
             );
         }
-
-        /// <summary>
-        ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
-        /// </summary>
-        /// <param name="disposing">
-        ///     true to release both managed and unmanaged resources; false to release only unmanaged
-        ///     resources.
-        /// </param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-                _db.Dispose();
-            base.Dispose(disposing);
-        }
     }
+
+    #endregion
 }
