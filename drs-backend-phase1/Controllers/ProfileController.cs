@@ -190,7 +190,7 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A Profile object</returns>
-        [Authorize(Roles = "PERSONNEL")]
+        //[Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult FetchProfileById(int id)
