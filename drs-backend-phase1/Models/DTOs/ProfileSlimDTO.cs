@@ -15,7 +15,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class AgencyDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -25,7 +25,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class BankDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -35,7 +35,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class BaseDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool? isDeleted { get; set; }
@@ -47,7 +47,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class CCGDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -57,7 +57,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class DocumentTypeDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -67,7 +67,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class EmailDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public string from { get; set; }
         public int id { get; set; }
         public bool? isDeleted { get; set; }
@@ -79,7 +79,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class IndemnityProviderDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -89,7 +89,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class JobTypeDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
         public bool? isClinical { get; set; }
         public bool? isDeleted { get; set; }
@@ -102,7 +102,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class PaymentCategoryDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -113,7 +113,7 @@ namespace drs_backend_phase1.Models.DTOs
     {
         //public DateTime? dateCreated { get; set; }
         public DateTime? dateExpires { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public DateTime? dateObtained { get; set; }
         public DocumentTypeDTO DocumentType { get; set; }
         public int? documentTypeId { get; set; }
@@ -135,7 +135,7 @@ namespace drs_backend_phase1.Models.DTOs
         public string address5 { get; set; }
         public string adEmailAddress { get; set; }
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public DateTime dateOfBirth { get; set; }
         public string firstName { get; set; }
 
@@ -168,7 +168,7 @@ namespace drs_backend_phase1.Models.DTOs
         public string bankSortCode { get; set; }
         public string buildingSocietyRollNumber { get; set; }
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
         public bool isDeleted { get; set; }
         public bool isIc24Staff { get; set; }
@@ -179,7 +179,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class ProfilePaymentCategoryDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
         public bool isDefault { get; set; }
         public bool isDeleted { get; set; }
@@ -197,7 +197,7 @@ namespace drs_backend_phase1.Models.DTOs
         public CCGDTO CCG { get; set; }
         public int? ccgId { get; set; }
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public string gmcNumber { get; set; }
         public string hcpcNumber { get; set; }
         public int id { get; set; }
@@ -232,7 +232,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class ProfileShiftTypeDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
         public bool isDeleted { get; set; }
         public bool? isUnderReview { get; set; }
@@ -244,7 +244,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class RegisteredSurgeryDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -254,7 +254,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class RegistrarLevelDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -265,7 +265,7 @@ namespace drs_backend_phase1.Models.DTOs
     {
         public int? createdProfileID { get; set; }
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public bool? isDeleted { get; set; }
         public int? modifiedProfileID { get; set; }
         public byte roleId { get; set; }
@@ -280,7 +280,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class ShiftTypeDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }
@@ -290,7 +290,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class SpecialNoteDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
         public bool? isDeleted { get; set; }
         public string noteText { get; set; }
@@ -301,7 +301,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class SubTypeDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
         public bool isAgency { get; set; }
         public bool isDeleted { get; set; }

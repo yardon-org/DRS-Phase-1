@@ -504,6 +504,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Properties\PublishProfiles\AuthDirectToServer.pubxml" />
+    <None Include="Properties\PublishProfiles\AuthDirectToServerDebug.pubxml" />
     <None Include="Properties\PublishProfiles\NoAuthDirectToServer.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\ai.1.0.11-build00400.js" />

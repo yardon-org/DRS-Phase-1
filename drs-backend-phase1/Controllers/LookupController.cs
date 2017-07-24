@@ -383,25 +383,29 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         /// <param name="entityToUpdate">The entity to update.</param>
         /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("saveTeam")]
-        public IHttpActionResult SaveTeam(TeamDTO entityToUpdate)
+        public IHttpActionResult SaveTeam([FromBody] TeamDTO entityToUpdate)
         {
+
+           var teamObj= Mapper.Map<Team>(entityToUpdate);
+
             Log.DebugFormat("LookupController (FetchAllTeams)\n");
 
 
-            var fetchedEntity = _db.Teams.SingleOrDefault(x => x.id == entityToUpdate.id);
+            var fetchedEntity = _db.Teams.SingleOrDefault(x => x.id == teamObj.id);
 
             if (fetchedEntity == null)
             {
                 return BadRequest($"The record cannot be null");
             }
 
-            Mapper.Map(entityToUpdate, fetchedEntity);
+         
         
             try
             {
-                _db.Teams.AddOrUpdate(fetchedEntity);
+                _db.Teams.AddOrUpdate(teamObj);
                 _db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException ex)

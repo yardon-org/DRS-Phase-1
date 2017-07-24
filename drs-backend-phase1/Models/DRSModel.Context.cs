@@ -12,6 +12,8 @@ namespace drs_backend_phase1.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Linq;
+    using System.Data;
     
     public partial class DRSEntities : DbContext
     {
@@ -53,5 +55,33 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<SpecialNote> SpecialNotes { get; set; }
         public virtual DbSet<SubType> SubTypes { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
+
+        /// <summary>
+        /// Saves all changes made in this context to the underlying database.
+        /// </summary>
+        /// <returns>
+        /// The number of state entries written to the underlying database. This can include
+        /// state entries for entities and/or relationships. Relationship state entries are created for
+        /// many-to-many relationships and relationships where there is no foreign key property
+        /// included in the entity class (often referred to as independent associations).
+        /// </returns>
+        public override int SaveChanges()
+        {
+            DateTime saveTime = DateTime.Now;
+            foreach (var entry in this.ChangeTracker.Entries())
+            {
+                if (entry.State == EntityState.Added || entry.State == EntityState.Modified)
+                {
+                    if (entry.Property("dateModified").CurrentValue == null)
+                        entry.Property("dateModified").CurrentValue = saveTime;
+
+
+                    if (entry.Property("dateCreated").CurrentValue == null)
+                        entry.Property("dateCreated").CurrentValue = saveTime;
+                }
+            }
+            return base.SaveChanges();
+
+        }
     }
 }

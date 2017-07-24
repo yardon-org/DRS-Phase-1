@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
@@ -98,10 +99,10 @@ namespace drs_backend_phase1.Controllers
             if (incomingProfileDTO != null)
                 try
                 {
-                  var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
-
+                    var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
                     // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);
+
                     _db.SaveChanges();
 
                     Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
@@ -118,10 +119,6 @@ namespace drs_backend_phase1.Controllers
                 $"Error updating Profile. Profile cannot be null\n");
             return BadRequest($"Error creating new Profile. Profile cannot be null");
         }
-
-
-
-
         #endregion
 
         #region Delete_Endpoints
