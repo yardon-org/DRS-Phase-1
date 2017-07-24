@@ -14,6 +14,12 @@ namespace drs_backend_phase1.Models
     
     public partial class SecurityRight
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SecurityRight()
+        {
+            this.SecurityPermissions = new HashSet<SecurityPermission>();
+        }
+    
         public byte rightID { get; set; }
         public string rightName { get; set; }
         public System.DateTime validFrom { get; set; }
@@ -23,5 +29,8 @@ namespace drs_backend_phase1.Models
         public Nullable<int> createdProfileId { get; set; }
         public Nullable<int> modifiedProfileId { get; set; }
         public Nullable<bool> isDeleted { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SecurityPermission> SecurityPermissions { get; set; }
     }
 }

@@ -45,8 +45,8 @@ namespace drs_backend_phase1.Models
         public bool isPremium { get; set; }
         public bool isTrainer { get; set; }
         public int id { get; set; }
-        public Nullable<System.DateTime> dateCreated { get; set; }
-        public Nullable<System.DateTime> dateModified { get; set; }
+        public System.DateTime dateCreated { get; set; }
+        public System.DateTime dateModified { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<int> baseId { get; set; }
     

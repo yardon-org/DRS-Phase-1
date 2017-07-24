@@ -54,14 +54,8 @@ namespace drs_backend_phase1.Controllers
 
             try
             {
-                IQueryable<object> query = _db.EventLogs
-                    .Select(x => new
-                    {
-                        x.typeKey,
-                        x.configId
-                    });
-
-                return query.AsQueryable();
+                IQueryable<object> query = _db.JobTypes;
+                  return query.AsQueryable();
             }
             catch (Exception ex)
             {

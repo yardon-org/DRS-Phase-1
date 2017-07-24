@@ -14,9 +14,18 @@ namespace drs_backend_phase1.Models
     
     public partial class SecurityGroup
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SecurityGroup()
+        {
+            this.SecurityPermissions = new HashSet<SecurityPermission>();
+        }
+    
         public byte groupId { get; set; }
         public string groupName { get; set; }
         public System.DateTime validFrom { get; set; }
         public System.DateTime validTo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SecurityPermission> SecurityPermissions { get; set; }
     }
 }

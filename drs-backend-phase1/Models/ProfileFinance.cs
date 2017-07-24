@@ -28,8 +28,8 @@ namespace drs_backend_phase1.Models
         public string bankSortCode { get; set; }
         public string buildingSocietyRollNumber { get; set; }
         public int id { get; set; }
-        public Nullable<System.DateTime> dateCreated { get; set; }
-        public Nullable<System.DateTime> dateModified { get; set; }
+        public System.DateTime dateCreated { get; set; }
+        public System.DateTime dateModified { get; set; }
         public bool isDeleted { get; set; }
     
         public virtual Bank Bank { get; set; }

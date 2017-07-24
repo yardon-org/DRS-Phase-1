@@ -22,8 +22,8 @@ namespace drs_backend_phase1.Models
         public Nullable<System.DateTime> dateExpires { get; set; }
         public Nullable<int> profileId { get; set; }
         public int id { get; set; }
-        public Nullable<System.DateTime> dateCreated { get; set; }
-        public Nullable<System.DateTime> dateModified { get; set; }
+        public System.DateTime dateCreated { get; set; }
+        public System.DateTime dateModified { get; set; }
         public bool isDeleted { get; set; }
     
         public virtual DocumentType DocumentType { get; set; }

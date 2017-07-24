@@ -12,16 +12,22 @@ namespace drs_backend_phase1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class QueuedEmail
+    public partial class SecurityPermission
     {
-        public float retryCount { get; set; }
-        public float status { get; set; }
-        public int id { get; set; }
+        public int permissionId { get; set; }
+        public byte groupId { get; set; }
+        public byte roleId { get; set; }
+        public byte rightId { get; set; }
+        public System.DateTime validFrom { get; set; }
+        public System.DateTime validTo { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
         public Nullable<System.DateTime> dateModified { get; set; }
+        public Nullable<int> createdProfileId { get; set; }
+        public Nullable<int> modifiedProfileId { get; set; }
         public Nullable<bool> isDeleted { get; set; }
-        public int email { get; set; }
     
-        public virtual Email Email1 { get; set; }
+        public virtual SecurityGroup SecurityGroup { get; set; }
+        public virtual SecurityRight SecurityRight { get; set; }
+        public virtual SecurityRole SecurityRole { get; set; }
     }
 }

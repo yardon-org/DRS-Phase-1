@@ -18,8 +18,8 @@ namespace drs_backend_phase1.Models
         public string noteText { get; set; }
         public int profileId { get; set; }
         public int id { get; set; }
-        public Nullable<System.DateTime> dateCreated { get; set; }
-        public Nullable<System.DateTime> dateModified { get; set; }
+        public System.DateTime dateCreated { get; set; }
+        public System.DateTime dateModified { get; set; }
         public Nullable<bool> isDeleted { get; set; }
     
         public virtual Profile Profile { get; set; }

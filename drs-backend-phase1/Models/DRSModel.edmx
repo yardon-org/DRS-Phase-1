@@ -12,7 +12,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Bank">
@@ -31,8 +31,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" />
           <Property Name="teamId" Type="int" Nullable="false" />
         </EntityType>
@@ -42,8 +42,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="DocumentType">
@@ -52,52 +52,9 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Email">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="to" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="from" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="subject" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="text" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
-          <Property Name="isDeleted" Type="bit" />
-        </EntityType>
-        <EntityType Name="EventLog">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="typeKey" Type="nvarchar" MaxLength="35" Nullable="false" />
-          <Property Name="configId" Type="int" />
-          <Property Name="userId" Type="int" />
-          <Property Name="userName" Type="nvarchar" MaxLength="50" />
-          <Property Name="createDate" Type="datetime" Nullable="false" />
-          <Property Name="serverName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="properties" Type="text" />
-        </EntityType>
-        <EntityType Name="EventLogConfig">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="logTypeKey" Type="nvarchar" MaxLength="35" />
-          <Property Name="loggingIsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="EventLogType">
-          <Key>
-            <PropertyRef Name="key" />
-          </Key>
-          <Property Name="key" Type="nvarchar" MaxLength="35" Nullable="false" />
-          <Property Name="friendlyName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="description" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="cssClass" Type="nvarchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityType Name="IndemnityProvider">
           <Key>
@@ -105,8 +62,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="JobType">
@@ -119,8 +76,8 @@
           <Property Name="isNmcRequired" Type="bit" />
           <Property Name="isHcpcRequired" Type="bit" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="PaymentCategory">
@@ -129,8 +86,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Profile">
@@ -155,8 +112,8 @@
           <Property Name="isInactive" Type="bit" Nullable="false" />
           <Property Name="isComplete" Type="bit" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="profileProfessionalId" Type="int" />
           <Property Name="profileFinanceId" Type="int" />
@@ -175,8 +132,8 @@
           <Property Name="dateExpires" Type="datetime" />
           <Property Name="profileId" Type="int" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ProfileFinance">
@@ -191,8 +148,8 @@
           <Property Name="bankSortCode" Type="nvarchar" MaxLength="255" />
           <Property Name="buildingSocietyRollNumber" Type="nvarchar" MaxLength="255" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ProfilePaymentCategory">
@@ -203,8 +160,8 @@
           <Property Name="profileProfessionalId" Type="int" />
           <Property Name="isDefault" Type="bit" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ProfileProfessional">
@@ -234,8 +191,8 @@
           <Property Name="isPremium" Type="bit" Nullable="false" />
           <Property Name="isTrainer" Type="bit" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="baseId" Type="int" />
         </EntityType>
@@ -247,21 +204,9 @@
           <Property Name="profileProfessionalId" Type="int" />
           <Property Name="isUnderReview" Type="bit" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="QueuedEmail">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="retryCount" Type="real" Nullable="false" />
-          <Property Name="status" Type="real" Nullable="false" />
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
-          <Property Name="isDeleted" Type="bit" />
-          <Property Name="email" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="RegisteredSurgery">
           <Key>
@@ -269,8 +214,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="RegistrarLevel">
@@ -279,8 +224,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="SecurityGroup">
@@ -291,6 +236,22 @@
           <Property Name="groupName" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SecurityPermission">
+          <Key>
+            <PropertyRef Name="permissionId" />
+          </Key>
+          <Property Name="permissionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="groupId" Type="tinyint" Nullable="false" />
+          <Property Name="roleId" Type="tinyint" Nullable="false" />
+          <Property Name="rightId" Type="tinyint" Nullable="false" />
+          <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateCreated" Type="datetime" />
+          <Property Name="dateModified" Type="datetime" />
+          <Property Name="createdProfileId" Type="int" />
+          <Property Name="modifiedProfileId" Type="int" />
+          <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
@@ -320,14 +281,16 @@
           <Property Name="modifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ShiftType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="SpecialNote">
@@ -338,8 +301,8 @@
           <Property Name="noteText" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="profileId" Type="int" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" />
         </EntityType>
         <EntityType Name="SubType">
@@ -350,8 +313,8 @@
           <Property Name="isAgency" Type="bit" Nullable="false" />
           <Property Name="isRegistrar" Type="bit" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime" />
-          <Property Name="dateModified" Type="datetime" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Team">
@@ -360,43 +323,43 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" />
+          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="fk_1c19cf8556e5edb55657714e1e8">
-          <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="0..1" />
-          <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="*" />
+        <Association Name="FK__SecurityP__Group__382F5661">
+          <End Role="SecurityGroup" Type="Self.SecurityGroup" Multiplicity="1" />
+          <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="EventLogType">
-              <PropertyRef Name="key" />
+            <Principal Role="SecurityGroup">
+              <PropertyRef Name="groupId" />
             </Principal>
-            <Dependent Role="EventLogConfig">
-              <PropertyRef Name="logTypeKey" />
+            <Dependent Role="SecurityPermission">
+              <PropertyRef Name="groupId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_6d489a18fcf57e4c8be0dbe3b25">
-          <End Role="Email" Type="Self.Email" Multiplicity="1" />
-          <End Role="QueuedEmail" Type="Self.QueuedEmail" Multiplicity="*" />
+        <Association Name="FK__SecurityP__Right__3A179ED3">
+          <End Role="SecurityRight" Type="Self.SecurityRight" Multiplicity="1" />
+          <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Email">
-              <PropertyRef Name="id" />
+            <Principal Role="SecurityRight">
+              <PropertyRef Name="rightID" />
             </Principal>
-            <Dependent Role="QueuedEmail">
-              <PropertyRef Name="email" />
+            <Dependent Role="SecurityPermission">
+              <PropertyRef Name="rightId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_7ff1130ed564e0a101e659e5860">
-          <End Role="EventLogConfig" Type="Self.EventLogConfig" Multiplicity="0..1" />
-          <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
+        <Association Name="FK__SecurityP__RoleI__39237A9A">
+          <End Role="SecurityRole" Type="Self.SecurityRole" Multiplicity="1" />
+          <End Role="SecurityPermission" Type="Self.SecurityPermission" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="EventLogConfig">
-              <PropertyRef Name="id" />
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="roleId" />
             </Principal>
-            <Dependent Role="EventLog">
-              <PropertyRef Name="configId" />
+            <Dependent Role="SecurityPermission">
+              <PropertyRef Name="roleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -409,18 +372,6 @@
             </Principal>
             <Dependent Role="SpecialNote">
               <PropertyRef Name="profileId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_a61286fc3ad6b583e96516d1d63">
-          <End Role="EventLogType" Type="Self.EventLogType" Multiplicity="1" />
-          <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EventLogType">
-              <PropertyRef Name="key" />
-            </Principal>
-            <Dependent Role="EventLog">
-              <PropertyRef Name="typeKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -658,10 +609,6 @@
           <EntitySet Name="Base" EntityType="Self.Base" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CCG" EntityType="Self.CCG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Email" EntityType="Self.Email" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EventLog" EntityType="Self.EventLog" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EventLogConfig" EntityType="Self.EventLogConfig" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EventLogType" EntityType="Self.EventLogType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IndemnityProvider" EntityType="Self.IndemnityProvider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JobType" EntityType="Self.JobType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaymentCategory" EntityType="Self.PaymentCategory" Schema="dbo" store:Type="Tables" />
@@ -671,35 +618,31 @@
           <EntitySet Name="ProfilePaymentCategory" EntityType="Self.ProfilePaymentCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProfileProfessional" EntityType="Self.ProfileProfessional" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProfileShiftType" EntityType="Self.ProfileShiftType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="QueuedEmail" EntityType="Self.QueuedEmail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegisteredSurgery" EntityType="Self.RegisteredSurgery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegistrarLevel" EntityType="Self.RegistrarLevel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityGroup" EntityType="Self.SecurityGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecurityPermission" EntityType="Self.SecurityPermission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityRight" EntityType="Self.SecurityRight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SecurityRole" EntityType="Self.SecurityRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShiftType" EntityType="Self.ShiftType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SpecialNote" EntityType="Self.SpecialNote" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubType" EntityType="Self.SubType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="fk_1c19cf8556e5edb55657714e1e8" Association="Self.fk_1c19cf8556e5edb55657714e1e8">
-            <End Role="EventLogType" EntitySet="EventLogType" />
-            <End Role="EventLogConfig" EntitySet="EventLogConfig" />
+          <AssociationSet Name="FK__SecurityP__Group__382F5661" Association="Self.FK__SecurityP__Group__382F5661">
+            <End Role="SecurityGroup" EntitySet="SecurityGroup" />
+            <End Role="SecurityPermission" EntitySet="SecurityPermission" />
           </AssociationSet>
-          <AssociationSet Name="fk_6d489a18fcf57e4c8be0dbe3b25" Association="Self.fk_6d489a18fcf57e4c8be0dbe3b25">
-            <End Role="Email" EntitySet="Email" />
-            <End Role="QueuedEmail" EntitySet="QueuedEmail" />
+          <AssociationSet Name="FK__SecurityP__Right__3A179ED3" Association="Self.FK__SecurityP__Right__3A179ED3">
+            <End Role="SecurityRight" EntitySet="SecurityRight" />
+            <End Role="SecurityPermission" EntitySet="SecurityPermission" />
           </AssociationSet>
-          <AssociationSet Name="fk_7ff1130ed564e0a101e659e5860" Association="Self.fk_7ff1130ed564e0a101e659e5860">
-            <End Role="EventLogConfig" EntitySet="EventLogConfig" />
-            <End Role="EventLog" EntitySet="EventLog" />
+          <AssociationSet Name="FK__SecurityP__RoleI__39237A9A" Association="Self.FK__SecurityP__RoleI__39237A9A">
+            <End Role="SecurityRole" EntitySet="SecurityRole" />
+            <End Role="SecurityPermission" EntitySet="SecurityPermission" />
           </AssociationSet>
           <AssociationSet Name="fk_97adea54804aa384c890cd6c3ae" Association="Self.fk_97adea54804aa384c890cd6c3ae">
             <End Role="Profile" EntitySet="Profile" />
             <End Role="SpecialNote" EntitySet="SpecialNote" />
-          </AssociationSet>
-          <AssociationSet Name="fk_a61286fc3ad6b583e96516d1d63" Association="Self.fk_a61286fc3ad6b583e96516d1d63">
-            <End Role="EventLogType" EntitySet="EventLogType" />
-            <End Role="EventLog" EntitySet="EventLog" />
           </AssociationSet>
           <AssociationSet Name="fk_a68f954b809d3a2fc2a21cb61b5" Association="Self.fk_a68f954b809d3a2fc2a21cb61b5">
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
@@ -788,10 +731,6 @@
           <EntitySet Name="Bases" EntityType="DRSModel.Base" />
           <EntitySet Name="CCGs" EntityType="DRSModel.CCG" />
           <EntitySet Name="DocumentTypes" EntityType="DRSModel.DocumentType" />
-          <EntitySet Name="Emails" EntityType="DRSModel.Email" />
-          <EntitySet Name="EventLogs" EntityType="DRSModel.EventLog" />
-          <EntitySet Name="EventLogConfigs" EntityType="DRSModel.EventLogConfig" />
-          <EntitySet Name="EventLogTypes" EntityType="DRSModel.EventLogType" />
           <EntitySet Name="IndemnityProviders" EntityType="DRSModel.IndemnityProvider" />
           <EntitySet Name="JobTypes" EntityType="DRSModel.JobType" />
           <EntitySet Name="PaymentCategories" EntityType="DRSModel.PaymentCategory" />
@@ -801,10 +740,10 @@
           <EntitySet Name="ProfilePaymentCategories" EntityType="DRSModel.ProfilePaymentCategory" />
           <EntitySet Name="ProfileProfessionals" EntityType="DRSModel.ProfileProfessional" />
           <EntitySet Name="ProfileShiftTypes" EntityType="DRSModel.ProfileShiftType" />
-          <EntitySet Name="QueuedEmails" EntityType="DRSModel.QueuedEmail" />
           <EntitySet Name="RegisteredSurgeries" EntityType="DRSModel.RegisteredSurgery" />
           <EntitySet Name="RegistrarLevels" EntityType="DRSModel.RegistrarLevel" />
           <EntitySet Name="SecurityGroups" EntityType="DRSModel.SecurityGroup" />
+          <EntitySet Name="SecurityPermissions" EntityType="DRSModel.SecurityPermission" />
           <EntitySet Name="SecurityRights" EntityType="DRSModel.SecurityRight" />
           <EntitySet Name="SecurityRoles" EntityType="DRSModel.SecurityRole" />
           <EntitySet Name="ShiftTypes" EntityType="DRSModel.ShiftType" />
@@ -834,22 +773,6 @@
           <AssociationSet Name="fk_DocumentType" Association="DRSModel.fk_DocumentType">
             <End Role="DocumentType" EntitySet="DocumentTypes" />
             <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
-          </AssociationSet>
-          <AssociationSet Name="fk_6d489a18fcf57e4c8be0dbe3b25" Association="DRSModel.fk_6d489a18fcf57e4c8be0dbe3b25">
-            <End Role="Email" EntitySet="Emails" />
-            <End Role="QueuedEmail" EntitySet="QueuedEmails" />
-          </AssociationSet>
-          <AssociationSet Name="fk_7ff1130ed564e0a101e659e5860" Association="DRSModel.fk_7ff1130ed564e0a101e659e5860">
-            <End Role="EventLogConfig" EntitySet="EventLogConfigs" />
-            <End Role="EventLog" EntitySet="EventLogs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_a61286fc3ad6b583e96516d1d63" Association="DRSModel.fk_a61286fc3ad6b583e96516d1d63">
-            <End Role="EventLogType" EntitySet="EventLogTypes" />
-            <End Role="EventLog" EntitySet="EventLogs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_1c19cf8556e5edb55657714e1e8" Association="DRSModel.fk_1c19cf8556e5edb55657714e1e8">
-            <End Role="EventLogType" EntitySet="EventLogTypes" />
-            <End Role="EventLogConfig" EntitySet="EventLogConfigs" />
           </AssociationSet>
           <AssociationSet Name="fk_Indemnity" Association="DRSModel.fk_Indemnity">
             <End Role="IndemnityProvider" EntitySet="IndemnityProviders" />
@@ -907,7 +830,19 @@
             <End Role="ShiftType" EntitySet="ShiftTypes" />
             <End Role="ProfileShiftType" EntitySet="ProfileShiftTypes" />
           </AssociationSet>
-          </EntityContainer>
+          <AssociationSet Name="FK__SecurityP__Group__382F5661" Association="DRSModel.FK__SecurityP__Group__382F5661">
+            <End Role="SecurityGroup" EntitySet="SecurityGroups" />
+            <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SecurityP__Right__3A179ED3" Association="DRSModel.FK__SecurityP__Right__3A179ED3">
+            <End Role="SecurityRight" EntitySet="SecurityRights" />
+            <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SecurityP__RoleI__39237A9A" Association="DRSModel.FK__SecurityP__RoleI__39237A9A">
+            <End Role="SecurityRole" EntitySet="SecurityRoles" />
+            <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="id" />
@@ -915,7 +850,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Agency" FromRole="Agency" ToRole="ProfileProfessional" />
         </EntityType>
@@ -936,8 +871,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" />
           <Property Name="teamId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Base" FromRole="Base" ToRole="ProfileProfessional" />
@@ -949,8 +884,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_CCG" FromRole="CCG" ToRole="ProfileProfessional" />
         </EntityType>
@@ -960,60 +895,10 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileDocuments" Relationship="DRSModel.fk_DocumentType" FromRole="DocumentType" ToRole="ProfileDocument" />
-        </EntityType>
-        <EntityType Name="Email">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="to" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="from" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="subject" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="text" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
-          <Property Name="isDeleted" Type="Boolean" />
-          <NavigationProperty Name="QueuedEmails" Relationship="DRSModel.fk_6d489a18fcf57e4c8be0dbe3b25" FromRole="Email" ToRole="QueuedEmail" />
-        </EntityType>
-        <EntityType Name="EventLog">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="typeKey" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="configId" Type="Int32" />
-          <Property Name="userId" Type="Int32" />
-          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="serverName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="properties" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="EventLogConfig" Relationship="DRSModel.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLog" ToRole="EventLogConfig" />
-          <NavigationProperty Name="EventLogType" Relationship="DRSModel.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLog" ToRole="EventLogType" />
-        </EntityType>
-        <EntityType Name="EventLogConfig">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="logTypeKey" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="loggingIsActive" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="EventLogs" Relationship="DRSModel.fk_7ff1130ed564e0a101e659e5860" FromRole="EventLogConfig" ToRole="EventLog" />
-          <NavigationProperty Name="EventLogType" Relationship="DRSModel.fk_1c19cf8556e5edb55657714e1e8" FromRole="EventLogConfig" ToRole="EventLogType" />
-        </EntityType>
-        <EntityType Name="EventLogType">
-          <Key>
-            <PropertyRef Name="key" />
-          </Key>
-          <Property Name="key" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
-          <Property Name="friendlyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="cssClass" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="EventLogs" Relationship="DRSModel.fk_a61286fc3ad6b583e96516d1d63" FromRole="EventLogType" ToRole="EventLog" />
-          <NavigationProperty Name="EventLogConfigs" Relationship="DRSModel.fk_1c19cf8556e5edb55657714e1e8" FromRole="EventLogType" ToRole="EventLogConfig" />
         </EntityType>
         <EntityType Name="IndemnityProvider">
           <Key>
@@ -1021,8 +906,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Indemnity" FromRole="IndemnityProvider" ToRole="ProfileProfessional" />
         </EntityType>
@@ -1036,8 +921,8 @@
           <Property Name="isNmcRequired" Type="Boolean" />
           <Property Name="isHcpcRequired" Type="Boolean" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_JobType" FromRole="JobType" ToRole="ProfileProfessional" />
         </EntityType>
@@ -1047,8 +932,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfilePaymentCategories" Relationship="DRSModel.fk_PaymentCategory" FromRole="PaymentCategory" ToRole="ProfilePaymentCategory" />
         </EntityType>
@@ -1074,8 +959,8 @@
           <Property Name="isInactive" Type="Boolean" Nullable="false" />
           <Property Name="isComplete" Type="Boolean" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="profileProfessionalId" Type="Int32" />
           <Property Name="profileFinanceId" Type="Int32" />
@@ -1099,8 +984,8 @@
           <Property Name="dateExpires" Type="DateTime" Precision="3" />
           <Property Name="profileId" Type="Int32" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="DocumentType" Relationship="DRSModel.fk_DocumentType" FromRole="ProfileDocument" ToRole="DocumentType" />
           <NavigationProperty Name="Profile" Relationship="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
@@ -1117,8 +1002,8 @@
           <Property Name="bankSortCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="buildingSocietyRollNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bank" Relationship="DRSModel.fk_Bank" FromRole="ProfileFinance" ToRole="Bank" />
           <NavigationProperty Name="Profiles" Relationship="DRSModel.fk_e7569dcf417e285aff79a7581cb" FromRole="ProfileFinance" ToRole="Profile" />
@@ -1131,8 +1016,8 @@
           <Property Name="profileProfessionalId" Type="Int32" />
           <Property Name="isDefault" Type="Boolean" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PaymentCategory" Relationship="DRSModel.fk_PaymentCategory" FromRole="ProfilePaymentCategory" ToRole="PaymentCategory" />
           <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfilePaymentCategory" ToRole="ProfileProfessional" />
@@ -1164,8 +1049,8 @@
           <Property Name="isPremium" Type="Boolean" Nullable="false" />
           <Property Name="isTrainer" Type="Boolean" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="baseId" Type="Int32" />
           <NavigationProperty Name="Agency" Relationship="DRSModel.fk_Agency" FromRole="ProfileProfessional" ToRole="Agency" />
@@ -1188,24 +1073,11 @@
           <Property Name="profileProfessionalId" Type="Int32" />
           <Property Name="isUnderReview" Type="Boolean" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_eab3618488d653242b55e486b64" FromRole="ProfileShiftType" ToRole="ProfileProfessional" />
           <NavigationProperty Name="ShiftType" Relationship="DRSModel.fk_ShiftType" FromRole="ProfileShiftType" ToRole="ShiftType" />
-        </EntityType>
-        <EntityType Name="QueuedEmail">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="retryCount" Type="Single" Nullable="false" />
-          <Property Name="status" Type="Single" Nullable="false" />
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
-          <Property Name="isDeleted" Type="Boolean" />
-          <Property Name="email" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Email1" Relationship="DRSModel.fk_6d489a18fcf57e4c8be0dbe3b25" FromRole="QueuedEmail" ToRole="Email" />
         </EntityType>
         <EntityType Name="RegisteredSurgery">
           <Key>
@@ -1213,8 +1085,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_RegisteredSurgery" FromRole="RegisteredSurgery" ToRole="ProfileProfessional" />
         </EntityType>
@@ -1224,8 +1096,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_RegistrarLevel" FromRole="RegistrarLevel" ToRole="ProfileProfessional" />
         </EntityType>
@@ -1237,6 +1109,26 @@
           <Property Name="groupName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityGroup" ToRole="SecurityPermission" />
+        </EntityType>
+        <EntityType Name="SecurityPermission">
+          <Key>
+            <PropertyRef Name="permissionId" />
+          </Key>
+          <Property Name="permissionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="groupId" Type="Byte" Nullable="false" />
+          <Property Name="roleId" Type="Byte" Nullable="false" />
+          <Property Name="rightId" Type="Byte" Nullable="false" />
+          <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Precision="3" />
+          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="createdProfileId" Type="Int32" />
+          <Property Name="modifiedProfileId" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="SecurityGroup" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityPermission" ToRole="SecurityGroup" />
+          <NavigationProperty Name="SecurityRight" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityPermission" ToRole="SecurityRight" />
+          <NavigationProperty Name="SecurityRole" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityPermission" ToRole="SecurityRole" />
         </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
@@ -1251,6 +1143,7 @@
           <Property Name="createdProfileId" Type="Int32" />
           <Property Name="modifiedProfileId" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
+          <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityRight" ToRole="SecurityPermission" />
         </EntityType>
         <EntityType Name="SecurityRole">
           <Key>
@@ -1266,6 +1159,7 @@
           <Property Name="modifiedProfileID" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profiles" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="SecurityRole" ToRole="Profile" />
+          <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityRole" ToRole="SecurityPermission" />
         </EntityType>
         <EntityType Name="ShiftType">
           <Key>
@@ -1273,8 +1167,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileShiftTypes" Relationship="DRSModel.fk_ShiftType" FromRole="ShiftType" ToRole="ProfileShiftType" />
         </EntityType>
@@ -1286,8 +1180,8 @@
           <Property Name="noteText" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="profileId" Type="Int32" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profile" Relationship="DRSModel.fk_97adea54804aa384c890cd6c3ae" FromRole="SpecialNote" ToRole="Profile" />
         </EntityType>
@@ -1299,9 +1193,10 @@
           <Property Name="isAgency" Type="Boolean" Nullable="false" />
           <Property Name="isRegistrar" Type="Boolean" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Precision="3" />
-          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="SubType" ToRole="ProfileProfessional" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -1309,8 +1204,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" ConcurrencyMode="Fixed" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bases" Relationship="DRSModel.fk_Team" FromRole="Team" ToRole="Base" />
         </EntityType>
@@ -1383,54 +1278,6 @@
             </Principal>
             <Dependent Role="ProfileDocument">
               <PropertyRef Name="documentTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_6d489a18fcf57e4c8be0dbe3b25">
-          <End Type="DRSModel.Email" Role="Email" Multiplicity="1" />
-          <End Type="DRSModel.QueuedEmail" Role="QueuedEmail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Email">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="QueuedEmail">
-              <PropertyRef Name="email" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_7ff1130ed564e0a101e659e5860">
-          <End Type="DRSModel.EventLogConfig" Role="EventLogConfig" Multiplicity="0..1" />
-          <End Type="DRSModel.EventLog" Role="EventLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EventLogConfig">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="EventLog">
-              <PropertyRef Name="configId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_a61286fc3ad6b583e96516d1d63">
-          <End Type="DRSModel.EventLogType" Role="EventLogType" Multiplicity="1" />
-          <End Type="DRSModel.EventLog" Role="EventLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EventLogType">
-              <PropertyRef Name="key" />
-            </Principal>
-            <Dependent Role="EventLog">
-              <PropertyRef Name="typeKey" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_1c19cf8556e5edb55657714e1e8">
-          <End Type="DRSModel.EventLogType" Role="EventLogType" Multiplicity="0..1" />
-          <End Type="DRSModel.EventLogConfig" Role="EventLogConfig" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="EventLogType">
-              <PropertyRef Name="key" />
-            </Principal>
-            <Dependent Role="EventLogConfig">
-              <PropertyRef Name="logTypeKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1602,6 +1449,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__SecurityP__Group__382F5661">
+          <End Type="DRSModel.SecurityGroup" Role="SecurityGroup" Multiplicity="1" />
+          <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityGroup">
+              <PropertyRef Name="groupId" />
+            </Principal>
+            <Dependent Role="SecurityPermission">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SecurityP__Right__3A179ED3">
+          <End Type="DRSModel.SecurityRight" Role="SecurityRight" Multiplicity="1" />
+          <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRight">
+              <PropertyRef Name="rightID" />
+            </Principal>
+            <Dependent Role="SecurityPermission">
+              <PropertyRef Name="rightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SecurityP__RoleI__39237A9A">
+          <End Type="DRSModel.SecurityRole" Role="SecurityRole" Multiplicity="1" />
+          <End Type="DRSModel.SecurityPermission" Role="SecurityPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecurityRole">
+              <PropertyRef Name="roleId" />
+            </Principal>
+            <Dependent Role="SecurityPermission">
+              <PropertyRef Name="roleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1661,53 +1544,6 @@
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Emails">
-            <EntityTypeMapping TypeName="DRSModel.Email">
-              <MappingFragment StoreEntitySet="Email">
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="text" ColumnName="text" />
-                <ScalarProperty Name="subject" ColumnName="subject" />
-                <ScalarProperty Name="from" ColumnName="from" />
-                <ScalarProperty Name="to" ColumnName="to" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EventLogs">
-            <EntityTypeMapping TypeName="DRSModel.EventLog">
-              <MappingFragment StoreEntitySet="EventLog">
-                <ScalarProperty Name="properties" ColumnName="properties" />
-                <ScalarProperty Name="serverName" ColumnName="serverName" />
-                <ScalarProperty Name="createDate" ColumnName="createDate" />
-                <ScalarProperty Name="userName" ColumnName="userName" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
-                <ScalarProperty Name="configId" ColumnName="configId" />
-                <ScalarProperty Name="typeKey" ColumnName="typeKey" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EventLogConfigs">
-            <EntityTypeMapping TypeName="DRSModel.EventLogConfig">
-              <MappingFragment StoreEntitySet="EventLogConfig">
-                <ScalarProperty Name="loggingIsActive" ColumnName="loggingIsActive" />
-                <ScalarProperty Name="logTypeKey" ColumnName="logTypeKey" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EventLogTypes">
-            <EntityTypeMapping TypeName="DRSModel.EventLogType">
-              <MappingFragment StoreEntitySet="EventLogType">
-                <ScalarProperty Name="cssClass" ColumnName="cssClass" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="friendlyName" ColumnName="friendlyName" />
-                <ScalarProperty Name="key" ColumnName="key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1872,19 +1708,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="QueuedEmails">
-            <EntityTypeMapping TypeName="DRSModel.QueuedEmail">
-              <MappingFragment StoreEntitySet="QueuedEmail">
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="retryCount" ColumnName="retryCount" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="RegisteredSurgeries">
             <EntityTypeMapping TypeName="DRSModel.RegisteredSurgery">
               <MappingFragment StoreEntitySet="RegisteredSurgery">
@@ -1914,6 +1737,23 @@
                 <ScalarProperty Name="validFrom" ColumnName="validFrom" />
                 <ScalarProperty Name="groupName" ColumnName="groupName" />
                 <ScalarProperty Name="groupId" ColumnName="groupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityPermissions">
+            <EntityTypeMapping TypeName="DRSModel.SecurityPermission">
+              <MappingFragment StoreEntitySet="SecurityPermission">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="modifiedProfileId" ColumnName="modifiedProfileId" />
+                <ScalarProperty Name="createdProfileId" ColumnName="createdProfileId" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="validTo" ColumnName="validTo" />
+                <ScalarProperty Name="validFrom" ColumnName="validFrom" />
+                <ScalarProperty Name="rightId" ColumnName="rightId" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+                <ScalarProperty Name="permissionId" ColumnName="permissionId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
