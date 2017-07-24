@@ -305,7 +305,6 @@
     <Compile Include="Models\DocumentType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
-    <None Include="Models\DTOs\ProfileSlimDTO.old" />
     <Compile Include="Models\DTOs\ProfileSlimDTO.cs" />
     <Compile Include="Models\IndemnityProvider.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
