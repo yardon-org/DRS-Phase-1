@@ -312,7 +312,7 @@ namespace drs_backend_phase1.Models.DTOs
     public partial class TeamDTO
     {
         //public DateTime? dateCreated { get; set; }
-        //public DateTime? dateModified { get; set; }
+        public DateTime? dateModified { get; set; }
         public int id { get; set; }
 
         public bool isDeleted { get; set; }

@@ -53,12 +53,7 @@ namespace drs_backend_phase1.Controllers
         public IHttpActionResult CheckPerformersList(ProfileDTO incomingProfileDTO)
         {
             Log.DebugFormat("ProfileController (CheckPerformersList)\n");
-
-            var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
-
-            if (fetchedProfile == null)
-                return BadRequest($"Error retrieving UpdateProfile. The object to update is null");
-
+            
             var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
             if (profileToUpdate != null)
@@ -96,20 +91,14 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-        public IHttpActionResult UpdateProfile(ProfileDTO incomingProfileDTO)
+        public IHttpActionResult UpdateProfile([FromBody]ProfileDTO incomingProfileDTO)
         {
             Log.DebugFormat("ProfileController (UpdateProfile)\n");
 
             if (incomingProfileDTO != null)
                 try
                 {
-                    // TODO: Test this
-                    var fetchedProfile = _db.Profiles.SingleOrDefault(x => x.id == incomingProfileDTO.id);
-
-                    if (fetchedProfile == null)
-                        return BadRequest($"Error retrieving UpdateProfile. The object to update is null");
-
-                    var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
+                  var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
                     // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);

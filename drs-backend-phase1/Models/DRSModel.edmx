@@ -1310,7 +1310,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="dateCreated" Type="DateTime" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Precision="7" ConcurrencyMode="Fixed" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bases" Relationship="DRSModel.fk_Team" FromRole="Team" ToRole="Base" />
         </EntityType>

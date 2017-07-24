@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using AutoMapper;
 using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Models.DTOs;
 using log4net;
+using Profile = drs_backend_phase1.Models.Profile;
 
 namespace drs_backend_phase1.Controllers
 {
@@ -351,7 +355,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllTeams")]
         public IHttpActionResult FetchAllTeams(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -375,6 +379,40 @@ namespace drs_backend_phase1.Controllers
         }
 
         /// <summary>
+        /// Fetches all teams.
+        /// </summary>
+        /// <param name="entityToUpdate">The entity to update.</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("saveTeam")]
+        public IHttpActionResult SaveTeam(TeamDTO entityToUpdate)
+        {
+            Log.DebugFormat("LookupController (FetchAllTeams)\n");
+
+
+            var fetchedEntity = _db.Teams.SingleOrDefault(x => x.id == entityToUpdate.id);
+
+            if (fetchedEntity == null)
+            {
+                return BadRequest($"The record cannot be null");
+            }
+
+            Mapper.Map(entityToUpdate, fetchedEntity);
+        
+            try
+            {
+                _db.Teams.AddOrUpdate(fetchedEntity);
+                _db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                return BadRequest($"The record was has been modified by someone else");
+            }
+
+            return Ok(true);
+        }
+
+        /// <summary>
         /// Searches for agencies by searchTerm.
         /// </summary>
         /// <param name="searchTerm">The searchTerm.</param>
@@ -382,7 +420,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns>A list of Agencies</returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("searchAgencies")]
         public IHttpActionResult SearchAgencies(string searchTerm, bool isDeleted = false, int page = 1, int pageSize = 10)
