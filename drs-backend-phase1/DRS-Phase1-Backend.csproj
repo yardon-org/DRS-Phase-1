@@ -302,6 +302,7 @@
     <Compile Include="Models\CCG.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContextOverride.cs" />
     <Compile Include="Models\DocumentType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
@@ -66,8 +65,6 @@ namespace drs_backend_phase1.Controllers
                     profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
                     profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
                     _db.SaveChanges();
-
-                    // TODO: Add to eventlog here
 
                     Log.DebugFormat("Retrieval of CheckPerformersList was successful.\n");
                     return Ok(true);
