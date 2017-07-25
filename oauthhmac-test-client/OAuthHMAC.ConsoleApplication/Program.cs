@@ -75,14 +75,15 @@ namespace OAuthHMAC.ConsoleApplication
                 //};
                 //inputMessage.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 //HttpResponseMessage message = client.PutAsJsonAsync(apiBaseAddress + "/api/lookup/saveTeam", inputMessage.Content).Result;
-                var httpContent = new StringContent(serilized, Encoding.UTF8, "application/json");
-                var message = await client.PutAsync(apiBaseAddress + "/api/profile", httpContent);
+                var httpContent = new StringContent(responseString1, Encoding.UTF8, "application/json");
+                response = client.PutAsync(apiBaseAddress + "/api/profile", httpContent).Result;
+                var responseString = await response.Content.ReadAsStringAsync();
                 response.EnsureSuccessStatusCode();
 
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var responseString = await response.Content.ReadAsStringAsync();
+                    //var responseString = await response.Content.ReadAsStringAsync();
                     Console.Clear();
                     Console.WriteLine(responseString);
                     Console.WriteLine("HTTP Status: {0}, Reason {1}. Press ENTER to exit", response.StatusCode,

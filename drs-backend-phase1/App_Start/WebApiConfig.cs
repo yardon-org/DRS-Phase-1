@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using drs_backend_phase1.Filter;
 
 namespace drs_backend_phase1
 {
@@ -19,7 +20,6 @@ namespace drs_backend_phase1
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
             config.Routes.MapHttpRoute(
                 "DefaultApi",
                 "{controller}/{action}/{id}",

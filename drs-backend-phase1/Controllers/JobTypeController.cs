@@ -72,7 +72,7 @@ namespace drs_backend_phase1.Controllers
       [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
-        public void CreateJobType(JobTypeDTO newJobType)
+        public IHttpActionResult CreateJobType(JobTypeDTO newJobType)
         {
             if (newJobType != null)
             {
@@ -86,13 +86,29 @@ namespace drs_backend_phase1.Controllers
                 {
                     Log.DebugFormat(
                         $"Error creating new JobType. The reason is as follows: {ex.Message} {ex.StackTrace}\n");
+                    var myError = new Error
+                    {
+                        Code = "400",
+                        Message = "Error creating new JobType",
+                        Data = new object[] {ex.Message,ex.StackTrace}
+
+                    };
+                    return new ErrorResult(myError, Request);
                 }
 
                 Log.DebugFormat("The new JobType record has been created successfully.\n");
+              
             }
 
-            Log.DebugFormat(
-                $"Error creating new JobType. JobType cannot be null\n");
+            Log.DebugFormat($"Error creating new JobType. JobType cannot be null\n");
+            var myError2 = new Error
+            {
+                Code = "400",
+                Message = "Error creating new JobType. JobType cannot be null",
+                Data = null
+
+            };
+            return new ErrorResult(myError2, Request);
         }
 
         /// <summary>
@@ -114,7 +130,14 @@ namespace drs_backend_phase1.Controllers
             catch (Exception ex)
             {
                 Log.DebugFormat($"Error retrieving JobTypes. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving JobTypes. The reason is as follows: {ex.Message}");
+                var myError2 = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving JobTypes",
+                    Data = new object[] {ex.Message,ex.StackTrace}
+
+                };
+                return new ErrorResult(myError2, Request);
             }
         }
 
@@ -141,7 +164,14 @@ namespace drs_backend_phase1.Controllers
             {
                 Log.DebugFormat(
                     $"Error retrieving ReadAllJobTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving ReadAllJobTypeById. The reason is as follows: {ex.Message}");
+                var myError2 = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving ReadAllJobTypeById",
+                    Data = new object[] { ex.Message, ex.StackTrace }
+
+                };
+                return new ErrorResult(myError2, Request);
             }
         }
 
@@ -174,12 +204,25 @@ namespace drs_backend_phase1.Controllers
                 {
                     Log.DebugFormat(
                         $"Error retrieving UpdateJobType. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error retrieving UpdateJobType. The reason is as follows: {ex.Message}");
+                    var myError2 = new Error
+                    {
+                        Code = "400",
+                        Message = "Error retrieving UpdateJobType",
+                        Data = new object[] { ex.Message, ex.StackTrace }
+
+                    };
+                    return new ErrorResult(myError2, Request);
                 }
 
-            Log.DebugFormat(
-                $"Error updating JobType. JobType cannot be null\n");
-            return BadRequest($"Error creating new JobType. JobType cannot be null");
+            Log.DebugFormat($"Error updating JobType. JobType cannot be null\n");
+            var myError = new Error
+            {
+                Code = "400",
+                Message = "Error updating JobType",
+                Data =null
+
+            };
+            return new ErrorResult(myError, Request);
         }
 
         /// <summary>
@@ -209,9 +252,15 @@ namespace drs_backend_phase1.Controllers
             }
             catch (Exception ex)
             {
-                Log.DebugFormat(
-                    $"Error retrieving DeleteJobTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving DeleteJobTypeById. The reason is as follows: {ex.Message}");
+                Log.DebugFormat($"Error retrieving DeleteJobTypeById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error running DeleteJobTypeById",
+                    Data = new object[] {ex.Message,ex.StackTrace}
+
+                };
+                return new ErrorResult(myError, Request);
             }
         }
 

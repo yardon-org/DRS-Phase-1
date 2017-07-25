@@ -288,6 +288,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="ErrorHandler\ErrorHandler.cs" />
     <Compile Include="Extensions\PagingExtensions.cs" />
     <Compile Include="Filter\HMACAuthenticationAttribute.cs" />
     <Compile Include="Models\Agency.cs">
@@ -306,8 +307,8 @@
     <Compile Include="Models\DocumentType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
-    <None Include="Models\DTOs\ProfileSlimDTO.old" />
-    <Compile Include="Models\DTOs\ProfileSlimDTO.cs" />
+    <Compile Include="Models\DTOs\SuperSlim\ProfileSuperSlimDTO.cs" />
+    <Compile Include="Models\DTOs\Compound\ProfileCompoundDTO.cs" />
     <Compile Include="Models\IndemnityProvider.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>

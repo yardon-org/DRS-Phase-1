@@ -12,17 +12,17 @@
         <EntityTypeShape EntityType="DRSModel.DocumentType" Width="1.5" PointX="7.5" PointY="13.375" />
         <EntityTypeShape EntityType="DRSModel.IndemnityProvider" Width="1.5" PointX="3" PointY="23" />
         <EntityTypeShape EntityType="DRSModel.JobType" Width="1.5" PointX="3" PointY="16.375" />
-        <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="1.5" PointX="8.25" PointY="16.375" />
+        <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="2.5" PointX="8.25" PointY="16.375" />
         <EntityTypeShape EntityType="DRSModel.Profile" Width="1.5" PointX="7.5" PointY="1.125" />
         <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="9.75" PointY="0.75" />
         <EntityTypeShape EntityType="DRSModel.ProfileFinance" Width="1.5" PointX="5.25" PointY="1.75" />
-        <EntityTypeShape EntityType="DRSModel.ProfilePaymentCategory" Width="1.5" PointX="10.5" PointY="9.125" />
+        <EntityTypeShape EntityType="DRSModel.ProfilePaymentCategory" Width="2.375" PointX="10.5" PointY="9.125" />
         <EntityTypeShape EntityType="DRSModel.ProfileProfessional" Width="1.5" PointX="5.25" PointY="6.375" />
         <EntityTypeShape EntityType="DRSModel.ProfileShiftType" Width="1.5" PointX="7.5" PointY="9.125" />
         <EntityTypeShape EntityType="DRSModel.RegisteredSurgery" Width="1.5" PointX="3" PointY="32.125" />
         <EntityTypeShape EntityType="DRSModel.RegistrarLevel" Width="1.5" PointX="3" PointY="13.375" />
         <EntityTypeShape EntityType="DRSModel.SecurityGroup" Width="1.5" PointX="8.25" PointY="23.5" />
-        <EntityTypeShape EntityType="DRSModel.SecurityPermission" Width="1.5" PointX="10.5" PointY="15.75" />
+        <EntityTypeShape EntityType="DRSModel.SecurityPermission" Width="1.5" PointX="12.875" PointY="15.625" />
         <EntityTypeShape EntityType="DRSModel.SecurityRight" Width="1.5" PointX="8.25" PointY="19.75" />
         <EntityTypeShape EntityType="DRSModel.SecurityRole" Width="1.5" PointX="5.25" PointY="16" />
         <EntityTypeShape EntityType="DRSModel.ShiftType" Width="1.5" PointX="5.25" PointY="20.375" />

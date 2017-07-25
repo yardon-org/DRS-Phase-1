@@ -7,8 +7,10 @@ using System.Web.Http;
 using System.Web.Http.OData;
 using AutoMapper;
 using drs_backend_phase1.Extensions;
+using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Models.DTOs;
+using drs_backend_phase1.Models.DTOs.SuperSlim;
 using log4net;
 using RefactorThis.GraphDiff;
 using Profile = drs_backend_phase1.Models.Profile;
@@ -70,7 +72,13 @@ namespace drs_backend_phase1.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    return BadRequest("The entity being updated has already been updated by another user...");
+                    var myError = new Error
+                    {
+                        Code = "400",
+                        Message = "The entity being updated has already been updated by another user...",
+                        Data =null
+                    };
+                    return new ErrorResult(myError, Request);
                 }
 
                 try
@@ -81,7 +89,13 @@ namespace drs_backend_phase1.Controllers
                 {
                     Log.DebugFormat(
                         $"Error running UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error running UpdateProfile. The reason is as follows: {ex.Message}");
+                    var myError = new Error
+                    {
+                        Code = "400",
+                        Message = "Error running UpdateProfile",
+                        Data = new object[] {ex.Message}
+                    };
+                    return new ErrorResult(myError, Request);
                 }
 
                 Log.DebugFormat("Updating of UpdateProfile was successful.\n");
@@ -89,7 +103,13 @@ namespace drs_backend_phase1.Controllers
             }
 
             Log.DebugFormat("incomingProfileDTO cannot be null");
-            return BadRequest("incomingProfileDTO cannot be null");
+            var myError2 = new Error
+            {
+                Code = "400",
+                Message = "incomingProfileDTO cannot be null",
+                Data = null
+            };
+            return new ErrorResult(myError2, Request);
         }
 
         /// <summary>
@@ -109,6 +129,9 @@ namespace drs_backend_phase1.Controllers
             {
                 var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
+                //Test
+                profileToUpdate.address1 = "test address";
+
                 try
                 {
                     // Create a graph of the Profile entity
@@ -116,7 +139,13 @@ namespace drs_backend_phase1.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    return BadRequest("The entity being updated has already been updated by another user...");
+                    var myError = new Error
+                    {
+                        Code = "400",
+                        Message = "The entity being updated has already been updated by another user...",
+                        Data = null
+                    };
+                    return new ErrorResult(myError, Request);
                 }
 
                 try
@@ -126,8 +155,14 @@ namespace drs_backend_phase1.Controllers
                 catch (Exception ex)
                 {
                     Log.DebugFormat(
-                        $"Error updating UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error running UpdateProfile. The reason is as follows: {ex.Message}");
+                        $"Error running UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                    var myError = new Error
+                    {
+                        Code = "400",
+                        Message = "Error running UpdateProfile",
+                        Data = new object[] { ex.Message, ex.StackTrace }
+                    };
+                    return new ErrorResult(myError, Request);
                 }
 
                 Log.DebugFormat("Updating of UpdateProfile was successful.\n");
@@ -135,7 +170,13 @@ namespace drs_backend_phase1.Controllers
             }
 
             Log.DebugFormat("incomingProfileDTO cannot be null");
-            return BadRequest("incomingProfileDTO cannot be null");
+            var myError2 = new Error
+            {
+                Code = "400",
+                Message = "incomingProfileDTO cannot be null",
+                Data = null
+            };
+            return new ErrorResult(myError2, Request);
 
         }
 
@@ -167,17 +208,15 @@ namespace drs_backend_phase1.Controllers
                     {
                         _db.SaveChanges();
                     }
-                    catch (DbUpdateConcurrencyException e)
+                    catch (DbUpdateConcurrencyException)
                     {
-                        var entity = e.Entries.Single().GetDatabaseValues();
-
-                        if (entity == null)
-
+                        var myError = new Error
                         {
-                            return BadRequest("The entity being updated is already deleted by another user...");
-                        }
-
-                        BadRequest("The entity being updated has already been updated by another user...");
+                            Code = "400",
+                            Message = "The entity being updated has already been updated by another user...",
+                            Data = null
+                        };
+                        return new ErrorResult(myError, Request);
                     }
                 }
 
@@ -188,7 +227,14 @@ namespace drs_backend_phase1.Controllers
             {
                 Log.DebugFormat(
                     $"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message}");
+
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving DeleteProfileById",
+                    Data = new object[] { ex.Message, ex.StackTrace }
+                };
+                return new ErrorResult(myError, Request);
             }
         }
 
@@ -209,20 +255,27 @@ namespace drs_backend_phase1.Controllers
         public IHttpActionResult FetchAllProfiles(bool includeDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
-
             try
             {
                 var profs = _db.Profiles
                     .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted)
                     .OrderBy(x => x.id)
-                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
+                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, SlimProfileDTO>();
 
                 return Ok(new {metaData = profs.GetMetaData(), items = profs});
             }
             catch (Exception ex)
             {
                 Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving Profiles. The reason is as follows: {ex.Message}");
+
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving Profiles",
+                    Data = new object[]{ex.Message,ex.StackTrace}
+                    
+                };
+                return new ErrorResult(myError, Request);
             }
         }
 
@@ -248,7 +301,7 @@ namespace drs_backend_phase1.Controllers
                     .Where(x => x.ProfileProfessional.teamId == teamId &&
                                 x.isDeleted == false || includeDeleted && x.isDeleted)
                     .OrderBy(x => x.id)
-                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
+                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, SlimProfileDTO>();
 
                 return Ok(new {metaData = profs.GetMetaData(), items = profs});
             }
@@ -256,8 +309,15 @@ namespace drs_backend_phase1.Controllers
             {
                 Log.DebugFormat(
                     $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest(
-                    $"Error retrieving FetchManyByTeamId. The reason is as follows: {ex.Message}");
+
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving FetchManyByTeamId",
+                    Data = new object[] { ex.Message, ex.StackTrace }
+
+                };
+                return new ErrorResult(myError, Request);
             }
         }
 
@@ -287,7 +347,15 @@ namespace drs_backend_phase1.Controllers
             {
                 Log.DebugFormat(
                     $"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving ReadAllProfileById. The reason is as follows: {ex.Message}");
+
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving ReadAllProfileById",
+                    Data = new object[] { ex.Message, ex.StackTrace }
+
+                };
+                return new ErrorResult(myError, Request);
             }
         }
 
@@ -316,7 +384,7 @@ namespace drs_backend_phase1.Controllers
                             || p.middleNames.ToLower().Contains(searchTerm.ToLower())
                         ))
                     .OrderBy(x => x.id)
-                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, ProfileDTO>();
+                    .ToPagedList(page, pageSize).ToMappedPagedList<Profile, SlimProfileDTO>();
 
                 return Ok(new { metaData = profs.GetMetaData(), items = profs });
             }
@@ -324,7 +392,14 @@ namespace drs_backend_phase1.Controllers
             {
                 Log.DebugFormat(
                     $"Error retrieving SearchProfiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                return BadRequest($"Error retrieving SearchProfiles. The reason is as follows: {ex.Message}");
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving SearchProfiles",
+                    Data = new object[] { ex.Message, ex.StackTrace }
+
+                };
+                return new ErrorResult(myError, Request);
             }
         }
 
