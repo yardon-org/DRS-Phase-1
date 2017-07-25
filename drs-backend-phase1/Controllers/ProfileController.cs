@@ -84,6 +84,14 @@ namespace drs_backend_phase1.Controllers
                 try
                 {
                     _db.SaveChanges();
+
+                    // Now fetch the updated object to send back
+                    var refreshedEntity = _db.Profiles.SingleOrDefault(x => x.id == profileToUpdate.id);
+                    if (refreshedEntity != null)
+                    {
+                        Log.DebugFormat("Updating of UpdateProfile was successful.\n");
+                        return Ok(Mapper.Map<ProfileDTO>(profileToUpdate));
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -99,7 +107,7 @@ namespace drs_backend_phase1.Controllers
                 }
 
                 Log.DebugFormat("Updating of UpdateProfile was successful.\n");
-                return Ok(true);
+                return Ok(Mapper.Map<ProfileDTO>(profileToUpdate));
             }
 
             Log.DebugFormat("incomingProfileDTO cannot be null");
@@ -129,10 +137,7 @@ namespace drs_backend_phase1.Controllers
             {
                 var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
-                //Test
-                profileToUpdate.address1 = "test address";
-
-                try
+              try
                 {
                     // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);
@@ -151,6 +156,15 @@ namespace drs_backend_phase1.Controllers
                 try
                 {
                     _db.SaveChanges();
+
+                    // Now fetch the updated object to send back
+                    var refreshedEntity = _db.Profiles.SingleOrDefault(x => x.id == profileToUpdate.id);
+                    if (refreshedEntity != null)
+                    {
+                        Log.DebugFormat("Updating of UpdateProfile was successful.\n");
+                        return Ok(Mapper.Map<ProfileDTO>(profileToUpdate));
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -164,9 +178,6 @@ namespace drs_backend_phase1.Controllers
                     };
                     return new ErrorResult(myError, Request);
                 }
-
-                Log.DebugFormat("Updating of UpdateProfile was successful.\n");
-                return Ok(true);
             }
 
             Log.DebugFormat("incomingProfileDTO cannot be null");
