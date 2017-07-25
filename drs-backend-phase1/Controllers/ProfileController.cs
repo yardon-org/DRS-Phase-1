@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Web.Http;
 using System.Web.Http.OData;
 using AutoMapper;
@@ -53,32 +55,41 @@ namespace drs_backend_phase1.Controllers
         public IHttpActionResult CheckPerformersList(ProfileDTO incomingProfileDTO)
         {
             Log.DebugFormat("ProfileController (CheckPerformersList)\n");
-            
-            var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
-            if (profileToUpdate != null)
+            if (incomingProfileDTO != null)
+            {
+                var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
+
+                profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
+                profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
+
                 try
                 {
                     // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    return BadRequest("The entity being updated has already been updated by another user...");
+                }
 
-                    profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
-                    profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
+                try
+                {
                     _db.SaveChanges();
-
-                    Log.DebugFormat("Retrieval of CheckPerformersList was successful.\n");
-                    return Ok(true);
                 }
                 catch (Exception ex)
                 {
                     Log.DebugFormat(
-                        $"Error retrieving CheckPerformersList. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error retrieving CheckPerformersList. The reason is as follows: {ex.Message}");
+                        $"Error running UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                    return BadRequest($"Error running UpdateProfile. The reason is as follows: {ex.Message}");
                 }
 
-            Log.DebugFormat(
-                $"Error updating Profile. Profile cannot be null\n");
-            return BadRequest($"Error creating new Profile. Profile cannot be null");
+                Log.DebugFormat("Updating of UpdateProfile was successful.\n");
+                return Ok(true);
+            }
+
+            Log.DebugFormat("incomingProfileDTO cannot be null");
+            return BadRequest("incomingProfileDTO cannot be null");
         }
 
         /// <summary>
@@ -89,33 +100,45 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-        public IHttpActionResult UpdateProfile([FromBody]ProfileDTO incomingProfileDTO)
+
+        public IHttpActionResult UpdateProfile([FromBody] ProfileDTO incomingProfileDTO)
         {
             Log.DebugFormat("ProfileController (UpdateProfile)\n");
 
             if (incomingProfileDTO != null)
+            {
+                var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
+
                 try
                 {
-                    var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
                     // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    return BadRequest("The entity being updated has already been updated by another user...");
+                }
 
+                try
+                {
                     _db.SaveChanges();
-
-                    Log.DebugFormat("Retrieval of UpdateProfile was successful.\n");
-                    return Ok(true);
                 }
                 catch (Exception ex)
                 {
                     Log.DebugFormat(
-                        $"Error retrieving UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
-                    return BadRequest($"Error retrieving UpdateProfile. The reason is as follows: {ex.Message}");
+                        $"Error updating UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                    return BadRequest($"Error running UpdateProfile. The reason is as follows: {ex.Message}");
                 }
 
-            Log.DebugFormat(
-                $"Error updating Profile. Profile cannot be null\n");
-            return BadRequest($"Error creating new Profile. Profile cannot be null");
+                Log.DebugFormat("Updating of UpdateProfile was successful.\n");
+                return Ok(true);
+            }
+
+            Log.DebugFormat("incomingProfileDTO cannot be null");
+            return BadRequest("incomingProfileDTO cannot be null");
+
         }
+
         #endregion
 
         #region Delete_Endpoints
@@ -128,6 +151,7 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpDelete]
         [Route("{id}")]
+
         public virtual IHttpActionResult DeleteProfileById(int id)
         {
             Log.DebugFormat("ProfileController (DeleteProfileById)\n");
@@ -139,7 +163,22 @@ namespace drs_backend_phase1.Controllers
                 if (profile != null)
                 {
                     _db.Profiles.Remove(profile);
-                    _db.SaveChanges();
+                    try
+                    {
+                        _db.SaveChanges();
+                    }
+                    catch (DbUpdateConcurrencyException e)
+                    {
+                        var entity = e.Entries.Single().GetDatabaseValues();
+
+                        if (entity == null)
+
+                        {
+                            return BadRequest("The entity being updated is already deleted by another user...");
+                        }
+
+                        BadRequest("The entity being updated has already been updated by another user...");
+                    }
                 }
 
                 Log.DebugFormat("Retrieval of DeleteProfileById was successful.\n");

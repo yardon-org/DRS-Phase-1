@@ -25,6 +25,7 @@ namespace drs_backend_phase1.Models
         public Nullable<int> createdProfileId { get; set; }
         public Nullable<int> modifiedProfileId { get; set; }
         public Nullable<bool> isDeleted { get; set; }
+        public byte[] rowVersion { get; set; }
     
         public virtual SecurityGroup SecurityGroup { get; set; }
         public virtual SecurityRight SecurityRight { get; set; }

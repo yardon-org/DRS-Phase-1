@@ -49,6 +49,7 @@ namespace drs_backend_phase1.Models
         public System.DateTime dateModified { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<int> baseId { get; set; }
+        public byte[] rowVersion { get; set; }
     
         public virtual Agency Agency { get; set; }
         public virtual Base Base { get; set; }

@@ -26,6 +26,7 @@ namespace drs_backend_phase1.Models
         public System.DateTime dateModified { get; set; }
         public Nullable<bool> isDeleted { get; set; }
         public int teamId { get; set; }
+        public byte[] rowVersion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfileProfessional> ProfileProfessionals { get; set; }

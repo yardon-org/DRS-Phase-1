@@ -29,6 +29,7 @@ namespace drs_backend_phase1.Models
         public Nullable<int> createdProfileId { get; set; }
         public Nullable<int> modifiedProfileId { get; set; }
         public Nullable<bool> isDeleted { get; set; }
+        public byte[] rowVersion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SecurityPermission> SecurityPermissions { get; set; }

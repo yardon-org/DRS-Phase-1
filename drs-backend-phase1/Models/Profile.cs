@@ -46,6 +46,7 @@ namespace drs_backend_phase1.Models
         public Nullable<int> profileFinanceId { get; set; }
         public string adEmailAddress { get; set; }
         public Nullable<byte> roleID { get; set; }
+        public byte[] rowVersion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SpecialNote> SpecialNotes { get; set; }

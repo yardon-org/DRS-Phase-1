@@ -14,6 +14,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Bank">
           <Key>
@@ -24,6 +25,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" />
           <Property Name="dateModified" Type="datetime2" Precision="7" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Base">
           <Key>
@@ -35,6 +37,7 @@
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" />
           <Property Name="teamId" Type="int" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="CCG">
           <Key>
@@ -45,6 +48,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="DocumentType">
           <Key>
@@ -55,6 +59,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="IndemnityProvider">
           <Key>
@@ -65,6 +70,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="JobType">
           <Key>
@@ -79,6 +85,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="PaymentCategory">
           <Key>
@@ -89,6 +96,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -119,6 +127,7 @@
           <Property Name="profileFinanceId" Type="int" />
           <Property Name="adEmailAddress" Type="varchar" MaxLength="200" />
           <Property Name="roleID" Type="tinyint" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="ProfileDocument">
           <Key>
@@ -135,6 +144,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="ProfileFinance">
           <Key>
@@ -151,6 +161,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="ProfilePaymentCategory">
           <Key>
@@ -163,6 +174,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="ProfileProfessional">
           <Key>
@@ -195,6 +207,7 @@
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="baseId" Type="int" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="ProfileShiftType">
           <Key>
@@ -207,6 +220,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="RegisteredSurgery">
           <Key>
@@ -217,6 +231,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="RegistrarLevel">
           <Key>
@@ -227,6 +242,7 @@
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="SecurityGroup">
           <Key>
@@ -236,6 +252,7 @@
           <Property Name="groupName" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="validFrom" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="validTo" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="SecurityPermission">
           <Key>
@@ -252,6 +269,7 @@
           <Property Name="createdProfileId" Type="int" />
           <Property Name="modifiedProfileId" Type="int" />
           <Property Name="isDeleted" Type="bit" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
@@ -266,6 +284,7 @@
           <Property Name="createdProfileId" Type="int" />
           <Property Name="modifiedProfileId" Type="int" />
           <Property Name="isDeleted" Type="bit" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="SecurityRole">
           <Key>
@@ -280,9 +299,8 @@
           <Property Name="createdProfileID" Type="int" />
           <Property Name="modifiedProfileID" Type="int" />
           <Property Name="isDeleted" Type="bit" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ShiftType">
           <Key>
             <PropertyRef Name="id" />
@@ -292,6 +310,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="SpecialNote">
           <Key>
@@ -304,6 +323,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="SubType">
           <Key>
@@ -316,6 +336,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -326,6 +347,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <Association Name="FK__SecurityP__Group__382F5661">
           <End Role="SecurityGroup" Type="Self.SecurityGroup" Multiplicity="1" />
@@ -853,6 +875,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Agency" FromRole="Agency" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="Bank">
           <Key>
@@ -864,6 +887,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileFinances" Relationship="DRSModel.fk_Bank" FromRole="Bank" ToRole="ProfileFinance" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="Base">
           <Key>
@@ -877,6 +901,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="teamId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Base" FromRole="Base" ToRole="ProfileProfessional" />
           <NavigationProperty Name="Team" Relationship="DRSModel.fk_Team" FromRole="Base" ToRole="Team" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="CCG">
           <Key>
@@ -888,6 +913,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_CCG" FromRole="CCG" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="DocumentType">
           <Key>
@@ -899,6 +925,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileDocuments" Relationship="DRSModel.fk_DocumentType" FromRole="DocumentType" ToRole="ProfileDocument" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="IndemnityProvider">
           <Key>
@@ -910,6 +937,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_Indemnity" FromRole="IndemnityProvider" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="JobType">
           <Key>
@@ -925,6 +953,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_JobType" FromRole="JobType" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="PaymentCategory">
           <Key>
@@ -936,6 +965,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfilePaymentCategories" Relationship="DRSModel.fk_PaymentCategory" FromRole="PaymentCategory" ToRole="ProfilePaymentCategory" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -971,6 +1001,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <NavigationProperty Name="ProfileDocuments" Relationship="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" FromRole="Profile" ToRole="ProfileDocument" />
           <NavigationProperty Name="ProfileFinance" Relationship="DRSModel.fk_e7569dcf417e285aff79a7581cb" FromRole="Profile" ToRole="ProfileFinance" />
           <NavigationProperty Name="SecurityRole" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="Profile" ToRole="SecurityRole" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="ProfileDocument">
           <Key>
@@ -989,6 +1020,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="DocumentType" Relationship="DRSModel.fk_DocumentType" FromRole="ProfileDocument" ToRole="DocumentType" />
           <NavigationProperty Name="Profile" Relationship="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="ProfileFinance">
           <Key>
@@ -1007,6 +1039,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bank" Relationship="DRSModel.fk_Bank" FromRole="ProfileFinance" ToRole="Bank" />
           <NavigationProperty Name="Profiles" Relationship="DRSModel.fk_e7569dcf417e285aff79a7581cb" FromRole="ProfileFinance" ToRole="Profile" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="ProfilePaymentCategory">
           <Key>
@@ -1021,6 +1054,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PaymentCategory" Relationship="DRSModel.fk_PaymentCategory" FromRole="ProfilePaymentCategory" ToRole="PaymentCategory" />
           <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfilePaymentCategory" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="ProfileProfessional">
           <Key>
@@ -1064,6 +1098,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <NavigationProperty Name="ProfileShiftTypes" Relationship="DRSModel.fk_eab3618488d653242b55e486b64" FromRole="ProfileProfessional" ToRole="ProfileShiftType" />
           <NavigationProperty Name="RegisteredSurgery" Relationship="DRSModel.fk_RegisteredSurgery" FromRole="ProfileProfessional" ToRole="RegisteredSurgery" />
           <NavigationProperty Name="RegistrarLevel" Relationship="DRSModel.fk_RegistrarLevel" FromRole="ProfileProfessional" ToRole="RegistrarLevel" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="ProfileShiftType">
           <Key>
@@ -1078,6 +1113,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_eab3618488d653242b55e486b64" FromRole="ProfileShiftType" ToRole="ProfileProfessional" />
           <NavigationProperty Name="ShiftType" Relationship="DRSModel.fk_ShiftType" FromRole="ProfileShiftType" ToRole="ShiftType" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="RegisteredSurgery">
           <Key>
@@ -1089,6 +1125,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_RegisteredSurgery" FromRole="RegisteredSurgery" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="RegistrarLevel">
           <Key>
@@ -1100,6 +1137,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_RegistrarLevel" FromRole="RegistrarLevel" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="SecurityGroup">
           <Key>
@@ -1110,6 +1148,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="validFrom" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="validTo" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityGroup" ToRole="SecurityPermission" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="SecurityPermission">
           <Key>
@@ -1129,6 +1168,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <NavigationProperty Name="SecurityGroup" Relationship="DRSModel.FK__SecurityP__Group__382F5661" FromRole="SecurityPermission" ToRole="SecurityGroup" />
           <NavigationProperty Name="SecurityRight" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityPermission" ToRole="SecurityRight" />
           <NavigationProperty Name="SecurityRole" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityPermission" ToRole="SecurityRole" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="SecurityRight">
           <Key>
@@ -1144,6 +1184,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="modifiedProfileId" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__Right__3A179ED3" FromRole="SecurityRight" ToRole="SecurityPermission" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="SecurityRole">
           <Key>
@@ -1160,6 +1201,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profiles" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="SecurityRole" ToRole="Profile" />
           <NavigationProperty Name="SecurityPermissions" Relationship="DRSModel.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityRole" ToRole="SecurityPermission" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="ShiftType">
           <Key>
@@ -1171,6 +1213,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileShiftTypes" Relationship="DRSModel.fk_ShiftType" FromRole="ShiftType" ToRole="ProfileShiftType" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="SpecialNote">
           <Key>
@@ -1184,6 +1227,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" />
           <NavigationProperty Name="Profile" Relationship="DRSModel.fk_97adea54804aa384c890cd6c3ae" FromRole="SpecialNote" ToRole="Profile" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="SubType">
           <Key>
@@ -1197,6 +1241,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="SubType" ToRole="ProfileProfessional" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -1208,6 +1253,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bases" Relationship="DRSModel.fk_Team" FromRole="Team" ToRole="Base" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
         </EntityType>
         <Association Name="fk_Agency">
           <End Type="DRSModel.Agency" Role="Agency" Multiplicity="0..1" />
@@ -1494,6 +1540,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="Agencies">
             <EntityTypeMapping TypeName="DRSModel.Agency">
               <MappingFragment StoreEntitySet="Agency">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1505,6 +1552,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="Banks">
             <EntityTypeMapping TypeName="DRSModel.Bank">
               <MappingFragment StoreEntitySet="Bank">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1516,6 +1564,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="Bases">
             <EntityTypeMapping TypeName="DRSModel.Base">
               <MappingFragment StoreEntitySet="Base">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="teamId" ColumnName="teamId" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
@@ -1528,6 +1577,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="CCGs">
             <EntityTypeMapping TypeName="DRSModel.CCG">
               <MappingFragment StoreEntitySet="CCG">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1539,6 +1589,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="DocumentTypes">
             <EntityTypeMapping TypeName="DRSModel.DocumentType">
               <MappingFragment StoreEntitySet="DocumentType">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1550,6 +1601,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="IndemnityProviders">
             <EntityTypeMapping TypeName="DRSModel.IndemnityProvider">
               <MappingFragment StoreEntitySet="IndemnityProvider">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1561,6 +1613,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="JobTypes">
             <EntityTypeMapping TypeName="DRSModel.JobType">
               <MappingFragment StoreEntitySet="JobType">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1576,6 +1629,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="PaymentCategories">
             <EntityTypeMapping TypeName="DRSModel.PaymentCategory">
               <MappingFragment StoreEntitySet="PaymentCategory">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1587,6 +1641,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="Profiles">
             <EntityTypeMapping TypeName="DRSModel.Profile">
               <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="roleID" ColumnName="roleID" />
                 <ScalarProperty Name="adEmailAddress" ColumnName="adEmailAddress" />
                 <ScalarProperty Name="profileFinanceId" ColumnName="profileFinanceId" />
@@ -1618,6 +1673,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="ProfileDocuments">
             <EntityTypeMapping TypeName="DRSModel.ProfileDocument">
               <MappingFragment StoreEntitySet="ProfileDocument">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1635,6 +1691,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="ProfileFinances">
             <EntityTypeMapping TypeName="DRSModel.ProfileFinance">
               <MappingFragment StoreEntitySet="ProfileFinance">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1652,6 +1709,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="ProfilePaymentCategories">
             <EntityTypeMapping TypeName="DRSModel.ProfilePaymentCategory">
               <MappingFragment StoreEntitySet="ProfilePaymentCategory">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1665,6 +1723,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="ProfileProfessionals">
             <EntityTypeMapping TypeName="DRSModel.ProfileProfessional">
               <MappingFragment StoreEntitySet="ProfileProfessional">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="baseId" ColumnName="baseId" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
@@ -1698,6 +1757,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="ProfileShiftTypes">
             <EntityTypeMapping TypeName="DRSModel.ProfileShiftType">
               <MappingFragment StoreEntitySet="ProfileShiftType">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1711,6 +1771,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="RegisteredSurgeries">
             <EntityTypeMapping TypeName="DRSModel.RegisteredSurgery">
               <MappingFragment StoreEntitySet="RegisteredSurgery">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1722,6 +1783,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="RegistrarLevels">
             <EntityTypeMapping TypeName="DRSModel.RegistrarLevel">
               <MappingFragment StoreEntitySet="RegistrarLevel">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1733,6 +1795,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="SecurityGroups">
             <EntityTypeMapping TypeName="DRSModel.SecurityGroup">
               <MappingFragment StoreEntitySet="SecurityGroup">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="validTo" ColumnName="validTo" />
                 <ScalarProperty Name="validFrom" ColumnName="validFrom" />
                 <ScalarProperty Name="groupName" ColumnName="groupName" />
@@ -1743,6 +1806,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="SecurityPermissions">
             <EntityTypeMapping TypeName="DRSModel.SecurityPermission">
               <MappingFragment StoreEntitySet="SecurityPermission">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="modifiedProfileId" ColumnName="modifiedProfileId" />
                 <ScalarProperty Name="createdProfileId" ColumnName="createdProfileId" />
@@ -1760,6 +1824,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="SecurityRights">
             <EntityTypeMapping TypeName="DRSModel.SecurityRight">
               <MappingFragment StoreEntitySet="SecurityRight">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="modifiedProfileId" ColumnName="modifiedProfileId" />
                 <ScalarProperty Name="createdProfileId" ColumnName="createdProfileId" />
@@ -1775,6 +1840,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="SecurityRoles">
             <EntityTypeMapping TypeName="DRSModel.SecurityRole">
               <MappingFragment StoreEntitySet="SecurityRole">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="modifiedProfileID" ColumnName="modifiedProfileID" />
                 <ScalarProperty Name="createdProfileID" ColumnName="createdProfileID" />
@@ -1790,6 +1856,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="ShiftTypes">
             <EntityTypeMapping TypeName="DRSModel.ShiftType">
               <MappingFragment StoreEntitySet="ShiftType">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1801,6 +1868,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="SpecialNotes">
             <EntityTypeMapping TypeName="DRSModel.SpecialNote">
               <MappingFragment StoreEntitySet="SpecialNote">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1814,6 +1882,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="SubTypes">
             <EntityTypeMapping TypeName="DRSModel.SubType">
               <MappingFragment StoreEntitySet="SubType">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
@@ -1827,6 +1896,7 @@ warning 6002: The table/view 'DRS.dbo.SecurityRole_History' does not have a prim
           <EntitySetMapping Name="Teams">
             <EntityTypeMapping TypeName="DRSModel.Team">
               <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="dateModified" ColumnName="dateModified" />
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />

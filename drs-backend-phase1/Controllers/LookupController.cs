@@ -295,7 +295,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllRegistrarLevels")]
         public IHttpActionResult FetchAllRegistrarLevels(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -325,7 +325,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllShiftTypes")]
         public IHttpActionResult FetchAllShiftTypes(bool isDeleted = false, int page = 1, int pageSize = 10)
