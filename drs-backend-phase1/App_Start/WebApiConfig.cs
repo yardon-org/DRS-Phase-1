@@ -17,16 +17,15 @@ namespace drs_backend_phase1
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            config.Filters.Add(new ValidateModelStateFilter());
-            config.MessageHandlers.Add(new ResponseWrappingHandler());
+            //config.Filters.Add(new ValidateModelStateFilter());
+            //config.MessageHandlers.Add(new ResponseWrappingHandler());
 
-            // Add validation
-            FluentValidationModelValidatorProvider.Configure(config);
+            //// Add validation
+            //FluentValidationModelValidatorProvider.Configure(config);
 
             // Allow OData Queries on all methods that return IQueryable
-            System.Web.Http.OData.Extensions
-                .HttpConfigurationExtensions.AddODataQueryFilter(config);
-
+            System.Web.Http.OData.Extensions.HttpConfigurationExtensions.AddODataQueryFilter(config);
+            HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
             // Web API routes
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(

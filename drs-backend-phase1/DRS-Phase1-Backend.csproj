@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>drs_backend_phase1</RootNamespace>
     <AssemblyName>drs-backend-phase1</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -69,6 +69,9 @@
     <Reference Include="FluentValidation.WebApi, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.WebApi.7.1.1\lib\net45\FluentValidation.WebApi.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender">
+      <HintPath>C:\Users\pfoster1\Desktop\Entity Framework Profiler v4.0 Build 4042\Appender\net46\HibernatingRhinos.Profiler.Appender.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -318,6 +321,21 @@
     <Compile Include="Models\DocumentType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DRSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DRSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DRSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DRSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DRSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DRSModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\DTOs\SuperSlim\ProfileSuperSlimDTO.cs" />
     <Compile Include="Models\DTOs\Compound\ProfileCompoundDTO.cs" />
     <Compile Include="Models\IndemnityProvider.cs">
@@ -394,21 +412,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DRSModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DRSModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DRSModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DRSModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DRSModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Get_AddressesForPostCodeSimple_Result.cs">
       <DependentUpon>PAFModel.tt</DependentUpon>
     </Compile>
@@ -443,8 +446,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\DRSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DRSModel.Context.cs</LastGenOutput>
       <DependentUpon>DRSModel.edmx</DependentUpon>
+      <LastGenOutput>DRSModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\DRSModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -483,13 +486,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\DRSModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DRSModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DRSModel.edmx.diagram">
-      <DependentUpon>DRSModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\PAFModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PAFModel.Designer.cs</LastGenOutput>
@@ -505,6 +501,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\DRSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DRSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DRSModel.edmx.diagram">
+      <DependentUpon>DRSModel.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\AuthDirectToServer.pubxml" />
     <None Include="Properties\PublishProfiles\AuthDirectToServerDebug.pubxml" />
     <None Include="Properties\PublishProfiles\NoAuthDirectToServer.pubxml" />

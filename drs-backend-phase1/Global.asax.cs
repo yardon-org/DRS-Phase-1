@@ -37,8 +37,9 @@ namespace drs_backend_phase1
             Mapper.Initialize(cfg =>
                 {
                     cfg.CreateMissingTypeMaps = true;
+                    cfg.CreateMap<Profile, ProfileDTO>();
+                    cfg.CreateMap<ProfileProfessional, ProfileProfessionalDTO>();
                     cfg.CreateMap<SubType, SubTypeDTO>();
-                  
                     cfg.CreateMap<List<Profile>, List<ProfileDTO>>();
                     cfg.CreateMap<SecurityRole, SecurityRoleDTO>();
                     cfg.CreateMap<CCG, CCGDTO>();
@@ -54,9 +55,6 @@ namespace drs_backend_phase1
                     cfg.CreateMap<ShiftType, ShiftTypeDTO>();
                     cfg.CreateMap<SpecialNote, SpecialNoteDTO>();
                     cfg.CreateMap<ProfileFinance, ProfileFinanceDTO>();
-                    cfg.CreateMap<Profile, ProfileDTO>();
-                    cfg.CreateMap<ProfileProfessional, ProfileProfessionalDTO>();
-
                 }
             );
 

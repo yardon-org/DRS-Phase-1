@@ -4,54 +4,54 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8783c4619c1d4f9cbd439e25bb57f4c0" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="DRSModel.Agency" Width="1.5" PointX="3" PointY="25.875" />
-        <EntityTypeShape EntityType="DRSModel.Bank" Width="1.5" PointX="3" PointY="5.5" />
-        <EntityTypeShape EntityType="DRSModel.Base" Width="1.5" PointX="3" PointY="9.25" />
-        <EntityTypeShape EntityType="DRSModel.CCG" Width="1.5" PointX="3" PointY="20" />
-        <EntityTypeShape EntityType="DRSModel.DocumentType" Width="1.5" PointX="7.5" PointY="13.375" />
-        <EntityTypeShape EntityType="DRSModel.IndemnityProvider" Width="1.5" PointX="3" PointY="23" />
-        <EntityTypeShape EntityType="DRSModel.JobType" Width="1.5" PointX="3" PointY="16.375" />
-        <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="2.5" PointX="8.25" PointY="16.375" />
-        <EntityTypeShape EntityType="DRSModel.Profile" Width="1.5" PointX="7.5" PointY="1.125" />
-        <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="9.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DRSModel.ProfileFinance" Width="1.5" PointX="5.25" PointY="1.75" />
-        <EntityTypeShape EntityType="DRSModel.ProfilePaymentCategory" Width="2.375" PointX="10.5" PointY="9.125" />
-        <EntityTypeShape EntityType="DRSModel.ProfileProfessional" Width="1.5" PointX="5.25" PointY="6.375" />
-        <EntityTypeShape EntityType="DRSModel.ProfileShiftType" Width="1.5" PointX="7.5" PointY="9.125" />
-        <EntityTypeShape EntityType="DRSModel.RegisteredSurgery" Width="1.5" PointX="3" PointY="32.125" />
-        <EntityTypeShape EntityType="DRSModel.RegistrarLevel" Width="1.5" PointX="3" PointY="13.375" />
-        <EntityTypeShape EntityType="DRSModel.SecurityGroup" Width="1.5" PointX="8.25" PointY="23.5" />
-        <EntityTypeShape EntityType="DRSModel.SecurityPermission" Width="1.5" PointX="12.875" PointY="15.625" />
-        <EntityTypeShape EntityType="DRSModel.SecurityRight" Width="1.5" PointX="8.25" PointY="19.75" />
-        <EntityTypeShape EntityType="DRSModel.SecurityRole" Width="1.5" PointX="5.25" PointY="16" />
-        <EntityTypeShape EntityType="DRSModel.ShiftType" Width="1.5" PointX="5.25" PointY="20.375" />
-        <EntityTypeShape EntityType="DRSModel.SpecialNote" Width="1.5" PointX="9.75" PointY="5.5" />
-        <EntityTypeShape EntityType="DRSModel.SubType" Width="1.5" PointX="3" PointY="28.875" />
-        <EntityTypeShape EntityType="DRSModel.Team" Width="1.5" PointX="0.75" PointY="9.375" />
-        <AssociationConnector Association="DRSModel.fk_Agency" />
-        <AssociationConnector Association="DRSModel.fk_Bank" />
-        <AssociationConnector Association="DRSModel.fk_Base" />
-        <AssociationConnector Association="DRSModel.fk_Team" />
-        <AssociationConnector Association="DRSModel.fk_CCG" />
-        <AssociationConnector Association="DRSModel.fk_DocumentType" />
-        <AssociationConnector Association="DRSModel.fk_Indemnity" />
-        <AssociationConnector Association="DRSModel.fk_JobType" />
-        <AssociationConnector Association="DRSModel.fk_PaymentCategory" />
-        <AssociationConnector Association="DRSModel.fk_97adea54804aa384c890cd6c3ae" />
-        <AssociationConnector Association="DRSModel.fk_a68f954b809d3a2fc2a21cb61b5" />
-        <AssociationConnector Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" />
-        <AssociationConnector Association="DRSModel.fk_e7569dcf417e285aff79a7581cb" />
-        <AssociationConnector Association="DRSModel.FK_Profile_SecurityRole" />
-        <AssociationConnector Association="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" />
-        <AssociationConnector Association="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" />
-        <AssociationConnector Association="DRSModel.fk_eab3618488d653242b55e486b64" />
-        <AssociationConnector Association="DRSModel.fk_RegisteredSurgery" />
-        <AssociationConnector Association="DRSModel.fk_RegistrarLevel" />
-        <AssociationConnector Association="DRSModel.fk_ShiftType" />
-        <AssociationConnector Association="DRSModel.FK__SecurityP__Group__382F5661" />
-        <AssociationConnector Association="DRSModel.FK__SecurityP__Right__3A179ED3" />
-        <AssociationConnector Association="DRSModel.FK__SecurityP__RoleI__39237A9A" />
+      <Diagram DiagramId="60debccad5784bf5b9c2754068aaf390" Name="Diagram1">
+        <EntityTypeShape EntityType="DRSModel.Agency" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.Bank" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.Base" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.CCG" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.DocumentType" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.IndemnityProvider" Width="1.5" PointX="3" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.JobType" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="1.5" PointX="8.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.Profile" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="12.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileFinance" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfilePaymentCategory" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileProfessional" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ProfileShiftType" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.RegisteredSurgery" Width="1.5" PointX="3" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.RegistrarLevel" Width="1.5" PointX="3" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SecurityGroup" Width="1.5" PointX="8.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SecurityPermission" Width="1.5" PointX="10.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SecurityRight" Width="1.5" PointX="8.25" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SecurityRole" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.ShiftType" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SpecialNote" Width="1.5" PointX="9.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.SubType" Width="1.5" PointX="3" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DRSModel.Team" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="DRSModel.fk_Agency" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_Base" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_CCG" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_DocumentType" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_Indemnity" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.FK_ProfileProfessional_JobType" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_PaymentCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_97adea54804aa384c890cd6c3ae" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_a68f954b809d3a2fc2a21cb61b5" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_e7569dcf417e285aff79a7581cb" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.FK_Profile_SecurityRole" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_eab3618488d653242b55e486b64" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_RegisteredSurgery" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_RegistrarLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.fk_ShiftType" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.FK__SecurityP__Group__382F5661" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.FK__SecurityP__Right__3A179ED3" ManuallyRouted="false" />
+        <AssociationConnector Association="DRSModel.FK__SecurityP__RoleI__39237A9A" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
