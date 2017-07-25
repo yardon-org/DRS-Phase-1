@@ -9,616 +9,1896 @@
 using System.Text;
 using System.Collections.Generic;
 using System;
+using FluentValidation.Attributes;
 
 namespace drs_backend_phase1.Models.DTOs
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class AgencyDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime? dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class BankDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime? dateCreated { get; set; }
 
         //public DateTime? dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileFinanceDTO> ProfileFinances { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class BaseDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is deleted.
+        /// </summary>
+        /// <value>
+        /// The is deleted.
+        /// </value>
         public bool? isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team identifier.
+        /// </summary>
+        /// <value>
+        /// The team identifier.
+        /// </value>
         public int teamId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team.
+        /// </summary>
+        /// <value>
+        /// The team.
+        /// </value>
         public TeamDTO Team { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class CCGDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class DocumentTypeDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileDocumentDTO> ProfileDocuments { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class IndemnityProviderDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class JobTypeDTO
     {
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is clinical.
+        /// </summary>
+        /// <value>
+        /// The is clinical.
+        /// </value>
         public bool? isClinical { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is GMC required.
+        /// </summary>
+        /// <value>
+        /// The is GMC required.
+        /// </value>
         public bool? isGmcRequired { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is NMC required.
+        /// </summary>
+        /// <value>
+        /// The is NMC required.
+        /// </value>
         public bool? isNmcRequired { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is HCPC required.
+        /// </summary>
+        /// <value>
+        /// The is HCPC required.
+        /// </value>
         public bool? isHcpcRequired { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is deleted.
+        /// </summary>
+        /// <value>
+        /// The is deleted.
+        /// </value>
         public bool? isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class PaymentCategoryDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfilePaymentCategoryDTO> ProfilePaymentCategories { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    [Validator(typeof(ProfileDTO))]
     public partial class ProfileDTO
     {
+        /// <summary>
+        /// Gets or sets the first name.
+        /// </summary>
+        /// <value>
+        /// The first name.
+        /// </value>
         public string firstName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the middle names.
+        /// </summary>
+        /// <value>
+        /// The middle names.
+        /// </value>
         public string middleNames { get; set; }
 
+        /// <summary>
+        /// Gets or sets the last name.
+        /// </summary>
+        /// <value>
+        /// The last name.
+        /// </value>
         public string lastName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the date of birth.
+        /// </summary>
+        /// <value>
+        /// The date of birth.
+        /// </value>
         public DateTime dateOfBirth { get; set; }
 
+        /// <summary>
+        /// Gets or sets the address1.
+        /// </summary>
+        /// <value>
+        /// The address1.
+        /// </value>
         public string address1 { get; set; }
 
+        /// <summary>
+        /// Gets or sets the address2.
+        /// </summary>
+        /// <value>
+        /// The address2.
+        /// </value>
         public string address2 { get; set; }
 
+        /// <summary>
+        /// Gets or sets the address3.
+        /// </summary>
+        /// <value>
+        /// The address3.
+        /// </value>
         public string address3 { get; set; }
 
+        /// <summary>
+        /// Gets or sets the address4.
+        /// </summary>
+        /// <value>
+        /// The address4.
+        /// </value>
         public string address4 { get; set; }
 
+        /// <summary>
+        /// Gets or sets the address5.
+        /// </summary>
+        /// <value>
+        /// The address5.
+        /// </value>
         public string address5 { get; set; }
 
+        /// <summary>
+        /// Gets or sets the postcode.
+        /// </summary>
+        /// <value>
+        /// The postcode.
+        /// </value>
         public string postcode { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home phone.
+        /// </summary>
+        /// <value>
+        /// The home phone.
+        /// </value>
         public string homePhone { get; set; }
 
+        /// <summary>
+        /// Gets or sets the mobile phone.
+        /// </summary>
+        /// <value>
+        /// The mobile phone.
+        /// </value>
         public string mobilePhone { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home email.
+        /// </summary>
+        /// <value>
+        /// The home email.
+        /// </value>
         public string homeEmail { get; set; }
 
+        /// <summary>
+        /// Gets or sets the NHS email.
+        /// </summary>
+        /// <value>
+        /// The NHS email.
+        /// </value>
         public string nhsEmail { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [SMS enabled].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [SMS enabled]; otherwise, <c>false</c>.
+        /// </value>
         public bool smsEnabled { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is inactive.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is inactive; otherwise, <c>false</c>.
+        /// </value>
         public bool isInactive { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is complete.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is complete; otherwise, <c>false</c>.
+        /// </value>
         public bool isComplete { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile professional identifier.
+        /// </summary>
+        /// <value>
+        /// The profile professional identifier.
+        /// </value>
         public int? profileProfessionalId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile finance identifier.
+        /// </summary>
+        /// <value>
+        /// The profile finance identifier.
+        /// </value>
         public int? profileFinanceId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the ad email address.
+        /// </summary>
+        /// <value>
+        /// The ad email address.
+        /// </value>
         public string adEmailAddress { get; set; }
 
+        /// <summary>
+        /// Gets or sets the role identifier.
+        /// </summary>
+        /// <value>
+        /// The role identifier.
+        /// </value>
         public byte? roleID { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
+        /// <summary>
+        /// Gets or sets the special notes.
+        /// </summary>
+        /// <value>
+        /// The special notes.
+        /// </value>
         public List<SpecialNoteDTO> SpecialNotes { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile professional.
+        /// </summary>
+        /// <value>
+        /// The profile professional.
+        /// </value>
         public ProfileProfessionalDTO ProfileProfessional { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile documents.
+        /// </summary>
+        /// <value>
+        /// The profile documents.
+        /// </value>
         public List<ProfileDocumentDTO> ProfileDocuments { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile finance.
+        /// </summary>
+        /// <value>
+        /// The profile finance.
+        /// </value>
         public ProfileFinanceDTO ProfileFinance { get; set; }
 
+        /// <summary>
+        /// Gets or sets the security role.
+        /// </summary>
+        /// <value>
+        /// The security role.
+        /// </value>
         public SecurityRoleDTO SecurityRole { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ProfileDocumentDTO
     {
+        /// <summary>
+        /// Gets or sets the document type identifier.
+        /// </summary>
+        /// <value>
+        /// The document type identifier.
+        /// </value>
         public int? documentTypeId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the original file.
+        /// </summary>
+        /// <value>
+        /// The name of the original file.
+        /// </value>
         public string originalFileName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the multer file.
+        /// </summary>
+        /// <value>
+        /// The name of the multer file.
+        /// </value>
         public string multerFileName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the MIME.
+        /// </summary>
+        /// <value>
+        /// The type of the MIME.
+        /// </value>
         public string mimeType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the date obtained.
+        /// </summary>
+        /// <value>
+        /// The date obtained.
+        /// </value>
         public DateTime? dateObtained { get; set; }
 
+        /// <summary>
+        /// Gets or sets the date expires.
+        /// </summary>
+        /// <value>
+        /// The date expires.
+        /// </value>
         public DateTime? dateExpires { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile identifier.
+        /// </summary>
+        /// <value>
+        /// The profile identifier.
+        /// </value>
         public int? profileId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the document.
+        /// </summary>
+        /// <value>
+        /// The type of the document.
+        /// </value>
         public DocumentTypeDTO DocumentType { get; set; }
 
         //public ProfileDTO Profile { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ProfileFinanceDTO
     {
+        /// <summary>
+        /// Gets or sets the payroll number.
+        /// </summary>
+        /// <value>
+        /// The payroll number.
+        /// </value>
         public string payrollNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is ic24 staff.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is ic24 staff; otherwise, <c>false</c>.
+        /// </value>
         public bool isIc24Staff { get; set; }
 
+        /// <summary>
+        /// Gets or sets the national insurance number.
+        /// </summary>
+        /// <value>
+        /// The national insurance number.
+        /// </value>
         public string nationalInsuranceNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets the bank identifier.
+        /// </summary>
+        /// <value>
+        /// The bank identifier.
+        /// </value>
         public int? bankId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the bank account number.
+        /// </summary>
+        /// <value>
+        /// The bank account number.
+        /// </value>
         public string bankAccountNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets the bank sort code.
+        /// </summary>
+        /// <value>
+        /// The bank sort code.
+        /// </value>
         public string bankSortCode { get; set; }
 
+        /// <summary>
+        /// Gets or sets the building society roll number.
+        /// </summary>
+        /// <value>
+        /// The building society roll number.
+        /// </value>
         public string buildingSocietyRollNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
+        /// <summary>
+        /// Gets or sets the bank.
+        /// </summary>
+        /// <value>
+        /// The bank.
+        /// </value>
         public BankDTO Bank { get; set; }
 
         //public List<ProfileDTO> Profiles { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ProfilePaymentCategoryDTO
     {
+        /// <summary>
+        /// Gets or sets the payment category identifier.
+        /// </summary>
+        /// <value>
+        /// The payment category identifier.
+        /// </value>
         public int? paymentCategoryId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile professional identifier.
+        /// </summary>
+        /// <value>
+        /// The profile professional identifier.
+        /// </value>
         public int? profileProfessionalId { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is default.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is default; otherwise, <c>false</c>.
+        /// </value>
         public bool isDefault { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
+        /// <summary>
+        /// Gets or sets the payment category.
+        /// </summary>
+        /// <value>
+        /// The payment category.
+        /// </value>
         public PaymentCategoryDTO PaymentCategory { get; set; }
 
         //public ProfileProfessionalDTO ProfileProfessional { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ProfileProfessionalDTO
     {
+        /// <summary>
+        /// Gets or sets the team identifier.
+        /// </summary>
+        /// <value>
+        /// The team identifier.
+        /// </value>
         public int? teamId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the job type identifier.
+        /// </summary>
+        /// <value>
+        /// The job type identifier.
+        /// </value>
         public int? jobTypeId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the GMC number.
+        /// </summary>
+        /// <value>
+        /// The GMC number.
+        /// </value>
         public string gmcNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets the NMC number.
+        /// </summary>
+        /// <value>
+        /// The NMC number.
+        /// </value>
         public string nmcNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets the HCPC number.
+        /// </summary>
+        /// <value>
+        /// The HCPC number.
+        /// </value>
         public string hcpcNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets the registration expiry date.
+        /// </summary>
+        /// <value>
+        /// The registration expiry date.
+        /// </value>
         public DateTime? registrationExpiryDate { get; set; }
 
+        /// <summary>
+        /// Gets or sets the sub type identifier.
+        /// </summary>
+        /// <value>
+        /// The sub type identifier.
+        /// </value>
         public int? subTypeId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the registrar level identifier.
+        /// </summary>
+        /// <value>
+        /// The registrar level identifier.
+        /// </value>
         public int? registrarLevelId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the registrar trainer.
+        /// </summary>
+        /// <value>
+        /// The registrar trainer.
+        /// </value>
         public string registrarTrainer { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is registrar green.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is registrar green; otherwise, <c>false</c>.
+        /// </value>
         public bool isRegistrarGreen { get; set; }
 
+        /// <summary>
+        /// Gets or sets the agency identifier.
+        /// </summary>
+        /// <value>
+        /// The agency identifier.
+        /// </value>
         public int? agencyId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the registered surgery identifier.
+        /// </summary>
+        /// <value>
+        /// The registered surgery identifier.
+        /// </value>
         public int? registeredSurgeryId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the CCG identifier.
+        /// </summary>
+        /// <value>
+        /// The CCG identifier.
+        /// </value>
         public int? ccgId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the indemnity provider identifier.
+        /// </summary>
+        /// <value>
+        /// The indemnity provider identifier.
+        /// </value>
         public int? indemnityProviderId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the performers list.
+        /// </summary>
+        /// <value>
+        /// The performers list.
+        /// </value>
         public string performersList { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [performers list checked].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [performers list checked]; otherwise, <c>false</c>.
+        /// </value>
         public bool performersListChecked { get; set; }
 
+        /// <summary>
+        /// Gets or sets the performers list checked date.
+        /// </summary>
+        /// <value>
+        /// The performers list checked date.
+        /// </value>
         public DateTime? performersListCheckedDate { get; set; }
 
+        /// <summary>
+        /// Gets or sets the performers list checked by.
+        /// </summary>
+        /// <value>
+        /// The performers list checked by.
+        /// </value>
         public string performersListCheckedBy { get; set; }
 
+        /// <summary>
+        /// Gets or sets the indemnity number.
+        /// </summary>
+        /// <value>
+        /// The indemnity number.
+        /// </value>
         public string indemnityNumber { get; set; }
 
+        /// <summary>
+        /// Gets or sets the indemnity expiry date.
+        /// </summary>
+        /// <value>
+        /// The indemnity expiry date.
+        /// </value>
         public DateTime? indemnityExpiryDate { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is premium.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is premium; otherwise, <c>false</c>.
+        /// </value>
         public bool isPremium { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is trainer.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is trainer; otherwise, <c>false</c>.
+        /// </value>
         public bool isTrainer { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the base identifier.
+        /// </summary>
+        /// <value>
+        /// The base identifier.
+        /// </value>
         public int? baseId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
+        /// <summary>
+        /// Gets or sets the agency.
+        /// </summary>
+        /// <value>
+        /// The agency.
+        /// </value>
         public AgencyDTO Agency { get; set; }
 
+        /// <summary>
+        /// Gets or sets the base.
+        /// </summary>
+        /// <value>
+        /// The base.
+        /// </value>
         public BaseDTO Base_ { get; set; }
 
+        /// <summary>
+        /// Gets or sets the CCG.
+        /// </summary>
+        /// <value>
+        /// The CCG.
+        /// </value>
         public CCGDTO CCG { get; set; }
 
+        /// <summary>
+        /// Gets or sets the indemnity provider.
+        /// </summary>
+        /// <value>
+        /// The indemnity provider.
+        /// </value>
         public IndemnityProviderDTO IndemnityProvider { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the job.
+        /// </summary>
+        /// <value>
+        /// The type of the job.
+        /// </value>
         public JobTypeDTO JobType { get; set; }
 
         //public List<ProfileDTO> Profiles { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile payment categories.
+        /// </summary>
+        /// <value>
+        /// The profile payment categories.
+        /// </value>
         public List<ProfilePaymentCategoryDTO> ProfilePaymentCategories { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the sub.
+        /// </summary>
+        /// <value>
+        /// The type of the sub.
+        /// </value>
         public SubTypeDTO SubType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile shift types.
+        /// </summary>
+        /// <value>
+        /// The profile shift types.
+        /// </value>
         public List<ProfileShiftTypeDTO> ProfileShiftTypes { get; set; }
 
+        /// <summary>
+        /// Gets or sets the registered surgery.
+        /// </summary>
+        /// <value>
+        /// The registered surgery.
+        /// </value>
         public RegisteredSurgeryDTO RegisteredSurgery { get; set; }
 
+        /// <summary>
+        /// Gets or sets the registrar level.
+        /// </summary>
+        /// <value>
+        /// The registrar level.
+        /// </value>
         public RegistrarLevelDTO RegistrarLevel { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ProfileShiftTypeDTO
     {
+        /// <summary>
+        /// Gets or sets the shift type identifier.
+        /// </summary>
+        /// <value>
+        /// The shift type identifier.
+        /// </value>
         public int? shiftTypeId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile professional identifier.
+        /// </summary>
+        /// <value>
+        /// The profile professional identifier.
+        /// </value>
         public int? profileProfessionalId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is under review.
+        /// </summary>
+        /// <value>
+        /// The is under review.
+        /// </value>
         public bool? isUnderReview { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public ProfileProfessionalDTO ProfileProfessional { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the shift.
+        /// </summary>
+        /// <value>
+        /// The type of the shift.
+        /// </value>
         public ShiftTypeDTO ShiftType { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class RegisteredSurgeryDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class RegistrarLevelDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SecurityGroupDTO
     {
+        /// <summary>
+        /// Gets or sets the group identifier.
+        /// </summary>
+        /// <value>
+        /// The group identifier.
+        /// </value>
         public byte groupId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the group.
+        /// </summary>
+        /// <value>
+        /// The name of the group.
+        /// </value>
         public string groupName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid from.
+        /// </summary>
+        /// <value>
+        /// The valid from.
+        /// </value>
         public DateTime validFrom { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid to.
+        /// </summary>
+        /// <value>
+        /// The valid to.
+        /// </value>
         public DateTime validTo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<SecurityPermissionDTO> SecurityPermissions { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SecurityPermissionDTO
     {
+        /// <summary>
+        /// Gets or sets the permission identifier.
+        /// </summary>
+        /// <value>
+        /// The permission identifier.
+        /// </value>
         public int permissionId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the group identifier.
+        /// </summary>
+        /// <value>
+        /// The group identifier.
+        /// </value>
         public byte groupId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the role identifier.
+        /// </summary>
+        /// <value>
+        /// The role identifier.
+        /// </value>
         public byte roleId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the right identifier.
+        /// </summary>
+        /// <value>
+        /// The right identifier.
+        /// </value>
         public byte rightId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid from.
+        /// </summary>
+        /// <value>
+        /// The valid from.
+        /// </value>
         public DateTime validFrom { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid to.
+        /// </summary>
+        /// <value>
+        /// The valid to.
+        /// </value>
         public DateTime validTo { get; set; }
 
         //public DateTime? dateCreated { get; set; }
 
         //public DateTime? dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets the created profile identifier.
+        /// </summary>
+        /// <value>
+        /// The created profile identifier.
+        /// </value>
         public int? createdProfileId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the modified profile identifier.
+        /// </summary>
+        /// <value>
+        /// The modified profile identifier.
+        /// </value>
         public int? modifiedProfileId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is deleted.
+        /// </summary>
+        /// <value>
+        /// The is deleted.
+        /// </value>
         public bool? isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
+        /// <summary>
+        /// Gets or sets the security group.
+        /// </summary>
+        /// <value>
+        /// The security group.
+        /// </value>
         public SecurityGroupDTO SecurityGroup { get; set; }
 
+        /// <summary>
+        /// Gets or sets the security right.
+        /// </summary>
+        /// <value>
+        /// The security right.
+        /// </value>
         public SecurityRightDTO SecurityRight { get; set; }
 
         //public SecurityRoleDTO SecurityRole { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SecurityRightDTO
     {
+        /// <summary>
+        /// Gets or sets the right identifier.
+        /// </summary>
+        /// <value>
+        /// The right identifier.
+        /// </value>
         public byte rightID { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the right.
+        /// </summary>
+        /// <value>
+        /// The name of the right.
+        /// </value>
         public string rightName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid from.
+        /// </summary>
+        /// <value>
+        /// The valid from.
+        /// </value>
         public DateTime validFrom { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid to.
+        /// </summary>
+        /// <value>
+        /// The valid to.
+        /// </value>
         public DateTime validTo { get; set; }
 
         //public DateTime? dateCreated { get; set; }
 
         //public DateTime? dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets the created profile identifier.
+        /// </summary>
+        /// <value>
+        /// The created profile identifier.
+        /// </value>
         public int? createdProfileId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the modified profile identifier.
+        /// </summary>
+        /// <value>
+        /// The modified profile identifier.
+        /// </value>
         public int? modifiedProfileId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is deleted.
+        /// </summary>
+        /// <value>
+        /// The is deleted.
+        /// </value>
         public bool? isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<SecurityPermissionDTO> SecurityPermissions { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SecurityRoleDTO
     {
+        /// <summary>
+        /// Gets or sets the role identifier.
+        /// </summary>
+        /// <value>
+        /// The role identifier.
+        /// </value>
         public byte roleId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the role.
+        /// </summary>
+        /// <value>
+        /// The name of the role.
+        /// </value>
         public string roleName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid from.
+        /// </summary>
+        /// <value>
+        /// The valid from.
+        /// </value>
         public DateTime validFrom { get; set; }
 
+        /// <summary>
+        /// Gets or sets the valid to.
+        /// </summary>
+        /// <value>
+        /// The valid to.
+        /// </value>
         public DateTime validTo { get; set; }
 
         //public DateTime? dateCreated { get; set; }
 
         //public DateTime? dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets the created profile identifier.
+        /// </summary>
+        /// <value>
+        /// The created profile identifier.
+        /// </value>
         public int? createdProfileID { get; set; }
 
+        /// <summary>
+        /// Gets or sets the modified profile identifier.
+        /// </summary>
+        /// <value>
+        /// The modified profile identifier.
+        /// </value>
         public int? modifiedProfileID { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is deleted.
+        /// </summary>
+        /// <value>
+        /// The is deleted.
+        /// </value>
         public bool? isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileDTO> Profiles { get; set; }
 
+        /// <summary>
+        /// Gets or sets the security permissions.
+        /// </summary>
+        /// <value>
+        /// The security permissions.
+        /// </value>
         public List<SecurityPermissionDTO> SecurityPermissions { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ShiftTypeDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileShiftTypeDTO> ProfileShiftTypes { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SpecialNoteDTO
     {
+        /// <summary>
+        /// Gets or sets the name of the user.
+        /// </summary>
+        /// <value>
+        /// The name of the user.
+        /// </value>
         public string userName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the note text.
+        /// </summary>
+        /// <value>
+        /// The note text.
+        /// </value>
         public string noteText { get; set; }
 
+        /// <summary>
+        /// Gets or sets the profile identifier.
+        /// </summary>
+        /// <value>
+        /// The profile identifier.
+        /// </value>
         public int profileId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets the is deleted.
+        /// </summary>
+        /// <value>
+        /// The is deleted.
+        /// </value>
         public bool? isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public ProfileDTO Profile { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SubTypeDTO
     {
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is agency.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is agency; otherwise, <c>false</c>.
+        /// </value>
         public bool isAgency { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is registrar.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is registrar; otherwise, <c>false</c>.
+        /// </value>
         public bool isRegistrar { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class TeamDTO
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
 
         //public DateTime dateCreated { get; set; }
 
         //public DateTime dateModified { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is deleted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
+        /// </value>
         public bool isDeleted { get; set; }
 
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
 
         //public List<BaseDTO> Bases { get; set; }

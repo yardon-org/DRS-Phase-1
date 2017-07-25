@@ -2,12 +2,10 @@
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Web.Http;
 using System.Web.Http.OData;
 using AutoMapper;
 using drs_backend_phase1.Extensions;
-using drs_backend_phase1.Filter;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Models.DTOs;
 using drs_backend_phase1.Models.DTOs.SuperSlim;
@@ -90,7 +88,7 @@ namespace drs_backend_phase1.Controllers
                     if (refreshedEntity != null)
                     {
                         Log.DebugFormat("Updating of UpdateProfile was successful.\n");
-                        return Ok(Mapper.Map<ProfileDTO>(profileToUpdate));
+                        return Ok(Mapper.Map<ProfileDTO>(refreshedEntity));
                     }
                 }
                 catch (Exception ex)
@@ -162,7 +160,7 @@ namespace drs_backend_phase1.Controllers
                     if (refreshedEntity != null)
                     {
                         Log.DebugFormat("Updating of UpdateProfile was successful.\n");
-                        return Ok(Mapper.Map<ProfileDTO>(profileToUpdate));
+                        return Ok(Mapper.Map<ProfileDTO>(refreshedEntity));
                     }
 
                 }
