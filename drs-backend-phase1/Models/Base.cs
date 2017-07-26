@@ -24,7 +24,7 @@ namespace drs_backend_phase1.Models
         public string name { get; set; }
         public System.DateTime dateCreated { get; set; }
         public System.DateTime dateModified { get; set; }
-        public Nullable<bool> isDeleted { get; set; }
+        public bool isDeleted { get; set; }
         public int teamId { get; set; }
         public byte[] rowVersion { get; set; }
     

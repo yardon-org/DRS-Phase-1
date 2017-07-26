@@ -21,14 +21,14 @@ namespace drs_backend_phase1.Models
         }
     
         public string name { get; set; }
-        public Nullable<bool> isClinical { get; set; }
-        public Nullable<bool> isGmcRequired { get; set; }
-        public Nullable<bool> isNmcRequired { get; set; }
-        public Nullable<bool> isHcpcRequired { get; set; }
+        public bool isClinical { get; set; }
+        public bool isGmcRequired { get; set; }
+        public bool isNmcRequired { get; set; }
+        public bool isHcpcRequired { get; set; }
         public int id { get; set; }
         public System.DateTime dateCreated { get; set; }
         public System.DateTime dateModified { get; set; }
-        public Nullable<bool> isDeleted { get; set; }
+        public bool isDeleted { get; set; }
         public byte[] rowVersion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

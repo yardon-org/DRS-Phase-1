@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DRSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DRSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="id" />
@@ -35,7 +35,7 @@
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="isDeleted" Type="bit" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="teamId" Type="int" Nullable="false" />
           <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
@@ -77,14 +77,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="isClinical" Type="bit" />
-          <Property Name="isGmcRequired" Type="bit" />
-          <Property Name="isNmcRequired" Type="bit" />
-          <Property Name="isHcpcRequired" Type="bit" />
+          <Property Name="isClinical" Type="bit" Nullable="false" />
+          <Property Name="isGmcRequired" Type="bit" Nullable="false" />
+          <Property Name="isNmcRequired" Type="bit" Nullable="false" />
+          <Property Name="isHcpcRequired" Type="bit" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="isDeleted" Type="bit" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="PaymentCategory">
@@ -215,7 +215,7 @@
           </Key>
           <Property Name="shiftTypeId" Type="int" />
           <Property Name="profileProfessionalId" Type="int" />
-          <Property Name="isUnderReview" Type="bit" />
+          <Property Name="isUnderReview" Type="bit" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
@@ -298,7 +298,7 @@
           <Property Name="dateModified" Type="datetime" />
           <Property Name="createdProfileID" Type="int" />
           <Property Name="modifiedProfileID" Type="int" />
-          <Property Name="isDeleted" Type="bit" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="ShiftType">
@@ -322,7 +322,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="isDeleted" Type="bit" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="SubType">
@@ -577,6 +577,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProfileShiftType_ShiftType">
+          <End Role="ShiftType" Type="Self.ShiftType" Multiplicity="0..1" />
+          <End Role="ProfileShiftType" Type="Self.ProfileShiftType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShiftType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProfileShiftType">
+              <PropertyRef Name="shiftTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_RegisteredSurgery">
           <End Role="RegisteredSurgery" Type="Self.RegisteredSurgery" Multiplicity="0..1" />
           <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
@@ -598,18 +610,6 @@
             </Principal>
             <Dependent Role="ProfileProfessional">
               <PropertyRef Name="registrarLevelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_ShiftType">
-          <End Role="ShiftType" Type="Self.ShiftType" Multiplicity="0..1" />
-          <End Role="ProfileShiftType" Type="Self.ProfileShiftType" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ShiftType">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ProfileShiftType">
-              <PropertyRef Name="shiftTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -726,6 +726,10 @@
             <End Role="JobType" EntitySet="JobType" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProfileShiftType_ShiftType" Association="Self.FK_ProfileShiftType_ShiftType">
+            <End Role="ShiftType" EntitySet="ShiftType" />
+            <End Role="ProfileShiftType" EntitySet="ProfileShiftType" />
+          </AssociationSet>
           <AssociationSet Name="fk_RegisteredSurgery" Association="Self.fk_RegisteredSurgery">
             <End Role="RegisteredSurgery" EntitySet="RegisteredSurgery" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
@@ -734,17 +738,12 @@
             <End Role="RegistrarLevel" EntitySet="RegistrarLevel" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
-          <AssociationSet Name="fk_ShiftType" Association="Self.fk_ShiftType">
-            <End Role="ShiftType" EntitySet="ShiftType" />
-            <End Role="ProfileShiftType" EntitySet="ProfileShiftType" />
-          </AssociationSet>
           <AssociationSet Name="fk_Team" Association="Self.fk_Team">
             <End Role="Team" EntitySet="Team" />
             <End Role="Base" EntitySet="Base" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DRSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -780,7 +779,7 @@
           <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="teamId" Type="Int32" Nullable="false" />
           <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="Self.fk_Base" FromRole="Base" ToRole="ProfileProfessional" />
@@ -827,14 +826,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="isClinical" Type="Boolean" />
-          <Property Name="isGmcRequired" Type="Boolean" />
-          <Property Name="isNmcRequired" Type="Boolean" />
-          <Property Name="isHcpcRequired" Type="Boolean" />
+          <Property Name="isClinical" Type="Boolean" Nullable="false" />
+          <Property Name="isGmcRequired" Type="Boolean" Nullable="false" />
+          <Property Name="isNmcRequired" Type="Boolean" Nullable="false" />
+          <Property Name="isHcpcRequired" Type="Boolean" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="ProfileProfessionals" Relationship="Self.FK_ProfileProfessional_JobType" FromRole="JobType" ToRole="ProfileProfessional" />
         </EntityType>
@@ -989,7 +988,7 @@
           </Key>
           <Property Name="shiftTypeId" Type="Int32" />
           <Property Name="profileProfessionalId" Type="Int32" />
-          <Property Name="isUnderReview" Type="Boolean" />
+          <Property Name="isUnderReview" Type="Boolean" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
@@ -1081,7 +1080,7 @@
           <Property Name="dateModified" Type="DateTime" Precision="3" />
           <Property Name="createdProfileID" Type="Int32" />
           <Property Name="modifiedProfileID" Type="Int32" />
-          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Profiles" Relationship="Self.FK_Profile_SecurityRole" FromRole="SecurityRole" ToRole="Profile" />
           <NavigationProperty Name="SecurityPermissions" Relationship="Self.FK__SecurityP__RoleI__39237A9A" FromRole="SecurityRole" ToRole="SecurityPermission" />
@@ -1108,7 +1107,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Profile" Relationship="Self.fk_97adea54804aa384c890cd6c3ae" FromRole="SpecialNote" ToRole="Profile" />
         </EntityType>

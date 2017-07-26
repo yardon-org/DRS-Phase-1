@@ -16,7 +16,7 @@ namespace drs_backend_phase1.Models
     {
         public Nullable<int> shiftTypeId { get; set; }
         public Nullable<int> profileProfessionalId { get; set; }
-        public Nullable<bool> isUnderReview { get; set; }
+        public bool isUnderReview { get; set; }
         public int id { get; set; }
         public System.DateTime dateCreated { get; set; }
         public System.DateTime dateModified { get; set; }
