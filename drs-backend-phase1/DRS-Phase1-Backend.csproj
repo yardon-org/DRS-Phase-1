@@ -262,7 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Validation\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -304,8 +303,6 @@
     <Compile Include="Extensions\PagingExtensions.cs" />
     <Compile Include="Filter\ValidateModelStateFilter.cs" />
     <Compile Include="Filter\HMACAuthenticationAttribute.cs" />
-    <Compile Include="Handlers\ResponsePackage.cs" />
-    <Compile Include="Handlers\ResponseWrappingHandler.cs" />
     <Compile Include="Models\Agency.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>

@@ -347,10 +347,6 @@ namespace drs_backend_phase1.Controllers
                 var profile = _db.Profiles
                     .Where(p => p.id == id).OrderBy(x => x.id).SingleOrDefault();
 
-                //TESTING
-                profile.ProfileProfessional.ProfileShiftTypes.Add(new ProfileShiftType() {shiftTypeId = 2,isUnderReview = true});
-
-
                 var dto = Mapper.Map<ProfileDTO>(profile);
                 Log.DebugFormat("Retrieval of ReadAllProfileById was successful.\n");
 

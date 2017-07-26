@@ -1,7 +1,4 @@
 ﻿using System.Web.Http;
-using drs_backend_phase1.Filter;
-using drs_backend_phase1.Handlers;
-using FluentValidation.WebApi;
 
 namespace drs_backend_phase1
 {
@@ -16,13 +13,6 @@ namespace drs_backend_phase1
         /// <param name="config">The configuration.</param>
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-            //config.Filters.Add(new ValidateModelStateFilter());
-            //config.MessageHandlers.Add(new ResponseWrappingHandler());
-
-            ////// Add validation
-            //FluentValidationModelValidatorProvider.Configure(config);
-
             // Allow OData Queries on all methods that return IQueryable
             System.Web.Http.OData.Extensions.HttpConfigurationExtensions.AddODataQueryFilter(config);
             //HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
