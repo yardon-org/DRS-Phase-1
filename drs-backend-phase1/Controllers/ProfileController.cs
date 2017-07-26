@@ -84,27 +84,30 @@ namespace drs_backend_phase1.Controllers
                     _db.SaveChanges();
 
                     // Now fetch the updated object to send back
-                    var refreshedEntity = _db.Profiles.SingleOrDefault(x => x.id == profileToUpdate.id);
-                    if (refreshedEntity != null)
+                    using (var responseConn = new DRSEntities())
                     {
-                        Log.DebugFormat("Updating of UpdateProfile was successful.\n");
-                        return Ok(Mapper.Map<ProfileDTO>(refreshedEntity));
+                        var refreshedEntity = responseConn.Profiles.SingleOrDefault(x => x.id == profileToUpdate.id);
+                        if (refreshedEntity != null)
+                        {
+                            Log.DebugFormat("Updating of CheckPerformersList was successful.\n");
+                            return Ok(Mapper.Map<ProfileDTO>(refreshedEntity));
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
                     Log.DebugFormat(
-                        $"Error running UpdateProfile. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                        $"Error running CheckPerformersList. The reason is as follows: {ex.Message} {ex.StackTrace}");
                     var myError = new Error
                     {
                         Code = "400",
-                        Message = "Error running UpdateProfile",
+                        Message = "Error running CheckPerformersList",
                         Data = new object[] {ex.Message}
                     };
                     return new ErrorResult(myError, Request);
                 }
 
-                Log.DebugFormat("Updating of UpdateProfile was successful.\n");
+                Log.DebugFormat("Updating of CheckPerformersList was successful.\n");
                 return Ok(Mapper.Map<ProfileDTO>(profileToUpdate));
             }
 
@@ -162,13 +165,15 @@ namespace drs_backend_phase1.Controllers
                     _db.SaveChanges();
 
                     // Now fetch the updated object to send back
-                    var refreshedEntity = _db.Profiles.SingleOrDefault(x => x.id == profileToUpdate.id);
-                    if (refreshedEntity != null)
+                    using (var responseConn = new DRSEntities())
                     {
-                        Log.DebugFormat("Updating of UpdateProfile was successful.\n");
-                        return Ok(Mapper.Map<ProfileDTO>(refreshedEntity));
+                        var refreshedEntity = responseConn.Profiles.SingleOrDefault(x => x.id == profileToUpdate.id);
+                        if (refreshedEntity != null)
+                        {
+                            Log.DebugFormat("Updating of UpdateProfile was successful.\n");
+                            return Ok(Mapper.Map<ProfileDTO>(refreshedEntity));
+                        }
                     }
-
                 }
                 catch (Exception ex)
                 {

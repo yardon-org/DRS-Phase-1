@@ -9,7 +9,6 @@ using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Models.DTOs;
 using log4net;
-using Profile = drs_backend_phase1.Models.Profile;
 
 namespace drs_backend_phase1.Controllers
 {

@@ -55,6 +55,14 @@ namespace drs_backend_phase1
                     cfg.CreateMap<ShiftType, ShiftTypeDTO>();
                     cfg.CreateMap<SpecialNote, SpecialNoteDTO>();
                     cfg.CreateMap<ProfileFinance, ProfileFinanceDTO>();
+                    cfg.CreateMap<ProfilePaymentCategory, ProfilePaymentCategoryDTO>();
+                    cfg.CreateMap<PaymentCategory, PaymentCategoryDTO>();
+                    cfg.CreateMap<DocumentType, DocumentTypeDTO>();
+                    cfg.CreateMap<Bank, BankDTO>();
+                    cfg.CreateMap<SecurityPermission, SecurityPermissionDTO>();
+                    cfg.CreateMap<SecurityGroup, SecurityGroupDTO>();
+                    cfg.CreateMap<SecurityRight, SecurityRightDTO>();
+
                 }
             );
 

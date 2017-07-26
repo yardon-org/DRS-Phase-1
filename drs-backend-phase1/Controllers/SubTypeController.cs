@@ -10,8 +10,6 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models.DTOs;
-using drs_backend_phase1.Paging;
-using Profile = drs_backend_phase1.Models.Profile;
 
 namespace drs_backend_phase1.Controllers
 {

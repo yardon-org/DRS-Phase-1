@@ -20,6 +20,7 @@ namespace drs_backend_phase1.Models
         /// </returns>
         public override int SaveChanges()
         {
+            DateTime epochDate = DateTime.Parse("01/01/0001 00:00:00");
             var saveTime = DateTime.Now;
             foreach (var entry in ChangeTracker.Entries())
                 if (entry.State == EntityState.Added || entry.State == EntityState.Modified)
@@ -27,7 +28,7 @@ namespace drs_backend_phase1.Models
                     entry.Property("dateModified").CurrentValue = saveTime;
 
 
-                    if (entry.Property("dateCreated").CurrentValue == null)
+                    if (entry.Property("dateCreated").CurrentValue == null || entry.Property("dateCreated").CurrentValue.ToString()== "01/01/0001 00:00:00")
                         entry.Property("dateCreated").CurrentValue = saveTime;
                 }
             return base.SaveChanges();
