@@ -52,7 +52,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
@@ -96,7 +96,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileFinanceDTO> ProfileFinances { get; set; }
     }
@@ -148,7 +148,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
 
@@ -200,7 +200,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
@@ -244,7 +244,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileDocumentDTO> ProfileDocuments { get; set; }
     }
@@ -288,7 +288,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
@@ -364,7 +364,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
@@ -408,7 +408,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfilePaymentCategoryDTO> ProfilePaymentCategories { get; set; }
     }
@@ -843,7 +843,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         /// <summary>
         /// Gets or sets the bank.
@@ -911,7 +911,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         /// <summary>
         /// Gets or sets the payment category.
@@ -1331,7 +1331,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
@@ -1375,7 +1375,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
@@ -1423,7 +1423,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<SecurityPermissionDTO> SecurityPermissions { get; set; }
     }
@@ -1515,7 +1515,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         /// <summary>
         /// Gets or sets the security group.
@@ -1607,7 +1607,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<SecurityPermissionDTO> SecurityPermissions { get; set; }
     }
@@ -1683,7 +1683,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileDTO> Profiles { get; set; }
 
@@ -1735,7 +1735,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileShiftTypeDTO> ProfileShiftTypes { get; set; }
     }
@@ -1855,7 +1855,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
@@ -1899,7 +1899,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The row version.
         /// </value>
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
 
         //public List<BaseDTO> Bases { get; set; }
     }

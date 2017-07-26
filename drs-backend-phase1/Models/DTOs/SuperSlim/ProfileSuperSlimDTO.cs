@@ -9,32 +9,125 @@
 
 namespace drs_backend_phase1.Models.DTOs.SuperSlim
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SlimJobTypeDTO
     {
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string name { get; set; }
-        public byte[] rowVersion { get; set; }
+        //public byte[] rowVersion { get; set; }
     }
 
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SlimProfileDTO
     {
+        /// <summary>
+        /// Gets or sets the first name.
+        /// </summary>
+        /// <value>
+        /// The first name.
+        /// </value>
         public string firstName { get; set; }
+        /// <summary>
+        /// Gets or sets the home email.
+        /// </summary>
+        /// <value>
+        /// The home email.
+        /// </value>
         public string homeEmail { get; set; }
+        /// <summary>
+        /// Gets or sets the home phone.
+        /// </summary>
+        /// <value>
+        /// The home phone.
+        /// </value>
         public string homePhone { get; set; }
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int id { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is complete.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is complete; otherwise, <c>false</c>.
+        /// </value>
         public bool isComplete { get; set; }
+        /// <summary>
+        /// Gets or sets the last name.
+        /// </summary>
+        /// <value>
+        /// The last name.
+        /// </value>
         public string lastName { get; set; }
+        /// <summary>
+        /// Gets or sets the middle names.
+        /// </summary>
+        /// <value>
+        /// The middle names.
+        /// </value>
         public string middleNames { get; set; }
+        /// <summary>
+        /// Gets or sets the mobile phone.
+        /// </summary>
+        /// <value>
+        /// The mobile phone.
+        /// </value>
         public string mobilePhone { get; set; }
+        /// <summary>
+        /// Gets or sets the NHS email.
+        /// </summary>
+        /// <value>
+        /// The NHS email.
+        /// </value>
         public string nhsEmail { get; set; }
+        /// <summary>
+        /// Gets or sets the profile professional.
+        /// </summary>
+        /// <value>
+        /// The profile professional.
+        /// </value>
         public SlimProfileProfessionalDTO ProfileProfessional { get; set; }
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
     }
 
 
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class SlimProfileProfessionalDTO
     {
+        /// <summary>
+        /// Gets or sets the type of the job.
+        /// </summary>
+        /// <value>
+        /// The type of the job.
+        /// </value>
         public SlimJobTypeDTO JobType { get; set; }
+        /// <summary>
+        /// Gets or sets the row version.
+        /// </summary>
+        /// <value>
+        /// The row version.
+        /// </value>
         public byte[] rowVersion { get; set; }
     }
 
