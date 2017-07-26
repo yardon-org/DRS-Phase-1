@@ -135,7 +135,9 @@ namespace drs_backend_phase1.Controllers
             {
                 var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
-              try
+                #region GraphDiff
+
+                try
                 {
                     // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);
@@ -150,6 +152,10 @@ namespace drs_backend_phase1.Controllers
                     };
                     return new ErrorResult(myError, Request);
                 }
+
+                #endregion
+
+                #region SaveChanges
 
                 try
                 {
@@ -176,7 +182,11 @@ namespace drs_backend_phase1.Controllers
                     };
                     return new ErrorResult(myError, Request);
                 }
+
+                #endregion
             }
+
+            #region FinalCatch
 
             Log.DebugFormat("incomingProfileDTO cannot be null");
             var myError2 = new Error
@@ -186,6 +196,8 @@ namespace drs_backend_phase1.Controllers
                 Data = null
             };
             return new ErrorResult(myError2, Request);
+
+            #endregion
 
         }
 
