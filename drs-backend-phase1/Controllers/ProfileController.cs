@@ -33,10 +33,10 @@ namespace drs_backend_phase1.Controllers
         /// </summary>
         private readonly DRSEntities _db;
 
-
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ProfileController" /> class.
+        /// Initializes a new instance of the <see cref="ProfileController" /> class.
         /// </summary>
+
         public ProfileController()
         {
             _db = new DRSEntities();
@@ -127,7 +127,6 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPut]
         [Route("")]
-
         public IHttpActionResult UpdateProfile([FromBody] ProfileDTO incomingProfileDTO)
         {
             Log.DebugFormat("ProfileController (UpdateProfile)\n");
@@ -176,12 +175,7 @@ namespace drs_backend_phase1.Controllers
                     };
                     return new ErrorResult(myError, Request);
                 }
-
-
-                #endregion
             }
-
-            #region FinalCatch
 
             Log.DebugFormat("incomingProfileDTO cannot be null");
             var myError2 = new Error
@@ -192,7 +186,6 @@ namespace drs_backend_phase1.Controllers
             };
             return new ErrorResult(myError2, Request);
         }
-
         #endregion
 
         #region Delete_Endpoints
@@ -449,24 +442,6 @@ namespace drs_backend_phase1.Controllers
 
             #endregion
 
-        #region Disposing
-
-        /// <summary>
-        ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
-        /// </summary>
-        /// <param name="disposing">
-        ///     true to release both managed and unmanaged resources; false to release only unmanaged
-        ///     resources.
-        /// </param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-                _db.Dispose();
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region GraphDiff_Configuration
 
         /// <summary>
@@ -475,6 +450,8 @@ namespace drs_backend_phase1.Controllers
         /// <param name="profileToUpdate">The profile to update.</param>
         private void ConfigureGraphDiff(Profile profileToUpdate)
         {
+            // TODO: Add more entities to this
+
             _db.UpdateGraph(profileToUpdate,
                 map => map.OwnedEntity(
                         p => p.ProfileProfessional,
@@ -496,7 +473,24 @@ namespace drs_backend_phase1.Controllers
                     .AssociatedEntity(p => p.ProfileFinance)
             );
         }
-    }
+        #endregion
 
-    #endregion
+        #region Disposing
+
+        /// <summary>
+        ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">
+        ///     true to release both managed and unmanaged resources; false to release only unmanaged
+        ///     resources.
+        /// </param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+                _db.Dispose();
+            base.Dispose(disposing);
+        }
+
+        #endregion
+    }
 }
