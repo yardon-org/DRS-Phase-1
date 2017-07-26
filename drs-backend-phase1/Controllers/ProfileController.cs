@@ -475,22 +475,21 @@ namespace drs_backend_phase1.Controllers
                 map => map.OwnedEntity(
                         p => p.ProfileProfessional,
                         with =>
-                            with.OwnedEntity(p => p.Agency)
-                                .OwnedEntity(p => p.Base, x => x.OwnedEntity(p => p.Team))
-                                .OwnedEntity(p => p.CCG)
-                                .OwnedEntity(p => p.IndemnityProvider)
-                                .OwnedEntity(p => p.JobType)
+                            with.AssociatedEntity(p => p.Agency)
+                                .AssociatedEntity(p => p.Base)
+                                .AssociatedEntity(p => p.CCG)
+                                .AssociatedEntity(p => p.IndemnityProvider)
+                                .AssociatedEntity(p => p.JobType)
                                 .OwnedCollection(p => p.ProfilePaymentCategories)
                                 .OwnedCollection(p => p.ProfileShiftTypes)
-                                .OwnedEntity(p => p.RegisteredSurgery)
-                                .OwnedEntity(p => p.RegistrarLevel)
-                                .OwnedEntity(p => p.SubType)
+                                .AssociatedEntity(p => p.RegisteredSurgery)
+                                .AssociatedEntity(p => p.RegistrarLevel)
+                                .AssociatedEntity(p => p.SubType)
                     )
                     .OwnedCollection(p => p.ProfileDocuments)
                     .OwnedCollection(p => p.SpecialNotes)
-                    .OwnedEntity(p => p.SecurityRole)
-                    .OwnedEntity(p => p.ProfileFinance, with => with.OwnedEntity(p => p.Bank)
-                    )
+                    .AssociatedEntity(p => p.SecurityRole)
+                    .AssociatedEntity(p => p.ProfileFinance)
             );
         }
     }
