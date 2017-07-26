@@ -63,24 +63,11 @@ namespace drs_backend_phase1.Controllers
                 profileToUpdate.ProfileProfessional.performersListCheckedDate = DateTime.Now;
                 profileToUpdate.ProfileProfessional.performersListCheckedBy = User.Identity.Name;
 
+
                 try
                 {
                     // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    var myError = new Error
-                    {
-                        Code = "400",
-                        Message = "The entity being updated has already been updated by another user...",
-                        Data =null
-                    };
-                    return new ErrorResult(myError, Request);
-                }
-
-                try
-                {
                     _db.SaveChanges();
 
                     // Now fetch the updated object to send back
@@ -94,6 +81,17 @@ namespace drs_backend_phase1.Controllers
                         }
                     }
                 }
+                catch (DbUpdateConcurrencyException)
+                {
+                    var myError = new Error
+                    {
+                        Code = "400",
+                        Message = "The entity being updated has already been updated by another user...",
+                        Data = null
+                    };
+                    return new ErrorResult(myError, Request);
+                }
+
                 catch (Exception ex)
                 {
                     Log.DebugFormat(
@@ -138,30 +136,9 @@ namespace drs_backend_phase1.Controllers
             {
                 var profileToUpdate = Mapper.Map<Profile>(incomingProfileDTO);
 
-                #region GraphDiff
-
                 try
                 {
-                    // Create a graph of the Profile entity
                     ConfigureGraphDiff(profileToUpdate);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    var myError = new Error
-                    {
-                        Code = "400",
-                        Message = "The entity being updated has already been updated by another user...",
-                        Data = null
-                    };
-                    return new ErrorResult(myError, Request);
-                }
-
-                #endregion
-
-                #region SaveChanges
-
-                try
-                {
                     _db.SaveChanges();
 
                     // Now fetch the updated object to send back
@@ -175,6 +152,18 @@ namespace drs_backend_phase1.Controllers
                         }
                     }
                 }
+
+                catch (DbUpdateConcurrencyException)
+                {
+                    var myError = new Error
+                    {
+                        Code = "400",
+                        Message = "The entity being updated has already been updated by another user...",
+                        Data = null
+                    };
+                    return new ErrorResult(myError, Request);
+                }
+
                 catch (Exception ex)
                 {
                     Log.DebugFormat(
@@ -187,6 +176,7 @@ namespace drs_backend_phase1.Controllers
                     };
                     return new ErrorResult(myError, Request);
                 }
+
 
                 #endregion
             }
@@ -201,9 +191,6 @@ namespace drs_backend_phase1.Controllers
                 Data = null
             };
             return new ErrorResult(myError2, Request);
-
-            #endregion
-
         }
 
         #endregion
