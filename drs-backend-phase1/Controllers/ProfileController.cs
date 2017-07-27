@@ -29,7 +29,7 @@ namespace drs_backend_phase1.Controllers
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
-        ///     The database
+        ///     The database context
         /// </summary>
         private readonly DRSEntities _db;
 
@@ -461,8 +461,8 @@ namespace drs_backend_phase1.Controllers
                                 .AssociatedEntity(p => p.CCG)
                                 .AssociatedEntity(p => p.IndemnityProvider)
                                 .AssociatedEntity(p => p.JobType)
-                                .OwnedCollection(p => p.ProfilePaymentCategories, x=>x.OwnedEntity(p=>p.PaymentCategory))
-                                .OwnedCollection(p => p.ProfileShiftTypes, x => x.OwnedEntity(p=>p.ShiftType))
+                                .OwnedCollection(p => p.ProfilePaymentCategories, x=>x.AssociatedEntity(p=>p.PaymentCategory))
+                                .OwnedCollection(p => p.ProfileShiftTypes, x => x.AssociatedEntity(p=>p.ShiftType))
                                 .AssociatedEntity(p => p.RegisteredSurgery)
                                 .AssociatedEntity(p => p.RegistrarLevel)
                                 .AssociatedEntity(p => p.SubType)
@@ -470,7 +470,7 @@ namespace drs_backend_phase1.Controllers
                     .OwnedCollection(p => p.ProfileDocuments)
                     .OwnedCollection(p => p.SpecialNotes)
                     .AssociatedEntity(p => p.SecurityRole)
-                    .AssociatedEntity(p => p.ProfileFinance)
+                    .OwnedEntity(p => p.ProfileFinance, x=>x.AssociatedEntity(p=>p.Bank))
             );
         }
         #endregion

@@ -94,8 +94,11 @@ namespace drs_backend_phase1.Provider
                     var standardProps = new AuthenticationProperties(new Dictionary<string, string>
                     {
                         {"clientId", user.ActiveDirectoryGuid},
-                        {"clientSecret", Convert.ToBase64String(secretKeyBytes)},
+                        {"clientSecret", Convert.ToBase64String(secretKeyBytes)}
                     });
+
+                    // Add role in plain text on header
+                    context.OwinContext.Response.Headers.Add("Role", new[] {role.roleName});
 
                     var ticket = new AuthenticationTicket(identity, standardProps);
                     context.Validated(ticket);
