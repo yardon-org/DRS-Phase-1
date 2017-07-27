@@ -4,11 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DRS_Phase1_UnitTests
 {
     [TestClass]
-    public class ProfileControllerUnitTest1
+    public class ProfileControllerUnitTest
     {
         [TestMethod]
         public void TestMethod1()
         {
+
         }
+
     }
 }

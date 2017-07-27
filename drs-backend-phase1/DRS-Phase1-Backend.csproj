@@ -262,6 +262,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\UnitTests\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -334,6 +335,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DRSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTOs\MockTestData.cs" />
     <Compile Include="Models\DTOs\SuperSlim\ProfileSuperSlimDTO.cs" />
     <Compile Include="Models\DTOs\Compound\ProfileCompoundDTO.cs" />
     <Compile Include="Models\IndemnityProvider.cs">
@@ -563,7 +565,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53901</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
