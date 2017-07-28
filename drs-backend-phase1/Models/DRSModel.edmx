@@ -433,18 +433,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_b9e3709fcadd3d69eb7b7c8cc03">
-          <End Role="SubType" Type="Self.SubType" Multiplicity="0..1" />
-          <End Role="ProfileProfessional" Type="Self.ProfileProfessional" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SubType">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ProfileProfessional">
-              <PropertyRef Name="subTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_Bank">
           <End Role="Bank" Type="Self.Bank" Multiplicity="0..1" />
           <End Role="ProfileFinance" Type="Self.ProfileFinance" Multiplicity="*" />
@@ -676,10 +664,6 @@
           </AssociationSet>
           <AssociationSet Name="fk_Agency" Association="Self.fk_Agency">
             <End Role="Agency" EntitySet="Agency" />
-            <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
-          </AssociationSet>
-          <AssociationSet Name="fk_b9e3709fcadd3d69eb7b7c8cc03" Association="Self.fk_b9e3709fcadd3d69eb7b7c8cc03">
-            <End Role="SubType" EntitySet="SubType" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessional" />
           </AssociationSet>
           <AssociationSet Name="fk_Bank" Association="Self.fk_Bank">

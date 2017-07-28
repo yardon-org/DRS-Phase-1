@@ -300,6 +300,7 @@
     <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="ErrorHandler\ErrorHandler.cs" />
+    <Compile Include="Extensions\DbEntityValidationExtensions.cs" />
     <Compile Include="Extensions\PagingExtensions.cs" />
     <Compile Include="Filter\ValidateModelStateFilter.cs" />
     <Compile Include="Filter\HMACAuthenticationAttribute.cs" />

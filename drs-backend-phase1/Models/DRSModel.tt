@@ -144,9 +144,12 @@ foreach (var complex in typeMapper.GetItemsToGenerate<ComplexType>(itemCollectio
         this.<#=code.Escape(complexProperty)#> = new <#=typeMapper.GetTypeName(complexProperty.TypeUsage)#>();
 <#
         }
-#>
+#> 
+    OnCreated();
+
     }
 
+	partial class OnCreated();
 <#
     }
 
