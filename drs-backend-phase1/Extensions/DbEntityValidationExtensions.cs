@@ -42,11 +42,10 @@ namespace drs_backend_phase1.Extensions
         /// <returns></returns>
         public static string DbValidationErrorsToString(this DbEntityValidationResult dbEntityValidationResult, IEnumerable<DbValidationError> dbValidationErrors)
         {
-            var entityName = string.Format("[{0}]", dbEntityValidationResult.Entry.Entity.GetType().Name);
-            const string indentation = "\t - ";
+            var entityName = $"[{dbEntityValidationResult.Entry.Entity.GetType().Name}]";
             var aggregatedValidationErrorMessages = dbValidationErrors.Select(error => string.Format("[{0} - {1}]", error.PropertyName, error.ErrorMessage))
-                .Aggregate(string.Empty, (current, validationErrorMessage) => current + (Environment.NewLine + indentation + validationErrorMessage));
-            return string.Format("{0}{1}", entityName, aggregatedValidationErrorMessages);
+                .Aggregate(string.Empty, (current, validationErrorMessage) => current + (Environment.NewLine + validationErrorMessage));
+            return $"{entityName}{aggregatedValidationErrorMessages}";
         }
     }
 }

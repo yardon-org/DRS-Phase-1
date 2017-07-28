@@ -140,13 +140,12 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
-        public IHttpActionResult PostProfile([FromBody] object profileDTO)
+        public IHttpActionResult PostProfile([FromBody] ProfileDTO profileDTO)
         {
             var profileToAdd = Mapper.Map<Profile>(profileDTO);
 
             try
             {
-                //_db.Profiles.Add(new Profile());
                 _db.Profiles.Add(profileToAdd);
                 _db.SaveChanges();
 
@@ -163,7 +162,6 @@ namespace drs_backend_phase1.Controllers
             }
             catch (DbEntityValidationException ee)
             {
-                var debug = ee.DbEntityValidationResultToString();
                 return BadRequest(ee.DbEntityValidationResultToString());
             }
             catch (Exception ex)
