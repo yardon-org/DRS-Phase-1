@@ -140,12 +140,13 @@ namespace drs_backend_phase1.Controllers
         [Authorize(Roles = "PERSONNEL")]
         [HttpPost]
         [Route("")]
-        public IHttpActionResult PostProfile([FromBody] ProfileDTO profileDTO)
+        public IHttpActionResult PostProfile([FromBody] object profileDTO)
         {
             var profileToAdd = Mapper.Map<Profile>(profileDTO);
 
             try
             {
+                //_db.Profiles.Add(new Profile());
                 _db.Profiles.Add(profileToAdd);
                 _db.SaveChanges();
 
@@ -162,6 +163,7 @@ namespace drs_backend_phase1.Controllers
             }
             catch (DbEntityValidationException ee)
             {
+                var debug = ee.DbEntityValidationResultToString();
                 return BadRequest(ee.DbEntityValidationResultToString());
             }
             catch (Exception ex)
@@ -190,7 +192,6 @@ namespace drs_backend_phase1.Controllers
 
         #endregion
 
-
         #region GraphDiff_Configuration
 
         /// <summary>
@@ -214,7 +215,6 @@ namespace drs_backend_phase1.Controllers
                                 .OwnedCollection(p => p.ProfileShiftTypes, x => x.AssociatedEntity(p => p.ShiftType))
                                 .AssociatedEntity(p => p.RegisteredSurgery)
                                 .AssociatedEntity(p => p.RegistrarLevel)
-                                .AssociatedEntity(p => p.SubType)
                     )
                     .OwnedCollection(p => p.ProfileDocuments)
                     .OwnedCollection(p => p.SpecialNotes)

@@ -983,7 +983,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The sub type identifier.
         /// </value>
-        public int? subTypeId { get; set; }
+        //public int? subTypeId { get; set; }
 
         /// <summary>
         /// Gets or sets the registrar level identifier.
@@ -1190,14 +1190,6 @@ namespace drs_backend_phase1.Models.DTOs
         /// The profile payment categories.
         /// </value>
         public List<ProfilePaymentCategoryDTO> ProfilePaymentCategories { get; set; }
-
-        /// <summary>
-        /// Gets or sets the type of the sub.
-        /// </summary>
-        /// <value>
-        /// The type of the sub.
-        /// </value>
-        public SubTypeDTO SubType { get; set; }
 
         /// <summary>
         /// Gets or sets the profile shift types.
@@ -1798,66 +1790,6 @@ namespace drs_backend_phase1.Models.DTOs
         public byte[] rowVersion { get; set; }
 
         //public ProfileDTO Profile { get; set; }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public partial class SubTypeDTO
-    {
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        public string name { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is agency.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is agency; otherwise, <c>false</c>.
-        /// </value>
-        public bool isAgency { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is registrar.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is registrar; otherwise, <c>false</c>.
-        /// </value>
-        public bool isRegistrar { get; set; }
-
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public int id { get; set; }
-
-        //public DateTime dateCreated { get; set; }
-
-        //public DateTime dateModified { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is deleted.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
-        /// </value>
-        public bool isDeleted { get; set; }
-
-        /// <summary>
-        /// Gets or sets the row version.
-        /// </summary>
-        /// <value>
-        /// The row version.
-        /// </value>
-        //public byte[] rowVersion { get; set; }
-
-        //public List<ProfileProfessionalDTO> ProfileProfessionals { get; set; }
     }
 
     /// <summary>
