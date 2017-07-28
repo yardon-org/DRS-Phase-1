@@ -18,7 +18,10 @@ namespace drs_backend_phase1.Models
         public PaymentCategory()
         {
             this.ProfilePaymentCategories = new HashSet<ProfilePaymentCategory>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public int id { get; set; }
         public string name { get; set; }

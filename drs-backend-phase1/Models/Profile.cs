@@ -19,7 +19,10 @@ namespace drs_backend_phase1.Models
         {
             this.SpecialNotes = new HashSet<SpecialNote>();
             this.ProfileDocuments = new HashSet<ProfileDocument>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public string firstName { get; set; }
         public string middleNames { get; set; }

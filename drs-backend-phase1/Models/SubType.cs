@@ -18,7 +18,10 @@ namespace drs_backend_phase1.Models
         public SubType()
         {
             this.ProfileProfessionals = new HashSet<ProfileProfessional>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public string name { get; set; }
         public bool isAgency { get; set; }

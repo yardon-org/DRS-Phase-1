@@ -19,7 +19,10 @@ namespace drs_backend_phase1.Models
         {
             this.Profiles = new HashSet<Profile>();
             this.SecurityPermissions = new HashSet<SecurityPermission>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public byte roleId { get; set; }
         public string roleName { get; set; }

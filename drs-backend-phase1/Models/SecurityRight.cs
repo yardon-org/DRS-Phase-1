@@ -18,7 +18,10 @@ namespace drs_backend_phase1.Models
         public SecurityRight()
         {
             this.SecurityPermissions = new HashSet<SecurityPermission>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public byte rightID { get; set; }
         public string rightName { get; set; }

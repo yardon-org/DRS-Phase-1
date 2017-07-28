@@ -20,7 +20,10 @@ namespace drs_backend_phase1.Models
             this.Profiles = new HashSet<Profile>();
             this.ProfilePaymentCategories = new HashSet<ProfilePaymentCategory>();
             this.ProfileShiftTypes = new HashSet<ProfileShiftType>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public Nullable<int> teamId { get; set; }
         public Nullable<int> jobTypeId { get; set; }

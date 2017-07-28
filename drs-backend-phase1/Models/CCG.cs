@@ -18,7 +18,10 @@ namespace drs_backend_phase1.Models
         public CCG()
         {
             this.ProfileProfessionals = new HashSet<ProfileProfessional>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public int id { get; set; }
         public string name { get; set; }
