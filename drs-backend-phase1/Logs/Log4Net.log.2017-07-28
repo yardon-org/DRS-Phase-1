@@ -1,0 +1,161 @@
+2017-07-28 07:21:40,245 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:21:42,067 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:21:42,399 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:21:43,364 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:22:45,325 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:22:46,142 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:22:46,404 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:22:47,338 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:24:21,055 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:24:21,915 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:24:22,163 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:24:23,094 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:38:37,564 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:38:38,564 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:38:38,908 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:38:39,595 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:41:13,611 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:41:14,268 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:41:14,502 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:41:22,127 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:44:47,795 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:44:48,655 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:44:48,889 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:44:49,623 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:46:54,127 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:46:54,799 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:46:55,033 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:46:55,783 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:50:57,950 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:50:58,779 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:50:59,029 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:50:59,779 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:54:39,351 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 07:54:40,132 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 07:54:40,382 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 07:54:41,101 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 07:54:47,998 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Profile creation was successful.
+
+2017-07-28 08:00:18,517 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 08:00:18,780 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 08:00:18,849 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 08:00:19,203 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 08:08:31,088 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 08:08:32,052 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 08:08:32,306 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 08:08:33,037 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 08:09:27,803 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 08:09:28,504 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 08:09:28,751 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 08:09:29,522 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 09:32:35,195 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:32:35,958 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:32:37,343 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfileById)
+
+2017-07-28 09:32:37,685 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - Retrieval of ReadAllProfileById was successful.
+
+2017-07-28 09:32:55,447 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:32:55,615 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:33:47,784 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:33:48,509 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:36:14,677 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:36:15,320 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:36:17,840 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 09:39:15,942 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:39:16,096 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:39:19,050 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 09:50:46,886 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:50:47,778 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:50:50,560 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 09:53:40,057 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:53:40,788 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:53:43,389 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 09:56:21,760 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 09:56:22,607 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 09:56:28,209 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 10:00:10,508 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 10:00:11,440 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 10:00:15,363 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 10:01:59,897 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 10:02:00,703 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 10:02:04,206 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 10:04:37,081 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 10:04:37,820 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 10:04:50,686 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 10:06:41,220 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 10:06:41,859 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 10:06:46,089 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (ReadAllProfiles)
+
+2017-07-28 13:03:35,993 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 13:03:37,214 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 13:03:44,202 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (UpdateProfile)
+
+2017-07-28 13:04:05,757 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - incomingProfileDTO cannot be null
+2017-07-28 13:04:29,427 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 13:04:29,593 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 13:04:39,441 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.ProfileController - ProfileController (UpdateProfile)
+
+2017-07-28 13:09:30,056 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 13:09:30,731 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-28 13:09:59,883 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Attempting to log in via the internal service...
+
+2017-07-28 13:10:00,639 DEBUG (null) (null) (null) drs_backend_phase1.Provider.SimpleAuthorizationServerProvider - Successfully retrieved active directory credentials for: pfoster1
