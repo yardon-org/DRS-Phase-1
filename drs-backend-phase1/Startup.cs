@@ -28,32 +28,12 @@ namespace drs_backend_phase1
         {
             var config = new HttpConfiguration();
 
-            //ConfigureOAuth(app);
             ConfigureOAuthTokenGeneration(app);
             ConfigureOAuthTokenConsumption(app);
 
             app.UseCors(CorsOptions.AllowAll);
             app.UseWebApi(config);
         }
-
-        /// <summary>
-        ///     Configures the o authentication.
-        /// </summary>
-        /// <param name="app">The application.</param>
-        //public void ConfigureOAuth(IAppBuilder app)
-        //{
-        //    var oAuthServerOptions = new OAuthAuthorizationServerOptions
-        //    {
-        //        // AllowInsecureHttp needs to be set to false for live environment
-        //        AllowInsecureHttp = true,
-        //        TokenEndpointPath = new PathString("/api/stats/token"),
-        //        AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(Convert.ToDouble(ConfigurationManager.AppSettings["tokenDuration"])),
-        //        Provider = new SimpleAuthorizationServerProvider()
-        //    };
-
-        //    app.UseOAuthAuthorizationServer(oAuthServerOptions);
-        //    app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
-        //}
 
         private void ConfigureOAuthTokenGeneration(IAppBuilder app)
         {
