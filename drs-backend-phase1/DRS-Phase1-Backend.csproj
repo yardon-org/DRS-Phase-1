@@ -335,7 +335,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DRSModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\DTOs\MockTestData.cs" />
+    <Compile Include="Models\MockSetup\FakeProfiles.cs" />
+    <Compile Include="Models\MockTestData.cs" />
     <Compile Include="Models\DTOs\SuperSlim\ProfileSuperSlimDTO.cs" />
     <Compile Include="Models\DTOs\Compound\ProfileCompoundDTO.cs" />
     <Compile Include="Models\IndemnityProvider.cs">

@@ -42,6 +42,11 @@ namespace drs_backend_phase1.Controllers
             _db = new DRSEntities();
         }
 
+        public ProfileController(DRSEntities repository)
+        {
+            _db = repository;
+        }
+
         #region Put_Endpoints
 
         /// <summary>
@@ -269,6 +274,7 @@ namespace drs_backend_phase1.Controllers
                     .ToPagedList(page, pageSize).ToMappedPagedList<Profile, SlimProfileDTO>();
 
                 return Ok(new {metaData = profs.GetMetaData(), items = profs});
+                
             }
             catch (Exception ex)
             {

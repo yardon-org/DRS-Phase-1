@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace drs_backend_phase1.Models.DTOs
+namespace drs_backend_phase1.Models.MockSetup
 {
-    public class MockTestData
+    public class FakeProfiles
     {
         public IList<Profile> FakeProfile()
         {
+
             List<Profile> fakeProf = new List<Profile>
             {
                 new Profile {
@@ -49,37 +50,6 @@ namespace drs_backend_phase1.Models.DTOs
                 }
             };
             return fakeProf;
-        }
-
-        public IList<ProfileDocument> fakeDocuments()
-        {
-            List<ProfileDocument> fakeDoc = new List<ProfileDocument>
-            {
-                new ProfileDocument
-                {
-                    id=1,
-                    dateCreated = new DateTime(2017,07,01),
-                    dateExpires = new DateTime(2018,6,30),
-                    dateModified = new DateTime(2017,7,1),
-                    dateObtained = new DateTime(2017,6,6),
-                    DocumentType = 1,
-                    documentTypeId = 1,
-                    originalFileName="OriginalFileName.one",
-                    profileId = 1
-                }
-            };
-            return fakeDoc;
-        }
-
-        public DocumentType FakeDocumentType()
-        {
-            DocumentType fakeDT = new DocumentType
-            {
-                id = 1,
-                name = "Document Type One",
-                dateCreated = new DateTime(2017, 6, 22),
-            };
-         return fakeDT;
         }
     }
 }
