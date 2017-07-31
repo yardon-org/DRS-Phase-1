@@ -10,6 +10,7 @@ using System.Text;
 using System.Collections.Generic;
 using System;
 using FluentValidation.Attributes;
+using System.Collections;
 
 namespace drs_backend_phase1.Models.DTOs
 {
@@ -656,9 +657,6 @@ namespace drs_backend_phase1.Models.DTOs
         public SecurityRoleDTO SecurityRole { get; set; }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public partial class ProfileDocumentDTO
     {
         /// <summary>

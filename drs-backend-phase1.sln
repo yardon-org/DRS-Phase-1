@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRS-Phase1-Backend", "drs-backend-phase1\DRS-Phase1-Backend.csproj", "{D0EC287D-A5C5-4E9E-81B2-D9D2A807ADD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrencyModeFixer", "ConcurrencyModeFixer\ConcurrencyModeFixer.csproj", "{B3E4104F-7E5C-4320-B666-4245E8FB3FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRS-Phase1-UnitTests", "DRS-Phase1-UnitTests\DRS-Phase1-UnitTests.csproj", "{4BFF4142-1C2A-4271-B1E6-565076CE0049}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B3E4104F-7E5C-4320-B666-4245E8FB3FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3E4104F-7E5C-4320-B666-4245E8FB3FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3E4104F-7E5C-4320-B666-4245E8FB3FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BFF4142-1C2A-4271-B1E6-565076CE0049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BFF4142-1C2A-4271-B1E6-565076CE0049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BFF4142-1C2A-4271-B1E6-565076CE0049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BFF4142-1C2A-4271-B1E6-565076CE0049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
