@@ -73,7 +73,7 @@ namespace drs_backend_phase1
 
         private void ConfigureOAuthTokenConsumption(IAppBuilder app)
         {
-            var issuer = "ITK24";
+            var issuer = "IC24-DRS";
             var audienceId = ConfigurationManager.AppSettings["as:AudienceId"];
             var audienceSecret = TextEncodings.Base64Url.Decode(ConfigurationManager.AppSettings["as:AudienceSecret"]);
 

@@ -89,15 +89,8 @@ namespace drs_backend_phase1.Provider
 
                 if (user != null)
                 {
-                    var secretKeyBytes = Encoding.UTF8.GetBytes(user.ActiveDirectorySid);
-
                     var standardProps = new AuthenticationProperties(new Dictionary<string, string>
                     {
-                        //{"clientId", user.ActiveDirectoryGuid},
-                        //{"clientSecret", Convert.ToBase64String(secretKeyBytes)}
-                        //{"as:AudienceId","IC24" },
-                        //{"as:AudienceSecret","qMCdFDQuF23RV1Y-1Gq9L3cF3VmuFwVbam4fMTdAfpo" }
-
                     });
 
                     // Add role in plain text on header

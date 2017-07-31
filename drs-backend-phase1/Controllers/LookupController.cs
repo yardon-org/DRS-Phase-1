@@ -111,7 +111,7 @@ namespace drs_backend_phase1.Controllers
         /// <returns>
         ///     List of Banks
         /// </returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllBases")]
         public IHttpActionResult FetchAllBases(bool isDeleted = false, int page = 1, int pageSize = 10)
@@ -141,7 +141,7 @@ namespace drs_backend_phase1.Controllers
         /// <param name="page">The page.</param>
         /// <param name="pageSize">Size of the page.</param>
         /// <returns></returns>
-      [Authorize(Roles = "PERSONNEL")]
+        [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
         [Route("fetchAllCCGs")]
         public IHttpActionResult FetchAllCCGs(bool isDeleted = false, int page = 1, int pageSize = 10)
