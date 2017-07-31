@@ -18,7 +18,10 @@ namespace drs_backend_phase1.Models
         public ShiftType()
         {
             this.ProfileShiftTypes = new HashSet<ProfileShiftType>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public int id { get; set; }
         public string name { get; set; }

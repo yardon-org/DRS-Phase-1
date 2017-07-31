@@ -39,7 +39,6 @@ namespace drs_backend_phase1
                     cfg.CreateMissingTypeMaps = true;
                     cfg.CreateMap<Profile, ProfileDTO>();
                     cfg.CreateMap<ProfileProfessional, ProfileProfessionalDTO>();
-                    cfg.CreateMap<SubType, SubTypeDTO>();
                     cfg.CreateMap<List<Profile>, List<ProfileDTO>>();
                     cfg.CreateMap<SecurityRole, SecurityRoleDTO>();
                     cfg.CreateMap<CCG, CCGDTO>();

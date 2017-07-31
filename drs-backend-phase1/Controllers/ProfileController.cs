@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Description;
 using System.Web.Http.OData;
 using AutoMapper;
 using drs_backend_phase1.Extensions;
@@ -29,24 +31,224 @@ namespace drs_backend_phase1.Controllers
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
-        ///     The database
+        ///     The database context
         /// </summary>
         private readonly DRSEntities _db;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProfileController" /> class.
+        ///     Initializes a new instance of the <see cref="ProfileController" /> class.
         /// </summary>
-
         public ProfileController()
         {
             _db = new DRSEntities();
         }
 
+<<<<<<< HEAD
         public ProfileController(DRSEntities repository)
         {
             _db = repository;
         }
 
+=======
+        #region Delete_Endpoints
+
+        /// <summary>
+        ///     Deletes a Profile by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>HttpActionResult</returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpDelete]
+        [Route("{id}")]
+        public virtual IHttpActionResult DeleteProfileById(int id)
+        {
+            Log.DebugFormat("ProfileController (DeleteProfileById)\n");
+
+            try
+            {
+                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
+
+                if (profile != null)
+                {
+                    _db.Profiles.Remove(profile);
+                    try
+                    {
+                        _db.SaveChanges();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        var myError = new Error
+                        {
+                            Code = "400",
+                            Message = "The entity being updated has already been updated by another user...",
+                            Data = null
+                        };
+                        return new ErrorResult(myError, Request);
+                    }
+                }
+
+                Log.DebugFormat("Retrieval of DeleteProfileById was successful.\n");
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
+
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error retrieving DeleteProfileById",
+                    Data = new object[] {ex.Message, ex.StackTrace}
+                };
+                return new ErrorResult(myError, Request);
+            }
+        }
+
+        #endregion
+
+        #region OData_Endpoints
+
+        /// <summary>
+        ///     OData endpoit.
+        /// </summary>
+        /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [EnableQuery(PageSize = 200)]
+        [Route("odata")]
+        public IQueryable<object> GetProfilesOData(bool includeDeleted = false)
+        {
+            Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
+
+            try
+            {
+                IQueryable<object> query = _db.Profiles
+                    .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted);
+
+                return query.AsQueryable();
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
+            }
+
+            return null;
+        }
+
+        #endregion
+
+        #region Post_Endpoints
+
+        /// <summary>
+        /// Posts the profile.
+        /// </summary>
+        /// <param name="profileDTO">The profile dto.</param>
+        /// <returns></returns>
+        [Authorize(Roles = "PERSONNEL")]
+        [HttpPost]
+        [Route("")]
+        public IHttpActionResult PostProfile([FromBody] ProfileDTO profileDTO)
+        {
+            var profileToAdd = Mapper.Map<Profile>(profileDTO);
+
+            try
+            {
+                _db.Profiles.Add(profileToAdd);
+                _db.SaveChanges();
+
+                using (var responseConn = new DRSEntities())
+                {
+                    var refreshedEntity = responseConn.Profiles.SingleOrDefault(x => x.id == profileToAdd.id);
+                    if (refreshedEntity != null)
+                    {
+                        Log.DebugFormat("Profile creation was successful.\n");
+                        return Ok(Mapper.Map<ProfileDTO>(refreshedEntity));
+                    }
+                }
+
+            }
+            catch (DbEntityValidationException ee)
+            {
+                return BadRequest(ee.DbEntityValidationResultToString());
+            }
+            catch (Exception ex)
+            {
+                Log.DebugFormat(
+                    $"Error running CheckPerformersList. The reason is as follows: {ex.Message} {ex.StackTrace}");
+                var myError = new Error
+                {
+                    Code = "400",
+                    Message = "Error running CheckPerformersList",
+                    Data = new object[] { ex.Message }
+                };
+                return new ErrorResult(myError, Request);
+            }
+
+            Log.DebugFormat("incomingProfileDTO cannot be null");
+            var myError2 = new Error
+            {
+                Code = "400",
+                Message = "incomingProfileDTO cannot be null",
+                Data = null
+            };
+            return new ErrorResult(myError2, Request);
+
+        }
+
+        #endregion
+
+        #region GraphDiff_Configuration
+
+        /// <summary>
+        ///     Configures the graph dif.
+        /// </summary>
+        /// <param name="profileToUpdate">The profile to update.</param>
+        private void ConfigureGraphDiff(Profile profileToUpdate)
+        {
+            // TODO: Add more entities to this
+
+            _db.UpdateGraph(profileToUpdate,
+                map => map.OwnedEntity(
+                        p => p.ProfileProfessional,
+                        with =>
+                            with.AssociatedEntity(p => p.Agency)
+                                .AssociatedEntity(p => p.Base)
+                                .AssociatedEntity(p => p.CCG)
+                                .AssociatedEntity(p => p.IndemnityProvider)
+                                .AssociatedEntity(p => p.JobType)
+                                .OwnedCollection(p => p.ProfilePaymentCategories, x => x.AssociatedEntity(p => p.PaymentCategory))
+                                .OwnedCollection(p => p.ProfileShiftTypes, x => x.AssociatedEntity(p => p.ShiftType))
+                                .AssociatedEntity(p => p.RegisteredSurgery)
+                                .AssociatedEntity(p => p.RegistrarLevel)
+                    )
+                    .OwnedCollection(p => p.ProfileDocuments)
+                    .OwnedCollection(p => p.SpecialNotes)
+                    .AssociatedEntity(p => p.SecurityRole)
+                    .OwnedEntity(p => p.ProfileFinance, x => x.AssociatedEntity(p => p.Bank))
+            );
+        }
+
+        #endregion
+
+        #region Disposing
+
+        /// <summary>
+        ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">
+        ///     true to release both managed and unmanaged resources; false to release only unmanaged
+        ///     resources.
+        /// </param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+                _db.Dispose();
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+>>>>>>> 1dc8e9114003a278b0b79f2a02f1bceac0238c2b
         #region Put_Endpoints
 
         /// <summary>
@@ -176,7 +378,7 @@ namespace drs_backend_phase1.Controllers
                     {
                         Code = "400",
                         Message = "Error running UpdateProfile",
-                        Data = new object[] { ex.Message, ex.StackTrace }
+                        Data = new object[] {ex.Message, ex.StackTrace}
                     };
                     return new ErrorResult(myError, Request);
                 }
@@ -191,65 +393,8 @@ namespace drs_backend_phase1.Controllers
             };
             return new ErrorResult(myError2, Request);
         }
+
         #endregion
-
-        #region Delete_Endpoints
-
-        /// <summary>
-        ///     Deletes a Profile by identifier.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>HttpActionResult</returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [HttpDelete]
-        [Route("{id}")]
-
-        public virtual IHttpActionResult DeleteProfileById(int id)
-        {
-            Log.DebugFormat("ProfileController (DeleteProfileById)\n");
-
-            try
-            {
-                var profile = _db.Profiles.SingleOrDefault(x => x.id == id);
-
-                if (profile != null)
-                {
-                    _db.Profiles.Remove(profile);
-                    try
-                    {
-                        _db.SaveChanges();
-                    }
-                    catch (DbUpdateConcurrencyException)
-                    {
-                        var myError = new Error
-                        {
-                            Code = "400",
-                            Message = "The entity being updated has already been updated by another user...",
-                            Data = null
-                        };
-                        return new ErrorResult(myError, Request);
-                    }
-                }
-
-                Log.DebugFormat("Retrieval of DeleteProfileById was successful.\n");
-                return Ok(true);
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat(
-                    $"Error retrieving DeleteProfileById. The reason is as follows: {ex.Message} {ex.StackTrace}");
-
-                var myError = new Error
-                {
-                    Code = "400",
-                    Message = "Error retrieving DeleteProfileById",
-                    Data = new object[] { ex.Message, ex.StackTrace }
-                };
-                return new ErrorResult(myError, Request);
-            }
-        }
-
-            #endregion
 
         #region Get_Endpoints
 
@@ -284,8 +429,7 @@ namespace drs_backend_phase1.Controllers
                 {
                     Code = "400",
                     Message = "Error retrieving Profiles",
-                    Data = new object[]{ex.Message,ex.StackTrace}
-                    
+                    Data = new object[] {ex.Message, ex.StackTrace}
                 };
                 return new ErrorResult(myError, Request);
             }
@@ -326,8 +470,7 @@ namespace drs_backend_phase1.Controllers
                 {
                     Code = "400",
                     Message = "Error retrieving FetchManyByTeamId",
-                    Data = new object[] { ex.Message, ex.StackTrace }
-
+                    Data = new object[] {ex.Message, ex.StackTrace}
                 };
                 return new ErrorResult(myError, Request);
             }
@@ -364,8 +507,7 @@ namespace drs_backend_phase1.Controllers
                 {
                     Code = "400",
                     Message = "Error retrieving ReadAllProfileById",
-                    Data = new object[] { ex.Message, ex.StackTrace }
-
+                    Data = new object[] {ex.Message, ex.StackTrace}
                 };
                 return new ErrorResult(myError, Request);
             }
@@ -398,7 +540,7 @@ namespace drs_backend_phase1.Controllers
                     .OrderBy(x => x.id)
                     .ToPagedList(page, pageSize).ToMappedPagedList<Profile, SlimProfileDTO>();
 
-                return Ok(new { metaData = profs.GetMetaData(), items = profs });
+                return Ok(new {metaData = profs.GetMetaData(), items = profs});
             }
             catch (Exception ex)
             {
@@ -408,93 +550,10 @@ namespace drs_backend_phase1.Controllers
                 {
                     Code = "400",
                     Message = "Error retrieving SearchProfiles",
-                    Data = new object[] { ex.Message, ex.StackTrace }
-
+                    Data = new object[] {ex.Message, ex.StackTrace}
                 };
                 return new ErrorResult(myError, Request);
             }
-        }
-
-
-        #endregion
-
-        #region OData_Endpoints
-
-        /// <summary>
-        ///     OData endpoit.
-        /// </summary>
-        /// <returns></returns>
-        [Authorize(Roles = "PERSONNEL")]
-        [EnableQuery(PageSize = 200)]
-        [Route("odata")]
-        public IQueryable<object> GetProfilesOData(bool includeDeleted = false)
-        {
-            Log.DebugFormat("ProfileController (ReadAllProfiles)\n");
-
-            try
-            {
-                IQueryable<object> query = _db.Profiles
-                    .Where(p => p.isDeleted == false || includeDeleted && p.isDeleted);
-
-                return query.AsQueryable();
-            }
-            catch (Exception ex)
-            {
-                Log.DebugFormat($"Error retrieving Profiles. The reason is as follows: {ex.Message} {ex.StackTrace}");
-            }
-
-            return null;
-        }
-
-            #endregion
-
-        #region GraphDiff_Configuration
-
-        /// <summary>
-        ///     Configures the graph dif.
-        /// </summary>
-        /// <param name="profileToUpdate">The profile to update.</param>
-        private void ConfigureGraphDiff(Profile profileToUpdate)
-        {
-            // TODO: Add more entities to this
-
-            _db.UpdateGraph(profileToUpdate,
-                map => map.OwnedEntity(
-                        p => p.ProfileProfessional,
-                        with =>
-                            with.AssociatedEntity(p => p.Agency)
-                                .AssociatedEntity(p => p.Base)
-                                .AssociatedEntity(p => p.CCG)
-                                .AssociatedEntity(p => p.IndemnityProvider)
-                                .AssociatedEntity(p => p.JobType)
-                                .OwnedCollection(p => p.ProfilePaymentCategories, x=>x.OwnedEntity(p=>p.PaymentCategory))
-                                .OwnedCollection(p => p.ProfileShiftTypes, x => x.OwnedEntity(p=>p.ShiftType))
-                                .AssociatedEntity(p => p.RegisteredSurgery)
-                                .AssociatedEntity(p => p.RegistrarLevel)
-                                .AssociatedEntity(p => p.SubType)
-                    )
-                    .OwnedCollection(p => p.ProfileDocuments)
-                    .OwnedCollection(p => p.SpecialNotes)
-                    .AssociatedEntity(p => p.SecurityRole)
-                    .AssociatedEntity(p => p.ProfileFinance)
-            );
-        }
-        #endregion
-
-        #region Disposing
-
-        /// <summary>
-        ///     Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
-        /// </summary>
-        /// <param name="disposing">
-        ///     true to release both managed and unmanaged resources; false to release only unmanaged
-        ///     resources.
-        /// </param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-                _db.Dispose();
-            base.Dispose(disposing);
         }
 
         #endregion

@@ -18,7 +18,10 @@ namespace drs_backend_phase1.Models
         public ProfileFinance()
         {
             this.Profiles = new HashSet<Profile>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public string payrollNumber { get; set; }
         public bool isIc24Staff { get; set; }

@@ -59,7 +59,10 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
 <#
         }
 #>
+       OnCreated();
     }
+
+	partial void OnCreated();
 
 <#
     }

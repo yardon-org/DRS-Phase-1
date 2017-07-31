@@ -164,6 +164,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -301,6 +302,7 @@
     <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="ErrorHandler\ErrorHandler.cs" />
+    <Compile Include="Extensions\DbEntityValidationExtensions.cs" />
     <Compile Include="Extensions\PagingExtensions.cs" />
     <Compile Include="Filter\ValidateModelStateFilter.cs" />
     <Compile Include="Filter\HMACAuthenticationAttribute.cs" />
@@ -342,6 +344,7 @@
     <Compile Include="Models\IndemnityProvider.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Initialisers\ObjectInitialisers.cs" />
     <Compile Include="Models\JobType.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
@@ -407,7 +410,6 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Controllers\SubTypeController.cs" />
     <Compile Include="Controllers\PafController.cs" />
     <Compile Include="Controllers\JobTypeController.cs" />
     <Compile Include="Global.asax.cs">

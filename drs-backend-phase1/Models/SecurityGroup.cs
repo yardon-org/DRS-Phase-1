@@ -18,7 +18,10 @@ namespace drs_backend_phase1.Models
         public SecurityGroup()
         {
             this.SecurityPermissions = new HashSet<SecurityPermission>();
+           OnCreated();
         }
+    
+    	partial void OnCreated();
     
         public byte groupId { get; set; }
         public string groupName { get; set; }
