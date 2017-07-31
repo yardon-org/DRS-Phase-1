@@ -43,13 +43,6 @@ namespace drs_backend_phase1.Controllers
             _db = new DRSEntities();
         }
 
-<<<<<<< HEAD
-        public ProfileController(DRSEntities repository)
-        {
-            _db = repository;
-        }
-
-=======
         #region Delete_Endpoints
 
         /// <summary>
@@ -248,7 +241,6 @@ namespace drs_backend_phase1.Controllers
 
         #endregion
 
->>>>>>> 1dc8e9114003a278b0b79f2a02f1bceac0238c2b
         #region Put_Endpoints
 
         /// <summary>

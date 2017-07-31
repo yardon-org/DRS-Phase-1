@@ -276,7 +276,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\UnitTests\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -351,8 +350,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DRSModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\MockSetup\FakeProfiles.cs" />
-    <Compile Include="Models\MockTestData.cs" />
     <Compile Include="Models\DTOs\SuperSlim\ProfileSuperSlimDTO.cs" />
     <Compile Include="Models\DTOs\Compound\ProfileCompoundDTO.cs" />
     <Compile Include="Models\IndemnityProvider.cs">
