@@ -221,6 +221,7 @@ namespace DRS_Phase1_UnitTests
             _mockContext = new Mock<DRSEntities>();
             _testProfileList[2].isDeleted = false;
             _queryProfileList = _testProfileList.AsQueryable();
+            _queryProfessionalList = _testProfessional.AsQueryable();
         }
 
         #region "ProfileController"
@@ -321,6 +322,35 @@ namespace DRS_Phase1_UnitTests
                        select fp.isDeleted).Single();
 
             Assert.AreEqual(true, prof);
+        }
+
+        [TestMethod]
+        public void FetchManyByTeamId_Returns_Many()
+        {
+            var mockSet = new Mock<DbSet<Profile>>();
+
+            mockSet.As<IQueryable<Profile>>().Setup(m => m.Provider).Returns(_queryProfileList.Provider);
+            //mockSet.As<IQueryable<ProfileProfessional>>().Setup(m => m.Provider).Returns(_queryProfessionalList.Provider);
+            mockSet.As<IQueryable<Profile>>().Setup(m => m.Expression).Returns(_queryProfileList.Expression);
+            //mockSet.As<IQueryable<ProfileProfessional>>().Setup(m => m.Expression).Returns(_queryProfessionalList.Expression);
+            mockSet.As<IQueryable<Profile>>().Setup(m => m.ElementType).Returns(_queryProfileList.ElementType);
+            //mockSet.As<IQueryable<ProfileProfessional>>().Setup(m => m.ElementType).Returns(_queryProfessionalList.ElementType);
+            mockSet.As<IQueryable<Profile>>().Setup(m => m.GetEnumerator()).Returns(_queryProfileList.GetEnumerator);
+            //mockSet.As<IQueryable<ProfileProfessional>>().Setup(m => m.GetEnumerator()).Returns(_queryProfessionalList.GetEnumerator());
+
+            _mockContext.Setup(c => c.Profiles).Returns(mockSet.Object);
+
+            var p = new ProfileController(_mockContext.Object);
+
+            p.FetchManyByTeamId(2);
+
+            dynamic actionResult = p.FetchAllProfiles(true);
+            dynamic content = actionResult.Content;
+
+            // Assert
+
+            Assert.AreEqual(3, content.items.Count);
+
         }
         #endregion
         #region "EMail Controller"
