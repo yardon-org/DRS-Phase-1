@@ -18,6 +18,8 @@ namespace DRS_Phase1_UnitTests
     [TestClass]
     public class ControllerUnitTest
     {
+        static List<ProfileProfessional> _testProfessional;
+        static IQueryable<ProfileProfessional> _queryProfessionalList;
         static List<Profile> _testProfileList;
         static IQueryable<Profile> _queryProfileList;
         static Mock<DRSEntities> _mockContext;
@@ -57,7 +59,99 @@ namespace DRS_Phase1_UnitTests
 
             Mapper.AssertConfigurationIsValid();
 
-
+            _testProfessional = new List<ProfileProfessional>
+            {
+                new ProfileProfessional
+                {
+                    agencyId = 1,
+                    dateCreated = DateTime.Now,
+                    gmcNumber="G12345678",
+                    ccgId=1,
+                    id=1,
+                    baseId=1,
+                    indemnityExpiryDate = new DateTime(2018,4,13),
+                    registeredSurgeryId = 1,
+                    teamId = 1,
+                    registrarLevelId= 1,
+                    nmcNumber = "nmc001",
+                    dateModified = DateTime.Now,
+                    isDeleted=false,
+                    hcpcNumber = "hcpc001",
+                    jobTypeId = 1
+                },
+                new ProfileProfessional
+                {
+                    agencyId = 1,
+                    dateCreated = DateTime.Now,
+                    gmcNumber="G12345679",
+                    ccgId=1,
+                    id=2,
+                    baseId=1,
+                    indemnityExpiryDate = new DateTime(2018,4,14),
+                    registeredSurgeryId = 2,
+                    teamId = 1,
+                    registrarLevelId= 1,
+                    nmcNumber = "nmc002",
+                    dateModified = DateTime.Now,
+                    isDeleted=false,
+                    hcpcNumber = "hcpc002",
+                    jobTypeId = 1
+                },
+                new ProfileProfessional
+                {
+                    agencyId = 1,
+                    dateCreated = DateTime.Now,
+                    gmcNumber="G12345680",
+                    ccgId=1,
+                    id=3,
+                    baseId=1,
+                    indemnityExpiryDate = new DateTime(2018,4,14),
+                    registeredSurgeryId = 2,
+                    teamId = 1,
+                    registrarLevelId= 1,
+                    nmcNumber = "nmc003",
+                    dateModified = DateTime.Now,
+                    isDeleted=false,
+                    hcpcNumber = "hcpc003",
+                    jobTypeId = 1
+                },
+                new ProfileProfessional
+                {
+                    agencyId = 2,
+                    dateCreated = DateTime.Now,
+                    gmcNumber="G12345681",
+                    ccgId=1,
+                    id=4,
+                    baseId=1,
+                    indemnityExpiryDate = new DateTime(2018,4,14),
+                    registeredSurgeryId = 3,
+                    teamId = 2,
+                    registrarLevelId= 1,
+                    nmcNumber = "nmc004",
+                    dateModified = DateTime.Now,
+                    isDeleted=false,
+                    hcpcNumber = "hcpc004",
+                    jobTypeId = 2
+                },
+                new ProfileProfessional
+                {
+                    agencyId = 2,
+                    dateCreated = DateTime.Now,
+                    gmcNumber="G12345682",
+                    ccgId=1,
+                    id=5,
+                    baseId=1,
+                    indemnityExpiryDate = new DateTime(2018,4,14),
+                    registeredSurgeryId = 2,
+                    teamId = 2,
+                    registrarLevelId= 2,
+                    nmcNumber = "nmc005",
+                    dateModified = DateTime.Now,
+                    isDeleted=false,
+                    hcpcNumber = "hcpc005",
+                    jobTypeId = 3
+                }
+            };
 
             _testProfileList = new List<Profile>
             {
@@ -72,7 +166,8 @@ namespace DRS_Phase1_UnitTests
                     lastName = "Bloggs",
                     homeEmail = "me@me.com",
                     postcode = "PO5 T00",
-                    id = 1
+                    id = 1,
+                    ProfileProfessional = _testProfessional[0]
                 },
                 new Profile
                 {
@@ -85,7 +180,8 @@ namespace DRS_Phase1_UnitTests
                     lastName = "Bloggs",
                     homeEmail = "him@me.com",
                     postcode = "PO5 T01",
-                    id = 2
+                    id = 2,
+                    ProfileProfessional = _testProfessional[1]
                 },
                 new Profile
                 {
@@ -98,7 +194,8 @@ namespace DRS_Phase1_UnitTests
                     lastName = "Bloggs",
                     homeEmail = "her@me.com",
                     postcode = "PO5 T02",
-                    id = 3
+                    id = 3,
+                    ProfileProfessional = _testProfessional[2]
                 },
                 new Profile
                 {
@@ -112,7 +209,8 @@ namespace DRS_Phase1_UnitTests
                     homeEmail = "deleted@me.com",
                     postcode = "PO5 T02",
                     id = 4,
-                    isDeleted = true
+                    isDeleted = true,
+                    ProfileProfessional = _testProfessional[3]
                 }
             };
         }
