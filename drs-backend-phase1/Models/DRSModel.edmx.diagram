@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="DRSModel.JobType" Width="1.5" PointX="3" PointY="19.625" />
         <EntityTypeShape EntityType="DRSModel.PaymentCategory" Width="1.5" PointX="8.25" PointY="13.125" />
         <EntityTypeShape EntityType="DRSModel.Profile" Width="1.5" PointX="7.5" PointY="0.75" />
-        <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="12.75" PointY="2.375" />
         <EntityTypeShape EntityType="DRSModel.ProfileFinance" Width="1.5" PointX="5.25" PointY="0.75" />
         <EntityTypeShape EntityType="DRSModel.ProfilePaymentCategory" Width="1.5" PointX="10.5" PointY="8.875" />
         <EntityTypeShape EntityType="DRSModel.ProfileProfessional" Width="1.5" PointX="5.25" PointY="6" />
@@ -34,13 +33,11 @@
         <AssociationConnector Association="DRSModel.fk_Base" />
         <AssociationConnector Association="DRSModel.fk_Team" />
         <AssociationConnector Association="DRSModel.fk_CCG" />
-        <AssociationConnector Association="DRSModel.fk_DocumentType" />
         <AssociationConnector Association="DRSModel.fk_Indemnity" />
         <AssociationConnector Association="DRSModel.FK_ProfileProfessional_JobType" />
         <AssociationConnector Association="DRSModel.fk_PaymentCategory" />
         <AssociationConnector Association="DRSModel.fk_97adea54804aa384c890cd6c3ae" />
         <AssociationConnector Association="DRSModel.fk_a68f954b809d3a2fc2a21cb61b5" />
-        <AssociationConnector Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" />
         <AssociationConnector Association="DRSModel.fk_e7569dcf417e285aff79a7581cb" />
         <AssociationConnector Association="DRSModel.FK_Profile_SecurityRole" />
         <AssociationConnector Association="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" />
@@ -52,6 +49,9 @@
         <AssociationConnector Association="DRSModel.FK__SecurityP__Group__382F5661" />
         <AssociationConnector Association="DRSModel.FK__SecurityP__Right__3A179ED3" />
         <AssociationConnector Association="DRSModel.FK__SecurityP__RoleI__39237A9A" />
+        <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="12.75" PointY="6.25" />
+        <AssociationConnector Association="DRSModel.fk_DocumentType" />
+        <AssociationConnector Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

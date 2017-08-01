@@ -7,16 +7,19 @@ using Thinktecture.IdentityModel.Tokens;
 
 namespace drs_backend_phase1.Provider
 {
+    /// <summary>
+    /// Formats the retuned JWT token
+    /// </summary>
+    /// <seealso cref="Microsoft.Owin.Security.ISecureDataFormat{Microsoft.Owin.Security.AuthenticationTicket}" />
     public class CustomJwtFormat : ISecureDataFormat<AuthenticationTicket>
     {
-
-        private const string AudienceId = "as:AudienceId";
-        private const string AudienceSecret = "as:AudienceSecret";
-
+        /// <summary>
+        /// The issuer
+        /// </summary>
         private readonly string _issuer;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomJwtFormat"/> class.
+        /// Initializes a new instance of the <see cref="CustomJwtFormat" /> class.
         /// </summary>
         /// <param name="issuer">The issuer.</param>
         public CustomJwtFormat(string issuer)
@@ -59,6 +62,12 @@ namespace drs_backend_phase1.Provider
             return jwt;
         }
 
+        /// <summary>
+        /// Unprotects the specified protected text.
+        /// </summary>
+        /// <param name="protectedText">The protected text.</param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public AuthenticationTicket Unprotect(string protectedText)
         {
             throw new NotImplementedException();

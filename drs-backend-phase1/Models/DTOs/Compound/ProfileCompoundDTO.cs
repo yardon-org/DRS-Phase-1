@@ -676,14 +676,6 @@ namespace drs_backend_phase1.Models.DTOs
         public string originalFileName { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of the multer file.
-        /// </summary>
-        /// <value>
-        /// The name of the multer file.
-        /// </value>
-        public string multerFileName { get; set; }
-
-        /// <summary>
         /// Gets or sets the type of the MIME.
         /// </summary>
         /// <value>
@@ -722,6 +714,14 @@ namespace drs_backend_phase1.Models.DTOs
         /// The identifier.
         /// </value>
         public int id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the document data.
+        /// </summary>
+        /// <value>
+        /// The document data.
+        /// </value>
+        public string documentData { get; set; }
 
         //public DateTime dateCreated { get; set; }
 

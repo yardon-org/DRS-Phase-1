@@ -1,0 +1,74 @@
+2017-07-31 11:17:16,320 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 11:17:51,780 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 11:18:31,984 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 11:20:53,911 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 11:21:03,585 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 11:25:42,661 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 11:25:50,759 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 11:34:01,467 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 11:34:06,697 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 11:36:50,485 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 11:36:56,973 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:17:05,751 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:17:07,741 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:18:28,362 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:18:29,728 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:23:11,125 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:23:12,418 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:25:40,989 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:25:41,698 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:30:20,408 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:30:21,202 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:31:17,262 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:31:17,992 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:32:32,529 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:32:32,699 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:34:07,299 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:34:07,459 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:34:49,718 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:34:50,409 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:39:56,113 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:39:56,886 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:45:34,582 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:45:35,394 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 13:48:25,540 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 13:48:26,242 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 14:15:28,296 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 14:15:29,234 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 14:24:55,594 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Attempting to log in via the internal service...
+
+2017-07-31 14:24:56,413 DEBUG (null) (null) (null) drs_backend_phase1.Provider.CustomOAuthProvider - Successfully retrieved active directory credentials for: pfoster1
+2017-07-31 14:42:55,253 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.LookupController - LookupController (FetchAllCCGs)
+
+2017-07-31 14:43:50,747 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.LookupController - LookupController (FetchAllCCGs)
+
+2017-07-31 14:45:07,962 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.LookupController - LookupController (FetchAllCCGs)
+
+2017-07-31 14:53:42,153 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.LookupController - LookupController (FetchAllCCGs)
+
+2017-07-31 14:56:42,845 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.LookupController - LookupController (FetchAllCCGs)
+
+2017-07-31 14:59:39,912 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.LookupController - LookupController (FetchAllCCGs)
+
+2017-07-31 16:00:48,004 DEBUG (null) (null) (null) drs_backend_phase1.Controllers.LookupController - LookupController (FetchAllCCGs)
+

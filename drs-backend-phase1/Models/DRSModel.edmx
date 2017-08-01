@@ -135,11 +135,11 @@
           </Key>
           <Property Name="documentTypeId" Type="int" />
           <Property Name="originalFileName" Type="nvarchar" MaxLength="255" />
-          <Property Name="multerFileName" Type="nvarchar" MaxLength="255" />
           <Property Name="mimeType" Type="nvarchar" MaxLength="255" />
           <Property Name="dateObtained" Type="datetime" />
           <Property Name="dateExpires" Type="datetime" />
           <Property Name="profileId" Type="int" />
+          <Property Name="documentData" Type="varchar(max)" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
@@ -741,7 +741,6 @@
           <EntitySet Name="JobTypes" EntityType="DRSModel.JobType" />
           <EntitySet Name="PaymentCategories" EntityType="DRSModel.PaymentCategory" />
           <EntitySet Name="Profiles" EntityType="DRSModel.Profile" />
-          <EntitySet Name="ProfileDocuments" EntityType="DRSModel.ProfileDocument" />
           <EntitySet Name="ProfileFinances" EntityType="DRSModel.ProfileFinance" />
           <EntitySet Name="ProfilePaymentCategories" EntityType="DRSModel.ProfilePaymentCategory" />
           <EntitySet Name="ProfileProfessionals" EntityType="DRSModel.ProfileProfessional" />
@@ -776,10 +775,6 @@
             <End Role="CCG" EntitySet="CCGs" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
           </AssociationSet>
-          <AssociationSet Name="fk_DocumentType" Association="DRSModel.fk_DocumentType">
-            <End Role="DocumentType" EntitySet="DocumentTypes" />
-            <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
-          </AssociationSet>
           <AssociationSet Name="fk_Indemnity" Association="DRSModel.fk_Indemnity">
             <End Role="IndemnityProvider" EntitySet="IndemnityProviders" />
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
@@ -799,10 +794,6 @@
           <AssociationSet Name="fk_a68f954b809d3a2fc2a21cb61b5" Association="DRSModel.fk_a68f954b809d3a2fc2a21cb61b5">
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
             <End Role="Profile" EntitySet="Profiles" />
-          </AssociationSet>
-          <AssociationSet Name="fk_c000a0f2b66dd4a69ad36de6460" Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460">
-            <End Role="Profile" EntitySet="Profiles" />
-            <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
           </AssociationSet>
           <AssociationSet Name="fk_e7569dcf417e285aff79a7581cb" Association="DRSModel.fk_e7569dcf417e285aff79a7581cb">
             <End Role="ProfileFinance" EntitySet="ProfileFinances" />
@@ -847,6 +838,15 @@
           <AssociationSet Name="FK__SecurityP__RoleI__39237A9A" Association="DRSModel.FK__SecurityP__RoleI__39237A9A">
             <End Role="SecurityRole" EntitySet="SecurityRoles" />
             <End Role="SecurityPermission" EntitySet="SecurityPermissions" />
+          </AssociationSet>
+          <EntitySet Name="ProfileDocuments" EntityType="DRSModel.ProfileDocument" />
+          <AssociationSet Name="fk_DocumentType" Association="DRSModel.fk_DocumentType">
+            <End Role="DocumentType" EntitySet="DocumentTypes" />
+            <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_c000a0f2b66dd4a69ad36de6460" Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460">
+            <End Role="Profile" EntitySet="Profiles" />
+            <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Agency">
@@ -983,28 +983,9 @@
           <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="SpecialNotes" Relationship="DRSModel.fk_97adea54804aa384c890cd6c3ae" FromRole="Profile" ToRole="SpecialNote" />
           <NavigationProperty Name="ProfileProfessional" Relationship="DRSModel.fk_a68f954b809d3a2fc2a21cb61b5" FromRole="Profile" ToRole="ProfileProfessional" />
-          <NavigationProperty Name="ProfileDocuments" Relationship="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" FromRole="Profile" ToRole="ProfileDocument" />
           <NavigationProperty Name="ProfileFinance" Relationship="DRSModel.fk_e7569dcf417e285aff79a7581cb" FromRole="Profile" ToRole="ProfileFinance" />
           <NavigationProperty Name="SecurityRole" Relationship="DRSModel.FK_Profile_SecurityRole" FromRole="Profile" ToRole="SecurityRole" />
-        </EntityType>
-        <EntityType Name="ProfileDocument">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="documentTypeId" Type="Int32" />
-          <Property Name="originalFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="multerFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="mimeType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="dateObtained" Type="DateTime" Precision="3" />
-          <Property Name="dateExpires" Type="DateTime" Precision="3" />
-          <Property Name="profileId" Type="Int32" />
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="DocumentType" Relationship="DRSModel.fk_DocumentType" FromRole="ProfileDocument" ToRole="DocumentType" />
-          <NavigationProperty Name="Profile" Relationship="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
+          <NavigationProperty Name="ProfileDocuments" Relationship="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" FromRole="Profile" ToRole="ProfileDocument" />
         </EntityType>
         <EntityType Name="ProfileFinance">
           <Key>
@@ -1299,18 +1280,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_DocumentType">
-          <End Type="DRSModel.DocumentType" Role="DocumentType" Multiplicity="0..1" />
-          <End Type="DRSModel.ProfileDocument" Role="ProfileDocument" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DocumentType">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ProfileDocument">
-              <PropertyRef Name="documentTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_Indemnity">
           <End Type="DRSModel.IndemnityProvider" Role="IndemnityProvider" Multiplicity="0..1" />
           <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
@@ -1368,18 +1337,6 @@
             </Principal>
             <Dependent Role="Profile">
               <PropertyRef Name="profileProfessionalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_c000a0f2b66dd4a69ad36de6460">
-          <End Type="DRSModel.Profile" Role="Profile" Multiplicity="0..1" />
-          <End Type="DRSModel.ProfileDocument" Role="ProfileDocument" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Profile">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ProfileDocument">
-              <PropertyRef Name="profileId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1512,6 +1469,49 @@
             </Principal>
             <Dependent Role="SecurityPermission">
               <PropertyRef Name="roleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ProfileDocument">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="documentTypeId" Type="Int32" />
+          <Property Name="originalFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mimeType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dateObtained" Type="DateTime" Precision="3" />
+          <Property Name="dateExpires" Type="DateTime" Precision="3" />
+          <Property Name="profileId" Type="Int32" />
+          <Property Name="documentData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="DocumentType" Relationship="DRSModel.fk_DocumentType" FromRole="ProfileDocument" ToRole="DocumentType" />
+          <NavigationProperty Name="Profile" Relationship="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" FromRole="ProfileDocument" ToRole="Profile" />
+        </EntityType>
+        <Association Name="fk_DocumentType">
+          <End Type="DRSModel.DocumentType" Role="DocumentType" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileDocument" Role="ProfileDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProfileDocument">
+              <PropertyRef Name="documentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_c000a0f2b66dd4a69ad36de6460">
+          <End Type="DRSModel.Profile" Role="Profile" Multiplicity="0..1" />
+          <End Type="DRSModel.ProfileDocument" Role="ProfileDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProfileDocument">
+              <PropertyRef Name="profileId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1651,24 +1651,6 @@
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
                 <ScalarProperty Name="middleNames" ColumnName="middleNames" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProfileDocuments">
-            <EntityTypeMapping TypeName="DRSModel.ProfileDocument">
-              <MappingFragment StoreEntitySet="ProfileDocument">
-                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="profileId" ColumnName="profileId" />
-                <ScalarProperty Name="dateExpires" ColumnName="dateExpires" />
-                <ScalarProperty Name="dateObtained" ColumnName="dateObtained" />
-                <ScalarProperty Name="mimeType" ColumnName="mimeType" />
-                <ScalarProperty Name="multerFileName" ColumnName="multerFileName" />
-                <ScalarProperty Name="originalFileName" ColumnName="originalFileName" />
-                <ScalarProperty Name="documentTypeId" ColumnName="documentTypeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1886,6 +1868,24 @@
                 <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProfileDocuments">
+            <EntityTypeMapping TypeName="DRSModel.ProfileDocument">
+              <MappingFragment StoreEntitySet="ProfileDocument">
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="documentData" ColumnName="documentData" />
+                <ScalarProperty Name="profileId" ColumnName="profileId" />
+                <ScalarProperty Name="dateExpires" ColumnName="dateExpires" />
+                <ScalarProperty Name="dateObtained" ColumnName="dateObtained" />
+                <ScalarProperty Name="mimeType" ColumnName="mimeType" />
+                <ScalarProperty Name="originalFileName" ColumnName="originalFileName" />
+                <ScalarProperty Name="documentTypeId" ColumnName="documentTypeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

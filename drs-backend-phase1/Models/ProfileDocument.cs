@@ -16,11 +16,11 @@ namespace drs_backend_phase1.Models
     {
         public Nullable<int> documentTypeId { get; set; }
         public string originalFileName { get; set; }
-        public string multerFileName { get; set; }
         public string mimeType { get; set; }
         public Nullable<System.DateTime> dateObtained { get; set; }
         public Nullable<System.DateTime> dateExpires { get; set; }
         public Nullable<int> profileId { get; set; }
+        public string documentData { get; set; }
         public int id { get; set; }
         public System.DateTime dateCreated { get; set; }
         public System.DateTime dateModified { get; set; }
