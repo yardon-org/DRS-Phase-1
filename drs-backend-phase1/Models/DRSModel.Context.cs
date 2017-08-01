@@ -46,7 +46,6 @@ namespace drs_backend_phase1.Models
         public virtual DbSet<SecurityRole> SecurityRoles { get; set; }
         public virtual DbSet<ShiftType> ShiftTypes { get; set; }
         public virtual DbSet<SpecialNote> SpecialNotes { get; set; }
-        public virtual DbSet<SubType> SubTypes { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<ProfileDocument> ProfileDocuments { get; set; }
     }

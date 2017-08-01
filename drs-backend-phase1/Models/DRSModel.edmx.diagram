@@ -26,7 +26,6 @@
         <EntityTypeShape EntityType="DRSModel.SecurityRole" Width="1.5" PointX="5.25" PointY="16.25" />
         <EntityTypeShape EntityType="DRSModel.ShiftType" Width="1.5" PointX="5.25" PointY="21.125" />
         <EntityTypeShape EntityType="DRSModel.SpecialNote" Width="1.5" PointX="9.75" PointY="2.875" />
-        <EntityTypeShape EntityType="DRSModel.SubType" Width="1.5" PointX="3" PointY="29.75" />
         <EntityTypeShape EntityType="DRSModel.Team" Width="1.5" PointX="0.75" PointY="9.125" />
         <AssociationConnector Association="DRSModel.fk_Agency" />
         <AssociationConnector Association="DRSModel.fk_Bank" />
@@ -41,7 +40,6 @@
         <AssociationConnector Association="DRSModel.fk_e7569dcf417e285aff79a7581cb" />
         <AssociationConnector Association="DRSModel.FK_Profile_SecurityRole" />
         <AssociationConnector Association="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" />
-        <AssociationConnector Association="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" />
         <AssociationConnector Association="DRSModel.fk_eab3618488d653242b55e486b64" />
         <AssociationConnector Association="DRSModel.fk_RegisteredSurgery" />
         <AssociationConnector Association="DRSModel.fk_RegistrarLevel" />

@@ -325,19 +325,6 @@
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
-        <EntityType Name="SubType">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="isAgency" Type="bit" Nullable="false" />
-          <Property Name="isRegistrar" Type="bit" Nullable="false" />
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="isDeleted" Type="bit" Nullable="false" />
-          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
-        </EntityType>
         <EntityType Name="Team">
           <Key>
             <PropertyRef Name="id" />
@@ -636,7 +623,6 @@
           <EntitySet Name="SecurityRole" EntityType="Self.SecurityRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShiftType" EntityType="Self.ShiftType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SpecialNote" EntityType="Self.SpecialNote" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SubType" EntityType="Self.SubType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__SecurityP__Group__382F5661" Association="Self.FK__SecurityP__Group__382F5661">
             <End Role="SecurityGroup" EntitySet="SecurityGroup" />
@@ -753,7 +739,6 @@
           <EntitySet Name="SecurityRoles" EntityType="DRSModel.SecurityRole" />
           <EntitySet Name="ShiftTypes" EntityType="DRSModel.ShiftType" />
           <EntitySet Name="SpecialNotes" EntityType="DRSModel.SpecialNote" />
-          <EntitySet Name="SubTypes" EntityType="DRSModel.SubType" />
           <EntitySet Name="Teams" EntityType="DRSModel.Team" />
           <AssociationSet Name="fk_Agency" Association="DRSModel.fk_Agency">
             <End Role="Agency" EntitySet="Agencies" />
@@ -806,10 +791,6 @@
           <AssociationSet Name="fk_a99f1e86833eaeda0198ae4d8fc" Association="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc">
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
             <End Role="ProfilePaymentCategory" EntitySet="ProfilePaymentCategories" />
-          </AssociationSet>
-          <AssociationSet Name="fk_b9e3709fcadd3d69eb7b7c8cc03" Association="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03">
-            <End Role="SubType" EntitySet="SubTypes" />
-            <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
           </AssociationSet>
           <AssociationSet Name="fk_eab3618488d653242b55e486b64" Association="DRSModel.fk_eab3618488d653242b55e486b64">
             <End Role="ProfileProfessional" EntitySet="ProfileProfessionals" />
@@ -1060,7 +1041,6 @@
           <NavigationProperty Name="JobType" Relationship="DRSModel.FK_ProfileProfessional_JobType" FromRole="ProfileProfessional" ToRole="JobType" />
           <NavigationProperty Name="Profiles" Relationship="DRSModel.fk_a68f954b809d3a2fc2a21cb61b5" FromRole="ProfileProfessional" ToRole="Profile" />
           <NavigationProperty Name="ProfilePaymentCategories" Relationship="DRSModel.fk_a99f1e86833eaeda0198ae4d8fc" FromRole="ProfileProfessional" ToRole="ProfilePaymentCategory" />
-          <NavigationProperty Name="SubType" Relationship="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="ProfileProfessional" ToRole="SubType" />
           <NavigationProperty Name="ProfileShiftTypes" Relationship="DRSModel.fk_eab3618488d653242b55e486b64" FromRole="ProfileProfessional" ToRole="ProfileShiftType" />
           <NavigationProperty Name="RegisteredSurgery" Relationship="DRSModel.fk_RegisteredSurgery" FromRole="ProfileProfessional" ToRole="RegisteredSurgery" />
           <NavigationProperty Name="RegistrarLevel" Relationship="DRSModel.fk_RegistrarLevel" FromRole="ProfileProfessional" ToRole="RegistrarLevel" />
@@ -1193,20 +1173,6 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Profile" Relationship="DRSModel.fk_97adea54804aa384c890cd6c3ae" FromRole="SpecialNote" ToRole="Profile" />
-        </EntityType>
-        <EntityType Name="SubType">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="isAgency" Type="Boolean" Nullable="false" />
-          <Property Name="isRegistrar" Type="Boolean" Nullable="false" />
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="rowVersion" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="ProfileProfessionals" Relationship="DRSModel.fk_b9e3709fcadd3d69eb7b7c8cc03" FromRole="SubType" ToRole="ProfileProfessional" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -1373,18 +1339,6 @@
             </Principal>
             <Dependent Role="ProfilePaymentCategory">
               <PropertyRef Name="profileProfessionalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_b9e3709fcadd3d69eb7b7c8cc03">
-          <End Type="DRSModel.SubType" Role="SubType" Multiplicity="0..1" />
-          <End Type="DRSModel.ProfileProfessional" Role="ProfileProfessional" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SubType">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ProfileProfessional">
-              <PropertyRef Name="subTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1842,20 +1796,6 @@
                 <ScalarProperty Name="profileId" ColumnName="profileId" />
                 <ScalarProperty Name="noteText" ColumnName="noteText" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SubTypes">
-            <EntityTypeMapping TypeName="DRSModel.SubType">
-              <MappingFragment StoreEntitySet="SubType">
-                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
-                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="isRegistrar" ColumnName="isRegistrar" />
-                <ScalarProperty Name="isAgency" ColumnName="isAgency" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

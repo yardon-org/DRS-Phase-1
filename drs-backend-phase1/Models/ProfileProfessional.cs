@@ -63,7 +63,6 @@ namespace drs_backend_phase1.Models
         public virtual ICollection<Profile> Profiles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfilePaymentCategory> ProfilePaymentCategories { get; set; }
-        public virtual SubType SubType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProfileShiftType> ProfileShiftTypes { get; set; }
         public virtual RegisteredSurgery RegisteredSurgery { get; set; }

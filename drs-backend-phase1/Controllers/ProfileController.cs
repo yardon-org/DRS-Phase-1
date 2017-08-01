@@ -63,7 +63,8 @@ namespace drs_backend_phase1.Controllers
 
                 if (profile != null)
                 {
-                    _db.Profiles.Remove(profile);
+                    profile.isDeleted=true;
+
                     try
                     {
                         _db.SaveChanges();

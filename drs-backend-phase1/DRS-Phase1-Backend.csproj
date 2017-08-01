@@ -405,9 +405,6 @@
     <Compile Include="Models\SpecialNote.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SubType.cs">
-      <DependentUpon>DRSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Team.cs">
       <DependentUpon>DRSModel.tt</DependentUpon>
     </Compile>
