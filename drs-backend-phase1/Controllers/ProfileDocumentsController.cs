@@ -8,13 +8,11 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Results;
 using drs_backend_phase1.Extensions;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Models.DTOs;
-using drs_backend_phase1.Models.DTOs.SuperSlim;
 using log4net;
 
 namespace drs_backend_phase1.Controllers
@@ -47,8 +45,8 @@ namespace drs_backend_phase1.Controllers
         /// <returns></returns>
         [Authorize(Roles = "PERSONNEL")]
         [HttpGet]
-        [Route("fetchProfileDocsByProfId")]
-        public IHttpActionResult FetchListOfAllFilesByProfileId(int profileId, bool includeDeleted = false, int page = 1, int pageSize = 10)
+        [Route("fetchProfileDocMetaByProfId")]
+        public IHttpActionResult FetchListOfProfileDocMetaByProfileId(int profileId, bool includeDeleted = false, int page = 1, int pageSize = 10)
         {
             Log.DebugFormat("ProfileDocumentsController (FetchListOfAllFilesByProfileId)\n");
             try
