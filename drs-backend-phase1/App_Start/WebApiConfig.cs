@@ -20,7 +20,7 @@ namespace drs_backend_phase1
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 "DefaultApi",
-                "{controller}/{action}/{id}",
+                "{controller}/{action}",
                 new {id = RouteParameter.Optional});
         }
     }
