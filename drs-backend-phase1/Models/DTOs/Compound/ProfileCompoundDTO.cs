@@ -721,7 +721,7 @@ namespace drs_backend_phase1.Models.DTOs
         /// <value>
         /// The document data.
         /// </value>
-        public string documentData { get; set; }
+        public byte[] documentData { get; set; }
 
         //public DateTime dateCreated { get; set; }
 

@@ -52,7 +52,7 @@
         <EntityTypeShape EntityType="DRSModel.ProfileDocument" Width="1.5" PointX="12.75" PointY="6.25" />
         <AssociationConnector Association="DRSModel.fk_DocumentType" />
         <AssociationConnector Association="DRSModel.fk_c000a0f2b66dd4a69ad36de6460" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

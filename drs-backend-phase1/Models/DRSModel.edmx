@@ -139,7 +139,7 @@
           <Property Name="dateObtained" Type="datetime" />
           <Property Name="dateExpires" Type="datetime" />
           <Property Name="profileId" Type="int" />
-          <Property Name="documentData" Type="varchar(max)" />
+          <Property Name="documentData" Type="varbinary(max)" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="dateModified" Type="datetime2" Precision="7" Nullable="false" />
@@ -848,7 +848,7 @@
             <End Role="Profile" EntitySet="Profiles" />
             <End Role="ProfileDocument" EntitySet="ProfileDocuments" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="id" />
@@ -1482,7 +1482,7 @@
           <Property Name="dateObtained" Type="DateTime" Precision="3" />
           <Property Name="dateExpires" Type="DateTime" Precision="3" />
           <Property Name="profileId" Type="Int32" />
-          <Property Name="documentData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="documentData" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="dateModified" Type="DateTime" Nullable="false" Precision="7" />

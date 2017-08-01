@@ -46,12 +46,12 @@
 //            string extension = Path.GetExtension(filename.Trim());
 //            if (!string.IsNullOrEmpty(extension))
 //            {
-//                var tagList = new List<string> {"pdf","doc","docx","txt"};
+//                var tagList = new List<string> { "pdf", "doc", "docx", "txt" };
 //                var exists = tagList.Any(val => val.Contains(extension.ToLower()));
 
 //                if (exists)
 //                {
-//                    fileObj.mimeType=extension.ToLower();
+//                    fileObj.mimeType = extension.ToLower();
 //                    fileObj.originalFileName = filename.ToLower().Trim();
 //                }
 //            }
@@ -78,8 +78,9 @@
 //                byte[] compress = Compress(byteArray);
 
 
-//                fileObj.
-             
+//                fileObj.documentData=compress
+
+
 
 //            }
 //            catch (IOException)
@@ -87,7 +88,7 @@
 //                //throw new HttpResponseException("A generic error occured. Please try again later.", HttpStatusCode.InternalServerError);
 //            }
 
-//            HttpResponseMessage response = new HttpResponseMessage {StatusCode = HttpStatusCode.Created};
+//            HttpResponseMessage response = new HttpResponseMessage { StatusCode = HttpStatusCode.Created };
 //            return response;
 //        }
 
@@ -152,4 +153,3 @@
 //        }
 //    }
 //}
- 
