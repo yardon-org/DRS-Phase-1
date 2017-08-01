@@ -42,6 +42,14 @@ namespace drs_backend_phase1.Controllers
         {
             _db = new DRSEntities();
         }
+        /// <summary>
+        ///     Initailizes instance for unit testing
+        /// </summary>
+        /// <param name="mockEntity"></param>
+        public ProfileController(DRSEntities mockEntity)
+        {
+            _db = mockEntity;
+        }
 
         #region Delete_Endpoints
 
