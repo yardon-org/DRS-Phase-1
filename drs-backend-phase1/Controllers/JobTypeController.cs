@@ -40,6 +40,14 @@ namespace drs_backend_phase1.Controllers
             _db = new DRSEntities();
         }
 
+    /// <summary>
+    /// Initializes controller for unit testing
+    /// </summary>
+    /// <param name="mockEntity"></param>
+        public JobTypeController(DRSEntities mockEntity)
+        {
+            _db = mockEntity;
+        }
         /// <summary>
         /// Gets the job types o data.
         /// </summary>

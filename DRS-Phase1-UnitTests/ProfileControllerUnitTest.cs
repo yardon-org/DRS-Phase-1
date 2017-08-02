@@ -3,14 +3,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using drs_backend_phase1.Models;
 using drs_backend_phase1.Controllers;
-using System.Web.Http;
 using System.Web.Http.Results;
 using System.Linq;
 using Moq;
 using System.Data.Entity;
 using AutoMapper;
 using Profile = drs_backend_phase1.Models.Profile;
-using Microsoft.CSharp;
 using drs_backend_phase1.Models.DTOs;
 
 namespace DRS_Phase1_UnitTests
@@ -427,6 +425,36 @@ namespace DRS_Phase1_UnitTests
 
             // Assert
             Assert.AreEqual(2, content.items.Count);
+        }
+        [TestMethod]
+        public void UpdateProfile_Updates_and_Returns_Update()
+        {
+            ProfileDTO testDTO = new ProfileDTO
+            {
+                address1 = "New Address Line 1",
+                address2 = "New Address Line 2",
+                dateOfBirth = new DateTime(1970, 11, 11),
+                id = 2,
+                firstName = "Johnny",
+                lastName = "Depp",
+                homeEmail = "test@test.com",
+                isDeleted = false,
+                postcode = "NR0 0OO",
+                profileProfessionalId = 1
+            };
+
+
+            SetUpProfileMock();
+
+            var p = new ProfileController(_mockContext.Object);
+
+            //  Act
+            dynamic actionResult = p.UpdateProfile(testDTO);
+            dynamic content = actionResult.Content;
+
+            // Assert
+            Assert.AreEqual(2, content.items.Count);
+
         }
         #endregion
         #region "EMail Controller"
