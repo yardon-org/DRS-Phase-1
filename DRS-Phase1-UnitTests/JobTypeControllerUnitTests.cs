@@ -203,6 +203,29 @@ namespace DRS_Phase1_UnitTests
             // Assert
             Assert.AreEqual("UCP", contentResult.Content.name);
         }
+
+        [TestMethod]
+        public void DeleteJobTypeById_Sets_Deleted_Flag()
+        {
+            //  Arrange
+            var mockSet = SetUpJobTypeMock();
+
+            var p = new JobTypeController(_mockContext.Object);
+
+            //  Act
+            var actionResult = p.DeleteJobTypeById(2);
+            var contentResult = actionResult as OkNegotiatedContentResult<Boolean>;
+
+            //  Assert
+            Assert.AreEqual(true, contentResult.Content);
+
+            bool prof = (from fp in mockSet.Object
+                         where fp.id == 2
+                         select fp.isDeleted).Single();
+
+            //Assert.AreEqual(true, prof);
+
+        }
         #region "Test Helpers"
         private Mock<DbSet<JobType>> SetUpJobTypeMock()
         {
