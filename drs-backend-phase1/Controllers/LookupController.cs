@@ -38,7 +38,10 @@ namespace drs_backend_phase1.Controllers
             _db = new DRSEntities();
         }
 
-
+        public LookupController(DRSEntities mockEntity)
+        {
+            _db = mockEntity;
+        }
         /// <summary>
         ///     Fetches all agencies.
         /// </summary>

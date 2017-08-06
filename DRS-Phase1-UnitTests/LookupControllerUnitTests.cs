@@ -16,6 +16,8 @@ namespace DRS_Phase1_UnitTests
     [TestClass]
     public class LookupControllerUnitTests
     {
+        static Mock<DRSEntities> _mockContext;
+
         static List<Agency> _listAgency;
         static List<Bank> _listBank;
         static List<Base> _listBase;
@@ -25,6 +27,17 @@ namespace DRS_Phase1_UnitTests
         static List<RegisteredSurgery> _listRegSurgery;
         static List<RegistrarLevel> _listRegLevel;
         static List<Team> _listTeam;
+
+        IQueryable<Agency> _queryAgencyList;
+        IQueryable<Bank> _queryBankList;
+        IQueryable<Base> _queryBaseList;
+        IQueryable<DocumentType> _queryDopcTypeList;
+        IQueryable<IndemnityProvider> _queryIndemnityList;
+        IQueryable<PaymentCategory> _queryPayCatList;
+        IQueryable<RegisteredSurgery> _queryRegSurgeryList;
+        IQueryable<RegistrarLevel> _queryRegLevelList;
+        IQueryable<Team> _queryTeamList;
+
 
         [ClassInitialize]
         public static void ProfileInitialize(TestContext context)
@@ -60,7 +73,8 @@ namespace DRS_Phase1_UnitTests
             });
 
             Mapper.AssertConfigurationIsValid();
-
+#region "MockObjects
+       
             _listAgency = new List<Agency>
             {
                 new Agency
@@ -89,7 +103,8 @@ namespace DRS_Phase1_UnitTests
                     dateCreated=new DateTime(2016,07,20),
                     dateModified = DateTime.Now,
                     id = 4,
-                    name = "Agency 4"
+                    name = "Agency 4",
+                    isDeleted = true
                 },
                 new Agency
                 {
@@ -161,6 +176,7 @@ namespace DRS_Phase1_UnitTests
                 }
             };
 
+            
             _ListDocType = new List<DocumentType>
             {
                 new DocumentType
@@ -350,13 +366,70 @@ namespace DRS_Phase1_UnitTests
                     dateModified = DateTime.Now,
                     id= 4,
                     name = "Team 4"
-                }
-            }
+                 }
+            };
+        }
+#endregion
+
+        [TestInitialize]
+        public void JobTypeTestsSetup()
+        {
+            _mockContext = new Mock<DRSEntities>();
+            _queryAgencyList = _listAgency.AsQueryable();
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void FetchAllAgencies_DoesNot_Return_Deleted()
         {
+            //   Arrange
+            SetUpAgencyMock();
+
+            var p = new LookupController(_mockContext.Object);
+
+            //  Act
+            //var actionResult = p.GetJobTypesOData();
+            //var contentResult = actionResult as OkNegotiatedContentResult<List<JobType>>;
+
+            dynamic actionResult = p.FetchAllAgencies();
+            dynamic content = actionResult.Content;
+
+            // Assert
+            Assert.AreEqual(4, content.items.Count);
+
         }
+        [TestMethod]
+        public void FetchAllAgencies_Returns_Deleted()
+        {
+            //   Arrange
+            SetUpAgencyMock();
+
+            var p = new LookupController(_mockContext.Object);
+
+            //  Act
+            //var actionResult = p.GetJobTypesOData();
+            //var contentResult = actionResult as OkNegotiatedContentResult<List<JobType>>;
+
+            dynamic actionResult = p.FetchAllAgencies(true);
+            dynamic content = actionResult.Content;
+
+            // Assert
+            Assert.AreEqual(5, content.items.Count);
+
+        }
+        #region "Test Helpers"
+        private Mock<DbSet<Agency>> SetUpAgencyMock()
+        {
+            var mockSet = new Mock<DbSet<Agency>>();
+
+            mockSet.As<IQueryable<Agency>>().Setup(m => m.Provider).Returns(_queryAgencyList.Provider);
+            mockSet.As<IQueryable<Agency>>().Setup(m => m.Expression).Returns(_queryAgencyList.Expression);
+            mockSet.As<IQueryable<Agency>>().Setup(m => m.ElementType).Returns(_queryAgencyList.ElementType);
+            mockSet.As<IQueryable<Agency>>().Setup(m => m.GetEnumerator()).Returns(_queryAgencyList.GetEnumerator);
+
+            _mockContext.Setup(c => c.Agencies).Returns(mockSet.Object);
+
+            return mockSet;
+        }
+        #endregion  
     }
 }
