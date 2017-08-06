@@ -73,7 +73,7 @@ namespace DRS_Phase1_UnitTests
             });
 
             Mapper.AssertConfigurationIsValid();
-#region "MockObjects
+#region "MockObjects"
        
             _listAgency = new List<Agency>
             {
@@ -382,7 +382,10 @@ namespace DRS_Phase1_UnitTests
         public void FetchAllAgencies_DoesNot_Return_Deleted()
         {
             //   Arrange
-            SetUpAgencyMock();
+            //SetUpAgencyMock();
+            SetUpMock<Agency>(_queryAgencyList);
+
+            _mockContext.Setup(c => c.Agencies).Returns(mockSet.Object);
 
             var p = new LookupController(_mockContext.Object);
 
@@ -427,6 +430,19 @@ namespace DRS_Phase1_UnitTests
             mockSet.As<IQueryable<Agency>>().Setup(m => m.GetEnumerator()).Returns(_queryAgencyList.GetEnumerator);
 
             _mockContext.Setup(c => c.Agencies).Returns(mockSet.Object);
+
+            return mockSet;
+        }
+
+        private Mock<DbSet<T>> SetUpMock<T>(IQueryable<T> QueryList) where T: DRSEntities
+        {
+            var mockSet = new Mock<DbSet<T>>();
+
+
+            mockSet.As<IQueryable<T>>().Setup(m => m.Provider).Returns(QueryList.Provider);
+            mockSet.As<IQueryable<T>>().Setup(m => m.Expression).Returns(QueryList.Expression);
+            mockSet.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(QueryList.ElementType);
+            mockSet.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(QueryList.GetEnumerator);
 
             return mockSet;
         }
